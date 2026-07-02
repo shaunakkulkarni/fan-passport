@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fan Passport — Find Your Club</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper: #ded2ae;
+    --paper-2: #d3c69c;
+    --ink: #1b1b17;
+    --ink-soft: #3a382f;
+    --pitch: #1f4d3a;
+    --pitch-2: #163a2b;
+    --visa-red: #a5342b;
+    --gold: #b8902e;
+    --line: rgba(27,27,23,0.28);
+    --line-soft: rgba(27,27,23,0.14);
+    --paper-rgb: 222,210,174;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--paper);
+    background-image:
+      radial-gradient(rgba(27,27,23,0.035) 1px, transparent 1px);
+    background-size: 3px 3px;
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    letter-spacing:-0.01em;
+    margin:0;
+  }
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  .wrap{max-width:920px;margin:0 auto;padding:0 24px;}
+  a{color:inherit;}
+  button{font-family:inherit;cursor:pointer;}
+
+  /* header */
+  header.topbar{
+    background:var(--pitch);
+    color:var(--paper);
+    border-bottom:3px solid var(--pitch-2);
+  }
+  .topbar-inner{
+    max-width:920px;margin:0 auto;padding:16px 24px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .wordmark{
+    display:flex;align-items:baseline;gap:8px;
+    font-family:'Fraunces',serif;font-weight:700;font-size:20px;letter-spacing:0.01em;
+  }
+  .wordmark .mono{font-size:11px;color:var(--gold);letter-spacing:0.12em;text-transform:uppercase;}
+  nav.topnav{display:flex;gap:18px;font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.06em;text-transform:uppercase;}
+  nav.topnav span{cursor:pointer;opacity:0.82;border-bottom:1px solid transparent;padding-bottom:2px;}
+  nav.topnav span:hover{opacity:1;border-bottom:1px solid var(--gold);}
+
+  /* hero */
+  .hero{padding:72px 24px 56px;}
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;
+    color:var(--visa-red);margin-bottom:18px;display:flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:"";width:22px;height:1px;background:var(--visa-red);display:inline-block;}
+  .hero h1{font-size:clamp(34px,5.4vw,58px);line-height:1.04;max-width:11.5em;}
+  .hero p.lede{font-size:18px;line-height:1.6;max-width:34em;margin-top:22px;color:var(--ink-soft);}
+  .hero-actions{display:flex;gap:16px;margin-top:34px;flex-wrap:wrap;align-items:center;}
+  .btn{
+    font-family:'IBM Plex Mono',monospace;font-size:13px;letter-spacing:0.05em;text-transform:uppercase;
+    padding:14px 24px;border-radius:2px;border:1.5px solid var(--ink);background:var(--ink);color:var(--paper);
+    transition:transform .12s ease;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn.secondary{background:transparent;color:var(--ink);border:1.5px solid var(--line);}
+  .btn.secondary:hover{border-color:var(--ink);}
+  .stat-strip{display:flex;gap:0;margin-top:56px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .stat-strip div{flex:1;padding:18px 4px;border-right:1px solid var(--line);}
+  .stat-strip div:last-child{border-right:none;}
+  .stat-strip .num{font-family:'Fraunces',serif;font-size:26px;font-weight:600;}
+  .stat-strip .lab{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--ink-soft);margin-top:4px;}
+
+  /* stamp */
+  .stamp{
+    display:inline-flex;flex-direction:column;align-items:center;justify-content:center;
+    width:96px;height:96px;border-radius:50%;
+    border:2px dashed var(--visa-red);color:var(--visa-red);
+    transform:rotate(-9deg);
+    font-family:'IBM Plex Mono',monospace;text-transform:uppercase;
+  }
+  .stamp .big{font-size:20px;font-weight:600;line-height:1;}
+  .stamp .small{font-size:8px;letter-spacing:0.08em;margin-top:2px;}
+
+  /* quiz */
+  .quiz-shell{padding:48px 24px 80px;}
+  .quiz-card{
+    background:rgba(255,255,255,0.28);
+    border:1px solid var(--line);
+    padding:40px 36px;
+    position:relative;
+  }
+  .page-marker{
+    display:flex;justify-content:space-between;align-items:center;
+    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;
+    color:var(--ink-soft);margin-bottom:26px;
+  }
+  .stamp-row{display:flex;gap:6px;}
+  .mini-stamp{width:16px;height:16px;border-radius:50%;border:1.5px solid var(--line);}
+  .mini-stamp.filled{border-color:var(--pitch);background:var(--pitch);}
+  .quiz-card h2{font-size:clamp(22px,3.2vw,30px);line-height:1.2;max-width:18em;}
+  .quiz-card .qsub{color:var(--ink-soft);margin-top:8px;font-size:14px;}
+  .options{margin-top:28px;display:flex;flex-direction:column;gap:10px;}
+  .option{
+    border:1.5px solid var(--line);padding:16px 18px;display:flex;gap:14px;align-items:flex-start;
+    background:rgba(255,255,255,0.35);transition:border-color .12s, background .12s;
+  }
+  .option:hover{border-color:var(--ink);}
+  .option.selected{border-color:var(--visa-red);background:rgba(165,52,43,0.07);}
+  .option .letter{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-soft);
+    border:1px solid var(--line);width:22px;height:22px;flex:none;
+    display:flex;align-items:center;justify-content:center;border-radius:50%;margin-top:1px;
+  }
+  .option.selected .letter{border-color:var(--visa-red);color:var(--visa-red);}
+  .option .otext strong{display:block;font-size:15px;margin-bottom:3px;}
+  .option .otext span{font-size:13px;color:var(--ink-soft);line-height:1.4;}
+  .quiz-nav{display:flex;justify-content:space-between;margin-top:30px;align-items:center;}
+  .quiz-nav .step-count{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--ink-soft);}
+
+  /* result */
+  .result-shell{padding:56px 24px 80px;}
+  .result-top{display:flex;gap:36px;align-items:center;flex-wrap:wrap;}
+  .crest{
+    width:120px;height:120px;border-radius:50%;flex:none;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;font-weight:700;font-size:34px;color:#fff;
+    border:3px solid rgba(0,0,0,0.15);
+  }
+  .result-meta .granted{
+    font-family:'IBM Plex Mono',monospace;color:var(--visa-red);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;
+    display:flex;align-items:center;gap:8px;margin-bottom:8px;
+  }
+  .result-meta .granted::before{content:"";width:18px;height:1px;background:var(--visa-red);}
+  .result-meta h2{font-size:clamp(28px,4.4vw,42px);}
+  .result-meta .subline{color:var(--ink-soft);margin-top:6px;font-size:15px;}
+  .match-pct{font-family:'IBM Plex Mono',monospace;font-size:13px;margin-top:10px;color:var(--ink-soft);}
+  .match-pct b{color:var(--ink);font-size:15px;}
+  .why-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px;}
+  .why-chip{
+    border:1px solid var(--line);padding:7px 13px;font-size:12.5px;
+    font-family:'IBM Plex Mono',monospace;background:rgba(255,255,255,0.35);
+  }
+  .result-actions{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap;}
+  .runners{margin-top:56px;}
+  .runners h3{font-family:'IBM Plex Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.1em;color:var(--ink-soft);margin-bottom:16px;}
+  .runner-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+  @media(max-width:600px){.runner-grid{grid-template-columns:1fr;}}
+  .runner-card{
+    border:1px solid var(--line);padding:18px;display:flex;gap:14px;align-items:center;
+    background:rgba(255,255,255,0.28);
+  }
+  .runner-card:hover{border-color:var(--ink);cursor:pointer;}
+  .runner-crest{width:52px;height:52px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Fraunces',serif;font-weight:700;font-size:16px;}
+  .runner-card .rname{font-weight:600;font-size:15px;}
+  .runner-card .rleague{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-soft);margin-top:2px;text-transform:uppercase;}
+
+  /* dossier */
+  .dossier-band{color:#fff;padding:44px 24px 34px;}
+  .dossier-band .wrap{display:flex;gap:26px;align-items:center;flex-wrap:wrap;}
+  .dossier-crest{width:84px;height:84px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:700;font-size:26px;color:#fff;border:2px solid rgba(255,255,255,0.4);}
+  .dossier-band .dname{font-size:clamp(24px,4vw,36px);}
+  .dossier-band .dmeta{font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.08em;text-transform:uppercase;opacity:0.88;margin-top:6px;}
+  .dossier-body{padding:44px 24px 80px;}
+  .field{border-top:1px solid var(--line);padding:22px 0;}
+  .field:last-child{border-bottom:1px solid var(--line);}
+  .field .flabel{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.1em;color:var(--visa-red);margin-bottom:8px;}
+  .field .fval{font-size:15.5px;line-height:1.65;color:var(--ink);}
+  .field .fval.serif{font-family:'Fraunces',serif;font-size:18px;font-weight:500;line-height:1.5;}
+  .tagpills{display:flex;flex-wrap:wrap;gap:8px;}
+  .tagpills span{border:1px solid var(--line);padding:5px 11px;font-size:12px;font-family:'IBM Plex Mono',monospace;}
+  .back-link{font-family:'IBM Plex Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.06em;color:var(--ink-soft);cursor:pointer;display:inline-block;margin-bottom:18px;}
+  .back-link:hover{color:var(--ink);}
+
+  /* browse */
+  .browse-shell{padding:48px 24px 80px;}
+  .league-group{margin-bottom:44px;}
+  .league-head{display:flex;align-items:baseline;gap:14px;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:16px;}
+  .league-head h2{font-size:22px;}
+  .league-head .country{font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;color:var(--ink-soft);letter-spacing:0.08em;}
+  .club-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:12px;}
+  .club-card{
+    border:1px solid var(--line);padding:14px;display:flex;gap:12px;align-items:center;
+    background:rgba(255,255,255,0.28);
+  }
+  .club-card:hover{border-color:var(--ink);cursor:pointer;}
+  .club-crest-sm{width:38px;height:38px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Fraunces',serif;font-weight:700;font-size:13px;}
+  .club-card .cname{font-size:13.5px;font-weight:600;line-height:1.25;}
+  .club-card .cid{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--ink-soft);margin-top:2px;}
+
+  footer{padding:30px 24px 50px;text-align:center;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-soft);letter-spacing:0.05em;}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="wordmark">FAN PASSPORT <span class="mono">est. 2026</span></div>
+    <nav class="topnav">
+      <span data-nav="quiz">Get Matched</span>
+      <span data-nav="browse">Browse Clubs</span>
+    </nav>
+  </div>
+</header>
+<div id="app"></div>
+<footer>NO ALGORITHM CAN FULLY CAPTURE A FANDOM — CONSIDER THIS A WELL-ARGUED FIRST OPINION</footer>
+
+<script>
+/* ---------------- DATA ---------------- */
+
+const QUESTIONS = [
+  {
+    q: "How do you want your club to win?",
+    sub: "Pick the version of football that gets you off the couch.",
+    options: [
+      { label:"Total control", text:"Death by a thousand passes — starve the opponent of the ball until they break.", w:{possession:3, technical:2, patience:2} },
+      { label:"The knockout blow", text:"Sit deep, absorb pressure, then hit them on the break before they know what happened.", w:{counterattack:3, physical:1, chaos:1} },
+      { label:"Organized chaos", text:"End-to-end, high-event, nobody's defense is safe. Entertainment over control.", w:{chaos:3, highpress:2, physical:1} },
+      { label:"Grind it out", text:"Set pieces, duels, a back line that doesn't blink. Ugly wins still count.", w:{physical:3, setpieces:2, patience:1} },
+    ]
+  },
+  {
+    q: "What actually makes you fall for a club's identity?",
+    sub: "The football matters, but this is what you'll tell people at the bar.",
+    options: [
+      { label:"Working-class roots", text:"A ground built by factory workers, ultras who never sit down, a chip on its shoulder.", w:{ultras:3, rebellious:2, journey:1} },
+      { label:"Galáctico glamour", text:"Superstar signings, trophy cabinets that need their own wing, expectation as a baseline.", w:{galactico:3, trophyhunger:3, aristocratic:2} },
+      { label:"Homegrown pride", text:"An academy that actually produces first-teamers, and a fanbase that notices.", w:{academy:3, community:1, journey:1} },
+      { label:"Underdog with a plan", text:"Overachieving on a mid-table budget, punching up, occasionally pulling off a miracle.", w:{underdog:3, journey:2, rebellious:1} },
+    ]
+  },
+  {
+    q: "Which World Cup storyline had you the most locked in?",
+    sub: "This tells us more than you'd think.",
+    options: [
+      { label:"The global superstar chasing history", text:"One generational talent trying to will a whole nation forward.", w:{galactico:2, trophyhunger:2, diaspora:1} },
+      { label:"The scrappy team shocking a giant", text:"A roster nobody rated, playing above itself, ruining a favorite's tournament.", w:{underdog:3, rebellious:2} },
+      { label:"The kid who came out of nowhere", text:"A teenager or unknown suddenly the best player on the pitch.", w:{academy:3, journey:2} },
+      { label:"The manager's system working perfectly", text:"A tactical idea executed so well it looked unfair.", w:{possession:2, highpress:2, technical:2} },
+    ]
+  },
+  {
+    q: "How do you feel about inheriting a rivalry?",
+    sub: "Every club comes with enemies. Some are older than the club itself.",
+    options: [
+      { label:"Give me the blood feud", text:"I want a derby that shuts down a city, decades of grudges, songs about it.", w:{bloodfeud:3, ultras:1} },
+      { label:"A healthy rivalry is fine", text:"Some needle, a fun weekend, nothing that ruins a friendship.", w:{friendlyrivalry:2} },
+      { label:"I don't care about rivalries", text:"I'm here for good football, not a century-old grudge.", w:{rivalryagnostic:2, journey:1} },
+    ]
+  },
+  {
+    q: "Which region actually pulls at you?",
+    sub: "Family, travel, players you admire — whatever the connection is.",
+    options: [
+      { label:"British Isles", text:"Rain, noise, a pub before kickoff.", w:{britain:3} },
+      { label:"Iberia (Spain/Portugal orbit)", text:"Technical football and sun.", w:{iberia:3} },
+      { label:"Italy", text:"Tactics, tifo, tradition.", w:{italy:3} },
+      { label:"Germany / Central Europe", text:"Terraces, atmosphere, club-run ownership.", w:{germany:3, community:1} },
+      { label:"France", text:"Athleticism and star power.", w:{france:3} },
+      { label:"Mexico & Latin America", text:"Passion that doesn't come with an off-season.", w:{mexico:3, diaspora:1} },
+      { label:"My own city, USA", text:"I want to be able to actually show up.", w:{usa:3, accessible:2} },
+    ]
+  },
+  {
+    q: "Be honest about how you'll actually follow this club.",
+    sub: "No judgment. Just calibrating.",
+    options: [
+      { label:"I want to go to games in person", text:"Local, accessible, a season ticket is realistic.", w:{accessible:3, community:1} },
+      { label:"I'm fine being a distance fan", text:"3am kickoffs, streaming, the full long-distance-relationship experience.", w:{distancefan:3} },
+      { label:"Doesn't matter, I just want the right club", text:"Convenience is secondary to fit.", w:{} },
+    ]
+  },
+  {
+    q: "Trophies or story — what matters more?",
+    sub: "Last one. Then we stamp your passport.",
+    options: [
+      { label:"I want to win. A lot.", text:"Give me a club that expects a trophy every season.", w:{trophyhunger:3} },
+      { label:"I want a story worth telling", text:"Heartbreak, comebacks, a multi-year arc — even if it ends in near-misses.", w:{journey:3, underdog:1} },
+    ]
+  },
+];
+
+// Clubs: tags are the profile a club "scores" on. Higher = stronger identity match.
+const CLUBS = [
+// ---- Premier League (England) ----
+{id:"arsenal", name:"Arsenal", nick:"The Gunners", league:"Premier League", country:"England", founded:1886, stadium:"Emirates Stadium, London", honours:"13 English league titles, 14 FA Cups", c1:"#EF0107", c2:"#023474",
+ identity:"High-possession, academy-proud, and self-consciously intellectual — a club that talks about football the way other clubs talk about war.",
+ history:"Founded by munitions workers in Woolwich in 1886, Arsenal moved north across the Thames in 1913 and spent the 20th century as English football's most deliberately modern club — first to fly to away games, first to install floodlights on a large scale, first to really believe in a philosophy. The Wenger era (1996–2018) rebuilt that identity around possession and youth, culminating in the 2003–04 'Invincibles' season, still the only unbeaten Premier League campaign.",
+ rivals:["Tottenham Hotspur — the North London Derby, the most geographically compressed hatred in England","Manchester United — the title fights of the late 90s/2000s"],
+ legends:["Thierry Henry","Tony Adams","Dennis Bergkamp","Ian Wright"],
+ watch:"A squad built almost entirely through patient recruitment and academy graduation rather than galáctico spending — the identity is the point.",
+ tags:{possession:3, academy:3, technical:2, bloodfeud:3, britain:3, trophyhunger:2, journey:2, accessible:1, distancefan:3}},
+
+{id:"liverpool", name:"Liverpool", nick:"The Reds", league:"Premier League", country:"England", founded:1892, stadium:"Anfield, Liverpool", honours:"19 English league titles, 6 European Cups", c1:"#C8102E", c2:"#00B2A9",
+ identity:"Working-class, communal, built on a stadium chant that became a global funeral hymn — 'You'll Never Walk Alone' is not decoration here, it's doctrine.",
+ history:"Liverpool dominated English and European football through the 1970s and 80s under Bill Shankly's successors, then endured two civic tragedies — Heysel (1985) and Hillsborough (1989) — that reshaped both the club's culture and English stadium safety law. The Jürgen Klopp era (2015–2024) revived the club with a high-intensity 'heavy metal' pressing style, delivering the 2019 Champions League and a long-awaited 2020 league title.",
+ rivals:["Manchester United — the definitive rivalry of English football's north-west","Everton — the Merseyside Derby, a family rivalry more than a hateful one"],
+ legends:["Steven Gerrard","Kenny Dalglish","Mohamed Salah","Ian Rush"],
+ watch:"A club that rebuilds identity through managerial ideology as much as transfers — whoever holds the job inherits enormous cultural weight.",
+ tags:{highpress:3, ultras:3, community:2, bloodfeud:3, britain:3, trophyhunger:2, journey:2, distancefan:3}},
+
+{id:"man-utd", name:"Manchester United", nick:"The Red Devils", league:"Premier League", country:"England", founded:1878, stadium:"Old Trafford, Manchester", honours:"20 English league titles, 3 European Cups", c1:"#DA291C", c2:"#FBE122",
+ identity:"Galáctico-scale ambition built on a tragic origin story — the 1958 Munich air disaster killed eight players and still shapes how the club talks about itself.",
+ history:"Rebuilt from the Munich disaster by Matt Busby, United became England's most commercially dominant club under Alex Ferguson (1986–2013), winning 13 league titles and two Champions Leagues on a mix of academy talent (the 'Class of '92') and marquee signings. The post-Ferguson decade has been defined by managerial churn and a fanbase increasingly split between glory-era nostalgia and frustration with ownership.",
+ rivals:["Liverpool — England's defining rivalry","Manchester City — the modern, money-fueled city rivalry","Leeds United — a bitter 1960s–90s feud"],
+ legends:["Sir Bobby Charlton","Eric Cantona","Ryan Giggs","Cristiano Ronaldo"],
+ watch:"Enormous global fanbase and revenue mean expectations rarely match short-term reality — most storylines here are about the gap between the two.",
+ tags:{galactico:3, trophyhunger:2, journey:2, bloodfeud:3, britain:3, physical:1, accessible:1, distancefan:3}},
+
+{id:"man-city", name:"Manchester City", nick:"The Citizens", league:"Premier League", country:"England", founded:1880, stadium:"Etihad Stadium, Manchester", honours:"10 English league titles, 1 Champions League", c1:"#6CABDD", c2:"#1C2C5B",
+ identity:"A once-modest club transformed since 2008 by Abu Dhabi ownership into the closest thing modern football has to a perfected system.",
+ history:"City spent most of the 20th century as Manchester's less glamorous club before a 2008 takeover funded a rebuild around infrastructure, youth development, and eventually Pep Guardiola's positional-play system, which produced an unprecedented run of Premier League titles through the 2020s, including the 2023 treble.",
+ rivals:["Manchester United — now a rivalry of trophies as much as geography","Liverpool — the title fights of the Klopp–Guardiola years"],
+ legends:["Sergio Agüero","Vincent Kompany","David Silva","Erling Haaland"],
+ watch:"The clearest working example of Guardiola-style possession football in the modern game — study this club to understand the tactical era.",
+ tags:{possession:3, technical:3, trophyhunger:3, galactico:2, highpress:2, britain:2, distancefan:2}},
+
+{id:"chelsea", name:"Chelsea", nick:"The Blues", league:"Premier League", country:"England", founded:1905, stadium:"Stamford Bridge, London", honours:"6 English league titles, 2 Champions Leagues", c1:"#034694", c2:"#FFFFFF",
+ identity:"West London glamour funded by two very different ownership eras — Roman Abramovich's title-buying 2000s, then a young American-led consortium rebuilding around a long-term academy bet.",
+ history:"A mid-table club for most of its history, Chelsea's 2003 takeover by Roman Abramovich triggered two decades of major trophies, including Champions League wins in 2012 and 2021, built on aggressive transfer spending and a revolving door of elite managers.",
+ rivals:["Arsenal and Tottenham — London rivalries","Manchester United — 2000s–2010s title fights"],
+ legends:["Frank Lampard","John Terry","Didier Drogba","Petr Čech"],
+ watch:"The current ownership's strategy of signing very young players on very long contracts is one of the more distinctive experiments in modern squad building.",
+ tags:{galactico:3, trophyhunger:2, academy:1, britain:2, distancefan:2}},
+
+{id:"tottenham", name:"Tottenham Hotspur", nick:"Spurs", league:"Premier League", country:"England", founded:1882, stadium:"Tottenham Hotspur Stadium, London", honours:"2 English league titles, 8 FA Cups", c1:"#132257", c2:"#FFFFFF",
+ identity:"North London's other club — famous for attacking football, near-misses, and a fanbase with a very dark sense of humor about the phrase 'Spursy'.",
+ history:"Spurs were the first club to win the League and FA Cup double in the 20th century (1961) and have a long tradition of stylish attacking football, but a league title has eluded them since 1961 — a drought that defines much of the club's modern identity, alongside genuinely elite stadium infrastructure.",
+ rivals:["Arsenal — the North London Derby"],
+ legends:["Harry Kane","Ledley King","Glenn Hoddle","Sol Campbell"],
+ watch:"A club whose baseline expectation shifted upward after building one of Europe's best stadiums, even as the trophy drought continues.",
+ tags:{britain:3, bloodfeud:3, journey:3, underdog:1, technical:1, distancefan:2}},
+
+{id:"newcastle", name:"Newcastle United", nick:"The Magpies", league:"Premier League", country:"England", founded:1892, stadium:"St. James' Park, Newcastle", honours:"4 English league titles (pre-Premier League era)", c1:"#241F20", c2:"#FFFFFF",
+ identity:"A one-club city in England's northeast with arguably the most fanatical, unconditional support in the country, now backed by Saudi-linked ownership after decades without major silverware.",
+ history:"Newcastle's black-and-white stripes have flown over one of England's most passionate fanbases since the 19th century, but the club hasn't won a top-flight title since 1927. A 2021 takeover brought Gulf investment and renewed ambition, delivering a first major trophy in decades (2023 League Cup) and Champions League qualification.",
+ rivals:["Sunderland — the Tyne–Wear Derby, one of England's fiercest"],
+ legends:["Alan Shearer","Kevin Keegan","Peter Beardsley"],
+ watch:"A club testing whether decades of loyalty and a full stadium can translate into actual trophies now that resources have changed.",
+ tags:{ultras:3, community:2, journey:3, underdog:2, britain:3, distancefan:2}},
+
+{id:"aston-villa", name:"Aston Villa", nick:"The Villans", league:"Premier League", country:"England", founded:1874, stadium:"Villa Park, Birmingham", honours:"7 English league titles, 1 European Cup (1982)", c1:"#670E36", c2:"#95BFE5",
+ identity:"One of English football's founding clubs, with a genuinely major European pedigree that gets overlooked because it happened so long ago.",
+ history:"Villa were founding members of the Football League in 1888 and shocked the continent by winning the European Cup in 1982, but decades of mid-table drift followed. A 2018 ownership change and a run of smart hires have pushed the club back toward Champions League contention.",
+ rivals:["Birmingham City — the Second City Derby"],
+ legends:["Peter Withe","Paul McGrath","Dwight Yorke"],
+ watch:"A genuine modern comeback story — worth following for a club rediscovering ambition after a long stretch of anonymity.",
+ tags:{journey:3, underdog:2, britain:3, community:1, distancefan:2}},
+
+{id:"west-ham", name:"West Ham United", nick:"The Hammers", league:"Premier League", country:"England", founded:1895, stadium:"London Stadium, London", honours:"3 FA Cups", c1:"#7A263A", c2:"#1BB1E7",
+ identity:"East London working-class club, famous for a distinctive attacking tradition ('the West Ham way') and a fan culture built around the terrace anthem 'I'm Forever Blowing Bubbles.'",
+ history:"Formed from a shipbuilding works team in 1895, West Ham has long punched below its fanbase's passion in terms of trophies, but produced key members of England's 1966 World Cup-winning side and has a reputation for developing technically gifted attacking players.",
+ rivals:["Millwall — a genuinely hostile, class-inflected rivalry","Tottenham — a modern East vs North London needle"],
+ legends:["Bobby Moore","Sir Trevor Brooking","Mark Noble"],
+ watch:"A reliable source of academy-developed attacking talent that bigger clubs regularly poach.",
+ tags:{ultras:3, community:2, underdog:2, britain:3, academy:1, distancefan:2}},
+
+{id:"everton", name:"Everton", nick:"The Toffees", league:"Premier League", country:"England", founded:1878, stadium:"Hill Dickinson Stadium, Liverpool", honours:"9 English league titles", c1:"#003399", c2:"#FFFFFF",
+ identity:"Liverpool's other, older club — a founding Football League member with a genuinely major trophy history that's been dormant for decades.",
+ history:"Everton were founding members of the Football League in 1888 and one of England's dominant clubs through the mid-20th century, but haven't won the league since 1987 — the longest active title drought among England's traditional 'big' clubs. A move to a new waterfront stadium marks the start of a new era.",
+ rivals:["Liverpool — the Merseyside Derby"],
+ legends:["Dixie Dean","Alan Ball","Wayne Rooney"],
+ watch:"New stadium, new ownership group, and a fanbase hoping a genuine trophy drought finally ends.",
+ tags:{journey:3, community:2, britain:3, underdog:2, distancefan:2}},
+
+// ---- La Liga (Spain) ----
+{id:"real-madrid", name:"Real Madrid", nick:"Los Blancos", league:"La Liga", country:"Spain", founded:1902, stadium:"Santiago Bernabéu, Madrid", honours:"36 Spanish league titles, 15 European Cups", c1:"#FEBE10", c2:"#00529F",
+ identity:"The single most decorated club in world football, built on the doctrine that it can always sign, and eventually beat, anyone — 'Hala Madrid' as institutional philosophy.",
+ history:"Real Madrid's dominance dates to the 1950s, when a team built around Alfredo Di Stéfano won the first five European Cups ever played. The club's modern 'Galáctico' era, and its record 15 Champions League titles — five more than any other club — have made it the sport's benchmark for sustained institutional success.",
+ rivals:["FC Barcelona — El Clásico, arguably football's most-watched rivalry","Atlético Madrid — the Madrid Derby"],
+ legends:["Alfredo Di Stéfano","Raúl","Cristiano Ronaldo","Zinedine Zidane"],
+ watch:"A club that treats winning the Champions League as a baseline expectation, not an achievement — the bar here is genuinely different from anywhere else.",
+ tags:{galactico:3, trophyhunger:3, technical:2, bloodfeud:3, iberia:3, aristocratic:3, distancefan:3}},
+
+{id:"barcelona", name:"FC Barcelona", nick:"Blaugrana", league:"La Liga", country:"Spain", founded:1899, stadium:"Camp Nou / Estadi Olímpic (rebuild), Barcelona", honours:"27 Spanish league titles, 5 European Cups", c1:"#A50044", c2:"#004D98",
+ identity:"'Més que un club' — more than a club — Barcelona has long positioned itself as the footballing expression of Catalan identity, and the intellectual home of possession-based, academy-grown football.",
+ history:"Barcelona's La Masia academy produced the core of a Pep Guardiola-coached team (2008–2012) widely considered the greatest possession side in history, built around Lionel Messi, Xavi, and Andrés Iniesta. The club's identity is inseparable from Catalan politics — FC Barcelona was a site of resistance during the Franco dictatorship.",
+ rivals:["Real Madrid — El Clásico","Espanyol — the Barcelona city derby"],
+ legends:["Lionel Messi","Johan Cruyff","Xavi","Andrés Iniesta"],
+ watch:"The academy-first philosophy remains the club's core identity even through periods of financial turbulence and squad rebuilding.",
+ tags:{possession:3, academy:3, technical:3, bloodfeud:3, iberia:3, journey:1, distancefan:3}},
+
+{id:"atletico-madrid", name:"Atlético Madrid", nick:"Los Colchoneros", league:"La Liga", country:"Spain", founded:1903, stadium:"Cívitas Metropolitano, Madrid", honours:"11 Spanish league titles", c1:"#CB3524", c2:"#FFFFFF",
+ identity:"Madrid's working-class alternative to Real — defined for over a decade by Diego Simeone's uncompromising, defense-first 'cholismo' philosophy.",
+ history:"Long overshadowed by Real Madrid and Barcelona, Atlético's fortunes changed under manager Diego Simeone (from 2011), whose defensively rigid, physically demanding style delivered two league titles and two Champions League final appearances, turning underdog resilience into the club's core brand.",
+ rivals:["Real Madrid — the Madrid Derby, now genuinely competitive","Real Sociedad and Athletic Bilbao — regional pride matchups"],
+ legends:["Fernando Torres","Diego Forlán","Koke"],
+ watch:"The clearest modern example of a club building an entire identity around a single manager's tactical philosophy.",
+ tags:{physical:3, setpieces:2, underdog:2, ultras:2, bloodfeud:2, iberia:3, journey:2, distancefan:2}},
+
+{id:"athletic-bilbao", name:"Athletic Bilbao", nick:"Los Leones", league:"La Liga", country:"Spain", founded:1898, stadium:"San Mamés, Bilbao", honours:"8 Spanish league titles", c1:"#EE2523", c2:"#FFFFFF",
+ identity:"Uniquely in world football, Athletic fields only players from the Basque Country — a self-imposed rule (la cantera policy) that's remained unbroken for over a century.",
+ history:"Founded by Basque students and British mining engineers, Athletic has competed at the top of Spanish football for over a century using only Basque-born or Basque-raised players — never signing a foreign or even non-Basque Spanish star. It has never been relegated from the top flight.",
+ rivals:["Real Sociedad — the Basque Derby"],
+ legends:["Telmo Zarra","Andoni Zubizarreta","Iker Muniain"],
+ watch:"The single most philosophically distinct club in this directory — a genuine curiosity for anyone who cares about club identity over roster spending.",
+ tags:{academy:3, community:3, rebellious:3, underdog:2, iberia:3, journey:2, distancefan:1}},
+
+{id:"real-sociedad", name:"Real Sociedad", nick:"La Real", league:"La Liga", country:"Spain", founded:1909, stadium:"Reale Arena, San Sebastián", honours:"2 Spanish league titles", c1:"#0033A0", c2:"#FFFFFF",
+ identity:"The other great Basque club — historically academy-first like Athletic, now open to all players but still culturally rooted in San Sebastián.",
+ history:"Real Sociedad shared Athletic Bilbao's Basque-only policy until 1989, and won back-to-back league titles in the early 1980s. The club has since rebuilt as a modern, academy-leaning side that regularly punches into European competition on a mid-size budget.",
+ rivals:["Athletic Bilbao — the Basque Derby"],
+ legends:["Xabi Alonso","Antoine Griezmann (academy)","Mikel Arteta"],
+ watch:"A well-run, sustainably ambitious club — a good pick for fans who want competence over chaos.",
+ tags:{academy:2, technical:2, community:1, iberia:3, journey:1, distancefan:1}},
+
+{id:"sevilla", name:"Sevilla FC", nick:"Los Nervionenses", league:"La Liga", country:"Spain", founded:1890, stadium:"Ramón Sánchez-Pizjuán, Seville", honours:"1 Spanish league title, record 7 Europa League titles", c1:"#D2001C", c2:"#FFFFFF",
+ identity:"The undisputed kings of Europe's second club competition — no club has won the Europa League more times, a specialization that's become its own kind of pride.",
+ history:"Sevilla built a reputation in the 2000s–2020s as Europe's premier Europa League specialists, winning the competition a record seven times through a recruitment model built on smart scouting rather than galáctico spending.",
+ rivals:["Real Betis — the Seville Derby, split along the same city"],
+ legends:["Jesús Navas","Iván Rakitić"],
+ watch:"A model club for smart, sustainable recruitment — worth watching for how the sausage gets made, not just results.",
+ tags:{technical:2, underdog:1, journey:2, iberia:3, bloodfeud:2, distancefan:1}},
+
+{id:"valencia", name:"Valencia CF", nick:"Los Che", league:"La Liga", country:"Spain", founded:1919, stadium:"Mestalla, Valencia", honours:"6 Spanish league titles", c1:"#EE7203", c2:"#000000",
+ identity:"A historically major club — three Champions League final appearances in the early 2000s — now rebuilding after a turbulent ownership period.",
+ history:"Valencia was one of Europe's best sides in the early 2000s under managers like Héctor Cúper and Rafael Benítez, reaching back-to-back Champions League finals (2000, 2001) and winning two league titles. Ownership disputes since have slowed the club considerably.",
+ rivals:["Levante UD — the Valencia Derby"],
+ legends:["David Villa","Santiago Cañizares"],
+ watch:"A sleeping giant story — big history, currently rebuilding, good for fans who like a comeback arc.",
+ tags:{journey:3, underdog:2, iberia:3, distancefan:1}},
+
+{id:"real-betis", name:"Real Betis", nick:"Los Verdiblancos", league:"La Liga", country:"Spain", founded:1907, stadium:"Estadio Benito Villamarín, Seville", honours:"1 Spanish league title", c1:"#00A650", c2:"#FFFFFF",
+ identity:"Seville's self-styled 'people's club' — famously loyal, famously long-suffering, with a fanbase whose motto translates roughly to 'even losing, we win.'",
+ history:"Betis has spent much of its history yo-yoing between divisions, developing one of Spain's most emotionally intense, loyalty-over-results fan cultures in the process. Winning the 2022 Copa del Rey after a long trophy gap set off some of the most joyful scenes in recent Spanish football.",
+ rivals:["Sevilla FC — the Seville Derby"],
+ legends:["Joaquín","Rafael Gordillo"],
+ watch:"If you want a club whose fans genuinely mean it when they say results are secondary to identity, this is it.",
+ tags:{ultras:3, underdog:3, journey:3, iberia:3, bloodfeud:2, distancefan:1}},
+
+// ---- Serie A (Italy) ----
+{id:"juventus", name:"Juventus", nick:"La Vecchia Signora (The Old Lady)", league:"Serie A", country:"Italy", founded:1897, stadium:"Allianz Stadium, Turin", honours:"36 Italian league titles, 2 European Cups", c1:"#000000", c2:"#FFFFFF",
+ identity:"Italy's most decorated and most nationally divisive club — beloved and resented in roughly equal measure, with a self-image built on relentless winning ('Fino alla fine' — until the end).",
+ history:"Juventus has won more Italian league titles than any other club, including nine straight from 2011–2020 under a rebuilding project following the 2006 Calciopoli match-fixing scandal that saw the club stripped of two titles and relegated. That scandal remains a permanent scar and rallying point for both supporters and detractors.",
+ rivals:["Inter Milan and AC Milan — the Derby d'Italia and broader Turin-vs-Milan tension","Torino — the Turin Derby"],
+ legends:["Alessandro Del Piero","Gianluigi Buffon","Michel Platini"],
+ watch:"No club in Italy generates stronger opinions in either direction — a good pick if you want to understand Italian football's fault lines.",
+ tags:{trophyhunger:3, aristocratic:2, physical:2, setpieces:1, bloodfeud:3, italy:3, distancefan:2}},
+
+{id:"ac-milan", name:"AC Milan", nick:"Rossoneri", league:"Serie A", country:"Italy", founded:1899, stadium:"San Siro, Milan", honours:"19 Italian league titles, 7 European Cups", c1:"#FB090B", c2:"#000000",
+ identity:"Founded by English expatriates, Milan built its identity on tactical innovation — the Arrigo Sacchi and Carlo Ancelotti sides of the late 80s/2000s are still studied as some of the best-organized teams ever assembled.",
+ history:"Milan's late-1980s side under Arrigo Sacchi revolutionized pressing and zonal defense, and the club added further European Cups in the 2000s under Carlo Ancelotti. A mid-2010s decline was followed by a 2022 league title that reaffirmed the club's status among Italy's elite.",
+ rivals:["Inter Milan — the Derby della Madonnina, shared with their own stadium","Juventus — the Derby d'Italia"],
+ legends:["Paolo Maldini","Franco Baresi","Kaká"],
+ watch:"A club with genuine tactical-history bragging rights — good for fans who care about the 'how' as much as the trophies.",
+ tags:{technical:3, aristocratic:2, highpress:1, trophyhunger:2, bloodfeud:2, italy:3, journey:1, distancefan:2}},
+
+{id:"inter-milan", name:"Inter Milan", nick:"Nerazzurri", league:"Serie A", country:"Italy", founded:1908, stadium:"San Siro, Milan", honours:"20 Italian league titles, 3 European Cups", c1:"#0068A8", c2:"#010101",
+ identity:"Founded by dissident members who split from AC Milan over a policy of excluding foreign players — internazionale, by name and by founding principle, deliberately open to the world.",
+ history:"Inter's proudest modern achievement is the 2010 treble under José Mourinho — Serie A, Coppa Italia, and Champions League in one season, still the only Italian club to manage it. The club is currently on one of the longest domestic title runs in its history.",
+ rivals:["AC Milan — the Derby della Madonnina","Juventus — the Derby d'Italia"],
+ legends:["Javier Zanetti","Giuseppe Meazza","Sandro Mazzola"],
+ watch:"Currently one of Italy's two dominant clubs, with a defensively disciplined identity that traces back to catenaccio's origins in Italian football.",
+ tags:{physical:2, setpieces:2, trophyhunger:2, bloodfeud:2, italy:3, community:1, distancefan:2}},
+
+{id:"napoli", name:"SSC Napoli", nick:"Partenopei", league:"Serie A", country:"Italy", founded:1926, stadium:"Stadio Diego Armando Maradona, Naples", honours:"4 Italian league titles", c1:"#12A0D7", c2:"#FFFFFF",
+ identity:"Southern Italy's flagship club, in a country where football success has historically concentrated in the industrial north — every Napoli title carries a regional-pride charge that other Serie A clubs simply don't have.",
+ history:"Diego Maradona's arrival in 1984 transformed Napoli from a mid-table club into two-time champions (1987, 1990), producing a bond between player and city still unmatched in football. A third title arrived in 2023 under Luciano Spalletti, sparking city-wide celebrations that lasted weeks.",
+ rivals:["Juventus — a north-south, working-class-vs-establishment framing","Roma — a fierce southern-Italy rivalry"],
+ legends:["Diego Maradona","Marek Hamšík","Dries Mertens"],
+ watch:"The stadium is literally named after Maradona — few clubs anywhere have this level of one-player mythology.",
+ tags:{ultras:3, underdog:2, journey:3, community:2, italy:3, bloodfeud:2, distancefan:2}},
+
+{id:"as-roma", name:"AS Roma", nick:"Giallorossi", league:"Serie A", country:"Italy", founded:1927, stadium:"Stadio Olimpico, Rome", honours:"3 Italian league titles", c1:"#8E1F2F", c2:"#F0BC42",
+ identity:"The capital's senior club, formed by merging three older Roman teams in 1927 specifically to give the city a single powerhouse to rival the industrial north.",
+ history:"Roma's history is defined more by near-misses and passionate loyalty than major silverware — three league titles across nearly a century, most recently in 2001. The 2007–08 arrival of Francesco Totti-led sides and, more recently, José Mourinho's 2022 Europa Conference League win kept the fanbase's intensity rewarded.",
+ rivals:["Lazio — the Derby della Capitale, shared with their own city and stadium"],
+ legends:["Francesco Totti","Daniele De Rossi"],
+ watch:"Totti spent his entire 25-year career at Roma and never played for another club — a rare one-club-man story worth knowing.",
+ tags:{ultras:2, journey:3, community:1, italy:3, bloodfeud:3, distancefan:1}},
+
+{id:"lazio", name:"SS Lazio", nick:"Biancocelesti", league:"Serie A", country:"Italy", founded:1900, stadium:"Stadio Olimpico, Rome", honours:"2 Italian league titles", c1:"#87CEEB", c2:"#FFFFFF",
+ identity:"Rome's other club, culturally positioned as the more traditionally Roman (as opposed to working-class-immigrant) of the city's two sides, with a fierce Curva Nord ultras culture.",
+ history:"Lazio's high point was the 1999–2000 side, assembled through heavy investment, that won the league and Coppa Italia double. The Derby della Capitale against Roma remains one of European football's most intense single-city rivalries.",
+ rivals:["AS Roma — the Derby della Capitale"],
+ legends:["Alessandro Nesta","Pavel Nedvěd"],
+ watch:"One half of Rome's civic football divide — pick this one if the underdog-vs-establishment framing appeals more than Roma's.",
+ tags:{ultras:2, bloodfeud:3, italy:3, journey:2, distancefan:1}},
+
+{id:"fiorentina", name:"ACF Fiorentina", nick:"La Viola", league:"Serie A", country:"Italy", founded:1926, stadium:"Stadio Artemio Franchi, Florence", honours:"2 Italian league titles", c1:"#6B2C91", c2:"#FFFFFF",
+ identity:"Florence's proud but trophy-light club, whose purple kit and cultured-city backdrop give it an aesthetic identity that outpaces its silverware.",
+ history:"Fiorentina's peak came in the mid-1950s and again in the late-1960s, but the club's modern history is defined more by strong individual eras — like the Batistuta-led 1990s side — than sustained dominance.",
+ rivals:["Juventus — a broader Tuscany-vs-Turin resentment"],
+ legends:["Gabriel Batistuta","Giancarlo Antognoni"],
+ watch:"A club whose identity leans on romance and setting as much as results — a good fit for the 'journey over trophies' fan.",
+ tags:{journey:3, underdog:2, italy:3, community:1, distancefan:1}},
+
+{id:"atalanta", name:"Atalanta BC", nick:"La Dea (The Goddess)", league:"Serie A", country:"Italy", founded:1907, stadium:"Gewiss Stadium, Bergamo", honours:"1 Italian league title (Coppa Italia specialists historically)", c1:"#1E71B8", c2:"#000000",
+ identity:"A mid-size industrial city's club that became, over the 2010s–2020s, one of the most tactically admired sides in Europe on a fraction of the biggest clubs' budgets.",
+ history:"Under Gian Piero Gasperini from 2016, Atalanta transformed from a yo-yo club into a Champions League regular playing some of Europe's most aggressive, entertaining football, and won the 2024 Europa League — the club's first major European trophy.",
+ rivals:["Brescia — a regional Lombardy rivalry"],
+ legends:["Josip Iličić"],
+ watch:"Arguably the best value-for-budget tactical story in European football over the last decade — a great pick for fans who like overachievement.",
+ tags:{highpress:3, underdog:3, journey:2, technical:2, italy:3, distancefan:1}},
+
+// ---- Bundesliga (Germany) ----
+{id:"bayern-munich", name:"Bayern Munich", nick:"Der Rekordmeister", league:"Bundesliga", country:"Germany", founded:1900, stadium:"Allianz Arena, Munich", honours:"34 German league titles, 6 European Cups", c1:"#DC052D", c2:"#0066B2",
+ identity:"Germany's dominant institution — 'Der Rekordmeister,' the record champion — run with a corporate efficiency that mirrors Bavaria's industrial self-image.",
+ history:"Bayern has won more German titles than any other club by a wide margin, including 11 straight from 2013–2023. The 2020 side won every competition it entered, a rare sextuple, under Hansi Flick.",
+ rivals:["Borussia Dortmund — Der Klassiker, Germany's biggest domestic rivalry"],
+ legends:["Franz Beckenbauer","Gerd Müller","Manuel Neuer"],
+ watch:"So dominant domestically that the real drama each year is usually the Champions League, not the league table.",
+ tags:{trophyhunger:3, aristocratic:2, possession:2, technical:2, bloodfeud:2, germany:3, community:1, distancefan:2}},
+
+{id:"dortmund", name:"Borussia Dortmund", nick:"Die Schwarzgelben", league:"Bundesliga", country:"Germany", founded:1909, stadium:"Signal Iduna Park, Dortmund", honours:"8 German league titles, 1 Champions League", c1:"#FDE100", c2:"#000000",
+ identity:"Home to the 'Yellow Wall' — a 25,000-capacity standing terrace, the largest in European football, that's become a bucket-list atmosphere for neutral fans worldwide.",
+ history:"Dortmund built its modern identity as the Ruhr Valley's working-class answer to Bayern, developing a fast, high-pressing style under managers like Jürgen Klopp (2008–2015) that produced back-to-back titles and a memorable 2013 Champions League final run.",
+ rivals:["Bayern Munich — Der Klassiker","Schalke 04 — the Revierderby, one of Europe's most hostile atmospheres"],
+ legends:["Michael Zorc","Marco Reus","Jürgen Klopp (manager)"],
+ watch:"If atmosphere is what draws you to football, this is close to the top of the list globally — the Südtribüne experience is genuinely singular.",
+ tags:{highpress:3, ultras:3, community:2, bloodfeud:3, germany:3, journey:2, underdog:1, distancefan:2}},
+
+{id:"leipzig", name:"RB Leipzig", nick:"Die Roten Bullen", league:"Bundesliga", country:"Germany", founded:2009, stadium:"Red Bull Arena, Leipzig", honours:"No league titles yet; regular Champions League qualifier", c1:"#DD0741", c2:"#001E4B",
+ identity:"The most openly corporate, controversial club in German football — a Red Bull-backed project built to route around the country's fan-ownership traditions, deeply resented by much of the domestic football culture.",
+ history:"Founded in 2009 and rebranded to work around Bundesliga rules restricting corporate club names, Leipzig rose from Germany's fifth tier to the Bundesliga's upper table within a decade, largely through data-driven recruitment and a young, high-pressing playing identity.",
+ rivals:["Most of the traditional Bundesliga fanbase, on principle"],
+ legends:["Timo Werner (breakout years)"],
+ watch:"A useful case study in the tension between football-as-community and football-as-business — go in aware you're picking a side in that debate.",
+ tags:{highpress:2, technical:2, journey:1, germany:2, rebellious:1, distancefan:1}},
+
+{id:"leverkusen", name:"Bayer 04 Leverkusen", nick:"Die Werkself (The Works XI)", league:"Bundesliga", country:"Germany", founded:1904, stadium:"BayArena, Leverkusen", honours:"1 German league title (2024)", c1:"#E32219", c2:"#000000",
+ identity:"Long known as perennial nearly-men — 'Vizekusen,' or 'runners-up-kusen,' for a string of second-place finishes — until finally breaking through with an unbeaten 2023–24 title.",
+ history:"Founded as a works team for the Bayer pharmaceutical company, Leverkusen spent decades as a well-run but trophy-light club, famously losing three separate finals in a single 2001–02 season. Xabi Alonso's 2023–24 side won the league undefeated across 34 matches, a Bundesliga first.",
+ rivals:["Cologne — a regional rivalry"],
+ legends:["Michael Ballack","Bernd Schneider"],
+ watch:"A genuine underdog-breakthrough story, still fresh — good for fans who want to have joined near a real turning point.",
+ tags:{underdog:2, journey:3, technical:2, germany:3, distancefan:1}},
+
+{id:"schalke", name:"Schalke 04", nick:"Die Königsblauen", league:"Bundesliga", country:"Germany", founded:1904, stadium:"Veltins-Arena, Gelsenkirchen", honours:"7 German league titles (mostly pre-Bundesliga era)", c1:"#004D9D", c2:"#FFFFFF",
+ identity:"A miners' club from the industrial Ruhr Valley with one of Germany's largest, most fiercely loyal member bases, currently rebuilding outside the Bundesliga's top flight.",
+ history:"Schalke's golden era came in the 1930s and 40s; more recently the club has become known as much for financial turbulence and relegation battles as results, but retains one of the largest official membership bases of any football club in the world.",
+ rivals:["Borussia Dortmund — the Revierderby"],
+ legends:["Klaus Fischer","Manuel Neuer (academy)"],
+ watch:"A test of whether you can love a club through instability — the membership loyalty here is the real story, not the table position.",
+ tags:{ultras:3, community:3, underdog:3, journey:3, bloodfeud:3, germany:3, distancefan:1}},
+
+{id:"gladbach", name:"Borussia Mönchengladbach", nick:"Die Fohlen (The Foals)", league:"Bundesliga", country:"Germany", founded:1900, stadium:"Borussia-Park, Mönchengladbach", honours:"5 German league titles", c1:"#000000", c2:"#00A94F",
+ identity:"A small-city club whose 1970s 'Foals' side rivaled Bayern for the era's best football in Germany — faded from the top table since but retains a devoted, traditionalist fanbase.",
+ history:"Gladbach's 1970s golden generation, built on fast attacking football, won five league titles and reached three European finals, briefly rivaling Bayern Munich as Germany's best club. The club has since settled into upper-mid-table Bundesliga status.",
+ rivals:["Cologne — the Rhine Derby"],
+ legends:["Günter Netzer","Berti Vogts"],
+ watch:"A good pick for fans drawn to a club's golden-era mythology more than its present-day table position.",
+ tags:{journey:3, community:2, germany:3, technical:1, distancefan:1}},
+
+{id:"eintracht-frankfurt", name:"Eintracht Frankfurt", nick:"Die Adler (The Eagles)", league:"Bundesliga", country:"Germany", founded:1899, stadium:"Deutsche Bank Park, Frankfurt", honours:"1 German league title (1959), 1 Europa League (2022)", c1:"#E1000F", c2:"#000000",
+ identity:"Known for one of Europe's loudest, most disruptive travelling support bases and a knack for big European runs that outstrip domestic form.",
+ history:"Frankfurt's 2022 Europa League title, capped by tens of thousands of fans travelling to Seville, reminded European football of the club's outsized supporter culture relative to its domestic trophy count.",
+ rivals:["Kaiserslautern and Mainz — regional rivalries"],
+ legends:["Jean-Marie Pfaff","Bernd Hölzenbein"],
+ watch:"If you want the away-day, supporters-take-over-the-city experience, this fanbase specializes in it.",
+ tags:{ultras:3, underdog:2, journey:2, germany:3, distancefan:1}},
+
+{id:"union-berlin", name:"1. FC Union Berlin", nick:"Die Eisernen (The Iron Ones)", league:"Bundesliga", country:"Germany", founded:1966, stadium:"Stadion An der Alten Försterei, Berlin", honours:"No top-flight league titles; first Bundesliga era began 2019", c1:"#EB1923", c2:"#FFFFFF",
+ identity:"A former East German club whose fans literally rebuilt their own stadium by hand with volunteer labor in 2008 — the definitive fan-ownership romantic story in modern German football.",
+ history:"Union spent most of its history in East Germany's second tier, developing a fiercely loyal identity partly built in opposition to the more prominent, Stasi-linked Berlin club Dynamo. Promotion to the Bundesliga in 2019 and a surprise Champions League qualification in 2023 turned decades of grassroots loyalty into a genuine European story.",
+ rivals:["Hertha BSC — the Berlin Derby, sharpened by East/West Berlin history"],
+ legends:["Torsten Mattuschka"],
+ watch:"Possibly the purest 'fans built this' story in this whole directory — worth it for the mythology alone.",
+ tags:{community:3, ultras:2, underdog:3, journey:3, rebellious:2, germany:3, distancefan:1}},
+
+// ---- Ligue 1 (France) ----
+{id:"psg", name:"Paris Saint-Germain", nick:"Les Parisiens", league:"Ligue 1", country:"France", founded:1970, stadium:"Parc des Princes, Paris", honours:"12 French league titles", c1:"#004170", c2:"#DA020E",
+ identity:"A young club (founded 1970) transformed since 2011 by Qatari ownership into France's dominant, globally marketed superpower — built explicitly to compete with Europe's oldest institutions.",
+ history:"PSG's 2011 takeover by Qatar Sports Investments triggered over a decade of record-breaking transfer spending, including the 2017 signing of Neymar for a still-unbroken world-record fee, aimed squarely at winning the Champions League the club had never claimed.",
+ rivals:["Marseille — Le Classique, France's fiercest domestic rivalry"],
+ legends:["Zlatan Ibrahimović","Kylian Mbappé"],
+ watch:"A club whose entire modern identity is the pursuit of European legitimacy to match its domestic dominance.",
+ tags:{galactico:3, trophyhunger:3, physical:1, bloodfeud:3, france:3, distancefan:2}},
+
+{id:"marseille", name:"Olympique de Marseille", nick:"L'OM", league:"Ligue 1", country:"France", founded:1899, stadium:"Orange Vélodrome, Marseille", honours:"9 French league titles, 1 Champions League (1993)", c1:"#2FAEE0", c2:"#FFFFFF",
+ identity:"France's most passionately supported club, from its country's most chaotic footballing city — the only French side to win the Champions League, in 1993, under a scandal-shadowed ownership.",
+ history:"Marseille's 1993 European Cup triumph remains France's only Champions League title, though it's permanently shadowed by a domestic match-fixing scandal uncovered the same year. The club's Vélodrome stadium and Ultras culture are widely regarded as the most intense in French football.",
+ rivals:["PSG — Le Classique"],
+ legends:["Jean-Pierre Papin","Didier Drogba"],
+ watch:"If you want the loudest, most theatrically passionate fanbase in French football, this is the pick.",
+ tags:{ultras:3, underdog:2, journey:2, bloodfeud:3, france:3, community:1, distancefan:1}},
+
+{id:"lyon", name:"Olympique Lyonnais", nick:"Les Gones", league:"Ligue 1", country:"France", founded:1950, stadium:"Groupama Stadium, Lyon", honours:"7 French league titles (all consecutive, 2002–2008)", c1:"#0E3796", c2:"#DA020E",
+ identity:"French football's most successful sustained domestic dynasty outside Paris — seven straight league titles in the 2000s built on shrewd recruitment rather than superstar spending.",
+ history:"Lyon's 2002–2008 run of seven consecutive French titles remains unmatched in the modern era, achieved without the financial backing PSG later received, largely through savvy scouting and squad management under long-time president Jean-Michel Aulas.",
+ rivals:["Saint-Étienne — the Derby Rhône-Alpes, one of France's oldest and most bitter"],
+ legends:["Juninho Pernambucano"],
+ watch:"A genuine example of sustained success through management rather than money — a good pick for fans skeptical of pure spending power.",
+ tags:{technical:2, journey:2, community:1, france:3, bloodfeud:2, distancefan:1}},
+
+{id:"monaco", name:"AS Monaco", nick:"Les Rouge et Blanc", league:"Ligue 1", country:"France", founded:1924, stadium:"Stade Louis II, Monaco", honours:"8 French league titles", c1:"#E51A22", c2:"#FFFFFF",
+ identity:"A tiny principality's club, tax-advantaged and internationally minded, that's built a reputation as one of Europe's best talent-development-and-resale operations.",
+ history:"Monaco's tax status and youth-development focus have made it a springboard for future superstars — a 2016–17 title-winning side featuring a teenage Kylian Mbappé is the clearest recent example of the model working at the highest level.",
+ rivals:["Nice — a regional Côte d'Azur rivalry"],
+ legends:["Thierry Henry (academy)","Kylian Mbappé (breakout)"],
+ watch:"A great pick if you like spotting future superstars before anyone else does — that's the club's whole business model.",
+ tags:{academy:3, technical:2, france:3, journey:1, distancefan:1}},
+
+{id:"lille", name:"LOSC Lille", nick:"Les Dogues", league:"Ligue 1", country:"France", founded:1944, stadium:"Stade Pierre-Mauroy, Lille", honours:"4 French league titles", c1:"#C10018", c2:"#003D7C",
+ identity:"A northern industrial city's club that's twice broken up the PSG-vs-Marseille-vs-Monaco order at the top of French football through smart, budget-conscious management.",
+ history:"Lille's shock 2020–21 title, won on a fraction of PSG's budget, echoed the club's earlier 2010–11 title and reinforced its reputation as Ligue 1's most reliable overachiever.",
+ rivals:["Lens — a fierce, coal-country regional rivalry"],
+ legends:["Eden Hazard (breakout)"],
+ watch:"Ligue 1's best 'David vs. Goliath' story — worth it if you specifically want to root against the money.",
+ tags:{underdog:3, journey:2, community:1, france:3, bloodfeud:2, distancefan:1}},
+
+{id:"saint-etienne", name:"AS Saint-Étienne", nick:"Les Verts (The Greens)", league:"Ligue 1", country:"France", founded:1919, stadium:"Stade Geoffroy-Guichard, Saint-Étienne", honours:"10 French league titles", c1:"#00A651", c2:"#FFFFFF",
+ identity:"France's most historically decorated club outside the current 'big' clubs — a coal-mining city's team whose 1970s golden generation is still the emotional high-water mark of French domestic football.",
+ history:"Saint-Étienne's 1976 European Cup final defeat to Bayern Munich, despite dominating the match, is one of French football's defining heartbreak stories and helped cement Les Verts as the country's most romantically supported traditional club.",
+ rivals:["Lyon — the Derby Rhône-Alpes"],
+ legends:["Michel Platini","Dominique Rocheteau"],
+ watch:"The definitive French 'glorious past, hungry present' club — a strong pick for journey-over-trophies fans.",
+ tags:{journey:3, ultras:2, underdog:2, france:3, bloodfeud:2, community:1, distancefan:1}},
+
+// ---- MLS (USA) ----
+{id:"la-galaxy", name:"LA Galaxy", nick:"The Galaxy", league:"MLS", country:"USA", founded:1994, stadium:"Dignity Health Sports Park, Carson, CA", honours:"6 MLS Cups (most in league history)", c1:"#00245D", c2:"#FBD007",
+ identity:"MLS's flagship original club and all-time most successful franchise — the Beckham-era 2007 signing that put American soccer on the global back page.",
+ history:"A founding MLS club in 1996, the Galaxy have won more MLS Cups than any other franchise and became a global story in 2007 when David Beckham's arrival marked the league's first true international superstar signing, a template later followed across the league.",
+ rivals:["LAFC — El Tráfico, MLS's most-watched modern rivalry"],
+ legends:["Landon Donovan","David Beckham","Cobi Jones"],
+ watch:"The league's benchmark franchise for both trophies and star-power — a safe pick if you want MLS's version of an 'establishment' club.",
+ tags:{trophyhunger:3, galactico:2, usa:3, accessible:3, bloodfeud:2, distancefan:0}},
+
+{id:"lafc", name:"Los Angeles FC", nick:"LAFC", league:"MLS", country:"USA", founded:2014, stadium:"BMO Stadium, Los Angeles", honours:"1 MLS Cup (2022), Supporters' Shield record points total", c1:"#000000", c2:"#C39E6D",
+ identity:"MLS's fastest success story — an expansion club that built a genuine supporters'-culture identity from scratch and became a title contender within its first decade.",
+ history:"Founded in 2014 and entering play in 2018, LAFC set a single-season points record in 2019 and won its first MLS Cup in 2022, largely by investing early and heavily in supporters' culture (the 3252 supporters' group) alongside on-field talent, including a late-career Carlos Vela and, briefly, an aging Lionel Messi rivalry narrative with Inter Miami.",
+ rivals:["LA Galaxy — El Tráfico"],
+ legends:["Carlos Vela"],
+ watch:"The clearest proof-of-concept that MLS supporters' culture can be built intentionally and fast, not just inherited.",
+ tags:{ultras:3, trophyhunger:2, community:2, usa:3, accessible:3, bloodfeud:2, distancefan:0}},
+
+{id:"inter-miami", name:"Inter Miami CF", nick:"Las Garzas (The Herons)", league:"MLS", country:"USA", founded:2018, stadium:"Chase Stadium, Fort Lauderdale, FL", honours:"1 Supporters' Shield (2024)", c1:"#F7B5CD", c2:"#231F20",
+ identity:"An expansion club co-owned by David Beckham that became the center of American soccer's biggest-ever story: Lionel Messi's 2023 arrival, which redefined the league's global visibility overnight.",
+ history:"Founded in 2018, Inter Miami's fortunes changed permanently in July 2023 when Lionel Messi signed following his World Cup win with Argentina, immediately delivering a Leagues Cup title and record-breaking attention, followed by a 2024 Supporters' Shield.",
+ rivals:["Orlando City — the closest geographic rivalry"],
+ legends:["Lionel Messi"],
+ watch:"If your World Cup interest was specifically Messi, this is the direct, uncomplicated answer — you can watch him weekly.",
+ tags:{galactico:3, diaspora:2, trophyhunger:1, usa:3, accessible:3, distancefan:0}},
+
+{id:"seattle-sounders", name:"Seattle Sounders FC", nick:"The Sounders", league:"MLS", country:"USA", founded:2007, stadium:"Lumen Field, Seattle, WA", honours:"1 MLS Cup (2019), consistently MLS's highest average attendance", c1:"#5D9732", c2:"#0B2340",
+ identity:"MLS's attendance and atmosphere benchmark — a Pacific Northwest fanbase whose pre-match 'March to the Match' is one of the league's signature supporter traditions.",
+ history:"The Sounders joined MLS in 2009 (building on a pre-existing lower-division club dating to 1974) and have made the playoffs almost every season since, backed by consistently the league's largest crowds and a fiercely organized supporters' culture centered on groups like the Emerald City Supporters.",
+ rivals:["Portland Timbers — the Cascadia Cup rivalry, MLS's most storied regional feud"],
+ legends:["Clint Dempsey","Nicolás Lodeiro"],
+ watch:"If atmosphere and sustained competence over flashy spending is what you want from an MLS club, this is the pick.",
+ tags:{ultras:3, community:2, journey:1, usa:3, accessible:3, bloodfeud:3, distancefan:0}},
+
+{id:"atlanta-united", name:"Atlanta United FC", nick:"The Five Stripes", league:"MLS", country:"USA", founded:2014, stadium:"Mercedes-Benz Stadium, Atlanta, GA", honours:"1 MLS Cup (2018)", c1:"#80000A", c2:"#A29061",
+ identity:"MLS's fastest-ever title run and attendance phenomenon — regularly drawing 40,000+ fans since entering the league in 2017, unprecedented for American soccer.",
+ history:"Atlanta United entered MLS in 2017 and won the MLS Cup in just its second season, backed by attendance figures that dwarfed the rest of the league and a supporters' culture built partly on the city's existing soccer-mad immigrant and diaspora communities.",
+ rivals:["Orlando City — a growing southeastern rivalry"],
+ legends:["Josef Martínez"],
+ watch:"Proof that American soccer support can be huge from day one when a club invests correctly — good for fans who want scale.",
+ tags:{ultras:2, trophyhunger:2, diaspora:2, usa:3, accessible:3, distancefan:0}},
+
+{id:"nycfc", name:"New York City FC", nick:"NYCFC", league:"MLS", country:"USA", founded:2013, stadium:"Etihad Park (Willets Point), Queens, NY", honours:"1 MLS Cup (2021)", c1:"#6CACE4", c2:"#00285E",
+ identity:"A City Football Group club — the same ownership family as Manchester City — bringing a data-driven, possession-oriented development model to the biggest city in American soccer.",
+ history:"Founded in 2013 as part of the Manchester City-led City Football Group's global network, NYCFC won its first MLS Cup in 2021 and, after years without a permanent home, opened a purpose-built stadium in Queens.",
+ rivals:["New York Red Bulls — the Hudson River Derby"],
+ legends:["David Villa"],
+ watch:"For fans who liked the Manchester City style during the World Cup — this club shares an ownership philosophy and, loosely, a playing identity.",
+ tags:{possession:2, technical:1, galactico:1, usa:3, accessible:3, bloodfeud:2, distancefan:0}},
+
+{id:"nyrb", name:"New York Red Bulls", nick:"The Red Bulls", league:"MLS", country:"USA", founded:1994, stadium:"Sports Illustrated Stadium, Harrison, NJ", honours:"0 MLS Cups; 4 Supporters' Shields", c1:"#ED1C24", c2:"#191E3A",
+ identity:"One of MLS's original 1996 clubs, known for a relentless high-press identity borrowed from the wider Red Bull club network (Leipzig, Salzburg) and a genuine, if unfulfilled, trophy hunger.",
+ history:"A founding MLS club, the Red Bulls have won four Supporters' Shields for best regular-season record but have never won an MLS Cup — a persistent gap that defines the fanbase's relationship with the club, echoed by the sister-club pressing identity shared across the wider Red Bull network.",
+ rivals:["NYCFC — the Hudson River Derby"],
+ legends:["Thierry Henry (late career)","Tim Cahill"],
+ watch:"Good pick if you liked high-press, chaotic football during the World Cup and don't mind rooting for a club still chasing its first big trophy.",
+ tags:{highpress:3, journey:2, underdog:1, usa:3, accessible:3, bloodfeud:2, distancefan:0}},
+
+{id:"portland-timbers", name:"Portland Timbers", nick:"The Timbers", league:"MLS", country:"USA", founded:2001, stadium:"Providence Park, Portland, OR", honours:"1 MLS Cup (2015)", c1:"#004812", c2:"#D1332A",
+ identity:"Home to one of American soccer's most distinctive traditions — a chainsaw-wielding mascot who cuts a slice off a log after every home goal — and a supporters' culture (the Timbers Army) considered among MLS's most authentic.",
+ history:"Portland's soccer roots predate MLS by decades in the lower divisions; the club's 2015 MLS Cup win, and its intense Timbers Army supporters' section, cemented Providence Park's reputation as one of the league's best atmospheres.",
+ rivals:["Seattle Sounders — the Cascadia Cup"],
+ legends:["Diego Valeri"],
+ watch:"If quirky, deeply local tradition matters as much as trophies, this is one of MLS's most distinctive matchday experiences.",
+ tags:{ultras:3, community:2, journey:1, usa:3, accessible:3, bloodfeud:3, distancefan:0}},
+
+{id:"sporting-kc", name:"Sporting Kansas City", nick:"Sporting KC", league:"MLS", country:"USA", founded:1995, stadium:"Children's Mercy Park, Kansas City, KS", honours:"2 MLS Cups", c1:"#91B0D5", c2:"#002F5F",
+ identity:"A smaller-market club that's consistently outperformed its market size through smart management and a purpose-built, soccer-specific stadium widely praised as one of MLS's best.",
+ history:"Rebranded from the Kansas City Wizards in 2011 alongside a move to a new soccer-specific stadium, Sporting KC has been one of MLS's most consistently competitive clubs since, winning MLS Cups in 2013 and earlier as the Wizards in 2000.",
+ rivals:["No single dominant geographic rival; regional Midwest matchups"],
+ legends:["Preki"],
+ watch:"A good pick for fans who like a well-run, unglamorous, consistently competitive club over a big-market name.",
+ tags:{journey:1, community:1, usa:3, accessible:3, distancefan:0}},
+
+{id:"fc-cincinnati", name:"FC Cincinnati", nick:"FCC", league:"MLS", country:"USA", founded:2015, stadium:"TQL Stadium, Cincinnati, OH", honours:"1 Supporters' Shield (2023)", c1:"#FE5000", c2:"#003399",
+ identity:"A rapid rise built on genuinely massive lower-division attendance before even joining MLS, translated into a top-of-the-table regular-season team within a few years of top-flight entry.",
+ history:"FC Cincinnati drew record-breaking crowds in the lower-division USL before joining MLS in 2019, and after some rough early seasons broke through with the league's best regular-season record (Supporters' Shield) in 2023.",
+ rivals:["Columbus Crew — the Hell is Real Derby, one of MLS's best-named rivalries"],
+ legends:["Luciano Acosta"],
+ watch:"A newer club whose fanbase pre-existed its MLS status — worth it for the 'earned, not given' fan-culture story.",
+ tags:{ultras:2, journey:2, community:1, usa:3, accessible:3, bloodfeud:2, distancefan:0}},
+
+// ---- Liga MX (Mexico) ----
+{id:"club-america", name:"Club América", nick:"Las Águilas (The Eagles)", league:"Liga MX", country:"Mexico", founded:1916, stadium:"Estadio Azteca / Estadio GNP Seguros, Mexico City", honours:"Record 13 Liga MX titles", c1:"#FFDE00", c2:"#04124A",
+ identity:"Mexico's most decorated and most polarizing club — nationally supported and nationally resented in equal measure, nicknamed 'Las Águilas' and, less flatteringly by rivals, tied to old associations with media-conglomerate ownership (Televisa).",
+ history:"América holds the record for most Liga MX titles and has historically been Mexico's best-resourced club through its long association with the Televisa media empire, making it simultaneously the country's most-supported and most-hated team outside its own fanbase.",
+ rivals:["Chivas de Guadalajara — El Súper Clásico, Mexican football's biggest rivalry","Cruz Azul and Pumas — the Mexico City derbies"],
+ legends:["Cuauhtémoc Blanco","Hugo Sánchez"],
+ watch:"If you want Mexico's equivalent of a Real Madrid or Man United — big, resourced, and everyone else's most-hated rival — this is it.",
+ tags:{galactico:2, trophyhunger:3, bloodfeud:3, mexico:3, diaspora:2, accessible:1, distancefan:1}},
+
+{id:"chivas", name:"Chivas de Guadalajara", nick:"El Rebaño Sagrado (The Sacred Flock)", league:"Liga MX", country:"Mexico", founded:1906, stadium:"Estadio Akron, Guadalajara", honours:"12 Liga MX titles", c1:"#941E27", c2:"#FFFFFF",
+ identity:"Uniquely, Chivas fields Mexican-eligible players only — no foreign signings, ever — making it the country's answer to Athletic Bilbao and a fierce point of national pride.",
+ history:"Chivas' all-Mexican-players policy, unbroken since the club's founding, has made it the country's most nationally symbolic club, closely tied to the Mexican national team's talent pipeline, and the fiercest possible rival to the Televisa-linked América.",
+ rivals:["Club América — El Súper Clásico"],
+ legends:["Javier 'Chicharito' Hernández"],
+ watch:"A near-perfect parallel to Athletic Bilbao's identity policy — pick this if the 'only our own players' philosophy appealed to you there.",
+ tags:{academy:3, community:2, rebellious:2, bloodfeud:3, mexico:3, diaspora:2, distancefan:1}},
+
+{id:"cruz-azul", name:"Cruz Azul", nick:"La Máquina (The Machine)", league:"Liga MX", country:"Mexico", founded:1927, stadium:"Estadio Azteca / Estadio Ciudad de los Deportes, Mexico City", honours:"9 Liga MX titles", c1:"#0033A0", c2:"#FFFFFF",
+ identity:"Mexican football's ultimate heartbreak club for decades — famous for agonizing near-misses in finals — until finally breaking a long title drought, giving the fanbase a genuine catharsis story.",
+ history:"Cruz Azul's fans endured a title drought stretching back to 1997, including several devastating final losses along the way, before finally winning again in 2021 — one of the most emotionally cathartic title wins in recent Liga MX history.",
+ rivals:["Club América and Pumas UNAM — Mexico City derbies"],
+ legends:["Carlos Hermosillo"],
+ watch:"If you want the ultimate 'earned, not given' redemption story, this fanbase's decades-long wait is one of world football's great sagas.",
+ tags:{journey:3, underdog:2, mexico:3, bloodfeud:2, diaspora:1, distancefan:1}},
+
+{id:"pumas", name:"Pumas UNAM", nick:"Los Universitarios", league:"Liga MX", country:"Mexico", founded:1954, stadium:"Estadio Olímpico Universitario, Mexico City", honours:"7 Liga MX titles", c1:"#041E42", c2:"#FDB913",
+ identity:"The university club of Mexico's national autonomous university (UNAM) — academically rooted, historically youth-development-focused, with a fanbase that leans more intellectual and less corporate than its Mexico City rivals.",
+ history:"Founded by UNAM in 1954, Pumas built its identity around producing homegrown talent for both club and the Mexican national team, and its distinctive Olympic Stadium campus setting gives it a different cultural register than the capital's other clubs.",
+ rivals:["Club América — a Mexico City rivalry sharpened by contrasting institutional identities"],
+ legends:["Hugo Sánchez (academy)"],
+ watch:"The closest thing Liga MX has to an academy-first, culturally distinct alternative to the league's bigger commercial clubs.",
+ tags:{academy:3, community:2, journey:2, mexico:3, bloodfeud:1, distancefan:1}},
+
+{id:"tigres", name:"Tigres UANL", nick:"Los Felinos", league:"Liga MX", country:"Mexico", founded:1960, stadium:"Estadio Universitario, Monterrey", honours:"8 Liga MX titles", c1:"#FDB913", c2:"#00539F",
+ identity:"Northern Mexico's dominant modern power — heavy investment since the 2010s turned a mid-table club into one of Liga MX's most consistent title contenders and a CONCACAF Champions League regular.",
+ history:"Backed by Monterrey's industrial wealth and the CEMEX cement company, Tigres transformed in the 2010s into one of Liga MX's most consistently successful clubs, reaching the 2020 FIFA Club World Cup final — a rare deep global run for a Mexican club.",
+ rivals:["Monterrey (Rayados) — El Clásico Regiomontano, Mexico's fiercest single-city rivalry"],
+ legends:["André-Pierre Gignac"],
+ watch:"If you want modern Liga MX's version of a resourced, ambitious power club, this is the current benchmark.",
+ tags:{trophyhunger:2, galactico:1, bloodfeud:3, mexico:3, diaspora:1, distancefan:1}},
+
+{id:"monterrey", name:"CF Monterrey", nick:"Rayados", league:"Liga MX", country:"Mexico", founded:1945, stadium:"Estadio BBVA, Monterrey", honours:"5 Liga MX titles", c1:"#071D49", c2:"#FFFFFF",
+ identity:"Tigres' cross-town rival in Mexico's wealthiest industrial city, with its own strong recent trophy record and one of Liga MX's best modern stadiums.",
+ history:"Monterrey has been one of Liga MX's most consistently well-run clubs of the 21st century, winning multiple CONCACAF Champions League titles and building a reputation for smart squad management to match Tigres' spending.",
+ rivals:["Tigres UANL — El Clásico Regiomontano"],
+ legends:["Humberto Suazo"],
+ watch:"The other half of Mexican football's most intense single-city rivalry — pick based on whichever origin story appeals more.",
+ tags:{trophyhunger:2, bloodfeud:3, mexico:3, diaspora:1, distancefan:1}},
+
+{id:"leon", name:"Club León", nick:"La Fiera (The Beast)", league:"Liga MX", country:"Mexico", founded:1944, stadium:"Estadio León, León", honours:"8 Liga MX titles", c1:"#00612C", c2:"#FFFFFF",
+ identity:"A Bajío-region club with genuine mid-century pedigree and a modern resurgence that's made it a consistent Liga MX contender outside the traditional Mexico City/Monterrey/Guadalajara power centers.",
+ history:"León's early-1990s title run and more recent back-to-back championships in 2020 have kept it among Liga MX's most successful clubs by total title count, despite playing in a smaller market than most of the league's traditional powers.",
+ rivals:["Guadalajara-area clubs — regional Bajío matchups"],
+ legends:["Raúl 'Potro' Gutiérrez"],
+ watch:"Good for fans who want real trophy history without picking one of the three or four most obvious Liga MX giants.",
+ tags:{underdog:1, journey:2, mexico:3, distancefan:1}},
+
+{id:"toluca", name:"Deportivo Toluca", nick:"Los Diablos Rojos (The Red Devils)", league:"Liga MX", country:"Mexico", founded:1917, stadium:"Estadio Nemesio Díez, Toluca", honours:"10 Liga MX titles", c1:"#B7093A", c2:"#000000",
+ identity:"Played at Mexico's highest-altitude major stadium, giving Toluca a famous home-field advantage against visiting teams unused to the thin air — a small-city club with a genuinely major trophy haul.",
+ history:"Toluca has quietly amassed one of Liga MX's best all-time title records, helped for decades by the altitude advantage of its home stadium, one of the highest in world football at over 2,600 meters.",
+ rivals:["Club América — a Mexico City-adjacent rivalry"],
+ legends:["Antonio Carbajal"],
+ watch:"A genuinely underrated trophy history — good for fans who want substance without the biggest media profile.",
+ tags:{underdog:1, journey:2, mexico:3, distancefan:1}},
+];
+
+const TAG_LABEL = {
+  possession:"total-control possession", counterattack:"lightning counter-attacks", physical:"physical, duel-first football",
+  chaos:"chaotic, end-to-end football", highpress:"relentless high pressing", setpieces:"set-piece discipline",
+  technical:"technical, academy-built football", patience:"patient, controlled football",
+  ultras:"working-class ultras culture", galactico:"galáctico-level star power", academy:"homegrown academy pride",
+  underdog:"underdog, overachiever spirit", community:"community and fan-ownership values", rebellious:"outsider, rule-breaking pride",
+  aristocratic:"old-money institutional weight", journey:"a story worth telling over pure trophies", trophyhunger:"a genuine trophy-hunting mentality",
+  diaspora:"strong diaspora and global-fan ties", bloodfeud:"an inherited, historic rivalry", friendlyrivalry:"a lighter, friendlier rivalry",
+  rivalryagnostic:"low emphasis on rivalry", britain:"British football culture", iberia:"Iberian football culture", italy:"Italian football culture",
+  germany:"German club culture", france:"French football culture", mexico:"Mexican football culture", usa:"homegrown American soccer culture",
+  accessible:"realistic in-person attendance", distancefan:"long-distance fandom", diaspora:"diaspora ties",
+};
+
+/* ---------------- MATCHING ---------------- */
+function computeMatches(answers){
+  const profile = {};
+  answers.forEach(idx=>{}); // placeholder, real accumulation done in submit
+  return profile;
+}
+
+/* ---------------- APP STATE / ROUTER ---------------- */
+let state = {
+  view: "home",
+  qIndex: 0,
+  answers: [], // array of {qIndex, optIndex}
+  profile: {},
+  results: [],
+  currentClub: null,
+};
+
+function leagueColor(league){
+  const map = {
+    "Premier League":"#37003c", "La Liga":"#ee8707", "Serie A":"#024b93",
+    "Bundesliga":"#d3010c", "Ligue 1":"#0a1a5c", "MLS":"#101820", "Liga MX":"#0a3161",
+  };
+  return map[league] || "#1f4d3a";
+}
+
+function go(view, extra){
+  state.view = view;
+  if(extra) Object.assign(state, extra);
+  render();
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+
+function startQuiz(){
+  state.qIndex = 0;
+  state.answers = [];
+  go("quiz");
+}
+
+function selectOption(qIdx, optIdx){
+  state.answers[qIdx] = optIdx;
+  render();
+}
+
+function nextQuestion(){
+  if(state.answers[state.qIndex] === undefined) return;
+  if(state.qIndex < QUESTIONS.length - 1){
+    state.qIndex++;
+    render();
+    window.scrollTo({top:0, behavior:"smooth"});
+  } else {
+    submitQuiz();
+  }
+}
+
+function prevQuestion(){
+  if(state.qIndex > 0){
+    state.qIndex--;
+    render();
+    window.scrollTo({top:0, behavior:"smooth"});
+  }
+}
+
+function submitQuiz(){
+  const profile = {};
+  state.answers.forEach((optIdx, qIdx)=>{
+    const opt = QUESTIONS[qIdx].options[optIdx];
+    if(!opt) return;
+    Object.entries(opt.w).forEach(([tag,val])=>{
+      profile[tag] = (profile[tag]||0) + val;
+    });
+  });
+  const scored = CLUBS.map(club=>{
+    let score = 0;
+    const contributions = [];
+    Object.entries(profile).forEach(([tag,val])=>{
+      const clubVal = club.tags[tag] || 0;
+      const contrib = val * clubVal;
+      if(contrib > 0) contributions.push({tag, contrib});
+      score += contrib;
+    });
+    contributions.sort((a,b)=>b.contrib - a.contrib);
+    return {club, score, topTags: contributions.slice(0,3).map(c=>c.tag)};
+  });
+  scored.sort((a,b)=>b.score - a.score);
+  const maxScore = scored[0].score || 1;
+  const results = scored.slice(0,3).map(s=>({
+    club: s.club,
+    pct: Math.round((s.score/maxScore)*100),
+    topTags: s.topTags,
+  }));
+  go("result", {results});
+}
+
+function openDossier(clubId){
+  const club = CLUBS.find(c=>c.id===clubId);
+  go("dossier", {currentClub: club});
+}
+
+/* ---------------- RENDER ---------------- */
+function render(){
+  const app = document.getElementById("app");
+  if(state.view === "home") app.innerHTML = renderHome();
+  else if(state.view === "quiz") app.innerHTML = renderQuiz();
+  else if(state.view === "result") app.innerHTML = renderResult();
+  else if(state.view === "dossier") app.innerHTML = renderDossier();
+  else if(state.view === "browse") app.innerHTML = renderBrowse();
+  attachHandlers();
+}
+
+function renderHome(){
+  return `
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow">7 leagues · 58 clubs · one interview</div>
+      <h1>Your club is waiting to stamp you in.</h1>
+      <p class="lede">The World Cup made you a soccer fan. Now the actual leagues are kicking off — Premier League, La Liga, Serie A, Bundesliga, Ligue 1, MLS, and Liga MX — and you need somewhere to point your Saturday mornings. Answer a short interview, get matched to a club by identity and playing style, then read the full country-file on where you're headed.</p>
+      <div class="hero-actions">
+        <button class="btn" data-nav="quiz">Begin the interview →</button>
+        <button class="btn secondary" data-nav="browse">Skip to the directory</button>
+      </div>
+      <div class="stat-strip">
+        <div><div class="num">58</div><div class="lab">Clubs profiled</div></div>
+        <div><div class="num">7</div><div class="lab">Questions</div></div>
+        <div><div class="num">7</div><div class="lab">Leagues covered</div></div>
+      </div>
+    </div>
+  </section>`;
+}
+
+function renderQuiz(){
+  const q = QUESTIONS[state.qIndex];
+  const selected = state.answers[state.qIndex];
+  const stamps = QUESTIONS.map((_,i)=>`<div class="mini-stamp ${state.answers[i]!==undefined ? 'filled':''}"></div>`).join("");
+  const options = q.options.map((opt,i)=>`
+    <div class="option ${selected===i?'selected':''}" data-select="${i}">
+      <div class="letter">${String.fromCharCode(65+i)}</div>
+      <div class="otext"><strong>${opt.label}</strong><span>${opt.text}</span></div>
+    </div>
+  `).join("");
+  return `
+  <section class="quiz-shell">
+    <div class="wrap">
+      <div class="quiz-card">
+        <div class="page-marker">
+          <span>Page ${state.qIndex+1} of ${QUESTIONS.length}</span>
+          <div class="stamp-row">${stamps}</div>
+        </div>
+        <h2>${q.q}</h2>
+        <div class="qsub">${q.sub}</div>
+        <div class="options">${options}</div>
+        <div class="quiz-nav">
+          <button class="btn secondary" id="prevBtn" ${state.qIndex===0?'style="visibility:hidden"':''}>← Back</button>
+          <span class="step-count">${selected!==undefined ? '' : 'Pick one to continue'}</span>
+          <button class="btn" id="nextBtn" ${selected===undefined?'disabled style="opacity:0.4;cursor:not-allowed"':''}>${state.qIndex===QUESTIONS.length-1 ? 'Stamp my passport →' : 'Next →'}</button>
+        </div>
+      </div>
+    </div>
+  </section>`;
+}
+
+function renderResult(){
+  const top = state.results[0];
+  const runners = state.results.slice(1);
+  const chips = top.topTags.map(t=>`<span class="why-chip">${TAG_LABEL[t]||t}</span>`).join("");
+  const runnerCards = runners.map(r=>`
+    <div class="runner-card" data-open="${r.club.id}">
+      <div class="runner-crest" style="background:${r.club.c1}">${initials(r.club.name)}</div>
+      <div>
+        <div class="rname">${r.club.name}</div>
+        <div class="rleague">${r.club.league} · ${r.pct}% match</div>
+      </div>
+    </div>
+  `).join("");
+  return `
+  <section class="result-shell">
+    <div class="wrap">
+      <div class="result-top">
+        <div class="crest" style="background:${top.club.c1}">${initials(top.club.name)}</div>
+        <div class="result-meta">
+          <div class="granted">Entry granted</div>
+          <h2>${top.club.name}</h2>
+          <div class="subline">${top.club.nick} · ${top.club.league}, ${top.club.country}</div>
+          <div class="match-pct">Match strength: <b>${top.pct}%</b></div>
+        </div>
+      </div>
+      <div class="why-row">${chips}</div>
+      <div class="result-actions">
+        <button class="btn" data-open="${top.club.id}">Read the full dossier →</button>
+        <button class="btn secondary" data-nav="quiz">Retake the interview</button>
+        <button class="btn secondary" data-nav="browse">Browse all clubs</button>
+      </div>
+      <div class="runners">
+        <h3>Also under consideration</h3>
+        <div class="runner-grid">${runnerCards}</div>
+      </div>
+    </div>
+  </section>`;
+}
+
+function renderDossier(){
+  const c = state.currentClub;
+  const tagList = Object.keys(c.tags).slice(0,6).map(t=>`<span>${TAG_LABEL[t]||t}</span>`).join("");
+  return `
+  <section class="dossier-band" style="background:${c.c1}">
+    <div class="wrap">
+      <div class="dossier-crest" style="background:${c.c2}; color:${c.c1}">${initials(c.name)}</div>
+      <div>
+        <div class="dname display">${c.name}</div>
+        <div class="dmeta">${c.nick} · ${c.league}, ${c.country} · Founded ${c.founded}</div>
+      </div>
+    </div>
+  </section>
+  <section class="dossier-body">
+    <div class="wrap">
+      <span class="back-link" data-nav="browse">← Back to directory</span>
+      <div class="field">
+        <div class="flabel">Identity</div>
+        <div class="fval serif">${c.identity}</div>
+      </div>
+      <div class="field">
+        <div class="flabel">Home ground</div>
+        <div class="fval">${c.stadium}</div>
+      </div>
+      <div class="field">
+        <div class="flabel">Honours</div>
+        <div class="fval">${c.honours}</div>
+      </div>
+      <div class="field">
+        <div class="flabel">History</div>
+        <div class="fval">${c.history}</div>
+      </div>
+      <div class="field">
+        <div class="flabel">Rivals</div>
+        <div class="fval">${c.rivals.map(r=>`• ${r}`).join("<br>")}</div>
+      </div>
+      <div class="field">
+        <div class="flabel">Legends</div>
+        <div class="fval">${c.legends.join(" · ")}</div>
+      </div>
+      <div class="field">
+        <div class="flabel">What to watch for</div>
+        <div class="fval">${c.watch}</div>
+      </div>
+      <div class="field">
+        <div class="flabel">Identity tags</div>
+        <div class="tagpills">${tagList}</div>
+      </div>
+    </div>
+  </section>`;
+}
+
+function renderBrowse(){
+  const leagueOrder = ["Premier League","La Liga","Serie A","Bundesliga","Ligue 1","MLS","Liga MX"];
+  const groups = leagueOrder.map(league=>{
+    const clubs = CLUBS.filter(c=>c.league===league);
+    const country = clubs[0].country;
+    const cards = clubs.map(c=>`
+      <div class="club-card" data-open="${c.id}">
+        <div class="club-crest-sm" style="background:${c.c1}">${initials(c.name)}</div>
+        <div>
+          <div class="cname">${c.name}</div>
+          <div class="cid">${c.nick}</div>
+        </div>
+      </div>
+    `).join("");
+    return `
+      <div class="league-group">
+        <div class="league-head"><h2>${league}</h2><span class="country">${country}</span></div>
+        <div class="club-grid">${cards}</div>
+      </div>`;
+  }).join("");
+  return `
+  <section class="browse-shell">
+    <div class="wrap">
+      <div class="eyebrow">Full directory</div>
+      <h1 style="font-size:clamp(26px,4vw,38px); margin-bottom:28px;">Every club, every league.</h1>
+      ${groups}
+    </div>
+  </section>`;
+}
+
+function initials(name){
+  const words = name.replace("FC","").replace("CF","").trim().split(" ").filter(w=>w.length>1 || w===w.toUpperCase());
+  if(words.length>=2) return (words[0][0]+words[1][0]).toUpperCase();
+  return name.slice(0,2).toUpperCase();
+}
+
+function attachHandlers(){
+  document.querySelectorAll("[data-nav]").forEach(el=>{
+    el.onclick = ()=>{
+      const target = el.getAttribute("data-nav");
+      if(target==="quiz") startQuiz();
+      else go(target);
+    };
+  });
+  document.querySelectorAll("[data-select]").forEach(el=>{
+    el.onclick = ()=> selectOption(state.qIndex, parseInt(el.getAttribute("data-select")));
+  });
+  document.querySelectorAll("[data-open]").forEach(el=>{
+    el.onclick = ()=> openDossier(el.getAttribute("data-open"));
+  });
+  const nextBtn = document.getElementById("nextBtn");
+  if(nextBtn) nextBtn.onclick = nextQuestion;
+  const prevBtn = document.getElementById("prevBtn");
+  if(prevBtn) prevBtn.onclick = prevQuestion;
+}
+
+render();
+</script>
+</body>
+</html>

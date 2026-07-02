@@ -1,0 +1,294 @@
+{
+  "questions": [
+    {
+      "q": "How do you want your club to win?",
+      "sub": "Pick the version of football that gets you off the couch.",
+      "options": [
+        {
+          "label": "Total control",
+          "text": "Death by a thousand passes — starve the opponent of the ball until they break.",
+          "w": {
+            "possession": 3,
+            "technical": 2,
+            "patience": 2
+          }
+        },
+        {
+          "label": "The knockout blow",
+          "text": "Sit deep, absorb pressure, then hit them on the break before they know what happened.",
+          "w": {
+            "counterattack": 3,
+            "physical": 1,
+            "chaos": 1
+          }
+        },
+        {
+          "label": "Organized chaos",
+          "text": "End-to-end, high-event, nobody's defense is safe. Entertainment over control.",
+          "w": {
+            "chaos": 3,
+            "highpress": 2,
+            "physical": 1
+          }
+        },
+        {
+          "label": "Grind it out",
+          "text": "Set pieces, duels, a back line that doesn't blink. Ugly wins still count.",
+          "w": {
+            "physical": 3,
+            "setpieces": 2,
+            "patience": 1
+          }
+        }
+      ]
+    },
+    {
+      "q": "What actually makes you fall for a club's identity?",
+      "sub": "The football matters, but this is what you'll tell people at the bar.",
+      "options": [
+        {
+          "label": "Working-class roots",
+          "text": "A ground built by factory workers, ultras who never sit down, a chip on its shoulder.",
+          "w": {
+            "ultras": 3,
+            "rebellious": 2,
+            "journey": 1
+          }
+        },
+        {
+          "label": "Galáctico glamour",
+          "text": "Superstar signings, trophy cabinets that need their own wing, expectation as a baseline.",
+          "w": {
+            "galactico": 3,
+            "trophyhunger": 3,
+            "aristocratic": 2
+          }
+        },
+        {
+          "label": "Homegrown pride",
+          "text": "An academy that actually produces first-teamers, and a fanbase that notices.",
+          "w": {
+            "academy": 3,
+            "community": 1,
+            "journey": 1
+          }
+        },
+        {
+          "label": "Underdog with a plan",
+          "text": "Overachieving on a mid-table budget, punching up, occasionally pulling off a miracle.",
+          "w": {
+            "underdog": 3,
+            "journey": 2,
+            "rebellious": 1
+          }
+        }
+      ]
+    },
+    {
+      "q": "Which World Cup storyline had you the most locked in?",
+      "sub": "This tells us more than you'd think.",
+      "options": [
+        {
+          "label": "The global superstar chasing history",
+          "text": "One generational talent trying to will a whole nation forward.",
+          "w": {
+            "galactico": 2,
+            "trophyhunger": 2,
+            "diaspora": 1
+          }
+        },
+        {
+          "label": "The scrappy team shocking a giant",
+          "text": "A roster nobody rated, playing above itself, ruining a favorite's tournament.",
+          "w": {
+            "underdog": 3,
+            "rebellious": 2
+          }
+        },
+        {
+          "label": "The kid who came out of nowhere",
+          "text": "A teenager or unknown suddenly the best player on the pitch.",
+          "w": {
+            "academy": 3,
+            "journey": 2
+          }
+        },
+        {
+          "label": "The manager's system working perfectly",
+          "text": "A tactical idea executed so well it looked unfair.",
+          "w": {
+            "possession": 2,
+            "highpress": 2,
+            "technical": 2
+          }
+        }
+      ]
+    },
+    {
+      "q": "How do you feel about inheriting a rivalry?",
+      "sub": "Every club comes with enemies. Some are older than the club itself.",
+      "options": [
+        {
+          "label": "Give me the blood feud",
+          "text": "I want a derby that shuts down a city, decades of grudges, songs about it.",
+          "w": {
+            "bloodfeud": 3,
+            "ultras": 1
+          }
+        },
+        {
+          "label": "A healthy rivalry is fine",
+          "text": "Some needle, a fun weekend, nothing that ruins a friendship.",
+          "w": {
+            "friendlyrivalry": 2
+          }
+        },
+        {
+          "label": "I don't care about rivalries",
+          "text": "I'm here for good football, not a century-old grudge.",
+          "w": {
+            "rivalryagnostic": 2,
+            "journey": 1
+          }
+        }
+      ]
+    },
+    {
+      "q": "Which region actually pulls at you?",
+      "sub": "Family, travel, players you admire — whatever the connection is.",
+      "options": [
+        {
+          "label": "British Isles",
+          "text": "Rain, noise, a pub before kickoff.",
+          "w": {
+            "britain": 3
+          }
+        },
+        {
+          "label": "Iberia (Spain/Portugal orbit)",
+          "text": "Technical football and sun.",
+          "w": {
+            "iberia": 3
+          }
+        },
+        {
+          "label": "Italy",
+          "text": "Tactics, tifo, tradition.",
+          "w": {
+            "italy": 3
+          }
+        },
+        {
+          "label": "Germany / Central Europe",
+          "text": "Terraces, atmosphere, club-run ownership.",
+          "w": {
+            "germany": 3,
+            "community": 1
+          }
+        },
+        {
+          "label": "France",
+          "text": "Athleticism and star power.",
+          "w": {
+            "france": 3
+          }
+        },
+        {
+          "label": "Mexico & Latin America",
+          "text": "Passion that doesn't come with an off-season.",
+          "w": {
+            "mexico": 3,
+            "diaspora": 1
+          }
+        },
+        {
+          "label": "My own city, USA",
+          "text": "I want to be able to actually show up.",
+          "w": {
+            "usa": 3,
+            "accessible": 2
+          }
+        }
+      ]
+    },
+    {
+      "q": "Be honest about how you'll actually follow this club.",
+      "sub": "No judgment. Just calibrating.",
+      "options": [
+        {
+          "label": "I want to go to games in person",
+          "text": "Local, accessible, a season ticket is realistic.",
+          "w": {
+            "accessible": 3,
+            "community": 1
+          }
+        },
+        {
+          "label": "I'm fine being a distance fan",
+          "text": "3am kickoffs, streaming, the full long-distance-relationship experience.",
+          "w": {
+            "distancefan": 3
+          }
+        },
+        {
+          "label": "Doesn't matter, I just want the right club",
+          "text": "Convenience is secondary to fit.",
+          "w": {}
+        }
+      ]
+    },
+    {
+      "q": "Trophies or story — what matters more?",
+      "sub": "Last one. Then we stamp your passport.",
+      "options": [
+        {
+          "label": "I want to win. A lot.",
+          "text": "Give me a club that expects a trophy every season.",
+          "w": {
+            "trophyhunger": 3
+          }
+        },
+        {
+          "label": "I want a story worth telling",
+          "text": "Heartbreak, comebacks, a multi-year arc — even if it ends in near-misses.",
+          "w": {
+            "journey": 3,
+            "underdog": 1
+          }
+        }
+      ]
+    }
+  ],
+  "tag_labels": {
+    "possession": "total-control possession",
+    "counterattack": "lightning counter-attacks",
+    "physical": "physical, duel-first football",
+    "chaos": "chaotic, end-to-end football",
+    "highpress": "relentless high pressing",
+    "setpieces": "set-piece discipline",
+    "technical": "technical, academy-built football",
+    "patience": "patient, controlled football",
+    "ultras": "working-class ultras culture",
+    "galactico": "galáctico-level star power",
+    "academy": "homegrown academy pride",
+    "underdog": "underdog, overachiever spirit",
+    "community": "community and fan-ownership values",
+    "rebellious": "outsider, rule-breaking pride",
+    "aristocratic": "old-money institutional weight",
+    "journey": "a story worth telling over pure trophies",
+    "trophyhunger": "a genuine trophy-hunting mentality",
+    "diaspora": "diaspora ties",
+    "bloodfeud": "an inherited, historic rivalry",
+    "friendlyrivalry": "a lighter, friendlier rivalry",
+    "rivalryagnostic": "low emphasis on rivalry",
+    "britain": "British football culture",
+    "iberia": "Iberian football culture",
+    "italy": "Italian football culture",
+    "germany": "German club culture",
+    "france": "French football culture",
+    "mexico": "Mexican football culture",
+    "usa": "homegrown American soccer culture",
+    "accessible": "realistic in-person attendance",
+    "distancefan": "long-distance fandom"
+  }
+}
