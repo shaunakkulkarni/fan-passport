@@ -2,6 +2,50 @@
 
 A static web app that matches soccer-curious fans to their ideal club across 7 leagues and 144 clubs. Answer a 7-question interview, get matched by identity and playing style, read a full dossier on your result, and share it.
 
+## What's New in v2
+
+**Intangible Matchmaking & NFL Bridge** — v2 replaces the geography shortcut with intangible tag dimensions, adds an NFL team selector, and introduces a persistent floating share bar.
+
+### Key changes from v1
+
+- **New tag system:** Every club now has `stability`, `fan-culture`, `ambition`, and `narrative` tags (one value each from 4 options per dimension). These replace geography-based quiz scoring.
+- **Restructured quiz (Q1–Q7):**
+  - Q1: Playing Philosophy (kept from v1)
+  - Q2: Fan Culture Archetype (new — replaces v1 Q2)
+  - Q3: Narrative Arc (refined from v1 Q3)
+  - Q4: Rivalry Intensity (kept from v1)
+  - Q5: Chaos vs. Stability (new — replaces geography)
+  - Q6: Organizational Ambition (refined from v1 Q7)
+  - Q7: NFL Team Selector (new — American sports bridge)
+- **NFL team selector:** Q7 presents all 32 NFL teams in a conference/division grid. Each team maps to 2–3 soccer clubs via intangible profile similarity. Contributes ~15% of total match score. "I don't follow the NFL" skip option available (no boost applied).
+- **Anti-shortcut scoring audit:** `scripts/audit-scoring.js` verifies no answer option concentrates >40% of tag weight into a single league. Run with `node scripts/audit-scoring.js`.
+- **Floating share bar:** Persistent share bar appears on all post-result screens (result, dossier, browse) with club crest, name, match %, and Share button. Hidden when viewing via shared link. Dismissible.
+- **Toast notifications:** "Link copied" feedback replaces the old share link box.
+- **X/Twitter share:** Pre-filled tweet intent with match result.
+- **Shared link CTA:** Users viewing via shared link see "Take the quiz yourself →" instead of the share bar.
+- **FC Cincinnati fix:** Club ID corrected from placeholder to proper slug.
+
+### Scoring (v2)
+
+```
+For each club:
+  baseScore = sum of numeric tag matches (Q1, Q4) + intangible tag matches (Q2, Q3, Q5, Q6)
+  nflBoost = 0 if skipped or no NFL team
+           = weight × 0.15 × maxBaseScore if club is in NFL mapping
+  totalScore = baseScore + nflBoost
+
+Rank all clubs by totalScore, return top match + 2 runners-up
+```
+
+### Tag assignment guide
+
+| Tag | Values | Assignment criteria |
+|---|---|---|
+| `stability` | stable / chaotic / rebuilding / win-now | Institutional patience, managerial turnover, ownership stability |
+| `fan-culture` | ultras / family / intellectual / rebel | Supporter culture, matchday experience, political engagement |
+| `ambition` | trophy-driven / identity-driven / smart-overachiever / romantic | Trophy expectation vs. identity prioritization vs. overachievement |
+| `narrative` | underdog / dynasty / cursed / project | Club's story arc: rising, dominant, suffering, or building |
+
 ## Tech Stack
 
 - 100% static: `index.html` + `app.js` + `style.css` + `clubs.json` + `quiz.json`
@@ -14,18 +58,19 @@ A static web app that matches soccer-curious fans to their ideal club across 7 l
 
 ```
 Fan Passport/
-├── index.html          # App shell + OG meta tags
-├── app.js              # All app logic (quiz, matching, rendering, sharing)
-├── style.css           # Passport-aesthetic styles (paper/pitch/ink palette)
-├── clubs.json          # 144 club profiles (DO NOT EDIT — data is verified)
-├── quiz.json           # 7 questions + tag labels (DO NOT EDIT)
-├── schema.md           # Data schema reference (DO NOT EDIT)
-├── og/                 # 144 per-club OG share card PNGs (1200x630)
-├── og-share-card.png    # Default/generic OG share card
-├── vercel.json         # Vercel deployment config
+├── index.html              # App shell + OG meta tags (unchanged in v2)
+├── app.js                  # All app logic (quiz, matching, rendering, sharing, share bar)
+├── style.css               # Passport-aesthetic styles + NFL grid + share bar + toast
+├── clubs.json              # 144 club profiles with v2 intangible tags
+├── quiz.json               # v2 quiz structure (7 questions + NFL mapping)
+├── schema.md               # Data schema reference
+├── og/                     # 144 per-club OG share card PNGs (1200x630)
+├── og-share-card.png       # Default/generic OG share card
+├── vercel.json             # Vercel deployment config
 ├── scripts/
-│   └── generate-og-cards.py  # Regenerates og/ from clubs.json
-└── README.md           # This file
+│   ├── add-v2-tags.js      # One-time script: adds v2 tags to clubs.json
+│   └── audit-scoring.js    # Anti-shortcut scoring audit (re-runnable)
+└── README.md               # This file
 ```
 
 ## Local Development
@@ -37,6 +82,16 @@ python3 -m http.server 8000
 ```
 
 You must serve via HTTP — opening `index.html` via `file://` won't work because `fetch()` can't load local JSON.
+
+## Scoring Audit
+
+After any tag or quiz changes, run the anti-shortcut audit:
+
+```bash
+node scripts/audit-scoring.js
+```
+
+This checks that no answer option across Q1–Q6 concentrates >40% of its tag weight into a single league. The audit also verifies that all NFL mapping club IDs exist in clubs.json and flags any NFL team whose mapped clubs are all from the same league.
 
 ## Deploy to Vercel
 

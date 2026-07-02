@@ -1,262 +1,249 @@
 {
+  "version": 2,
   "questions": [
     {
-      "q": "How do you want your club to win?",
-      "sub": "Pick the version of football that gets you off the couch.",
+      "id": "q1",
+      "prompt": "How do you want your club to win?",
+      "subtext": "Pick the version of football that gets you off the couch.",
+      "type": "standard",
       "options": [
         {
           "label": "Total control",
-          "text": "Death by a thousand passes — starve the opponent of the ball until they break.",
-          "w": {
-            "possession": 3,
-            "technical": 2,
-            "patience": 2
-          }
+          "description": "Death by a thousand passes — starve the opponent of the ball until they break.",
+          "tags": { "possession": 2, "technical": 2, "patience": 1 }
         },
         {
           "label": "The knockout blow",
-          "text": "Sit deep, absorb pressure, then hit them on the break before they know what happened.",
-          "w": {
-            "counterattack": 3,
-            "physical": 1,
-            "chaos": 1
-          }
+          "description": "Sit deep, absorb pressure, then hit them on the break before they know what happened.",
+          "tags": { "counterattack": 2, "physical": 1, "patience": 1 }
         },
         {
           "label": "Organized chaos",
-          "text": "End-to-end, high-event, nobody's defense is safe. Entertainment over control.",
-          "w": {
-            "chaos": 3,
-            "highpress": 2,
-            "physical": 1
-          }
+          "description": "End-to-end, high-event, nobody's defense is safe. Entertainment over control.",
+          "tags": { "chaos": 2, "highpress": 2, "physical": 1 }
         },
         {
           "label": "Grind it out",
-          "text": "Set pieces, duels, a back line that doesn't blink. Ugly wins still count.",
-          "w": {
-            "physical": 3,
-            "setpieces": 2,
-            "patience": 1
-          }
+          "description": "Set pieces, duels, a back line that doesn't blink. Ugly wins still count.",
+          "tags": { "physical": 2, "setpieces": 2, "patience": 1 }
         }
       ]
     },
     {
-      "q": "What actually makes you fall for a club's identity?",
-      "sub": "The football matters, but this is what you'll tell people at the bar.",
+      "id": "q2",
+      "prompt": "When you picture yourself at a match, what's the scene?",
+      "subtext": "There's no wrong answer — just the version of fandom that feels like yours.",
+      "type": "standard",
       "options": [
         {
-          "label": "Working-class roots",
-          "text": "A ground built by factory workers, ultras who never sit down, a chip on its shoulder.",
-          "w": {
-            "ultras": 3,
-            "rebellious": 2,
-            "journey": 1
-          }
+          "label": "The wall of noise",
+          "description": "Thousands standing, singing for 90 minutes straight. The stadium IS the experience. You don't sit, you don't stop.",
+          "tags": { "fan-culture": "ultras", "ultras": 2, "bloodfeud": 1 }
         },
         {
-          "label": "Galáctico glamour",
-          "text": "Superstar signings, trophy cabinets that need their own wing, expectation as a baseline.",
-          "w": {
-            "galactico": 3,
-            "trophyhunger": 3,
-            "aristocratic": 2
-          }
+          "label": "The family outing",
+          "description": "Good view, clean concourse, kids running around. Football as a Saturday event, not a religious experience.",
+          "tags": { "fan-culture": "family", "community": 1, "accessible": 1 }
         },
         {
-          "label": "Homegrown pride",
-          "text": "An academy that actually produces first-teamers, and a fanbase that notices.",
-          "w": {
-            "academy": 3,
-            "community": 1,
-            "journey": 1
-          }
+          "label": "The intellectual",
+          "description": "You're there for the tactical chess match. You want to analyze formations, debate substitutions, appreciate the system.",
+          "tags": { "fan-culture": "intellectual", "technical": 2, "possession": 1 }
         },
         {
-          "label": "Underdog with a plan",
-          "text": "Overachieving on a mid-table budget, punching up, occasionally pulling off a miracle.",
-          "w": {
-            "underdog": 3,
-            "journey": 2,
-            "rebellious": 1
-          }
+          "label": "The rebels",
+          "description": "The fans who march, protest, fight ownership. Football is political, and your club takes a side.",
+          "tags": { "fan-culture": "rebel", "rebellious": 2, "community": 1 }
         }
       ]
     },
     {
-      "q": "Which World Cup storyline had you the most locked in?",
-      "sub": "This tells us more than you'd think.",
+      "id": "q3",
+      "prompt": "What kind of story do you want to be part of?",
+      "subtext": "Every club has a narrative. Which one is yours?",
+      "type": "standard",
       "options": [
         {
-          "label": "The global superstar chasing history",
-          "text": "One generational talent trying to will a whole nation forward.",
-          "w": {
-            "galactico": 2,
-            "trophyhunger": 2,
-            "diaspora": 1
-          }
+          "label": "The underdog rising",
+          "description": "A club that punches above its weight, shocks the giants, makes you believe in miracles. Think Leicester 2016.",
+          "tags": { "narrative": "underdog", "underdog": 2, "journey": 1 }
         },
         {
-          "label": "The scrappy team shocking a giant",
-          "text": "A roster nobody rated, playing above itself, ruining a favorite's tournament.",
-          "w": {
-            "underdog": 3,
-            "rebellious": 2
-          }
+          "label": "The dynasty",
+          "description": "A club that expects to win. Every year. The pressure is the point — anything less than a trophy is failure.",
+          "tags": { "narrative": "dynasty", "trophyhunger": 2, "galactico": 1 }
         },
         {
-          "label": "The kid who came out of nowhere",
-          "text": "A teenager or unknown suddenly the best player on the pitch.",
-          "w": {
-            "academy": 3,
-            "journey": 2
-          }
+          "label": "The cursed romantic",
+          "description": "Long-suffering, loyal through decades of heartbreak. The pain IS the identity. One day it'll be worth it.",
+          "tags": { "narrative": "cursed", "journey": 2, "ultras": 1 }
         },
         {
-          "label": "The manager's system working perfectly",
-          "text": "A tactical idea executed so well it looked unfair.",
-          "w": {
-            "possession": 2,
-            "highpress": 2,
-            "technical": 2
-          }
+          "label": "The project",
+          "description": "A club building something new — smart recruitment, young talent, a vision taking shape. You want to watch the ascent.",
+          "tags": { "narrative": "project", "academy": 2, "journey": 1 }
         }
       ]
     },
     {
-      "q": "How do you feel about inheriting a rivalry?",
-      "sub": "Every club comes with enemies. Some are older than the club itself.",
+      "id": "q4",
+      "prompt": "How do you want your club to handle rivalries?",
+      "subtext": "Some rivalries are family feuds. Some are blood feuds.",
+      "type": "standard",
       "options": [
         {
-          "label": "Give me the blood feud",
-          "text": "I want a derby that shuts down a city, decades of grudges, songs about it.",
-          "w": {
-            "bloodfeud": 3,
-            "ultras": 1
-          }
+          "label": "Toxic and beautiful",
+          "description": "The derby is everything. You hate the rival more than you love your own team. Losing to them is unthinkable.",
+          "tags": { "bloodfeud": 3, "ultras": 1, "passionate": 1 }
         },
         {
-          "label": "A healthy rivalry is fine",
-          "text": "Some needle, a fun weekend, nothing that ruins a friendship.",
-          "w": {
-            "friendlyrivalry": 2
-          }
+          "label": "Respectful but real",
+          "description": "There's history, there's tension, but it stays on the pitch. You want edge, not venom.",
+          "tags": { "friendlyrivalry": 2, "journey": 1 }
         },
         {
           "label": "I don't care about rivalries",
-          "text": "I'm here for good football, not a century-old grudge.",
-          "w": {
-            "rivalryagnostic": 2,
-            "journey": 1
-          }
+          "description": "I'm here for the football, not the grudges. Rivalry culture is fine but it's not my identity.",
+          "tags": { "rivalryagnostic": 2, "journey": 1 }
+        },
+        {
+          "label": "The enemy of my enemy",
+          "description": "I want a club whose rivals are clubs I already dislike by reputation. Give me a side with enemies worth having.",
+          "tags": { "bloodfeud": 1, "journey": 1, "underdog": 1 }
         }
       ]
     },
     {
-      "q": "Which region actually pulls at you?",
-      "sub": "Family, travel, players you admire — whatever the connection is.",
+      "id": "q5",
+      "prompt": "What's your tolerance for institutional drama?",
+      "subtext": "Some clubs are rock-solid institutions. Others are a beautiful mess.",
+      "type": "standard",
       "options": [
         {
-          "label": "British Isles",
-          "text": "Rain, noise, a pub before kickoff.",
-          "w": {
-            "britain": 3
-          }
+          "label": "Rock solid",
+          "description": "I want stability — long-term vision, a sporting director with a plan, no annual crisis. Boring excellence is fine by me.",
+          "tags": { "stability": "stable", "patience": 2 }
         },
         {
-          "label": "Iberia (Spain/Portugal orbit)",
-          "text": "Technical football and sun.",
-          "w": {
-            "iberia": 3
-          }
+          "label": "Beautiful chaos",
+          "description": "I can handle the drama — manager changes, owner scandals, transfer sagas. The chaos is part of the charm.",
+          "tags": { "stability": "chaotic", "chaos": 2, "passionate": 1 }
         },
         {
-          "label": "Italy",
-          "text": "Tactics, tifo, tradition.",
-          "w": {
-            "italy": 3
-          }
+          "label": "Rebuild in progress",
+          "description": "I want a club that's actively fixing something. New ownership, new philosophy, a turnaround story.",
+          "tags": { "stability": "rebuilding", "journey": 2, "underdog": 1 }
         },
         {
-          "label": "Germany / Central Europe",
-          "text": "Terraces, atmosphere, club-run ownership.",
-          "w": {
-            "germany": 3,
-            "community": 1
-          }
-        },
-        {
-          "label": "France",
-          "text": "Athleticism and star power.",
-          "w": {
-            "france": 3
-          }
-        },
-        {
-          "label": "Mexico & Latin America",
-          "text": "Passion that doesn't come with an off-season.",
-          "w": {
-            "mexico": 3,
-            "diaspora": 1
-          }
-        },
-        {
-          "label": "My own city, USA",
-          "text": "I want to be able to actually show up.",
-          "w": {
-            "usa": 3,
-            "accessible": 2
-          }
+          "label": "Win now, figure it out later",
+          "description": "I don't care about the next five years. I want trophies THIS year. Spend money, hire the best, deal with consequences later.",
+          "tags": { "stability": "win-now", "trophyhunger": 2, "galactico": 1 }
         }
       ]
     },
     {
-      "q": "Be honest about how you'll actually follow this club.",
-      "sub": "No judgment. Just calibrating.",
+      "id": "q6",
+      "prompt": "What matters more — the trophy cabinet or the soul of the club?",
+      "subtext": "Every club makes this trade-off. Where do you fall?",
+      "type": "standard",
       "options": [
         {
-          "label": "I want to go to games in person",
-          "text": "Local, accessible, a season ticket is realistic.",
-          "w": {
-            "accessible": 3,
-            "community": 1
-          }
+          "label": "Trophies. Period.",
+          "description": "I want a club that wins. If they're not competing for titles, what's the point? Legacy is measured in silverware.",
+          "tags": { "ambition": "trophy-driven", "trophyhunger": 2, "galactico": 1 }
         },
         {
-          "label": "I'm fine being a distance fan",
-          "text": "3am kickoffs, streaming, the full long-distance-relationship experience.",
-          "w": {
-            "distancefan": 3
-          }
+          "label": "Identity first",
+          "description": "I want a club with a soul — a philosophy, a culture, something that makes them unique regardless of results. Winning is secondary to being authentic.",
+          "tags": { "ambition": "identity-driven", "rebellious": 1, "community": 2 }
         },
         {
-          "label": "Doesn't matter, I just want the right club",
-          "text": "Convenience is secondary to fit.",
-          "w": {}
+          "label": "The smart overachiever",
+          "description": "I want a club that does more with less — data-driven recruitment, smart scouting, finding hidden gems. Winning through intelligence, not budget.",
+          "tags": { "ambition": "smart-overachiever", "academy": 2, "underdog": 1 }
+        },
+        {
+          "label": "The romantic choice",
+          "description": "I want a club that feels like a story worth telling. History, passion, a connection to a place and people. Results come and go; the romance is permanent.",
+          "tags": { "ambition": "romantic", "journey": 2, "ultras": 1 }
         }
       ]
     },
     {
-      "q": "Trophies or story — what matters more?",
-      "sub": "Last one. Then we stamp your passport.",
-      "options": [
-        {
-          "label": "I want to win. A lot.",
-          "text": "Give me a club that expects a trophy every season.",
-          "w": {
-            "trophyhunger": 3
-          }
-        },
-        {
-          "label": "I want a story worth telling",
-          "text": "Heartbreak, comebacks, a multi-year arc — even if it ends in near-misses.",
-          "w": {
-            "journey": 3,
-            "underdog": 1
-          }
-        }
-      ]
+      "id": "q7",
+      "prompt": "Last one. Which NFL team do you root for?",
+      "subtext": "We'll match your football DNA — no soccer knowledge needed.",
+      "type": "nfl-selector",
+      "options": null,
+      "nfl_teams": [
+        { "id": "steelers",  "name": "Pittsburgh Steelers",  "conference": "AFC", "division": "North" },
+        { "id": "ravens",    "name": "Baltimore Ravens",    "conference": "AFC", "division": "North" },
+        { "id": "browns",    "name": "Cleveland Browns",    "conference": "AFC", "division": "North" },
+        { "id": "bengals",   "name": "Cincinnati Bengals",   "conference": "AFC", "division": "North" },
+        { "id": "patriots",  "name": "New England Patriots", "conference": "AFC", "division": "East" },
+        { "id": "bills",     "name": "Buffalo Bills",       "conference": "AFC", "division": "East" },
+        { "id": "dolphins",  "name": "Miami Dolphins",      "conference": "AFC", "division": "East" },
+        { "id": "jets",      "name": "New York Jets",        "conference": "AFC", "division": "East" },
+        { "id": "colts",     "name": "Indianapolis Colts",    "conference": "AFC", "division": "South" },
+        { "id": "titans",    "name": "Tennessee Titans",     "conference": "AFC", "division": "South" },
+        { "id": "jaguars",   "name": "Jacksonville Jaguars",  "conference": "AFC", "division": "South" },
+        { "id": "texans",    "name": "Houston Texans",       "conference": "AFC", "division": "South" },
+        { "id": "chiefs",    "name": "Kansas City Chiefs",    "conference": "AFC", "division": "West" },
+        { "id": "raiders",   "name": "Las Vegas Raiders",     "conference": "AFC", "division": "West" },
+        { "id": "broncos",   "name": "Denver Broncos",       "conference": "AFC", "division": "West" },
+        { "id": "chargers",  "name": "Los Angeles Chargers",  "conference": "AFC", "division": "West" },
+        { "id": "packers",   "name": "Green Bay Packers",     "conference": "NFC", "division": "North" },
+        { "id": "bears",     "name": "Chicago Bears",        "conference": "NFC", "division": "North" },
+        { "id": "lions",     "name": "Detroit Lions",        "conference": "NFC", "division": "North" },
+        { "id": "vikings",   "name": "Minnesota Vikings",     "conference": "NFC", "division": "North" },
+        { "id": "cowboys",   "name": "Dallas Cowboys",       "conference": "NFC", "division": "East" },
+        { "id": "eagles",    "name": "Philadelphia Eagles",   "conference": "NFC", "division": "East" },
+        { "id": "giants",    "name": "New York Giants",       "conference": "NFC", "division": "East" },
+        { "id": "commanders","name": "Washington Commanders",  "conference": "NFC", "division": "East" },
+        { "id": "saints",    "name": "New Orleans Saints",    "conference": "NFC", "division": "South" },
+        { "id": "falcons",   "name": "Atlanta Falcons",       "conference": "NFC", "division": "South" },
+        { "id": "panthers",  "name": "Carolina Panthers",     "conference": "NFC", "division": "South" },
+        { "id": "buccaneers","name": "Tampa Bay Buccaneers",   "conference": "NFC", "division": "South" },
+        { "id": "49ers",     "name": "San Francisco 49ers",    "conference": "NFC", "division": "West" },
+        { "id": "seahawks",  "name": "Seattle Seahawks",       "conference": "NFC", "division": "West" },
+        { "id": "rams",      "name": "Los Angeles Rams",       "conference": "NFC", "division": "West" },
+        { "id": "cardinals", "name": "Arizona Cardinals",     "conference": "NFC", "division": "West" }
+      ],
+      "nfl_mapping": {
+        "steelers":   { "clubs": ["bayern-munich", "atletico-madrid", "inter-milan"], "weight": 1.0 },
+        "ravens":     { "clubs": ["juventus", "atletico-madrid", "chivas"], "weight": 1.0 },
+        "browns":     { "clubs": ["newcastle", "torino", "atlas"], "weight": 1.0 },
+        "bengals":    { "clubs": ["dortmund", "napoli", "brighton"], "weight": 1.0 },
+        "patriots":   { "clubs": ["real-madrid", "juventus", "la-galaxy"], "weight": 1.0 },
+        "bills":      { "clubs": ["everton", "gladbach", "pumas"], "weight": 1.0 },
+        "dolphins":   { "clubs": ["marseille", "ac-milan", "monterrey"], "weight": 1.0 },
+        "jets":       { "clubs": ["tottenham", "inter-milan", "cruz-azul"], "weight": 1.0 },
+        "colts":      { "clubs": ["arsenal", "sevilla", "tigres"], "weight": 1.0 },
+        "titans":     { "clubs": ["athletic-bilbao", "atalanta", "puebla"], "weight": 1.0 },
+        "jaguars":    { "clubs": ["crystal-palace", "getafe", "leon"], "weight": 0.8 },
+        "texans":     { "clubs": ["leipzig", "psg", "lafc"], "weight": 1.0 },
+        "chiefs":     { "clubs": ["man-city", "barcelona", "club-america"], "weight": 1.0 },
+        "raiders":    { "clubs": ["marseille", "lazio", "cruz-azul"], "weight": 1.0 },
+        "broncos":    { "clubs": ["atletico-madrid", "dortmund", "chivas"], "weight": 1.0 },
+        "chargers":   { "clubs": ["inter-milan", "lyon", "tigres"], "weight": 1.0 },
+        "packers":    { "clubs": ["barcelona", "athletic-bilbao", "seattle-sounders"], "weight": 1.0 },
+        "bears":      { "clubs": ["juventus", "inter-milan", "club-america"], "weight": 1.0 },
+        "lions":      { "clubs": ["leicester", "napoli", "pachuca"], "weight": 1.0 },
+        "vikings":    { "clubs": ["tottenham", "leverkusen", "cruz-azul"], "weight": 1.0 },
+        "cowboys":    { "clubs": ["man-utd", "real-madrid", "club-america"], "weight": 1.0 },
+        "eagles":     { "clubs": ["arsenal", "napoli", "as-roma"], "weight": 1.0 },
+        "giants":     { "clubs": ["ac-milan", "inter-milan", "chivas"], "weight": 1.0 },
+        "commanders": { "clubs": ["valencia", "atlas"], "weight": 0.8 },
+        "saints":     { "clubs": ["napoli", "marseille", "cruz-azul"], "weight": 1.0 },
+        "falcons":    { "clubs": ["tottenham", "leverkusen", "monterrey"], "weight": 1.0 },
+        "panthers":   { "clubs": ["leipzig", "lille"], "weight": 0.8 },
+        "buccaneers": { "clubs": ["chelsea", "inter-milan", "tigres"], "weight": 1.0 },
+        "49ers":      { "clubs": ["bayern-munich", "man-city", "barcelona"], "weight": 1.0 },
+        "seahawks":   { "clubs": ["dortmund", "seattle-sounders", "newcastle"], "weight": 1.0 },
+        "rams":       { "clubs": ["psg", "chelsea", "man-city"], "weight": 1.0 },
+        "cardinals":  { "clubs": ["getafe", "leon"], "weight": 0.8 }
+      },
+      "skip_option": "I don't follow the NFL"
     }
   ],
   "tag_labels": {
@@ -289,6 +276,11 @@
     "mexico": "Mexican football culture",
     "usa": "homegrown American soccer culture",
     "accessible": "realistic in-person attendance",
-    "distancefan": "long-distance fandom"
+    "distancefan": "long-distance fandom",
+    "passionate": "passionate, emotional intensity",
+    "stability": "institutional stability profile",
+    "fan-culture": "fan culture archetype",
+    "ambition": "organizational ambition profile",
+    "narrative": "narrative arc"
   }
 }

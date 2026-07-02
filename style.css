@@ -297,3 +297,148 @@ footer{padding:30px 24px 50px;text-align:center;font-family:'IBM Plex Mono',mono
 @media(min-width:901px){
   .wrap{padding:0 24px;}
 }
+
+/* ============================================================
+   v2 additions: NFL grid, floating share bar, toast
+   ============================================================ */
+
+/* ── NFL team selector grid ── */
+.nfl-grid{
+  margin-top:24px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+.nfl-conference{
+  /* each conference is a column */
+}
+.nfl-conf-header{
+  font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;
+  letter-spacing:0.12em;color:var(--visa-red);margin-bottom:12px;
+  border-bottom:1px solid var(--line);padding-bottom:6px;
+}
+.nfl-division-group{margin-bottom:16px;}
+.nfl-div-header{
+  font-family:'IBM Plex Mono',monospace;font-size:9px;text-transform:uppercase;
+  letter-spacing:0.1em;color:var(--ink-soft);margin-bottom:8px;
+}
+.nfl-team{
+  display:flex;align-items:center;gap:8px;
+  padding:9px 12px;border:1.5px solid var(--line);
+  background:rgba(255,255,255,0.35);cursor:pointer;
+  transition:border-color .12s,background .12s;
+  margin-bottom:6px;font-size:13px;
+}
+.nfl-team:hover{border-color:var(--ink);}
+.nfl-team.selected{border-color:var(--visa-red);background:rgba(165,52,43,0.1);}
+.nfl-team-conf{
+  font-family:'IBM Plex Mono',monospace;font-size:9px;color:var(--ink-soft);
+  text-transform:uppercase;letter-spacing:0.06em;flex:none;width:24px;
+}
+.nfl-team.selected .nfl-team-conf{color:var(--visa-red);}
+.nfl-team-name{font-weight:500;}
+.nfl-skip{
+  margin-top:12px;padding:12px 16px;border:1.5px dashed var(--line);
+  text-align:center;font-size:13px;color:var(--ink-soft);cursor:pointer;
+  transition:border-color .12s,color .12s;
+  grid-column:1 / -1;
+}
+.nfl-skip:hover{border-color:var(--ink);color:var(--ink);}
+.nfl-skip.selected{border-color:var(--visa-red);color:var(--visa-red);border-style:solid;background:rgba(165,52,43,0.07);}
+
+/* ── Floating share bar ── */
+.share-bar{
+  position:fixed;bottom:0;left:0;right:0;
+  background:var(--ink);color:var(--paper);
+  display:flex;align-items:center;gap:12px;
+  padding:10px 16px;z-index:200;
+  border-top:2px solid var(--gold);
+  box-shadow:0 -4px 16px rgba(0,0,0,0.12);
+}
+.share-bar-crest{
+  width:36px;height:36px;border-radius:50%;flex:none;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Fraunces',serif;font-weight:700;font-size:13px;color:#fff;
+  border:2px solid rgba(255,255,255,0.3);
+}
+.share-bar-info{flex:1;min-width:0;overflow:hidden;}
+.share-bar-name{
+  font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.share-bar-pct{
+  font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--gold);
+  text-transform:uppercase;letter-spacing:0.06em;
+}
+.share-bar-btn{
+  font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;
+  letter-spacing:0.06em;padding:8px 16px;border-radius:2px;
+  border:1.5px solid var(--paper);background:var(--paper);color:var(--ink);
+  cursor:pointer;flex:none;transition:transform .12s ease;
+}
+.share-bar-btn:hover{transform:translateY(-1px);}
+.share-bar-x{
+  background:none;border:none;color:var(--paper);font-size:20px;
+  cursor:pointer;opacity:0.6;flex:none;padding:4px 8px;
+}
+.share-bar-x:hover{opacity:1;}
+
+/* Desktop: bottom-right pill */
+@media(min-width:769px){
+  .share-bar{
+    bottom:20px;right:20px;left:auto;
+    border-radius:40px;padding:8px 12px 8px 16px;
+    border:1.5px solid var(--gold);
+    box-shadow:0 4px 20px rgba(0,0,0,0.2);
+    max-width:380px;
+  }
+  .share-bar-crest{width:32px;height:32px;font-size:11px;}
+  .share-bar-name{font-size:12px;}
+  .share-bar-pct{font-size:9px;}
+  .share-bar-btn{padding:6px 14px;font-size:10px;}
+}
+
+/* ── Toast notification ── */
+.toast{
+  position:fixed;bottom:80px;left:50%;transform:translateX(-50%) translateY(20px);
+  background:var(--ink);color:var(--paper);
+  padding:10px 20px;border-radius:4px;
+  font-family:'IBM Plex Mono',monospace;font-size:12px;
+  letter-spacing:0.06em;text-transform:uppercase;
+  z-index:300;opacity:0;pointer-events:none;
+  transition:opacity .2s ease,transform .2s ease;
+  border:1px solid var(--gold);
+}
+.toast.show{
+  opacity:1;transform:translateX(-50%) translateY(0);
+}
+@media(min-width:769px){
+  .toast{bottom:80px;}
+}
+
+/* ── Shared link CTA ── */
+.shared-cta{
+  margin-top:32px;padding:24px;text-align:center;
+  border:1.5px dashed var(--line);background:rgba(255,255,255,0.28);
+}
+.shared-cta .btn{margin:0 auto;}
+
+/* ── NFL grid responsive ── */
+@media(max-width:640px){
+  .nfl-grid{grid-template-columns:1fr;gap:12px;}
+  .nfl-team{padding:10px 12px;font-size:12px;}
+  .nfl-conf-header{font-size:10px;margin-bottom:8px;}
+  .nfl-div-header{font-size:8px;margin-bottom:6px;}
+  .nfl-team-conf{width:20px;font-size:8px;}
+  /* Share bar: full-width bottom on mobile */
+  .share-bar{padding:8px 12px;}
+  .share-bar-crest{width:32px;height:32px;font-size:11px;}
+  .share-bar-name{font-size:12px;}
+  .share-bar-pct{font-size:9px;}
+  .share-bar-btn{padding:7px 12px;font-size:10px;}
+  .share-bar-x{font-size:18px;padding:2px 6px;}
+  .toast{bottom:72px;font-size:10px;padding:8px 16px;}
+}
+
+@media(min-width:641px) and (max-width:768px){
+  .nfl-grid{grid-template-columns:1fr 1fr;gap:16px;}
+}

@@ -1,24 +1,37 @@
 /* ============================================================
-   Fan Passport — App Logic v1
+   Fan Passport — App Logic v2
    Loads clubs from clubs.json, handles quiz, matching,
    persistence (localStorage), shareable URLs, retake flow,
-   and lightweight analytics.
+   floating share bar, NFL selector, and lightweight analytics.
+
+   v2 changes:
+   - New question structure: prompt/subtext/options[].description/tags
+   - NFL team selector grid (Q7, type: "nfl-selector")
+   - Scoring: intangible tags (stability, fan-culture, ambition, narrative)
+   - NFL boost at 15% weight
+   - Floating share bar on post-result screens
+   - Toast notifications for share actions
+   - Hide share bar when viewing via shared link
    ============================================================ */
 
 let CLUBS = [];
 let QUESTIONS = [];
 let TAG_LABEL = {};
+let NFL_TEAMS = [];
+let NFL_MAPPING = {};
+let NFL_SKIP_LABEL = "";
 
 const LEAGUE_ORDER = ["Premier League","La Liga","Serie A","Bundesliga","Ligue 1","MLS","Liga MX"];
 
 let state = {
   view: "home",
   qIndex: 0,
-  answers: [],  // array of option indices, one per question
+  answers: [],  // array of option indices (or "nfl:<teamId>" / "nfl:skip" for Q7)
   results: [],  // top 3 match results
   currentClub: null,
   sharedResult: null,  // decoded from URL if present
   retakeMode: false,   // true when user jumped from results to edit one answer
+  shareBarDismissed: false,
 };
 
 const STORAGE_KEY = "fan-passport-state";
@@ -36,7 +49,14 @@ async function init(){
     CLUBS = await clubRes.json();
     const quizData = await quizRes.json();
     QUESTIONS = quizData.questions;
-    TAG_LABEL = quizData.tag_labels;
+    TAG_LABEL = quizData.tag_labels || {};
+    // Extract NFL data from Q7
+    const nflQ = QUESTIONS.find(q => q.type === "nfl-selector");
+    if(nflQ){
+      NFL_TEAMS = nflQ.nfl_teams || [];
+      NFL_MAPPING = nflQ.nfl_mapping || {};
+      NFL_SKIP_LABEL = nflQ.skip_option || "I don't follow the NFL";
+    }
   } catch(e) {
     console.error("Failed to load data:", e);
     document.getElementById("app").innerHTML = `<div class="loading">Failed to load club data. Make sure you're serving via HTTP (not file://).</div>`;
@@ -75,6 +95,7 @@ function saveState(){
       answers: state.answers,
       results: state.results,
       currentClub: state.currentClub ? state.currentClub.id : null,
+      shareBarDismissed: state.shareBarDismissed,
     };
     localStorage.setItem(STORAGE_KEY, JSON.stringify(toSave));
   } catch(e) { /* storage might be unavailable */ }
@@ -95,6 +116,12 @@ function restoreState(){
 
 function clearSavedState(){
   try { localStorage.removeItem(STORAGE_KEY); } catch(e) {}
+}
+
+/* ──── Is this a shared link view? ──── */
+
+function isSharedView(){
+  return state.sharedResult && state.sharedResult.isShared;
 }
 
 /* ──── Shareable Links ──── */
@@ -150,39 +177,108 @@ function logResult(answers, results){
   } catch(e) {}
 }
 
-/* ──── Matching Algorithm ──── */
+/* ──── Matching Algorithm (v2) ──── */
 
 function computeResults(answers){
-  // Build profile from quiz answers
+  // Build a profile from quiz answers Q1-Q6 (standard questions)
+  // Profile is a map: tag → accumulated weight
   const profile = {};
-  answers.forEach((optIdx, qIdx) => {
-    const opt = QUESTIONS[qIdx].options[optIdx];
+
+  answers.forEach((ans, qIdx) => {
+    const q = QUESTIONS[qIdx];
+    if(!q) return;
+    if(q.type === "nfl-selector") return; // NFL handled separately
+    if(typeof ans !== "number") return;
+    const opt = q.options[ans];
     if(!opt) return;
-    Object.entries(opt.w).forEach(([tag, val]) => {
-      profile[tag] = (profile[tag] || 0) + val;
+    Object.entries(opt.tags || {}).forEach(([tag, val]) => {
+      if(typeof val === "number" && val !== 0) {
+        profile[tag] = (profile[tag] || 0) + val;
+      }
+      // String-valued tags (stability, fan-culture, ambition, narrative) are handled below
     });
   });
 
-  // Score each club
+  // Build intangible tag profile from Q2, Q3, Q5, Q6
+  // These store string values in the answer's tags
+  const intangibleProfile = {}; // e.g. { "fan-culture": "ultras", "narrative": "underdog", ... }
+  answers.forEach((ans, qIdx) => {
+    const q = QUESTIONS[qIdx];
+    if(!q || q.type !== "standard") return;
+    if(typeof ans !== "number") return;
+    const opt = q.options[ans];
+    if(!opt) return;
+    Object.entries(opt.tags || {}).forEach(([tag, val]) => {
+      if(typeof val === "string") {
+        intangibleProfile[tag] = val;
+      }
+    });
+  });
+
+  // Score each club from Q1-Q6
   const scored = CLUBS.map(club => {
     let score = 0;
     const contributions = [];
+
+    // Numeric tag matching (Q1, Q4, and numeric parts of other questions)
     Object.entries(profile).forEach(([tag, val]) => {
-      const clubVal = club.tags[tag] || 0;
+      const clubVal = club.tags[tag];
+      if(typeof clubVal !== "number") return;
       const contrib = val * clubVal;
       if(contrib > 0) contributions.push({tag, contrib});
       score += contrib;
     });
-    contributions.sort((a,b) => b.contrib - a.contrib);
-    return { club, score, topTags: contributions.slice(0,3).map(c => c.tag) };
+
+    // Intangible tag matching (Q2, Q3, Q5, Q6)
+    Object.entries(intangibleProfile).forEach(([tag, val]) => {
+      const clubVal = club.tags[tag];
+      if(typeof clubVal === "string" && clubVal === val) {
+        const contrib = 3; // each intangible match is worth 3 points
+        contributions.push({tag, contrib});
+        score += contrib;
+      }
+    });
+
+    return { club, score, contributions };
   });
 
-  scored.sort((a,b) => b.score - a.score);
-  const maxScore = scored[0].score || 1;
+  // Find the baseScore max for normalization
+  scored.sort((a, b) => b.score - a.score);
+  const maxBaseScore = scored[0].score || 1;
+
+  // Apply NFL boost (Q7)
+  const nflAnswer = answers[QUESTIONS.findIndex(q => q.type === "nfl-selector")];
+  let nflTeamId = null;
+  if(typeof nflAnswer === "string" && nflAnswer.startsWith("nfl:") && nflAnswer !== "nfl:skip") {
+    nflTeamId = nflAnswer.substring(4);
+  }
+
+  if(nflTeamId && NFL_MAPPING[nflTeamId]) {
+    const mapping = NFL_MAPPING[nflTeamId];
+    const mappedClubIds = new Set(mapping.clubs);
+    const weight = mapping.weight || 1.0;
+    const boostFactor = weight * 0.15; // 15% of total score, adjusted by weight
+
+    scored.forEach(s => {
+      let boost = 0;
+      if(mappedClubIds.has(s.club.id)) {
+        boost = boostFactor * maxBaseScore;
+      }
+      s.score += boost;
+      if(boost > 0) {
+        s.contributions.push({tag: "nfl-boost", contrib: boost});
+      }
+    });
+  }
+
+  // Re-sort after NFL boost
+  scored.sort((a, b) => b.score - a.score);
+  const finalMax = scored[0].score || 1;
+
   return scored.slice(0, 3).map(s => ({
     club: s.club,
-    pct: Math.round((s.score / maxScore) * 100),
-    topTags: s.topTags,
+    pct: Math.round((s.score / finalMax) * 100),
+    topTags: s.contributions.sort((a,b) => b.contrib - a.contrib).slice(0, 5).map(c => c.tag),
   }));
 }
 
@@ -194,6 +290,7 @@ function startQuiz(){
   state.results = [];
   state.sharedResult = null;
   state.retakeMode = false;
+  state.shareBarDismissed = false;
   clearSavedState();
   go("quiz");
 }
@@ -202,6 +299,38 @@ function selectOption(qIdx, optIdx){
   state.answers[qIdx] = optIdx;
   if(state.retakeMode){
     // Recompute results and return to result page
+    state.results = computeResults(state.answers);
+    state.retakeMode = false;
+    state.view = "result";
+    logResult(state.answers, state.results);
+    saveState();
+    render();
+    window.scrollTo({top:0, behavior:"smooth"});
+    return;
+  }
+  saveState();
+  render();
+}
+
+function selectNFL(teamId){
+  state.answers[state.qIndex] = "nfl:" + teamId;
+  if(state.retakeMode){
+    state.results = computeResults(state.answers);
+    state.retakeMode = false;
+    state.view = "result";
+    logResult(state.answers, state.results);
+    saveState();
+    render();
+    window.scrollTo({top:0, behavior:"smooth"});
+    return;
+  }
+  saveState();
+  render();
+}
+
+function skipNFL(){
+  state.answers[state.qIndex] = "nfl:skip";
+  if(state.retakeMode){
     state.results = computeResults(state.answers);
     state.retakeMode = false;
     state.view = "result";
@@ -252,6 +381,7 @@ function submitQuiz(){
   const results = computeResults(state.answers);
   state.results = results;
   state.view = "result";
+  state.shareBarDismissed = false;
   logResult(state.answers, results);
   saveState();
   render();
@@ -306,6 +436,8 @@ function render(){
   else if(state.view === "dossier") { resetOGMeta(); app.innerHTML = renderDossier(); }
   else if(state.view === "browse") { resetOGMeta(); app.innerHTML = renderBrowse(); }
   attachHandlers();
+  renderShareBar();
+  renderToast();
 }
 
 function renderHome(){
@@ -335,18 +467,21 @@ function renderQuiz(){
   const stamps = QUESTIONS.map((_, i) =>
     `<div class="mini-stamp ${state.answers[i] !== undefined ? 'filled' : ''}"></div>`
   ).join("");
-  const options = q.options.map((opt, i) => `
-    <div class="option ${selected === i ? 'selected' : ''}" data-select="${i}">
-      <div class="letter">${String.fromCharCode(65 + i)}</div>
-      <div class="otext"><strong>${opt.label}</strong><span>${opt.text}</span></div>
-    </div>
-  `).join("");
+
+  let contentHTML = "";
+  let navHTML = "";
+
+  if(q.type === "nfl-selector"){
+    contentHTML = renderNFLSelector(q, selected);
+  } else {
+    contentHTML = renderStandardOptions(q, selected);
+  }
+
   const isLast = state.qIndex === QUESTIONS.length - 1;
   const nextLabel = isLast ? 'Stamp my passport →' : 'Next →';
   const nextDisabled = selected === undefined;
 
   // In retake mode, show a different nav: cancel goes back to results
-  let navHTML;
   if(state.retakeMode){
     navHTML = `
     <div class="quiz-nav">
@@ -371,20 +506,62 @@ function renderQuiz(){
           <span>Page ${state.qIndex + 1} of ${QUESTIONS.length}</span>
           <div class="stamp-row">${stamps}</div>
         </div>
-        <h2>${q.q}</h2>
-        <div class="qsub">${q.sub}</div>
-        <div class="options">${options}</div>
+        <h2>${q.prompt}</h2>
+        <div class="qsub">${q.subtext || q.sub || ""}</div>
+        ${contentHTML}
         ${navHTML}
       </div>
     </div>
   </section>`;
 }
 
+function renderStandardOptions(q, selected){
+  const options = q.options.map((opt, i) => `
+    <div class="option ${selected === i ? 'selected' : ''}" data-select="${i}">
+      <div class="letter">${String.fromCharCode(65 + i)}</div>
+      <div class="otext"><strong>${opt.label}</strong><span>${opt.description || opt.text || ""}</span></div>
+    </div>
+  `).join("");
+  return `<div class="options">${options}</div>`;
+}
+
+function renderNFLSelector(q, selected){
+  // Group teams by conference → division
+  const conferences = ["AFC", "NFC"];
+  const divisions = ["North", "East", "South", "West"];
+  let html = '<div class="nfl-grid">';
+
+  conferences.forEach(conf => {
+    html += `<div class="nfl-conference"><div class="nfl-conf-header">${conf}</div>`;
+    divisions.forEach(div => {
+      const teams = NFL_TEAMS.filter(t => t.conference === conf && t.division === div);
+      if(!teams.length) return;
+      html += `<div class="nfl-division-group"><div class="nfl-div-header">${conf} ${div}</div>`;
+      teams.forEach(team => {
+        const isSelected = selected === ("nfl:" + team.id);
+        html += `
+          <div class="nfl-team ${isSelected ? 'selected' : ''}" data-nfl="${team.id}">
+            <span class="nfl-team-conf">${conf}</span>
+            <span class="nfl-team-name">${team.name}</span>
+          </div>`;
+      });
+      html += `</div>`;
+    });
+    html += `</div>`;
+  });
+
+  // Skip option
+  const skipSelected = selected === "nfl:skip";
+  html += `<div class="nfl-skip ${skipSelected ? 'selected' : ''}" data-nfl-skip="1">${NFL_SKIP_LABEL}</div>`;
+  html += '</div>';
+  return html;
+}
+
 function renderResult(){
   if(!state.results.length) return renderHome();
   const top = state.results[0];
   const runners = state.results.slice(1);
-  const isShared = state.sharedResult && state.sharedResult.isShared;
+  const isShared = isSharedView();
   const chips = top.topTags.map(t => `<span class="why-chip">${TAG_LABEL[t] || t}</span>`).join("");
   const runnerCards = runners.map(r => `
     <div class="runner-card" data-open="${r.club.id}">
@@ -399,11 +576,27 @@ function renderResult(){
   // Retake chips: one per answered question
   const retakeChips = state.answers.map((ans, i) => {
     const q = QUESTIONS[i];
-    const label = q.options[ans] ? q.options[ans].label : "—";
+    let label = "—";
+    if(q.type === "nfl-selector"){
+      if(typeof ans === "string" && ans === "nfl:skip") label = NFL_SKIP_LABEL;
+      else if(typeof ans === "string" && ans.startsWith("nfl:")) {
+        const tid = ans.substring(4);
+        const team = NFL_TEAMS.find(t => t.id === tid);
+        label = team ? team.name : "NFL";
+      }
+    } else if(typeof ans === "number" && q.options[ans]) {
+      label = q.options[ans].label;
+    }
     return `<div class="retake-chip" data-jump="${i}">Q${i+1}: ${label}</div>`;
   }).join("");
 
   const sharedNote = isShared ? `<div class="why-chip" style="border-color:var(--visa-red);color:var(--visa-red)">Shared result</div>` : "";
+
+  // Shared link CTA
+  const sharedCTA = isShared ? `
+    <div class="shared-cta">
+      <button class="btn" data-nav="quiz">Take the quiz yourself →</button>
+    </div>` : "";
 
   // Update OG meta tags for this specific club result
   updateOGMeta(top.club);
@@ -424,8 +617,9 @@ function renderResult(){
       <div class="result-actions">
         <button class="btn" data-open="${top.club.id}">Read the full dossier →</button>
         <button class="btn secondary" id="shareBtn">Copy share link</button>
-        <button class="btn secondary" id="retakeBtn">Quick retake</button>
-        <button class="btn secondary" data-nav="quiz">Full retake</button>
+        <button class="btn secondary" id="shareXBtn">Share on X</button>
+        ${isShared ? "" : '<button class="btn secondary" id="retakeBtn">Quick retake</button>'}
+        ${isShared ? "" : '<button class="btn secondary" data-nav="quiz">Full retake</button>'}
         <button class="btn secondary" data-nav="browse">Browse all clubs</button>
       </div>
       <div class="share-link-box" id="shareBox"></div>
@@ -437,6 +631,7 @@ function renderResult(){
         <h3>Also under consideration</h3>
         <div class="runner-grid">${runnerCards}</div>
       </div>
+      ${sharedCTA}
     </div>
   </section>`;
 }
@@ -444,9 +639,11 @@ function renderResult(){
 function renderDossier(){
   const c = state.currentClub;
   if(!c) return renderBrowse();
-  const tagList = Object.keys(c.tags).slice(0, 6).map(t =>
-    `<span>${TAG_LABEL[t] || t}</span>`
-  ).join("");
+  const tagList = Object.keys(c.tags).slice(0, 8).map(t => {
+    const val = c.tags[t];
+    if(typeof val === "string") return `<span>${t}: ${val}</span>`;
+    return `<span>${TAG_LABEL[t] || t}</span>`;
+  }).join("");
   return `
   <section class="dossier-band" style="background:${c.c1}">
     <div class="wrap">
@@ -530,18 +727,81 @@ function renderBrowse(){
   </section>`;
 }
 
+/* ──── Floating Share Bar ──── */
+
+function renderShareBar(){
+  // Remove existing share bar
+  const existing = document.getElementById("shareBar");
+  if(existing) existing.remove();
+
+  // Don't show share bar if:
+  // 1. No results
+  // 2. Viewing via shared link (viewer hasn't taken the quiz)
+  // 3. Dismissed
+  // 4. On home or quiz screens
+  if(!state.results.length) return;
+  if(isSharedView()) return;
+  if(state.shareBarDismissed) return;
+  if(state.view === "home" || state.view === "quiz") return;
+
+  const top = state.results[0];
+  if(!top) return;
+
+  const bar = document.createElement("div");
+  bar.id = "shareBar";
+  bar.className = "share-bar";
+  bar.innerHTML = `
+    <div class="share-bar-crest" style="background:${top.club.c1}">${initials(top.club.name)}</div>
+    <div class="share-bar-info">
+      <div class="share-bar-name">${top.club.name}</div>
+      <div class="share-bar-pct">${top.pct}% match</div>
+    </div>
+    <button class="share-bar-btn" id="barShareBtn">Share</button>
+    <button class="share-bar-x" id="barDismissBtn">×</button>
+  `;
+
+  document.body.appendChild(bar);
+
+  // Attach handlers
+  const shareB = document.getElementById("barShareBtn");
+  if(shareB) shareB.onclick = copyShareLink;
+  const dismissB = document.getElementById("barDismissBtn");
+  if(dismissB) dismissB.onclick = dismissShareBar;
+}
+
+function dismissShareBar(){
+  state.shareBarDismissed = true;
+  saveState();
+  const bar = document.getElementById("shareBar");
+  if(bar) bar.remove();
+}
+
+/* ──── Toast ──── */
+
+let toastTimer = null;
+function showToast(msg){
+  let toast = document.getElementById("toast");
+  if(!toast){
+    toast = document.createElement("div");
+    toast.id = "toast";
+    toast.className = "toast";
+    document.body.appendChild(toast);
+  }
+  toast.textContent = msg;
+  toast.classList.add("show");
+  if(toastTimer) clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => {
+    toast.classList.remove("show");
+  }, 2500);
+}
+
+function renderToast(){
+  // Ensure toast element exists (created on demand by showToast)
+}
+
 /* ──── Helpers ──── */
 
 function updateOGMeta(club){
-  // Dynamically update OG/twitter meta tags for the current club result.
-  // NOTE: Most social scrapers (Facebook, Twitter/X, Slack, iMessage) read
-  // OG tags server-side and do NOT execute JavaScript. So this dynamic update
-  // only works for platforms that re-read meta tags after page load (rare)
-  // or for browser-native share sheets. The primary mechanism for correct
-  // share previews is the static per-club OG images in /og/<club-id>.png,
-  // combined with a server/edge function (not implemented in this static build)
-  // that serves the right og:image based on the ?r= param. For now, the static
-  // generic og-share-card.png remains the default for the root URL.
   const setMeta = (prop, val) => {
     let el = document.querySelector(`meta[property="${prop}"]`);
     if(!el) return;
@@ -610,6 +870,14 @@ function attachHandlers(){
   document.querySelectorAll("[data-jump]").forEach(el => {
     el.onclick = () => jumpToQuestion(parseInt(el.getAttribute("data-jump")));
   });
+  // NFL selector
+  document.querySelectorAll("[data-nfl]").forEach(el => {
+    el.onclick = () => selectNFL(el.getAttribute("data-nfl"));
+  });
+  document.querySelectorAll("[data-nfl-skip]").forEach(el => {
+    el.onclick = () => skipNFL();
+  });
+
   const nextBtn = document.getElementById("nextBtn");
   if(nextBtn) nextBtn.onclick = nextQuestion;
   const prevBtn = document.getElementById("prevBtn");
@@ -617,6 +885,8 @@ function attachHandlers(){
 
   const shareBtn = document.getElementById("shareBtn");
   if(shareBtn) shareBtn.onclick = copyShareLink;
+  const shareXBtn = document.getElementById("shareXBtn");
+  if(shareXBtn) shareXBtn.onclick = shareOnX;
   const retakeBtn = document.getElementById("retakeBtn");
   if(retakeBtn) retakeBtn.onclick = toggleRetakeBar;
   const cancelRetakeBtn = document.getElementById("cancelRetakeBtn");
@@ -626,13 +896,34 @@ function attachHandlers(){
 function copyShareLink(){
   const url = generateShareURL();
   if(!url) return;
-  const box = document.getElementById("shareBox");
-  box.innerHTML = `<strong>Share link:</strong> <a href="${url}">${url}</a><br><span style="font-size:10px;color:var(--ink-soft)">Copied to clipboard</span>`;
-  box.classList.add("show");
   // Try clipboard API
   if(navigator.clipboard){
-    navigator.clipboard.writeText(url).catch(() => {});
+    navigator.clipboard.writeText(url).then(() => {
+      showToast("Link copied");
+    }).catch(() => {
+      showShareBox(url);
+    });
+  } else {
+    showShareBox(url);
   }
+}
+
+function showShareBox(url){
+  const box = document.getElementById("shareBox");
+  if(box){
+    box.innerHTML = `<strong>Share link:</strong> <a href="${url}">${url}</a><br><span style="font-size:10px;color:var(--ink-soft)">Copied to clipboard</span>`;
+    box.classList.add("show");
+  }
+}
+
+function shareOnX(){
+  const url = generateShareURL();
+  if(!url) return;
+  const top = state.results[0];
+  if(!top) return;
+  const text = `I got matched to ${top.club.name} — ${top.pct}%. Take the quiz:`;
+  const xUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+  window.open(xUrl, "_blank");
 }
 
 /* ──── Boot ──── */
