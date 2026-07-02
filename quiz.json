@@ -20,7 +20,7 @@
         {
           "label": "Organized chaos",
           "description": "End-to-end, high-event, nobody's defense is safe. Entertainment over control.",
-          "tags": { "chaos": 2, "highpress": 2, "physical": 1 }
+          "tags": { "highpress": 3, "physical": 1 }
         },
         {
           "label": "Grind it out",
@@ -94,7 +94,7 @@
         {
           "label": "Toxic and beautiful",
           "description": "The derby is everything. You hate the rival more than you love your own team. Losing to them is unthinkable.",
-          "tags": { "bloodfeud": 3, "ultras": 1, "passionate": 1 }
+          "tags": { "bloodfeud": 3, "ultras": 1 }
         },
         {
           "label": "Respectful but real",
@@ -127,7 +127,7 @@
         {
           "label": "Beautiful chaos",
           "description": "I can handle the drama — manager changes, owner scandals, transfer sagas. The chaos is part of the charm.",
-          "tags": { "stability": "chaotic", "chaos": 2, "passionate": 1 }
+          "tags": { "stability": "chaotic", "highpress": 1 }
         },
         {
           "label": "Rebuild in progress",

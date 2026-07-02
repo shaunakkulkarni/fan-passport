@@ -28,11 +28,9 @@
       "academy": 3,
       "technical": 2,
       "bloodfeud": 3,
-      "britain": 3,
       "trophyhunger": 2,
       "journey": 2,
       "accessible": 1,
-      "distancefan": 3,
       "stability": "stable",
       "fan-culture": "intellectual",
       "ambition": "trophy-driven",
@@ -68,10 +66,8 @@
       "ultras": 3,
       "community": 2,
       "bloodfeud": 3,
-      "britain": 3,
       "trophyhunger": 2,
       "journey": 2,
-      "distancefan": 3,
       "stability": "stable",
       "fan-culture": "ultras",
       "ambition": "trophy-driven",
@@ -108,10 +104,8 @@
       "trophyhunger": 2,
       "journey": 2,
       "bloodfeud": 3,
-      "britain": 3,
       "physical": 1,
       "accessible": 1,
-      "distancefan": 3,
       "stability": "chaotic",
       "fan-culture": "intellectual",
       "ambition": "trophy-driven",
@@ -148,12 +142,11 @@
       "trophyhunger": 3,
       "galactico": 2,
       "highpress": 2,
-      "britain": 2,
-      "distancefan": 2,
       "stability": "win-now",
       "fan-culture": "intellectual",
       "ambition": "trophy-driven",
-      "narrative": "dynasty"
+      "narrative": "dynasty",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -184,12 +177,11 @@
       "galactico": 3,
       "trophyhunger": 2,
       "academy": 1,
-      "britain": 2,
-      "distancefan": 2,
       "stability": "win-now",
       "fan-culture": "family",
       "ambition": "trophy-driven",
-      "narrative": "dynasty"
+      "narrative": "dynasty",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -216,12 +208,10 @@
     ],
     "watch": "A club whose baseline expectation shifted upward after building one of Europe's best stadiums, even as the trophy drought continues.",
     "tags": {
-      "britain": 3,
       "bloodfeud": 3,
       "journey": 3,
       "underdog": 1,
       "technical": 1,
-      "distancefan": 2,
       "stability": "chaotic",
       "fan-culture": "intellectual",
       "ambition": "trophy-driven",
@@ -255,12 +245,11 @@
       "community": 2,
       "journey": 3,
       "underdog": 2,
-      "britain": 3,
-      "distancefan": 2,
       "stability": "rebuilding",
       "fan-culture": "ultras",
       "ambition": "romantic",
-      "narrative": "project"
+      "narrative": "project",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -288,13 +277,12 @@
     "tags": {
       "journey": 3,
       "underdog": 2,
-      "britain": 3,
       "community": 1,
-      "distancefan": 2,
       "stability": "stable",
       "fan-culture": "ultras",
       "ambition": "trophy-driven",
-      "narrative": "dynasty"
+      "narrative": "dynasty",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -324,13 +312,12 @@
       "ultras": 3,
       "community": 2,
       "underdog": 2,
-      "britain": 3,
       "academy": 1,
-      "distancefan": 2,
       "stability": "chaotic",
       "fan-culture": "ultras",
       "ambition": "romantic",
-      "narrative": "cursed"
+      "narrative": "cursed",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -358,13 +345,12 @@
     "tags": {
       "journey": 3,
       "community": 2,
-      "britain": 3,
       "underdog": 2,
-      "distancefan": 2,
       "stability": "rebuilding",
       "fan-culture": "ultras",
       "ambition": "romantic",
-      "narrative": "cursed"
+      "narrative": "cursed",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -396,9 +382,7 @@
       "trophyhunger": 3,
       "technical": 2,
       "bloodfeud": 3,
-      "iberia": 3,
       "aristocratic": 3,
-      "distancefan": 3,
       "stability": "stable",
       "fan-culture": "intellectual",
       "ambition": "trophy-driven",
@@ -434,9 +418,7 @@
       "academy": 3,
       "technical": 3,
       "bloodfeud": 3,
-      "iberia": 3,
       "journey": 1,
-      "distancefan": 3,
       "stability": "chaotic",
       "fan-culture": "intellectual",
       "ambition": "identity-driven",
@@ -472,9 +454,7 @@
       "underdog": 2,
       "ultras": 2,
       "bloodfeud": 2,
-      "iberia": 3,
       "journey": 2,
-      "distancefan": 2,
       "stability": "stable",
       "fan-culture": "ultras",
       "ambition": "trophy-driven",
@@ -508,13 +488,12 @@
       "community": 3,
       "rebellious": 3,
       "underdog": 2,
-      "iberia": 3,
       "journey": 2,
-      "distancefan": 1,
       "stability": "stable",
       "fan-culture": "rebel",
       "ambition": "identity-driven",
-      "narrative": "dynasty"
+      "narrative": "dynasty",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -543,13 +522,12 @@
       "academy": 2,
       "technical": 2,
       "community": 1,
-      "iberia": 3,
       "journey": 1,
-      "distancefan": 1,
       "stability": "stable",
       "fan-culture": "intellectual",
       "ambition": "identity-driven",
-      "narrative": "underdog"
+      "narrative": "underdog",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -577,9 +555,7 @@
       "technical": 2,
       "underdog": 1,
       "journey": 2,
-      "iberia": 3,
       "bloodfeud": 2,
-      "distancefan": 1,
       "stability": "stable",
       "fan-culture": "ultras",
       "ambition": "smart-overachiever",
@@ -610,12 +586,11 @@
     "tags": {
       "journey": 3,
       "underdog": 2,
-      "iberia": 3,
-      "distancefan": 1,
       "stability": "rebuilding",
       "fan-culture": "ultras",
       "ambition": "trophy-driven",
-      "narrative": "cursed"
+      "narrative": "cursed",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -643,9 +618,7 @@
       "ultras": 3,
       "underdog": 3,
       "journey": 3,
-      "iberia": 3,
       "bloodfeud": 2,
-      "distancefan": 1,
       "stability": "chaotic",
       "fan-culture": "ultras",
       "ambition": "romantic",
@@ -681,8 +654,6 @@
       "physical": 2,
       "setpieces": 1,
       "bloodfeud": 3,
-      "italy": 3,
-      "distancefan": 2,
       "stability": "stable",
       "fan-culture": "ultras",
       "ambition": "trophy-driven",
@@ -718,9 +689,7 @@
       "highpress": 1,
       "trophyhunger": 2,
       "bloodfeud": 2,
-      "italy": 3,
       "journey": 1,
-      "distancefan": 2,
       "stability": "stable",
       "fan-culture": "intellectual",
       "ambition": "trophy-driven",
@@ -755,9 +724,7 @@
       "setpieces": 2,
       "trophyhunger": 2,
       "bloodfeud": 2,
-      "italy": 3,
       "community": 1,
-      "distancefan": 2,
       "stability": "stable",
       "fan-culture": "ultras",
       "ambition": "trophy-driven",
@@ -792,9 +759,7 @@
       "underdog": 2,
       "journey": 3,
       "community": 2,
-      "italy": 3,
       "bloodfeud": 2,
-      "distancefan": 2,
       "stability": "chaotic",
       "fan-culture": "ultras",
       "ambition": "romantic",
@@ -826,9 +791,7 @@
       "ultras": 2,
       "journey": 3,
       "community": 1,
-      "italy": 3,
       "bloodfeud": 3,
-      "distancefan": 1,
       "stability": "chaotic",
       "fan-culture": "ultras",
       "ambition": "romantic",
@@ -859,9 +822,7 @@
     "tags": {
       "ultras": 2,
       "bloodfeud": 3,
-      "italy": 3,
       "journey": 2,
-      "distancefan": 1,
       "stability": "chaotic",
       "fan-culture": "ultras",
       "ambition": "trophy-driven",
@@ -892,13 +853,12 @@
     "tags": {
       "journey": 3,
       "underdog": 2,
-      "italy": 3,
       "community": 1,
-      "distancefan": 1,
       "stability": "stable",
       "fan-culture": "intellectual",
       "ambition": "romantic",
-      "narrative": "cursed"
+      "narrative": "cursed",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -926,12 +886,11 @@
       "underdog": 3,
       "journey": 2,
       "technical": 2,
-      "italy": 3,
-      "distancefan": 1,
       "stability": "stable",
       "fan-culture": "intellectual",
       "ambition": "smart-overachiever",
-      "narrative": "underdog"
+      "narrative": "underdog",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -962,9 +921,7 @@
       "possession": 2,
       "technical": 2,
       "bloodfeud": 2,
-      "germany": 3,
       "community": 1,
-      "distancefan": 2,
       "stability": "stable",
       "fan-culture": "intellectual",
       "ambition": "trophy-driven",
@@ -999,10 +956,8 @@
       "ultras": 3,
       "community": 2,
       "bloodfeud": 3,
-      "germany": 3,
       "journey": 2,
       "underdog": 1,
-      "distancefan": 2,
       "stability": "stable",
       "fan-culture": "ultras",
       "ambition": "identity-driven",
@@ -1033,13 +988,12 @@
       "highpress": 2,
       "technical": 2,
       "journey": 1,
-      "germany": 2,
       "rebellious": 1,
-      "distancefan": 1,
       "stability": "stable",
       "fan-culture": "family",
       "ambition": "trophy-driven",
-      "narrative": "project"
+      "narrative": "project",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -1067,12 +1021,11 @@
       "underdog": 2,
       "journey": 3,
       "technical": 2,
-      "germany": 3,
-      "distancefan": 1,
       "stability": "stable",
       "fan-culture": "family",
       "ambition": "smart-overachiever",
-      "narrative": "project"
+      "narrative": "project",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -1102,8 +1055,6 @@
       "underdog": 3,
       "journey": 3,
       "bloodfeud": 3,
-      "germany": 3,
-      "distancefan": 1,
       "stability": "chaotic",
       "fan-culture": "ultras",
       "ambition": "romantic",
@@ -1134,13 +1085,12 @@
     "tags": {
       "journey": 3,
       "community": 2,
-      "germany": 3,
       "technical": 1,
-      "distancefan": 1,
       "stability": "stable",
       "fan-culture": "ultras",
       "ambition": "romantic",
-      "narrative": "dynasty"
+      "narrative": "dynasty",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -1168,12 +1118,11 @@
       "ultras": 3,
       "underdog": 2,
       "journey": 2,
-      "germany": 3,
-      "distancefan": 1,
       "stability": "chaotic",
       "fan-culture": "ultras",
       "ambition": "romantic",
-      "narrative": "underdog"
+      "narrative": "underdog",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -1202,12 +1151,11 @@
       "underdog": 3,
       "journey": 3,
       "rebellious": 2,
-      "germany": 3,
-      "distancefan": 1,
       "stability": "stable",
       "fan-culture": "rebel",
       "ambition": "identity-driven",
-      "narrative": "underdog"
+      "narrative": "underdog",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -1236,8 +1184,6 @@
       "trophyhunger": 3,
       "physical": 1,
       "bloodfeud": 3,
-      "france": 3,
-      "distancefan": 2,
       "stability": "win-now",
       "fan-culture": "ultras",
       "ambition": "trophy-driven",
@@ -1270,9 +1216,7 @@
       "underdog": 2,
       "journey": 2,
       "bloodfeud": 3,
-      "france": 3,
       "community": 1,
-      "distancefan": 1,
       "stability": "chaotic",
       "fan-culture": "rebel",
       "ambition": "trophy-driven",
@@ -1303,9 +1247,7 @@
       "technical": 2,
       "journey": 2,
       "community": 1,
-      "france": 3,
       "bloodfeud": 2,
-      "distancefan": 1,
       "stability": "rebuilding",
       "fan-culture": "intellectual",
       "ambition": "trophy-driven",
@@ -1336,13 +1278,12 @@
     "tags": {
       "academy": 3,
       "technical": 2,
-      "france": 3,
       "journey": 1,
-      "distancefan": 1,
       "stability": "stable",
       "fan-culture": "family",
       "ambition": "smart-overachiever",
-      "narrative": "project"
+      "narrative": "project",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -1369,9 +1310,7 @@
       "underdog": 3,
       "journey": 2,
       "community": 1,
-      "france": 3,
       "bloodfeud": 2,
-      "distancefan": 1,
       "stability": "stable",
       "fan-culture": "ultras",
       "ambition": "smart-overachiever",
@@ -1403,10 +1342,8 @@
       "journey": 3,
       "ultras": 2,
       "underdog": 2,
-      "france": 3,
       "bloodfeud": 2,
       "community": 1,
-      "distancefan": 1,
       "stability": "rebuilding",
       "fan-culture": "ultras",
       "ambition": "romantic",
@@ -1438,10 +1375,8 @@
     "tags": {
       "trophyhunger": 3,
       "galactico": 2,
-      "usa": 3,
       "accessible": 3,
       "bloodfeud": 2,
-      "distancefan": 0,
       "stability": "stable",
       "fan-culture": "family",
       "ambition": "trophy-driven",
@@ -1472,10 +1407,8 @@
       "ultras": 3,
       "trophyhunger": 2,
       "community": 2,
-      "usa": 3,
       "accessible": 3,
       "bloodfeud": 2,
-      "distancefan": 0,
       "stability": "stable",
       "fan-culture": "ultras",
       "ambition": "trophy-driven",
@@ -1506,13 +1439,12 @@
       "galactico": 3,
       "diaspora": 2,
       "trophyhunger": 1,
-      "usa": 3,
       "accessible": 3,
-      "distancefan": 0,
       "stability": "win-now",
       "fan-culture": "family",
       "ambition": "trophy-driven",
-      "narrative": "project"
+      "narrative": "project",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -1540,10 +1472,8 @@
       "ultras": 3,
       "community": 2,
       "journey": 1,
-      "usa": 3,
       "accessible": 3,
       "bloodfeud": 3,
-      "distancefan": 0,
       "stability": "stable",
       "fan-culture": "ultras",
       "ambition": "trophy-driven",
@@ -1574,13 +1504,12 @@
       "ultras": 2,
       "trophyhunger": 2,
       "diaspora": 2,
-      "usa": 3,
       "accessible": 3,
-      "distancefan": 0,
       "stability": "stable",
       "fan-culture": "ultras",
       "ambition": "trophy-driven",
-      "narrative": "project"
+      "narrative": "project",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -1607,10 +1536,8 @@
       "possession": 2,
       "technical": 1,
       "galactico": 1,
-      "usa": 3,
       "accessible": 3,
       "bloodfeud": 2,
-      "distancefan": 0,
       "stability": "stable",
       "fan-culture": "family",
       "ambition": "smart-overachiever",
@@ -1642,10 +1569,8 @@
       "highpress": 3,
       "journey": 2,
       "underdog": 1,
-      "usa": 3,
       "accessible": 3,
       "bloodfeud": 2,
-      "distancefan": 0,
       "stability": "stable",
       "fan-culture": "family",
       "ambition": "smart-overachiever",
@@ -1676,10 +1601,8 @@
       "ultras": 3,
       "community": 2,
       "journey": 1,
-      "usa": 3,
       "accessible": 3,
       "bloodfeud": 3,
-      "distancefan": 0,
       "stability": "stable",
       "fan-culture": "ultras",
       "ambition": "romantic",
@@ -1709,13 +1632,12 @@
     "tags": {
       "journey": 1,
       "community": 1,
-      "usa": 3,
       "accessible": 3,
-      "distancefan": 0,
       "stability": "stable",
       "fan-culture": "family",
       "ambition": "smart-overachiever",
-      "narrative": "underdog"
+      "narrative": "underdog",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -1742,10 +1664,8 @@
       "ultras": 2,
       "journey": 2,
       "community": 1,
-      "usa": 3,
       "accessible": 3,
       "bloodfeud": 2,
-      "distancefan": 0,
       "stability": "stable",
       "fan-culture": "ultras",
       "ambition": "smart-overachiever",
@@ -1778,10 +1698,8 @@
       "galactico": 2,
       "trophyhunger": 3,
       "bloodfeud": 3,
-      "mexico": 3,
       "diaspora": 2,
       "accessible": 1,
-      "distancefan": 1,
       "stability": "stable",
       "fan-culture": "ultras",
       "ambition": "trophy-driven",
@@ -1813,9 +1731,7 @@
       "community": 2,
       "rebellious": 2,
       "bloodfeud": 3,
-      "mexico": 3,
       "diaspora": 2,
-      "distancefan": 1,
       "stability": "stable",
       "fan-culture": "rebel",
       "ambition": "identity-driven",
@@ -1845,10 +1761,8 @@
     "tags": {
       "journey": 3,
       "underdog": 2,
-      "mexico": 3,
       "bloodfeud": 2,
       "diaspora": 1,
-      "distancefan": 1,
       "stability": "chaotic",
       "fan-culture": "ultras",
       "ambition": "trophy-driven",
@@ -1879,13 +1793,12 @@
       "academy": 3,
       "community": 2,
       "journey": 2,
-      "mexico": 3,
       "bloodfeud": 1,
-      "distancefan": 1,
       "stability": "stable",
       "fan-culture": "intellectual",
       "ambition": "identity-driven",
-      "narrative": "dynasty"
+      "narrative": "dynasty",
+      "friendlyrivalry": 2
     }
   },
   {
@@ -1912,9 +1825,7 @@
       "trophyhunger": 2,
       "galactico": 1,
       "bloodfeud": 3,
-      "mexico": 3,
       "diaspora": 1,
-      "distancefan": 1,
       "stability": "win-now",
       "fan-culture": "ultras",
       "ambition": "trophy-driven",
@@ -1944,9 +1855,7 @@
     "tags": {
       "trophyhunger": 2,
       "bloodfeud": 3,
-      "mexico": 3,
       "diaspora": 1,
-      "distancefan": 1,
       "stability": "chaotic",
       "fan-culture": "ultras",
       "ambition": "trophy-driven",
@@ -1976,12 +1885,11 @@
     "tags": {
       "underdog": 1,
       "journey": 2,
-      "mexico": 3,
-      "distancefan": 1,
       "stability": "stable",
       "fan-culture": "ultras",
       "ambition": "romantic",
-      "narrative": "dynasty"
+      "narrative": "dynasty",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -2007,12 +1915,11 @@
     "tags": {
       "underdog": 1,
       "journey": 2,
-      "mexico": 3,
-      "distancefan": 1,
       "stability": "stable",
       "fan-culture": "family",
       "ambition": "trophy-driven",
-      "narrative": "dynasty"
+      "narrative": "dynasty",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -2044,14 +1951,13 @@
       "technical": 3,
       "underdog": 2,
       "academy": 1,
-      "britain": 3,
       "journey": 3,
-      "distancefan": 2,
       "accessible": 1,
       "stability": "stable",
       "fan-culture": "intellectual",
       "ambition": "smart-overachiever",
-      "narrative": "underdog"
+      "narrative": "underdog",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -2083,14 +1989,13 @@
       "technical": 2,
       "underdog": 3,
       "counterattack": 2,
-      "britain": 3,
       "journey": 3,
-      "distancefan": 1,
       "accessible": 1,
       "stability": "stable",
       "fan-culture": "intellectual",
       "ambition": "smart-overachiever",
-      "narrative": "underdog"
+      "narrative": "underdog",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -2120,14 +2025,13 @@
     "tags": {
       "community": 2,
       "underdog": 2,
-      "britain": 3,
       "journey": 2,
       "accessible": 2,
-      "distancefan": 1,
       "stability": "stable",
       "fan-culture": "family",
       "ambition": "romantic",
-      "narrative": "cursed"
+      "narrative": "cursed",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -2159,10 +2063,8 @@
       "counterattack": 2,
       "highpress": 2,
       "underdog": 2,
-      "britain": 3,
       "bloodfeud": 2,
       "journey": 1,
-      "distancefan": 1,
       "stability": "chaotic",
       "fan-culture": "ultras",
       "ambition": "romantic",
@@ -2197,10 +2099,8 @@
       "technical": 2,
       "counterattack": 2,
       "underdog": 1,
-      "britain": 3,
       "bloodfeud": 2,
       "journey": 2,
-      "distancefan": 1,
       "community": 1,
       "stability": "stable",
       "fan-culture": "family",
@@ -2236,9 +2136,7 @@
       "underdog": 3,
       "journey": 3,
       "community": 2,
-      "britain": 3,
       "bloodfeud": 2,
-      "distancefan": 2,
       "trophyhunger": 1,
       "stability": "chaotic",
       "fan-culture": "ultras",
@@ -2274,14 +2172,13 @@
       "highpress": 3,
       "underdog": 3,
       "counterattack": 2,
-      "britain": 3,
       "journey": 3,
       "accessible": 1,
-      "distancefan": 1,
       "stability": "stable",
       "fan-culture": "family",
       "ambition": "smart-overachiever",
-      "narrative": "underdog"
+      "narrative": "underdog",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -2312,14 +2209,13 @@
       "academy": 3,
       "possession": 2,
       "underdog": 2,
-      "britain": 3,
       "journey": 2,
-      "distancefan": 1,
       "community": 1,
       "stability": "rebuilding",
       "fan-culture": "intellectual",
       "ambition": "smart-overachiever",
-      "narrative": "project"
+      "narrative": "project",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -2350,15 +2246,14 @@
       "underdog": 3,
       "counterattack": 3,
       "trophyhunger": 2,
-      "britain": 3,
       "journey": 3,
       "bloodfeud": 1,
-      "distancefan": 3,
       "community": 2,
       "stability": "stable",
       "fan-culture": "family",
       "ambition": "smart-overachiever",
-      "narrative": "underdog"
+      "narrative": "underdog",
+      "friendlyrivalry": 2
     }
   },
   {
@@ -2389,10 +2284,8 @@
       "possession": 2,
       "underdog": 3,
       "community": 2,
-      "britain": 3,
       "journey": 3,
       "bloodfeud": 2,
-      "distancefan": 1,
       "academy": 1,
       "stability": "rebuilding",
       "fan-culture": "intellectual",
@@ -2428,14 +2321,13 @@
       "underdog": 3,
       "technical": 2,
       "possession": 2,
-      "iberia": 3,
       "journey": 2,
-      "distancefan": 2,
       "community": 2,
       "stability": "stable",
       "fan-culture": "family",
       "ambition": "smart-overachiever",
-      "narrative": "underdog"
+      "narrative": "underdog",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -2467,14 +2359,13 @@
       "technical": 2,
       "underdog": 3,
       "counterattack": 2,
-      "iberia": 3,
       "journey": 3,
-      "distancefan": 2,
       "accessible": 1,
       "stability": "stable",
       "fan-culture": "intellectual",
       "ambition": "smart-overachiever",
-      "narrative": "project"
+      "narrative": "project",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -2505,14 +2396,13 @@
       "underdog": 2,
       "community": 3,
       "setpieces": 1,
-      "iberia": 3,
       "journey": 2,
-      "distancefan": 1,
       "accessible": 1,
       "stability": "stable",
       "fan-culture": "ultras",
       "ambition": "romantic",
-      "narrative": "underdog"
+      "narrative": "underdog",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -2543,14 +2433,13 @@
       "physical": 3,
       "setpieces": 3,
       "underdog": 3,
-      "iberia": 2,
       "journey": 2,
-      "distancefan": 1,
       "community": 1,
       "stability": "stable",
       "fan-culture": "ultras",
       "ambition": "smart-overachiever",
-      "narrative": "underdog"
+      "narrative": "underdog",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -2582,13 +2471,12 @@
       "underdog": 3,
       "physical": 2,
       "setpieces": 1,
-      "iberia": 3,
-      "distancefan": 1,
       "accessible": 1,
       "stability": "stable",
       "fan-culture": "ultras",
       "ambition": "identity-driven",
-      "narrative": "underdog"
+      "narrative": "underdog",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -2619,10 +2507,8 @@
       "underdog": 2,
       "community": 2,
       "technical": 2,
-      "iberia": 3,
       "journey": 2,
       "bloodfeud": 2,
-      "distancefan": 1,
       "stability": "chaotic",
       "fan-culture": "ultras",
       "ambition": "romantic",
@@ -2658,14 +2544,13 @@
       "rebellious": 3,
       "community": 3,
       "underdog": 3,
-      "iberia": 3,
       "journey": 2,
-      "distancefan": 1,
       "accessible": 1,
       "stability": "chaotic",
       "fan-culture": "rebel",
       "ambition": "identity-driven",
-      "narrative": "underdog"
+      "narrative": "underdog",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -2696,14 +2581,13 @@
       "possession": 2,
       "technical": 2,
       "community": 2,
-      "iberia": 3,
       "journey": 2,
-      "distancefan": 2,
       "accessible": 1,
       "stability": "rebuilding",
       "fan-culture": "intellectual",
       "ambition": "identity-driven",
-      "narrative": "underdog"
+      "narrative": "underdog",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -2734,13 +2618,12 @@
       "underdog": 3,
       "community": 2,
       "journey": 3,
-      "iberia": 3,
-      "distancefan": 1,
       "accessible": 1,
       "stability": "stable",
       "fan-culture": "family",
       "ambition": "smart-overachiever",
-      "narrative": "underdog"
+      "narrative": "underdog",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -2771,14 +2654,13 @@
       "underdog": 3,
       "community": 2,
       "physical": 2,
-      "iberia": 2,
       "journey": 3,
-      "distancefan": 1,
       "accessible": 1,
       "stability": "stable",
       "fan-culture": "family",
       "ambition": "smart-overachiever",
-      "narrative": "underdog"
+      "narrative": "underdog",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -2808,10 +2690,8 @@
     "tags": {
       "underdog": 3,
       "community": 2,
-      "iberia": 3,
       "journey": 2,
       "bloodfeud": 2,
-      "distancefan": 1,
       "accessible": 1,
       "stability": "stable",
       "fan-culture": "family",
@@ -2847,13 +2727,12 @@
       "underdog": 3,
       "journey": 2,
       "community": 1,
-      "iberia": 2,
-      "distancefan": 2,
       "accessible": 1,
       "stability": "rebuilding",
       "fan-culture": "family",
       "ambition": "smart-overachiever",
-      "narrative": "underdog"
+      "narrative": "underdog",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -2887,13 +2766,12 @@
       "underdog": 2,
       "community": 3,
       "aristocratic": 1,
-      "italy": 3,
       "journey": 2,
-      "distancefan": 1,
       "stability": "stable",
       "fan-culture": "intellectual",
       "ambition": "smart-overachiever",
-      "narrative": "dynasty"
+      "narrative": "dynasty",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -2927,9 +2805,7 @@
       "ultras": 2,
       "community": 3,
       "bloodfeud": 3,
-      "italy": 3,
       "journey": 2,
-      "distancefan": 1,
       "stability": "chaotic",
       "fan-culture": "ultras",
       "ambition": "romantic",
@@ -2966,9 +2842,7 @@
       "underdog": 3,
       "journey": 3,
       "rivalryagnostic": 2,
-      "italy": 3,
       "accessible": 2,
-      "distancefan": 1,
       "stability": "stable",
       "fan-culture": "family",
       "ambition": "smart-overachiever",
@@ -3005,8 +2879,6 @@
       "community": 2,
       "bloodfeud": 2,
       "journey": 2,
-      "italy": 3,
-      "distancefan": 1,
       "patience": 2,
       "stability": "stable",
       "fan-culture": "ultras",
@@ -3043,9 +2915,7 @@
       "community": 1,
       "journey": 3,
       "rivalryagnostic": 2,
-      "italy": 3,
       "accessible": 2,
-      "distancefan": 1,
       "stability": "rebuilding",
       "fan-culture": "family",
       "ambition": "romantic",
@@ -3083,8 +2953,6 @@
       "setpieces": 1,
       "counterattack": 2,
       "bloodfeud": 2,
-      "italy": 3,
-      "distancefan": 1,
       "rebellious": 1,
       "stability": "chaotic",
       "fan-culture": "ultras",
@@ -3121,8 +2989,6 @@
       "community": 3,
       "physical": 1,
       "counterattack": 2,
-      "italy": 3,
-      "distancefan": 1,
       "rivalryagnostic": 2,
       "journey": 2,
       "stability": "stable",
@@ -3160,10 +3026,8 @@
       "journey": 3,
       "technical": 2,
       "possession": 2,
-      "rivalryagnostic": 1,
-      "italy": 3,
+      "rivalryagnostic": 2,
       "accessible": 2,
-      "distancefan": 1,
       "stability": "rebuilding",
       "fan-culture": "family",
       "ambition": "trophy-driven",
@@ -3200,9 +3064,7 @@
       "underdog": 3,
       "patience": 2,
       "rivalryagnostic": 2,
-      "italy": 3,
       "journey": 2,
-      "distancefan": 1,
       "stability": "stable",
       "fan-culture": "intellectual",
       "ambition": "smart-overachiever",
@@ -3240,13 +3102,12 @@
       "journey": 3,
       "aristocratic": 1,
       "patience": 2,
-      "italy": 3,
       "bloodfeud": 1,
-      "distancefan": 1,
       "stability": "rebuilding",
       "fan-culture": "family",
       "ambition": "romantic",
-      "narrative": "cursed"
+      "narrative": "cursed",
+      "friendlyrivalry": 2
     }
   },
   {
@@ -3278,14 +3139,13 @@
       "community": 3,
       "technical": 1,
       "chaos": 1,
-      "italy": 3,
-      "distancefan": 1,
       "journey": 2,
       "bloodfeud": 1,
       "stability": "stable",
       "fan-culture": "ultras",
       "ambition": "romantic",
-      "narrative": "underdog"
+      "narrative": "underdog",
+      "friendlyrivalry": 2
     }
   },
   {
@@ -3317,10 +3177,8 @@
       "possession": 1,
       "patience": 2,
       "journey": 3,
-      "rivalryagnostic": 1,
-      "italy": 3,
+      "rivalryagnostic": 2,
       "accessible": 2,
-      "distancefan": 1,
       "stability": "rebuilding",
       "fan-culture": "intellectual",
       "ambition": "romantic",
@@ -3358,9 +3216,7 @@
       "academy": 2,
       "underdog": 2,
       "bloodfeud": 2,
-      "germany": 3,
       "journey": 2,
-      "distancefan": 1,
       "stability": "chaotic",
       "fan-culture": "ultras",
       "ambition": "romantic",
@@ -3398,13 +3254,12 @@
       "community": 3,
       "patience": 3,
       "technical": 2,
-      "germany": 3,
       "journey": 2,
-      "distancefan": 1,
       "stability": "stable",
       "fan-culture": "family",
       "ambition": "smart-overachiever",
-      "narrative": "underdog"
+      "narrative": "underdog",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -3436,9 +3291,7 @@
       "physical": 2,
       "counterattack": 2,
       "aristocratic": 1,
-      "rivalryagnostic": 1,
-      "germany": 2,
-      "distancefan": 1,
+      "rivalryagnostic": 2,
       "underdog": 1,
       "stability": "stable",
       "fan-culture": "family",
@@ -3477,13 +3330,12 @@
       "academy": 2,
       "underdog": 2,
       "community": 2,
-      "germany": 3,
       "journey": 2,
-      "distancefan": 1,
       "stability": "stable",
       "fan-culture": "intellectual",
       "ambition": "smart-overachiever",
-      "narrative": "underdog"
+      "narrative": "underdog",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -3515,9 +3367,7 @@
       "physical": 2,
       "patience": 2,
       "counterattack": 2,
-      "germany": 2,
-      "distancefan": 1,
-      "rivalryagnostic": 1,
+      "rivalryagnostic": 2,
       "stability": "stable",
       "fan-culture": "family",
       "ambition": "smart-overachiever",
@@ -3555,13 +3405,12 @@
       "counterattack": 2,
       "community": 2,
       "underdog": 1,
-      "germany": 3,
       "journey": 2,
-      "distancefan": 2,
       "stability": "chaotic",
       "fan-culture": "ultras",
       "ambition": "romantic",
-      "narrative": "dynasty"
+      "narrative": "dynasty",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -3593,9 +3442,7 @@
       "highpress": 2,
       "galactico": 1,
       "underdog": 1,
-      "rivalryagnostic": 1,
-      "germany": 2,
-      "distancefan": 1,
+      "rivalryagnostic": 2,
       "rebellious": 1,
       "stability": "stable",
       "fan-culture": "family",
@@ -3633,8 +3480,6 @@
       "community": 2,
       "patience": 2,
       "bloodfeud": 2,
-      "germany": 3,
-      "distancefan": 1,
       "chaos": 1,
       "stability": "chaotic",
       "fan-culture": "ultras",
@@ -3672,13 +3517,12 @@
       "patience": 3,
       "physical": 2,
       "setpieces": 2,
-      "germany": 3,
       "journey": 3,
-      "distancefan": 1,
       "stability": "stable",
       "fan-culture": "family",
       "ambition": "smart-overachiever",
-      "narrative": "underdog"
+      "narrative": "underdog",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -3710,9 +3554,7 @@
       "community": 2,
       "journey": 3,
       "patience": 2,
-      "germany": 3,
-      "distancefan": 1,
-      "rivalryagnostic": 1,
+      "rivalryagnostic": 2,
       "stability": "rebuilding",
       "fan-culture": "family",
       "ambition": "smart-overachiever",
@@ -3744,14 +3586,13 @@
     "tags": {
       "trophyhunger": 2,
       "journey": 2,
-      "france": 3,
       "accessible": 2,
-      "distancefan": 1,
       "aristocratic": 1,
       "stability": "stable",
       "fan-culture": "family",
       "ambition": "trophy-driven",
-      "narrative": "project"
+      "narrative": "project",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -3780,9 +3621,7 @@
       "academy": 3,
       "community": 2,
       "technical": 2,
-      "france": 3,
       "bloodfeud": 2,
-      "distancefan": 1,
       "stability": "stable",
       "fan-culture": "ultras",
       "ambition": "smart-overachiever",
@@ -3815,13 +3654,12 @@
       "community": 3,
       "journey": 3,
       "underdog": 2,
-      "france": 3,
       "rebellious": 1,
-      "distancefan": 1,
       "stability": "rebuilding",
       "fan-culture": "ultras",
       "ambition": "identity-driven",
-      "narrative": "cursed"
+      "narrative": "cursed",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -3851,10 +3689,8 @@
       "academy": 3,
       "possession": 2,
       "technical": 2,
-      "france": 3,
       "journey": 2,
       "bloodfeud": 2,
-      "distancefan": 1,
       "stability": "chaotic",
       "fan-culture": "ultras",
       "ambition": "identity-driven",
@@ -3888,9 +3724,7 @@
       "community": 3,
       "ultras": 3,
       "underdog": 2,
-      "france": 3,
       "bloodfeud": 2,
-      "distancefan": 1,
       "stability": "stable",
       "fan-culture": "ultras",
       "ambition": "romantic",
@@ -3922,13 +3756,12 @@
       "underdog": 3,
       "journey": 3,
       "community": 2,
-      "france": 3,
-      "distancefan": 1,
       "chaos": 1,
       "stability": "stable",
       "fan-culture": "ultras",
       "ambition": "smart-overachiever",
-      "narrative": "underdog"
+      "narrative": "underdog",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -3954,13 +3787,12 @@
     "tags": {
       "technical": 2,
       "underdog": 1,
-      "france": 3,
       "journey": 2,
-      "distancefan": 1,
       "stability": "stable",
       "fan-culture": "family",
       "ambition": "smart-overachiever",
-      "narrative": "project"
+      "narrative": "project",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -3989,12 +3821,11 @@
       "underdog": 3,
       "journey": 2,
       "academy": 2,
-      "france": 3,
-      "distancefan": 1,
       "stability": "stable",
       "fan-culture": "family",
       "ambition": "smart-overachiever",
-      "narrative": "underdog"
+      "narrative": "underdog",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -4022,13 +3853,12 @@
       "academy": 3,
       "journey": 2,
       "community": 2,
-      "france": 3,
       "underdog": 2,
-      "distancefan": 1,
       "stability": "stable",
       "fan-culture": "intellectual",
       "ambition": "smart-overachiever",
-      "narrative": "underdog"
+      "narrative": "underdog",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -4058,13 +3888,12 @@
       "academy": 3,
       "underdog": 3,
       "journey": 3,
-      "france": 3,
       "community": 2,
-      "distancefan": 1,
       "stability": "stable",
       "fan-culture": "family",
       "ambition": "romantic",
-      "narrative": "underdog"
+      "narrative": "underdog",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -4092,12 +3921,11 @@
       "underdog": 2,
       "community": 2,
       "journey": 2,
-      "france": 3,
-      "distancefan": 1,
       "stability": "stable",
       "fan-culture": "family",
       "ambition": "romantic",
-      "narrative": "underdog"
+      "narrative": "underdog",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -4126,13 +3954,12 @@
       "aristocratic": 2,
       "journey": 3,
       "underdog": 2,
-      "france": 3,
       "community": 1,
-      "distancefan": 1,
       "stability": "rebuilding",
       "fan-culture": "intellectual",
       "ambition": "romantic",
-      "narrative": "dynasty"
+      "narrative": "dynasty",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -4161,10 +3988,8 @@
       "possession": 3,
       "technical": 3,
       "community": 2,
-      "usa": 3,
       "bloodfeud": 2,
       "accessible": 3,
-      "distancefan": 1,
       "stability": "stable",
       "fan-culture": "ultras",
       "ambition": "smart-overachiever",
@@ -4197,13 +4022,12 @@
       "academy": 3,
       "community": 2,
       "underdog": 1,
-      "usa": 3,
       "accessible": 3,
-      "distancefan": 1,
       "stability": "stable",
       "fan-culture": "ultras",
       "ambition": "smart-overachiever",
-      "narrative": "underdog"
+      "narrative": "underdog",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -4230,14 +4054,13 @@
     "tags": {
       "community": 2,
       "journey": 2,
-      "usa": 3,
       "accessible": 3,
-      "distancefan": 1,
       "bloodfeud": 1,
       "stability": "stable",
       "fan-culture": "ultras",
       "ambition": "romantic",
-      "narrative": "project"
+      "narrative": "project",
+      "friendlyrivalry": 2
     }
   },
   {
@@ -4266,9 +4089,7 @@
       "academy": 3,
       "community": 1,
       "underdog": 1,
-      "usa": 3,
       "accessible": 2,
-      "distancefan": 1,
       "bloodfeud": 2,
       "stability": "stable",
       "fan-culture": "family",
@@ -4301,9 +4122,7 @@
     "tags": {
       "trophyhunger": 2,
       "journey": 2,
-      "usa": 3,
       "accessible": 2,
-      "distancefan": 1,
       "bloodfeud": 2,
       "stability": "rebuilding",
       "fan-culture": "family",
@@ -4337,9 +4156,7 @@
       "underdog": 3,
       "journey": 2,
       "community": 2,
-      "usa": 3,
       "accessible": 2,
-      "distancefan": 1,
       "bloodfeud": 2,
       "stability": "rebuilding",
       "fan-culture": "family",
@@ -4373,9 +4190,7 @@
       "underdog": 2,
       "community": 1,
       "journey": 2,
-      "usa": 3,
       "accessible": 2,
-      "distancefan": 1,
       "bloodfeud": 2,
       "stability": "stable",
       "fan-culture": "family",
@@ -4409,9 +4224,7 @@
       "underdog": 3,
       "community": 2,
       "journey": 2,
-      "usa": 3,
       "accessible": 2,
-      "distancefan": 1,
       "bloodfeud": 2,
       "stability": "stable",
       "fan-culture": "family",
@@ -4444,13 +4257,12 @@
     "tags": {
       "community": 2,
       "journey": 2,
-      "usa": 3,
       "accessible": 2,
-      "distancefan": 1,
       "stability": "stable",
       "fan-culture": "ultras",
       "ambition": "romantic",
-      "narrative": "project"
+      "narrative": "project",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -4477,14 +4289,13 @@
     "tags": {
       "community": 2,
       "journey": 1,
-      "usa": 3,
       "accessible": 2,
-      "distancefan": 1,
       "bloodfeud": 1,
       "stability": "win-now",
       "fan-culture": "family",
       "ambition": "trophy-driven",
-      "narrative": "project"
+      "narrative": "project",
+      "friendlyrivalry": 2
     }
   },
   {
@@ -4512,13 +4323,12 @@
     "tags": {
       "underdog": 2,
       "journey": 2,
-      "usa": 3,
       "accessible": 2,
-      "distancefan": 1,
       "stability": "stable",
       "fan-culture": "ultras",
       "ambition": "romantic",
-      "narrative": "project"
+      "narrative": "project",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -4546,9 +4356,7 @@
     "tags": {
       "community": 2,
       "journey": 2,
-      "usa": 3,
       "accessible": 3,
-      "distancefan": 1,
       "bloodfeud": 2,
       "stability": "stable",
       "fan-culture": "ultras",
@@ -4582,9 +4390,7 @@
     "tags": {
       "trophyhunger": 2,
       "journey": 3,
-      "usa": 3,
       "accessible": 3,
-      "distancefan": 1,
       "bloodfeud": 2,
       "aristocratic": 1,
       "stability": "stable",
@@ -4618,14 +4424,13 @@
     "tags": {
       "underdog": 2,
       "journey": 2,
-      "usa": 3,
       "accessible": 2,
-      "distancefan": 1,
       "rebellious": 1,
       "stability": "rebuilding",
       "fan-culture": "family",
       "ambition": "romantic",
-      "narrative": "dynasty"
+      "narrative": "dynasty",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -4653,14 +4458,13 @@
     "tags": {
       "underdog": 2,
       "journey": 2,
-      "usa": 3,
       "accessible": 2,
-      "distancefan": 1,
       "bloodfeud": 1,
       "stability": "stable",
       "fan-culture": "family",
       "ambition": "smart-overachiever",
-      "narrative": "underdog"
+      "narrative": "underdog",
+      "friendlyrivalry": 2
     }
   },
   {
@@ -4689,9 +4493,7 @@
       "trophyhunger": 2,
       "community": 2,
       "ultras": 2,
-      "usa": 3,
       "accessible": 2,
-      "distancefan": 1,
       "bloodfeud": 2,
       "stability": "chaotic",
       "fan-culture": "ultras",
@@ -4724,9 +4526,7 @@
     "tags": {
       "community": 2,
       "journey": 2,
-      "usa": 3,
       "accessible": 2,
-      "distancefan": 1,
       "bloodfeud": 2,
       "stability": "stable",
       "fan-culture": "ultras",
@@ -4758,14 +4558,13 @@
     "tags": {
       "community": 3,
       "journey": 3,
-      "usa": 3,
       "accessible": 3,
-      "distancefan": 1,
       "bloodfeud": 1,
       "stability": "stable",
       "fan-culture": "ultras",
       "ambition": "romantic",
-      "narrative": "project"
+      "narrative": "project",
+      "friendlyrivalry": 2
     }
   },
   {
@@ -4793,13 +4592,12 @@
       "journey": 3,
       "community": 2,
       "diaspora": 2,
-      "usa": 3,
       "accessible": 2,
-      "distancefan": 1,
       "stability": "stable",
       "fan-culture": "family",
       "ambition": "romantic",
-      "narrative": "project"
+      "narrative": "project",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -4827,9 +4625,7 @@
     "tags": {
       "community": 2,
       "journey": 2,
-      "usa": 3,
       "accessible": 2,
-      "distancefan": 1,
       "bloodfeud": 2,
       "rebellious": 1,
       "stability": "rebuilding",
@@ -4864,13 +4660,12 @@
       "aristocratic": 1,
       "academy": 3,
       "journey": 2,
-      "mexico": 3,
-      "distancefan": 1,
       "bloodfeud": 1,
       "stability": "stable",
       "fan-culture": "family",
       "ambition": "smart-overachiever",
-      "narrative": "project"
+      "narrative": "project",
+      "friendlyrivalry": 2
     }
   },
   {
@@ -4898,8 +4693,6 @@
     "tags": {
       "underdog": 2,
       "journey": 2,
-      "mexico": 3,
-      "distancefan": 1,
       "bloodfeud": 2,
       "stability": "rebuilding",
       "fan-culture": "family",
@@ -4932,12 +4725,11 @@
       "underdog": 3,
       "community": 2,
       "journey": 2,
-      "mexico": 3,
-      "distancefan": 1,
       "stability": "stable",
       "fan-culture": "family",
       "ambition": "romantic",
-      "narrative": "underdog"
+      "narrative": "underdog",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -4966,10 +4758,8 @@
       "academy": 2,
       "underdog": 3,
       "journey": 3,
-      "mexico": 3,
       "bloodfeud": 3,
       "community": 2,
-      "distancefan": 1,
       "stability": "chaotic",
       "fan-culture": "ultras",
       "ambition": "identity-driven",
@@ -5001,12 +4791,11 @@
       "underdog": 3,
       "journey": 2,
       "community": 2,
-      "mexico": 3,
-      "distancefan": 1,
       "stability": "rebuilding",
       "fan-culture": "family",
       "ambition": "romantic",
-      "narrative": "project"
+      "narrative": "project",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -5035,12 +4824,11 @@
       "underdog": 2,
       "journey": 2,
       "community": 2,
-      "mexico": 3,
-      "distancefan": 1,
       "stability": "stable",
       "fan-culture": "ultras",
       "ambition": "romantic",
-      "narrative": "dynasty"
+      "narrative": "dynasty",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -5068,13 +4856,12 @@
       "underdog": 3,
       "diaspora": 2,
       "journey": 2,
-      "mexico": 3,
       "accessible": 1,
-      "distancefan": 1,
       "stability": "rebuilding",
       "fan-culture": "family",
       "ambition": "romantic",
-      "narrative": "project"
+      "narrative": "project",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -5101,13 +4888,12 @@
     "tags": {
       "underdog": 2,
       "journey": 1,
-      "mexico": 3,
       "accessible": 1,
-      "distancefan": 1,
       "stability": "stable",
       "fan-culture": "family",
       "ambition": "romantic",
-      "narrative": "project"
+      "narrative": "project",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -5136,13 +4922,12 @@
       "underdog": 2,
       "journey": 3,
       "diaspora": 2,
-      "mexico": 3,
       "accessible": 1,
-      "distancefan": 1,
       "stability": "chaotic",
       "fan-culture": "ultras",
       "ambition": "trophy-driven",
-      "narrative": "project"
+      "narrative": "project",
+      "rivalryagnostic": 2
     }
   },
   {
@@ -5171,13 +4956,12 @@
       "aristocratic": 1,
       "underdog": 2,
       "journey": 3,
-      "mexico": 3,
       "community": 1,
-      "distancefan": 1,
       "stability": "stable",
       "fan-culture": "family",
       "ambition": "romantic",
-      "narrative": "dynasty"
+      "narrative": "dynasty",
+      "rivalryagnostic": 2
     }
   }
 ]

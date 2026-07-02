@@ -179,7 +179,51 @@ function logResult(answers, results){
 
 /* ──── Matching Algorithm (v2) ──── */
 
+// F5 — IDF (inverse document frequency) rarity-weighted scoring.
+// Precompute document frequencies and IDF weights from the club corpus.
+// A tag on all 144 clubs gets idf=0 → stops influencing scoring.
+// idf = ln(N / df) where N = total clubs, df = clubs with that tag (or tag:value).
+let IDF_CACHE = null;
+
+function buildIdfTables(){
+  if(IDF_CACHE) return IDF_CACHE;
+  const N = CLUBS.length;
+  const numeric = {};   // tag → idf
+  const string = {};    // tag → { value → idf }
+
+  // Numeric df
+  const numDf = {};
+  // String df
+  const strDf = {};
+
+  CLUBS.forEach(club => {
+    Object.entries(club.tags || {}).forEach(([tag, val]) => {
+      if(typeof val === "number") {
+        numDf[tag] = (numDf[tag] || 0) + 1;
+      } else if(typeof val === "string") {
+        if(!strDf[tag]) strDf[tag] = {};
+        strDf[tag][val] = (strDf[tag][val] || 0) + 1;
+      }
+    });
+  });
+
+  Object.entries(numDf).forEach(([tag, df]) => {
+    numeric[tag] = Math.log(N / df);
+  });
+  Object.entries(strDf).forEach(([tag, vals]) => {
+    string[tag] = {};
+    Object.entries(vals).forEach(([val, df]) => {
+      string[tag][val] = Math.log(N / df);
+    });
+  });
+
+  IDF_CACHE = { numeric, string, N };
+  return IDF_CACHE;
+}
+
 function computeResults(answers){
+  const idf = buildIdfTables();
+
   // Build a profile from quiz answers Q1-Q6 (standard questions)
   // Profile is a map: tag → accumulated weight
   const profile = {};
@@ -215,29 +259,51 @@ function computeResults(answers){
     });
   });
 
-  // Score each club from Q1-Q6
+  // Score each club from Q1-Q6, weighted by IDF (rarity)
   const scored = CLUBS.map(club => {
     let score = 0;
     const contributions = [];
 
     // Numeric tag matching (Q1, Q4, and numeric parts of other questions)
+    // F5: weight = userWeight * clubWeight * idf.numeric[tag]
     Object.entries(profile).forEach(([tag, val]) => {
       const clubVal = club.tags[tag];
       if(typeof clubVal !== "number") return;
-      const contrib = val * clubVal;
+      const idfWeight = idf.numeric[tag] || 0;
+      const contrib = val * clubVal * idfWeight;
       if(contrib > 0) contributions.push({tag, contrib});
       score += contrib;
     });
 
     // Intangible tag matching (Q2, Q3, Q5, Q6)
+    // F5: weight = 3 * idf.string[tag][value]
     Object.entries(intangibleProfile).forEach(([tag, val]) => {
       const clubVal = club.tags[tag];
       if(typeof clubVal === "string" && clubVal === val) {
-        const contrib = 3; // each intangible match is worth 3 points
-        contributions.push({tag, contrib});
+        const idfWeight = (idf.string[tag] && idf.string[tag][val]) || 0;
+        const contrib = 3 * idfWeight;
+        if(contrib > 0) contributions.push({tag, contrib});
         score += contrib;
       }
     });
+
+    // F5 — Dominance cap: no single tag may account for >40% of total score.
+    // If a tag exceeds the cap, scale it down to 40% and redistribute.
+    if(score > 0 && contributions.length > 1) {
+      const cap = 0.40 * score;
+      let excess = 0;
+      contributions.forEach(c => {
+        if(c.contrib > cap) {
+          excess += (c.contrib - cap);
+          c.contrib = cap;
+        }
+      });
+      // Rescale all contributions proportionally to absorb the excess,
+      // then recompute score from the capped contributions.
+      if(excess > 0) {
+        score = contributions.reduce((sum, c) => sum + c.contrib, 0);
+      }
+    }
 
     return { club, score, contributions };
   });
@@ -276,11 +342,13 @@ function computeResults(answers){
 
   // Re-sort after NFL boost
   scored.sort((a, b) => b.score - a.score);
-  const finalMax = scored[0].score || 1;
+  // topScore = post-boost max, used ONLY as percentage denominator.
+  // (maxBaseScore above is pre-boost max, used ONLY to size the NFL boost.)
+  const topScore = scored[0].score || 1;
 
   return scored.slice(0, 3).map(s => ({
     club: s.club,
-    pct: Math.round((s.score / finalMax) * 100),
+    pct: Math.min(100, Math.round((s.score / topScore) * 100)),
     topTags: s.contributions.sort((a,b) => b.contrib - a.contrib).slice(0, 5).map(c => c.tag),
   }));
 }
