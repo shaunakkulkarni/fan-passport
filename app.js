@@ -255,15 +255,18 @@ function computeResults(answers){
 
   if(nflTeamId && NFL_MAPPING[nflTeamId]) {
     const mapping = NFL_MAPPING[nflTeamId];
-    const mappedClubIds = new Set(mapping.clubs);
+    const nflTags = mapping.tags || {};
     const weight = mapping.weight || 1.0;
-    const boostFactor = weight * 0.15; // 15% of total score, adjusted by weight
+    const totalBoostFraction = weight * 0.15; // 15% of total score, adjusted by weight
+    const perDimBoost = totalBoostFraction / 4; // each matching dimension contributes 1/4 of the boost
 
     scored.forEach(s => {
       let boost = 0;
-      if(mappedClubIds.has(s.club.id)) {
-        boost = boostFactor * maxBaseScore;
-      }
+      Object.entries(nflTags).forEach(([dim, val]) => {
+        if(s.club.tags[dim] === val) {
+          boost += perDimBoost * maxBaseScore;
+        }
+      });
       s.score += boost;
       if(boost > 0) {
         s.contributions.push({tag: "nfl-boost", contrib: boost});

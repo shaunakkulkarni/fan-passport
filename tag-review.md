@@ -239,42 +239,44 @@ The club's overarching story.
 
 ---
 
-## NFL Team → Soccer Club Mapping (for reference)
+## NFL Team → Intangible Tag Mapping (for reference)
 
-| NFL Team | Mapped Soccer Clubs | Weight |
-|---|---|---|
-| Steelers | Bayern Munich, Atlético Madrid, Inter Milan | 1.0 |
-| Ravens | Juventus, Atlético Madrid, Chivas | 1.0 |
-| Browns | Newcastle, Torino, Atlas | 1.0 |
-| Bengals | Dortmund, Napoli, Brighton | 1.0 |
-| Patriots | Real Madrid, Juventus, LA Galaxy | 1.0 |
-| Bills | Everton, Borussia Mönchengladbach, Pumas | 1.0 |
-| Dolphins | Marseille, AC Milan, Monterrey | 1.0 |
-| Jets | Tottenham, Inter Milan, Cruz Azul | 1.0 |
-| Colts | Arsenal, Sevilla, Tigres | 1.0 |
-| Titans | Athletic Bilbao, Atalanta, Puebla | 1.0 |
-| Jaguars | Crystal Palace | 0.8 |
-| Texans | RB Leipzig, PSG, LAFC | 1.0 |
-| Chiefs | Man City, Barcelona, Club América | 1.0 |
-| Raiders | Marseille, Lazio, Cruz Azul | 1.0 |
-| Broncos | Atlético Madrid, Dortmund, Chivas | 1.0 |
-| Chargers | Inter Milan, Lyon, Tigres | 1.0 |
-| Packers | Barcelona, Athletic Bilbao, Seattle Sounders | 1.0 |
-| Bears | Juventus, Inter Milan, Club América | 1.0 |
-| Lions | Leicester, Napoli, Pachuca | 1.0 |
-| Vikings | Tottenham, Leverkusen, Cruz Azul | 1.0 |
-| Cowboys | Man United, Real Madrid, Club América | 1.0 |
-| Eagles | Arsenal, Napoli, Roma | 1.0 |
-| Giants | AC Milan, Inter Milan, Chivas | 1.0 |
-| Commanders | Valencia, Atlas | 0.8 |
-| Saints | Napoli, Marseille, Cruz Azul | 1.0 |
-| Falcons | Tottenham, Leverkusen, Monterrey | 1.0 |
-| Panthers | RB Leipzig, Lille | 0.8 |
-| Buccaneers | Chelsea, Inter Milan, Tigres | 1.0 |
-| 49ers | Bayern Munich, Man City, Barcelona | 1.0 |
-| Seahawks | Dortmund, Seattle Sounders, Newcastle | 1.0 |
-| Rams | PSG, Chelsea, Man City | 1.0 |
-| Cardinals | Eibar → Getafe, León → Club León | 0.8 |
+Each NFL team maps to an intangible tag profile (stability, fan-culture, ambition, narrative). Selecting an NFL team boosts ALL soccer clubs whose tags match — distributed across multiple leagues rather than naming specific clubs.
+
+| NFL Team | Stability | Fan-Culture | Ambition | Narrative | Weight |
+|---|---|---|---|---|---|
+| Steelers | stable | ultras | trophy-driven | dynasty | 1.0 |
+| Ravens | stable | ultras | trophy-driven | underdog | 1.0 |
+| Browns | chaotic | ultras | romantic | cursed | 1.0 |
+| Bengals | rebuilding | ultras | smart-overachiever | project | 1.0 |
+| Patriots | stable | intellectual | trophy-driven | dynasty | 1.0 |
+| Bills | stable | ultras | romantic | cursed | 1.0 |
+| Dolphins | chaotic | family | trophy-driven | cursed | 1.0 |
+| Jets | chaotic | intellectual | trophy-driven | cursed | 1.0 |
+| Colts | rebuilding | intellectual | trophy-driven | project | 1.0 |
+| Titans | stable | ultras | smart-overachiever | underdog | 1.0 |
+| Jaguars | rebuilding | family | smart-overachiever | underdog | 0.8 |
+| Texans | rebuilding | family | trophy-driven | project | 1.0 |
+| Chiefs | stable | intellectual | trophy-driven | dynasty | 1.0 |
+| Raiders | chaotic | rebel | romantic | cursed | 1.0 |
+| Broncos | stable | ultras | trophy-driven | underdog | 1.0 |
+| Chargers | chaotic | family | trophy-driven | cursed | 1.0 |
+| Packers | stable | ultras | identity-driven | dynasty | 1.0 |
+| Bears | stable | ultras | trophy-driven | dynasty | 1.0 |
+| Lions | rebuilding | ultras | smart-overachiever | underdog | 1.0 |
+| Vikings | stable | intellectual | trophy-driven | cursed | 1.0 |
+| Cowboys | win-now | intellectual | trophy-driven | dynasty | 1.0 |
+| Eagles | win-now | ultras | trophy-driven | underdog | 1.0 |
+| Giants | stable | intellectual | trophy-driven | project | 1.0 |
+| Commanders | rebuilding | ultras | romantic | cursed | 0.8 |
+| Saints | chaotic | ultras | romantic | cursed | 1.0 |
+| Falcons | stable | family | trophy-driven | cursed | 1.0 |
+| Panthers | rebuilding | family | smart-overachiever | underdog | 0.8 |
+| Buccaneers | win-now | family | trophy-driven | project | 1.0 |
+| 49ers | stable | intellectual | trophy-driven | dynasty | 1.0 |
+| Seahawks | stable | ultras | identity-driven | underdog | 1.0 |
+| Rams | win-now | family | trophy-driven | project | 1.0 |
+| Cardinals | chaotic | family | romantic | cursed | 0.8 |
 
 ---
 

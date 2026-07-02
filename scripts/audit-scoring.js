@@ -129,7 +129,7 @@ quiz.questions.forEach((q, qIdx) => {
 
 // ── NFL mapping audit ──
 console.log('═'.repeat(70));
-console.log('NFL MAPPING — League distribution per team');
+console.log('NFL MAPPING — Tag-based boost distribution per team');
 console.log('═'.repeat(70));
 console.log('');
 
@@ -138,27 +138,49 @@ const mapping = nflQ.nfl_mapping;
 let nflWarnings = 0;
 
 Object.entries(mapping).forEach(([teamId, data]) => {
-  const mappedClubs = data.clubs.map(id => clubs.find(c => c.id === id)).filter(c => c);
-  if (mappedClubs.length !== data.clubs.length) {
-    console.log(`  ${teamId}: ⚠️ ${data.clubs.length - mappedClubs.length} mapped club(s) not found in clubs.json`);
+  const nflTags = data.tags || {};
+  const weight = data.weight || 1.0;
+  const totalBoostFraction = weight * 0.15;
+  const perDimBoost = totalBoostFraction / 4;
+
+  // Find all clubs that get any boost from this team's tag profile
+  const boostedClubs = clubs.filter(club => {
+    return Object.entries(nflTags).some(([dim, val]) => club.tags[dim] === val);
+  });
+
+  if (boostedClubs.length === 0) {
+    console.log(`  ${teamId}: ⚠️ No clubs match this tag profile`);
     nflWarnings++;
     return;
   }
+
+  // Count clubs per league
   const leagueCounts = {};
-  mappedClubs.forEach(c => {
+  boostedClubs.forEach(c => {
     leagueCounts[c.league] = (leagueCounts[c.league] || 0) + 1;
   });
-  const maxLeague = Object.entries(leagueCounts).sort((a,b) => b[1] - a[1])[0];
-  const maxPct = (maxLeague[1] / mappedClubs.length) * 100;
-  // NFL mapping can have >40% in one league since it's only 2-3 clubs,
-  // but we warn if all 3 are from the same league
-  const status = maxPct > 66 ? '⚠️ SAME LEAGUE' : '✅ spread';
-  if (maxPct > 66) nflWarnings++;
-  console.log(`  ${teamId} (${mappedClubs.length} clubs): ${maxLeague[0]} ${maxLeague[1]}/${mappedClubs.length} ${status}`);
+
+  // Also calculate how many clubs get the full 4/4 match vs partial
+  const fullMatch = boostedClubs.filter(c => 
+    Object.entries(nflTags).every(([dim, val]) => c.tags[dim] === val)
+  );
+  const partialMatch = boostedClubs.length - fullMatch.length;
+
+  const sortedLeagues = Object.entries(leagueCounts).sort((a,b) => b[1] - a[1]);
+  const maxLeague = sortedLeagues[0];
+  const maxPct = (maxLeague[1] / boostedClubs.length) * 100;
+  
+  const leagueSpread = sortedLeagues.length;
+  const status = leagueSpread >= 3 ? '✅ spread' : '⚠️ NARROW';
+  if (leagueSpread < 3) nflWarnings++;
+
+  console.log(`  ${teamId} (${boostedClubs.length} clubs boosted, ${fullMatch.length} full / ${partialMatch} partial match, ${leagueSpread} leagues):`);
+  console.log(`     Max league: ${maxLeague[0]} (${maxLeague[1]}/${boostedClubs.length}, ${maxPct.toFixed(1)}%) ${status}`);
+  console.log(`     League breakdown: ${sortedLeagues.map(([l,c]) => `${l}:${c}`).join(', ')}`);
 });
 
 console.log('');
-console.log(`NFL mapping warnings (all clubs same league): ${nflWarnings}`);
+console.log(`NFL mapping warnings (tag profile boosts <3 leagues): ${nflWarnings}`);
 console.log('');
 
 // ── Summary ──
