@@ -851,6 +851,37 @@ function renderResult(){
   // Build the personalized "why you matched" explanation
   const explanation = buildMatchExplanation(top, state.answers);
 
+  // ── Share result card ──
+  // 3 short reason chips for the card (from topTags / TAG_LABEL)
+  const cardChips = top.topTags.slice(0, 3).map(t => TAG_LABEL[t] || t).join(" · ");
+  // Runner-up names for the "Also considered" line
+  const runnerNames = runners.map(r => r.club.name).join(", ");
+  const runnerLine = runnerNames ? `<div class="sc-also">Also considered: ${runnerNames}</div>` : "";
+  // Branded card — uses club color as accent stripe
+  const cardAccent = top.club.c1;
+  const cardAccentText = contrastColor(top.club.c1);
+  const shareCard = `
+    <div class="share-card" id="shareCard">
+      <div class="sc-accent" style="background:${cardAccent};color:${cardAccentText}">FAN PASSPORT</div>
+      <div class="sc-body">
+        <div class="sc-crest-wrap">
+          ${crestHTML(top.club, "crest-xl")}
+        </div>
+        <div class="sc-match-label">You matched with</div>
+        <div class="sc-club-name">${top.club.name}</div>
+        <div class="sc-pct">${top.pct}% match</div>
+        <div class="sc-meta">${top.club.league} · ${top.club.country}</div>
+        ${cardChips ? `<div class="sc-chips">${cardChips}</div>` : ""}
+        ${runnerLine}
+        <div class="sc-cta">Take the quiz and find your club.</div>
+      </div>
+    </div>
+    <div class="share-card-actions">
+      <button class="btn" id="copyCaptionBtn">Copy caption</button>
+      <button class="btn secondary" id="shareCardBtn">Share result</button>
+    </div>
+  `;
+
   return `
   <section class="result-shell">
     <div class="wrap">
@@ -886,6 +917,10 @@ function renderResult(){
         <div class="runner-grid">${runnerCards}</div>
       </div>
       ${leagueSection}
+      <div class="share-card-section">
+        <div class="scs-label">Share this result</div>
+        ${shareCard}
+      </div>
       ${sharedCTA}
     </div>
   </section>`;
@@ -1200,6 +1235,10 @@ function attachHandlers(){
   if(shareBtn) shareBtn.onclick = copyShareLink;
   const shareXBtn = document.getElementById("shareXBtn");
   if(shareXBtn) shareXBtn.onclick = shareOnX;
+  const copyCaptionBtn = document.getElementById("copyCaptionBtn");
+  if(copyCaptionBtn) copyCaptionBtn.onclick = copyShareCaption;
+  const shareCardBtn = document.getElementById("shareCardBtn");
+  if(shareCardBtn) shareCardBtn.onclick = shareResultCard;
   const retakeBtn = document.getElementById("retakeBtn");
   if(retakeBtn) retakeBtn.onclick = toggleRetakeBar;
   const cancelRetakeBtn = document.getElementById("cancelRetakeBtn");
@@ -1237,6 +1276,71 @@ function shareOnX(){
   const text = `I got matched to ${top.club.name} — ${top.pct}%. Take the quiz:`;
   const xUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
   window.open(xUrl, "_blank");
+}
+
+/* Build a social-friendly caption for the share card copy button.
+   Owner mode uses first-person ("I got matched"); shared-link mode uses
+   neutral third-person so it reads correctly no matter who opens it. */
+function buildShareCaption(top, isShared){
+  if(!top || !top.club) return "";
+  const url = generateShareURL() || "";
+  const name = top.club.name;
+  const pct = top.pct;
+  if(isShared){
+    return `Someone matched with ${name} — ${pct}% on Fan Passport. Take the quiz and find your club: ${url}`;
+  }
+  const reactions = ["Honestly… I see it.", "Vibes.", "Could be worse.", "Honestly? Yeah.", "I'm not mad at it."];
+  const reaction = reactions[top.club.id.charCodeAt(0) % reactions.length];
+  return `I got matched with ${name} — ${pct}% on Fan Passport. ${reaction} Take the quiz and tell me who you get: ${url}`;
+}
+
+/* Copy the share caption to clipboard, with a toast confirmation.
+   Falls back to showing the text inline if the clipboard API is unavailable
+   or the permission is denied (e.g. insecure context, Firefox paste-block). */
+function copyShareCaption(){
+  const top = state.results[0];
+  if(!top) return;
+  const caption = buildShareCaption(top, isSharedView());
+  if(!caption) return;
+  if(navigator.clipboard && window.isSecureContext){
+    navigator.clipboard.writeText(caption).then(() => {
+      showToast("Caption copied");
+    }).catch(() => {
+      showCaptionBox(caption);
+    });
+  } else {
+    showCaptionBox(caption);
+  }
+}
+
+function showCaptionBox(caption){
+  const box = document.getElementById("shareBox");
+  if(box){
+    box.innerHTML = `<strong>Share caption:</strong> <textarea readonly style="width:100%;margin-top:8px;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-soft);border:1px solid var(--line);background:var(--paper);padding:8px;border-radius:2px;resize:none;" rows="4">${caption}</textarea><span style="font-size:10px;color:var(--ink-soft)">Copy the text above to share.</span>`;
+    box.classList.add("show");
+    // Focus + select the textarea for easy manual copy
+    const ta = box.querySelector("textarea");
+    if(ta){ setTimeout(() => { ta.focus(); ta.select(); }, 50); }
+  }
+}
+
+/* Progressive enhancement: use the Web Share API if available (mostly mobile
+   Safari/Chrome). Never required — the Copy caption button always works. */
+function shareResultCard(){
+  const top = state.results[0];
+  if(!top) return;
+  const url = generateShareURL();
+  if(!url) return;
+  if(navigator.share){
+    navigator.share({
+      title: `Fan Passport — ${top.club.name}`,
+      text: buildShareCaption(top, isSharedView()),
+      url: url,
+    }).catch(() => { /* user cancelled — no-op */ });
+  } else {
+    // No Web Share API — fall back to copying the caption
+    copyShareCaption();
+  }
 }
 
 /* ──── Boot ──── */

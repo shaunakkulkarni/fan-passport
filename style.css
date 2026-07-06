@@ -321,6 +321,98 @@ nav.topnav span:hover{opacity:1;border-bottom:1px solid var(--gold);}
 .lm-league{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--ink-soft);margin-top:3px;font-variant:small-caps;letter-spacing:0.04em;}
 .lm-pct{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--visa-red);font-weight:600;font-variant-numeric:tabular-nums;flex:none;}
 
+/* ── Share result card ── */
+/* A screenshot-friendly, branded card optimized for social sharing. */
+.share-card-section{margin-top:56px;}
+.scs-label{
+  font-family:'IBM Plex Mono',monospace;font-size:12px;text-transform:uppercase;
+  letter-spacing:0.1em;color:var(--ink-soft);margin-bottom:16px;
+  display:flex;align-items:center;gap:8px;
+}
+.scs-label::before{content:"";width:18px;height:1px;background:var(--ink-soft);}
+.share-card{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:6px;
+  overflow:hidden;
+  max-width:440px;
+  box-shadow:0 4px 24px rgba(27,27,23,0.16);
+  position:relative;
+}
+.sc-accent{
+  padding:12px 20px;
+  font-family:'IBM Plex Mono',monospace;
+  font-weight:600;font-size:13px;letter-spacing:0.18em;
+  text-align:center;
+  border-bottom:1px solid rgba(0,0,0,0.12);
+}
+.sc-body{
+  padding:28px 28px 24px;
+  text-align:center;
+  background:
+    radial-gradient(rgba(27,27,23,0.03) 1px, transparent 1px) 0 0 / 4px 4px,
+    var(--paper);
+}
+.sc-crest-wrap{
+  display:flex;justify-content:center;margin-bottom:18px;
+}
+.sc-crest-wrap .crest-xl{
+  width:96px;height:96px;font-size:28px;
+  animation:none;
+  box-shadow:0 4px 14px rgba(27,27,23,0.2);
+}
+.sc-match-label{
+  font-family:'IBM Plex Mono',monospace;font-size:11px;
+  text-transform:uppercase;letter-spacing:0.14em;
+  color:var(--visa-red);margin-bottom:6px;
+}
+.sc-club-name{
+  font-family:'Fraunces',serif;font-weight:600;
+  font-size:28px;line-height:1.1;letter-spacing:-0.01em;
+  text-wrap:balance;
+}
+.sc-pct{
+  font-family:'IBM Plex Mono',monospace;font-size:14px;
+  color:var(--ink);font-weight:600;margin-top:8px;
+  font-variant-numeric:tabular-nums;
+}
+.sc-meta{
+  font-family:'IBM Plex Mono',monospace;font-size:11px;
+  color:var(--ink-soft);margin-top:4px;
+  font-variant:small-caps;letter-spacing:0.04em;
+}
+.sc-chips{
+  font-family:'IBM Plex Mono',monospace;font-size:11px;
+  color:var(--ink-soft);margin-top:14px;line-height:1.5;
+  padding:10px 14px;border-top:1px solid var(--line-soft,rgba(27,27,23,0.14));
+  border-bottom:1px solid var(--line-soft,rgba(27,27,23,0.14));
+}
+.sc-also{
+  font-family:'IBM Plex Mono',monospace;font-size:10px;
+  color:var(--ink-soft);margin-top:10px;font-style:italic;
+}
+.sc-cta{
+  font-family:'Fraunces',serif;font-style:italic;font-size:14px;
+  color:var(--ink);margin-top:18px;
+}
+.share-card-actions{
+  display:flex;gap:12px;margin-top:16px;flex-wrap:wrap;
+}
+.share-card-actions .btn{flex:1 1 auto;text-align:center;}
+
+/* Share card entrance */
+.share-card{animation:fadeUp .5s ease both;animation-delay:.4s;}
+
+/* Mobile: card fills width, stays screenshot-friendly */
+@media(max-width:640px){
+  .share-card{max-width:none;border-radius:0;}
+  .sc-body{padding:24px 20px 20px;}
+  .sc-club-name{font-size:24px;}
+  .sc-crest-wrap .crest-xl{width:84px;height:84px;font-size:24px;}
+  .share-card-actions{flex-direction:column;}
+  .share-card-actions .btn{width:100%;}
+}
+
 /* retake flow */
 .retake-bar{
   margin-top:24px;padding:16px 18px;border:1px solid var(--line);background:rgba(255,255,255,0.28);
