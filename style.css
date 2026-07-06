@@ -225,6 +225,9 @@ nav.topnav span:hover{opacity:1;border-bottom:1px solid var(--gold);}
 /* result */
 .result-shell{padding:56px 24px 96px;}
 .result-top{display:flex;gap:36px;align-items:center;flex-wrap:wrap;margin-top:-24px;}
+/* In shared-link mode the sharedHero sits above result-top, so the
+   negative margin overlap must be removed to avoid collision. */
+.result-top-shared{margin-top:0;}
 /* Unified crest system — color set inline, text color computed for contrast */
 .crest{
   border-radius:50%;flex:none;
@@ -328,6 +331,8 @@ nav.topnav span:hover{opacity:1;border-bottom:1px solid var(--gold);}
 .shared-hero-grid{
   display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch;margin-bottom:16px;
 }
+/* Action buttons below the shared-hero grid need space before result-top */
+.shared-hero-grid ~ .share-card-actions{margin-bottom:48px;}
 .shared-hero-grid > *{min-width:0;}
 .scs-label{
   font-family:'IBM Plex Mono',monospace;font-size:12px;text-transform:uppercase;

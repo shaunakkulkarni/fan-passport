@@ -907,7 +907,7 @@ function renderResult(){
   <section class="result-shell">
     <div class="wrap">
       ${sharedHero}
-      <div class="result-top">
+      <div class="result-top${isShared ? ' result-top-shared' : ''}">
         ${crestHTML(top.club, "crest-xl")}
         <div class="result-meta">
           <div class="granted">Entry granted ${sharedNote}</div>
