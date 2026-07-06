@@ -200,6 +200,7 @@ nav.topnav span:hover{opacity:1;border-bottom:1px solid var(--gold);}
 .result-meta h2{animation:fadeUp .5s ease both;animation-delay:.16s;}
 .result-meta .subline{animation:fadeUp .4s ease both;animation-delay:.20s;}
 .result-meta .match-pct{animation:fadeUp .4s ease both;animation-delay:.24s;}
+.match-explanation{animation:fadeUp .5s ease both;animation-delay:.28s;}
 
 /* Dossier entrance */
 .dossier-band{animation:fadeUp .5s ease both;}
@@ -259,6 +260,31 @@ nav.topnav span:hover{opacity:1;border-bottom:1px solid var(--gold);}
   border:1px solid var(--line);padding:7px 13px;font-size:12.5px;
   font-family:'IBM Plex Mono',monospace;background:rgba(255,255,255,0.35);
 }
+/* Match explanation — premium result insight */
+.match-explanation{
+  margin-top:22px;padding:22px 24px;
+  background:rgba(255,255,255,0.4);
+  border-left:3px solid var(--visa-red);
+  border-top:1px solid rgba(27,27,23,0.14);
+  border-right:1px solid rgba(27,27,23,0.14);
+  border-bottom:1px solid rgba(27,27,23,0.14);
+  position:relative;
+}
+.match-explanation::before{
+  content:"§";position:absolute;top:14px;right:18px;
+  font-family:'Fraunces',serif;font-size:22px;color:var(--visa-red);opacity:0.35;
+}
+.me-eyebrow{
+  font-family:'IBM Plex Mono',monospace;font-size:11px;text-transform:uppercase;
+  letter-spacing:0.12em;color:var(--visa-red);margin-bottom:10px;
+  display:flex;align-items:center;gap:8px;
+}
+.me-eyebrow::before{content:"";width:14px;height:1px;background:var(--visa-red);}
+.me-text{
+  margin:0;font-family:'Fraunces',serif;font-size:18px;font-weight:500;
+  line-height:1.5;color:var(--ink);max-width:58ch;text-wrap:pretty;
+}
+.me-text .me-club{font-weight:600;}
 .result-actions{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap;}
 .share-link-box{
   margin-top:20px;padding:14px 18px;border:1px dashed var(--line);
@@ -392,6 +418,9 @@ footer{padding:30px 24px 50px;text-align:center;font-family:'IBM Plex Mono',mono
   .crest-xl{width:80px;height:80px;font-size:24px;}
   .result-meta h2{font-size:clamp(22px,6vw,32px);}
   .why-chip{font-size:11px;padding:6px 10px;}
+  .match-explanation{padding:18px 18px;margin-top:18px;}
+  .me-text{font-size:16px;line-height:1.45;}
+  .me-eyebrow{font-size:10px;letter-spacing:0.1em;}
   .result-actions{gap:10px;}
   .result-actions .btn{flex:1 1 auto;text-align:center;}
   .runner-grid{grid-template-columns:1fr;}

@@ -647,6 +647,145 @@ function renderNFLSelector(q, selected){
   return html;
 }
 
+/* ──── Match Explanation ──── */
+
+/* Build a concise, deterministic 1–2 sentence "why you matched" explanation
+   from the user's selected answers and the top club's identity. Falls back
+   gracefully to the club's identity if any answer is missing or malformed. */
+function buildMatchExplanation(top, answers){
+  const club = top && top.club;
+  if(!club) return "";
+
+  // Collect the user's selected option labels for Q1–Q6 (standard questions).
+  // Each entry: { qIndex, question, label, description }
+  const picks = [];
+  (answers || []).forEach((ans, i) => {
+    const q = QUESTIONS[i];
+    if(!q || q.type !== "standard") return;
+    if(typeof ans !== "number") return;
+    const opt = q.options && q.options[ans];
+    if(!opt) return;
+    picks.push({ qIndex: i, question: q.prompt, label: opt.label, description: opt.description || "" });
+  });
+
+  // If we don't have at least 3 valid picks, fall back to the club identity.
+  if(picks.length < 3){
+    return `You matched with ${club.name} — ${club.identity || "a club that fits the way you want to watch football."}`;
+  }
+
+  // Map the strongest picks into short, human phrases.
+  // Pull the label from each dimension we care about, in priority order.
+  const byQ = {};
+  picks.forEach(p => { byQ[p.qIndex] = p; });
+
+  // Dimension → human-readable phrase fragments (lowercase, no trailing punctuation)
+  // Each returns a fragment or null if the answer isn't usable.
+  const phrase = {
+    style:      () => byQ[0] ? stylePhrase(byQ[0].label) : null,
+    fanCulture: () => byQ[1] ? fanCulturePhrase(byQ[1].label) : null,
+    story:      () => byQ[2] ? storyPhrase(byQ[2].label) : null,
+    rivalry:    () => byQ[3] ? rivalryPhrase(byQ[3].label) : null,
+    stability:  () => byQ[4] ? stabilityPhrase(byQ[4].label) : null,
+    ambition:   () => byQ[5] ? ambitionPhrase(byQ[5].label) : null,
+  };
+
+  // Gather non-null phrases in priority order, keep up to 3 for the sentence.
+  const order = ["style", "fanCulture", "story", "ambition", "stability", "rivalry"];
+  const fragments = order.map(k => phrase[k]()).filter(Boolean).slice(0, 3);
+
+  if(!fragments.length){
+    return `You matched with ${club.name} — ${club.identity || "a club that fits the way you want to watch football."}`;
+  }
+
+  // Compose the sentence. One or two sentences max.
+  const lead = `You matched with ${club.name}`;
+  const because = fragments.length === 1
+    ? `because ${fragments[0]}`
+    : fragments.length === 2
+      ? `because ${fragments[0]} and ${fragments[1]}`
+      : `because ${fragments[0]}, ${fragments[1]}, and ${fragments[2]}`;
+
+  // Optional second sentence: pull a short hook from the club identity.
+  const hook = clubHook(club);
+
+  const sentence = `${lead} ${because}.`;
+  return hook ? `${sentence} ${hook}` : sentence;
+}
+
+/* Phrase fragments — lowercase, fit into "…because {fragment}…" */
+function stylePhrase(label){
+  switch(label){
+    case "Total control": return "you want patient, possession-first football";
+    case "The knockout blow": return "you want a club that strikes on the counter";
+    case "Organized chaos": return "you want enough chaos to make every weekend feel alive";
+    case "Grind it out": return "you're drawn to set-piece discipline and ugly wins that still count";
+    default: return null;
+  }
+}
+function fanCulturePhrase(label){
+  switch(label){
+    case "The wall of noise": return "a wall-of-noise fan culture";
+    case "The family outing": return "a family-friendly Saturday atmosphere";
+    case "The intellectual": return "a tactical, intellectual fan culture";
+    case "The rebels": return "a fan culture with a rebellious edge";
+    default: return null;
+  }
+}
+function storyPhrase(label){
+  switch(label){
+    case "The underdog rising": return "an underdog story worth believing in";
+    case "The dynasty": return "a club that expects to win every year";
+    case "The cursed romantic": return "a romantic, long-suffering narrative";
+    case "The project": return "a project still building toward something";
+    default: return null;
+  }
+}
+function rivalryPhrase(label){
+  switch(label){
+    case "Toxic and beautiful": return "a rivalry culture with real venom";
+    case "Respectful but real": return "a rivalry with edge but not hatred";
+    case "I don't care about rivalries": return "a club where rivalries aren't the point";
+    case "The enemy of my enemy": return "a club with enemies worth having";
+    default: return null;
+  }
+}
+function stabilityPhrase(label){
+  switch(label){
+    case "Rock solid": return "institutional stability over annual drama";
+    case "Beautiful chaos": return "a tolerance for beautiful chaos";
+    case "Rebuild in progress": return "a club actively rebuilding something";
+    case "Win now, figure it out later": return "a win-now mentality over a long-term plan";
+    default: return null;
+  }
+}
+function ambitionPhrase(label){
+  switch(label){
+    case "Trophies. Period.": return "a genuine trophy-hunting mentality";
+    case "Identity first": return "a club where identity matters more than silverware";
+    case "The smart overachiever": return "a smart overachiever that does more with less";
+    case "The romantic choice": return "a romantic, story-first club";
+    default: return null;
+  }
+}
+
+/* Short second-sentence hook derived from the club's identity line.
+   Returns null if the identity is missing or too long to lift cleanly. */
+function clubHook(club){
+  if(!club || !club.identity || typeof club.identity !== "string") return null;
+  // Use up to the first ~110 chars of identity, trimmed to a clean boundary.
+  const id = club.identity.trim();
+  if(!id) return null;
+  if(id.length <= 110) return id;
+  const slice = id.slice(0, 107);
+  const lastPunct = Math.max(slice.lastIndexOf("."), slice.lastIndexOf(","), slice.lastIndexOf("—"));
+  if(lastPunct > 60) return slice.slice(0, lastPunct).trim();
+  const lastSpace = slice.lastIndexOf(" ");
+  if(lastSpace > 60) return slice.slice(0, lastSpace).trim();
+  return null;
+}
+
+/* ──── Render ──── */
+
 function renderResult(){
   if(!state.results.length) return renderHome();
   const top = state.results[0];
@@ -709,6 +848,9 @@ function renderResult(){
   // Update OG meta tags for this specific club result
   updateOGMeta(top.club);
 
+  // Build the personalized "why you matched" explanation
+  const explanation = buildMatchExplanation(top, state.answers);
+
   return `
   <section class="result-shell">
     <div class="wrap">
@@ -722,6 +864,10 @@ function renderResult(){
         </div>
       </div>
       <div class="why-row">${chips}</div>
+      <div class="match-explanation">
+        <div class="me-eyebrow">Why this match</div>
+        <p class="me-text">${explanation}</p>
+      </div>
       <div class="result-actions">
         <button class="btn" data-open="${top.club.id}">Read the full dossier →</button>
         <button class="btn secondary" id="shareBtn">Copy share link</button>
