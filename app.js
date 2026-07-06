@@ -887,13 +887,15 @@ function renderResult(){
     <div class="share-card-actions">
       <button class="btn" id="copyCaptionBtn">Copy caption</button>
       <button class="btn secondary" id="shareCardBtn">Share result</button>
+      <button class="btn secondary" id="downloadPngBtn">Download PNG</button>
     </div>
   `;
 
-  // In shared-link mode, the share card + CTA go at the TOP (conversion-first).
+  // In shared-link mode, the share card + CTA go at the TOP (conversion-first),
+  // side-by-side as two equal-width columns.
   // In personal mode, the share card stays at the bottom and the CTA is hidden.
   const sharedHero = isShared ? `
-      <div class="shared-hero">
+      <div class="shared-hero-grid">
         ${shareCard}
         ${sharedCTA}
       </div>` : "";
@@ -1256,6 +1258,8 @@ function attachHandlers(){
   if(copyCaptionBtn) copyCaptionBtn.onclick = copyShareCaption;
   const shareCardBtn = document.getElementById("shareCardBtn");
   if(shareCardBtn) shareCardBtn.onclick = shareResultCard;
+  const downloadPngBtn = document.getElementById("downloadPngBtn");
+  if(downloadPngBtn) downloadPngBtn.onclick = downloadShareCardPNG;
   const retakeBtn = document.getElementById("retakeBtn");
   if(retakeBtn) retakeBtn.onclick = toggleRetakeBar;
   const cancelRetakeBtn = document.getElementById("cancelRetakeBtn");
@@ -1358,6 +1362,85 @@ function shareResultCard(){
     // No Web Share API — fall back to copying the caption
     copyShareCaption();
   }
+}
+
+/* Download the share card as a PNG using a native SVG-to-canvas render.
+   No external dependencies. Builds an SVG that mirrors the card's visual,
+   rasterizes via an <img> + <canvas>, and triggers a download. Falls back
+   to a toast error if the browser blocks the canvas (tainted canvas from
+   foreign-origin images — not expected here since we draw no external images). */
+function downloadShareCardPNG(){
+  const top = state.results[0];
+  if(!top) return;
+  const club = top.club;
+  const clubInitials = initials(club.name);
+  const crestBg = club.c1;
+  const crestFg = contrastColor(club.c1);
+  const accentFg = contrastColor(club.c1);
+  const chips = top.topTags.slice(0, 3).map(t => TAG_LABEL[t] || t).join(" · ");
+  const runnerNames = state.results.slice(1).map(r => r.club.name).join(", ");
+  const PAPER = "#ded2ae";
+  const INK = "#1b1b17";
+  const INK_SOFT = "#3a382f";
+  const VISA_RED = "#a5342b";
+  const W = 440, H = 560;
+
+  // Escape text for XML
+  const esc = s => String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
+  <defs>
+    <pattern id="dots" x="0" y="0" width="4" height="4" patternUnits="userSpaceOnUse">
+      <circle cx="1" cy="1" r="0.6" fill="${INK}" opacity="0.03"/>
+    </pattern>
+  </defs>
+  <rect width="${W}" height="${H}" fill="${PAPER}"/>
+  <rect width="${W}" height="${H}" fill="url(#dots)"/>
+  <rect width="${W}" height="40" fill="${crestBg}"/>
+  <text x="${W/2}" y="26" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-weight="600" font-size="13" letter-spacing="3.2" fill="${accentFg}">FAN PASSPORT</text>
+  <circle cx="${W/2}" cy="118" r="46" fill="${crestBg}" stroke="${INK}" stroke-opacity="0.12" stroke-width="2"/>
+  <text x="${W/2}" y="130" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="700" font-size="26" fill="${crestFg}">${esc(clubInitials)}</text>
+  <text x="${W/2}" y="184" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="11" letter-spacing="2.5" fill="${VISA_RED}">YOU MATCHED WITH</text>
+  <text x="${W/2}" y="222" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="600" font-size="26" fill="${INK}">${esc(club.name)}</text>
+  <text x="${W/2}" y="248" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="14" font-weight="600" fill="${INK}">${top.pct}% match</text>
+  <text x="${W/2}" y="268" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="11" letter-spacing="1" fill="${INK_SOFT}">${esc(club.league)} · ${esc(club.country)}</text>
+  ${chips ? `<line x1="60" y1="288" x2="${W-60}" y2="288" stroke="${INK}" stroke-opacity="0.14"/>
+  <text x="${W/2}" y="308" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="11" fill="${INK_SOFT}">${esc(chips)}</text>
+  <line x1="60" y1="318" x2="${W-60}" y2="318" stroke="${INK}" stroke-opacity="0.14"/>` : ""}
+  ${runnerNames ? `<text x="${W/2}" y="338" text-anchor="middle" font-family="'IBM Plex Mono',monospace" font-size="10" font-style="italic" fill="${INK_SOFT}">Also considered: ${esc(runnerNames)}</text>` : ""}
+  <text x="${W/2}" y="${runnerNames ? 388 : 358}" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-style="italic" font-size="14" fill="${INK}">Take the quiz and find your club.</text>
+</svg>`;
+
+  const blob = new Blob([svg], { type: "image/svg+xml;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const img = new Image();
+  img.onload = () => {
+    const scale = 2; // 2x for retina sharpness
+    const canvas = document.createElement("canvas");
+    canvas.width = W * scale;
+    canvas.height = H * scale;
+    const ctx = canvas.getContext("2d");
+    ctx.scale(scale, scale);
+    ctx.drawImage(img, 0, 0, W, H);
+    URL.revokeObjectURL(url);
+    canvas.toBlob((pngBlob) => {
+      if(!pngBlob){ showToast("Could not create image"); return; }
+      const pngUrl = URL.createObjectURL(pngBlob);
+      const a = document.createElement("a");
+      a.href = pngUrl;
+      a.download = `fan-passport-${club.id}.png`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(() => URL.revokeObjectURL(pngUrl), 1000);
+      showToast("Image downloaded");
+    }, "image/png");
+  };
+  img.onerror = () => {
+    URL.revokeObjectURL(url);
+    showToast("Could not render image");
+  };
+  img.src = url;
 }
 
 /* ──── Boot ──── */
