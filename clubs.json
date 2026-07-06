@@ -7,7 +7,7 @@
     "country": "England",
     "founded": 1886,
     "stadium": "Emirates Stadium, London",
-    "honours": "13 English league titles, 14 FA Cups",
+    "honours": "14 English league titles, 14 FA Cups",
     "c1": "#EF0107",
     "c2": "#023474",
     "identity": "High-possession, academy-proud, and self-consciously intellectual — a club that talks about football the way other clubs talk about war.",
@@ -34,8 +34,15 @@
       "stability": "stable",
       "fan-culture": "intellectual",
       "ambition": "trophy-driven",
-      "narrative": "dynasty"
-    }
+      "narrative": "underdog"
+    },
+    "lastSeason": "Won the 2025-26 Premier League title with a match to spare — their first English league title since 2004, ending a 22-year drought.",
+    "keyPlayers": [
+      "Bukayo Saka — homegrown academy product turned talisman",
+      "Declan Rice — signed 2023, engine room of Arteta's midfield",
+      "Martin Ødegaard — captain, orchestrates the possession game",
+      "William Saliba — defensive foundation of the title-winning back line"
+    ]
   },
   {
     "id": "liverpool",
@@ -72,7 +79,13 @@
       "fan-culture": "ultras",
       "ambition": "trophy-driven",
       "narrative": "dynasty"
-    }
+    },
+    "lastSeason": "Finished 5th (60 points), enough for a Champions League place; Dominik Szoboszlai was voted the club's Player of the Season.",
+    "keyPlayers": [
+      "Mohamed Salah — the club's all-time record scorer, still the focal point in attack",
+      "Virgil van Dijk — captain and defensive leader",
+      "Dominik Szoboszlai — 2025-26 Player of the Season"
+    ]
   },
   {
     "id": "man-utd",
@@ -110,7 +123,11 @@
       "fan-culture": "intellectual",
       "ambition": "trophy-driven",
       "narrative": "cursed"
-    }
+    },
+    "lastSeason": "Finished 3rd (71 points) and qualified for the Champions League — their best finish in years — despite sacking manager Rubén Amorim mid-season in favor of Michael Carrick. Bruno Fernandes was named the league's official Player of the Season.",
+    "keyPlayers": [
+      "Bruno Fernandes — captain, 2025-26 Premier League Player of the Season (9 goals, 21 assists)"
+    ]
   },
   {
     "id": "man-city",
@@ -147,7 +164,13 @@
       "ambition": "trophy-driven",
       "narrative": "dynasty",
       "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Finished 2nd (78 points) but won both the FA Cup and EFL Cup; Erling Haaland claimed his third Golden Boot in four seasons with 27 goals.",
+    "keyPlayers": [
+      "Erling Haaland — 2025-26 Golden Boot winner, 27 goals in 35 games",
+      "Phil Foden",
+      "Nico O'Reilly — voted the club's Player of the Season"
+    ]
   },
   {
     "id": "chelsea",
@@ -182,7 +205,11 @@
       "ambition": "trophy-driven",
       "narrative": "dynasty",
       "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Finished 10th (52 points) under a new manager after Enzo Maresca's mid-season resignation; João Pedro posted the best goal return of his career (15 league goals) and was voted Player of the Season.",
+    "keyPlayers": [
+      "João Pedro — 2025-26 Player of the Season, career-best 15 goals"
+    ]
   },
   {
     "id": "tottenham",
@@ -216,7 +243,11 @@
       "fan-culture": "intellectual",
       "ambition": "trophy-driven",
       "narrative": "cursed"
-    }
+    },
+    "lastSeason": "Finished 17th (41 points), a difficult season that saw manager Ange Postecoglou depart mid-season (eventually taking over at West Ham) and Thomas Frank arrive from Brentford. Archie Gray swept the club's end-of-season fan awards.",
+    "keyPlayers": [
+      "Archie Gray — swept all three fan-voted awards in 2025-26"
+    ]
   },
   {
     "id": "newcastle",
@@ -250,7 +281,11 @@
       "ambition": "romantic",
       "narrative": "project",
       "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Finished 12th (49 points); captain Bruno Guimarães won Player of the Season, topping both the goals and assists charts among his teammates.",
+    "keyPlayers": [
+      "Bruno Guimarães — captain, 2025-26 Player of the Season"
+    ]
   },
   {
     "id": "aston-villa",
@@ -283,42 +318,13 @@
       "ambition": "trophy-driven",
       "narrative": "dynasty",
       "rivalryagnostic": 2
-    }
-  },
-  {
-    "id": "west-ham",
-    "name": "West Ham United",
-    "nick": "The Hammers",
-    "league": "Premier League",
-    "country": "England",
-    "founded": 1895,
-    "stadium": "London Stadium, London",
-    "honours": "3 FA Cups",
-    "c1": "#7A263A",
-    "c2": "#1BB1E7",
-    "identity": "East London working-class club, famous for a distinctive attacking tradition ('the West Ham way') and a fan culture built around the terrace anthem 'I'm Forever Blowing Bubbles.'",
-    "history": "Formed from a shipbuilding works team in 1895, West Ham has long punched below its fanbase's passion in terms of trophies, but produced key members of England's 1966 World Cup-winning side and has a reputation for developing technically gifted attacking players.",
-    "rivals": [
-      "Millwall — a genuinely hostile, class-inflected rivalry",
-      "Tottenham — a modern East vs North London needle"
-    ],
-    "legends": [
-      "Bobby Moore",
-      "Sir Trevor Brooking",
-      "Mark Noble"
-    ],
-    "watch": "A reliable source of academy-developed attacking talent that bigger clubs regularly poach.",
-    "tags": {
-      "ultras": 3,
-      "community": 2,
-      "underdog": 2,
-      "academy": 1,
-      "stability": "chaotic",
-      "fan-culture": "ultras",
-      "ambition": "romantic",
-      "narrative": "cursed",
-      "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Finished 4th in the league (65 points), qualifying for the Champions League — and won the UEFA Europa League final on 20 May 2026.",
+    "keyPlayers": [
+      "Ollie Watkins",
+      "John McGinn — captain",
+      "Emiliano Martínez — goalkeeper"
+    ]
   },
   {
     "id": "everton",
@@ -351,7 +357,11 @@
       "ambition": "romantic",
       "narrative": "cursed",
       "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Finished 13th (49 points); James Garner was voted Player of the Season.",
+    "keyPlayers": [
+      "James Garner — 2025-26 Player of the Season"
+    ]
   },
   {
     "id": "real-madrid",
@@ -387,7 +397,12 @@
       "fan-culture": "intellectual",
       "ambition": "trophy-driven",
       "narrative": "dynasty"
-    }
+    },
+    "lastSeason": "Finished 2nd (86 points), qualifying for the Champions League; Kylian Mbappé won the Pichichi Trophy as the league's top scorer with 25 league goals.",
+    "keyPlayers": [
+      "Kylian Mbappé — 2025-26 Pichichi Trophy winner (25 league goals)",
+      "Vinícius Júnior"
+    ]
   },
   {
     "id": "barcelona",
@@ -423,7 +438,14 @@
       "fan-culture": "intellectual",
       "ambition": "identity-driven",
       "narrative": "dynasty"
-    }
+    },
+    "lastSeason": "Won back-to-back La Liga titles (their 29th overall), clinching it with three matches to spare via a 2-0 win over Real Madrid; Lamine Yamal was named LaLiga Player of the Season for the second year running.",
+    "keyPlayers": [
+      "Lamine Yamal — back-to-back LaLiga Player of the Season, still a teenager",
+      "Pedri — midfield engine",
+      "Robert Lewandowski — 18 league goals",
+      "Joan García — goalkeeper, won the Zamora Trophy for the league's best defensive record"
+    ]
   },
   {
     "id": "atletico-madrid",
@@ -459,7 +481,12 @@
       "fan-culture": "ultras",
       "ambition": "trophy-driven",
       "narrative": "project"
-    }
+    },
+    "lastSeason": "Finished 4th (69 points), qualifying for the Champions League; Marcos Llorente and Marc Pubill both made LaLiga's Team of the Season.",
+    "keyPlayers": [
+      "Marcos Llorente — 2025-26 Team of the Season",
+      "Marc Pubill — 2025-26 Team of the Season"
+    ]
   },
   {
     "id": "athletic-bilbao",
@@ -494,7 +521,11 @@
       "ambition": "identity-driven",
       "narrative": "dynasty",
       "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Finished 12th (45 points), a quieter campaign after recent Champions League seasons.",
+    "keyPlayers": [
+      "Nico Williams — homegrown academy winger, stayed at Bilbao through repeated transfer interest from Europe's biggest clubs"
+    ]
   },
   {
     "id": "real-sociedad",
@@ -528,7 +559,11 @@
       "ambition": "identity-driven",
       "narrative": "underdog",
       "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Finished 10th in the league (46 points) but won the Copa del Rey, securing a Europa League place.",
+    "keyPlayers": [
+      "Mikel Oyarzabal — captain, Spain international"
+    ]
   },
   {
     "id": "sevilla",
@@ -560,7 +595,9 @@
       "fan-culture": "ultras",
       "ambition": "smart-overachiever",
       "narrative": "dynasty"
-    }
+    },
+    "lastSeason": "Finished 13th (43 points), a season spent mostly clear of relegation trouble in an ongoing rebuild.",
+    "keyPlayers": []
   },
   {
     "id": "valencia",
@@ -591,7 +628,9 @@
       "ambition": "trophy-driven",
       "narrative": "cursed",
       "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Finished 9th (49 points), a mid-table campaign.",
+    "keyPlayers": []
   },
   {
     "id": "real-betis",
@@ -623,7 +662,11 @@
       "fan-culture": "ultras",
       "ambition": "romantic",
       "narrative": "cursed"
-    }
+    },
+    "lastSeason": "Finished 5th (60 points), qualifying for the Champions League — one of the club's best modern finishes.",
+    "keyPlayers": [
+      "Isco — veteran playmaker central to the team's identity"
+    ]
   },
   {
     "id": "juventus",
@@ -658,7 +701,12 @@
       "fan-culture": "ultras",
       "ambition": "trophy-driven",
       "narrative": "dynasty"
-    }
+    },
+    "lastSeason": "Finished 6th (69 points) and qualified for the Europa League after a turbulent season with two managerial changes (ending under Luciano Spalletti). Manuel Locatelli was voted Serie A Player of the Season.",
+    "keyPlayers": [
+      "Manuel Locatelli — 2025-26 Serie A Player of the Season",
+      "Kenan Yıldız — breakout attacking talent, Team of the Season"
+    ]
   },
   {
     "id": "ac-milan",
@@ -694,7 +742,12 @@
       "fan-culture": "intellectual",
       "ambition": "trophy-driven",
       "narrative": "dynasty"
-    }
+    },
+    "lastSeason": "Finished 5th (70 points), qualifying for the Europa League under new manager Massimiliano Allegri; 40-year-old Luka Modrić and Alexis Saelemaekers both made the Team of the Season.",
+    "keyPlayers": [
+      "Luka Modrić — Team of the Season midfielder in a remarkable late-career season",
+      "Alexis Saelemaekers — 2025-26 Team of the Season"
+    ]
   },
   {
     "id": "inter-milan",
@@ -729,7 +782,13 @@
       "fan-culture": "ultras",
       "ambition": "trophy-driven",
       "narrative": "dynasty"
-    }
+    },
+    "lastSeason": "Won their 21st Serie A title (the Scudetto) with three games to spare and completed a domestic double with the Coppa Italia; Lautaro Martínez won the Capocannoniere as top scorer with 17 goals.",
+    "keyPlayers": [
+      "Lautaro Martínez — captain and 2025-26 Capocannoniere (top scorer, 17 goals)",
+      "Federico Dimarco — Team of the Season full-back",
+      "Alessandro Bastoni — Team of the Season centre-back"
+    ]
   },
   {
     "id": "napoli",
@@ -764,7 +823,11 @@
       "fan-culture": "ultras",
       "ambition": "romantic",
       "narrative": "cursed"
-    }
+    },
+    "lastSeason": "Finished 2nd (76 points), qualifying for the Champions League; centre-back Amir Rrahmani made Serie A's Team of the Season.",
+    "keyPlayers": [
+      "Amir Rrahmani — 2025-26 Team of the Season centre-back"
+    ]
   },
   {
     "id": "as-roma",
@@ -796,7 +859,11 @@
       "fan-culture": "ultras",
       "ambition": "romantic",
       "narrative": "cursed"
-    }
+    },
+    "lastSeason": "Finished 3rd (73 points) under new manager Gian Piero Gasperini, returning to the Champions League for the first time in years.",
+    "keyPlayers": [
+      "Gian Piero Gasperini — manager (joined from Atalanta), architect of the Champions League finish"
+    ]
   },
   {
     "id": "lazio",
@@ -827,7 +894,9 @@
       "fan-culture": "ultras",
       "ambition": "trophy-driven",
       "narrative": "dynasty"
-    }
+    },
+    "lastSeason": "Finished 9th (54 points), a mid-table campaign without European football.",
+    "keyPlayers": []
   },
   {
     "id": "fiorentina",
@@ -859,7 +928,11 @@
       "ambition": "romantic",
       "narrative": "cursed",
       "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Finished 15th (42 points) after a disappointing, managerially turbulent season; midfielder Nicolò Fagioli made the Team of the Season.",
+    "keyPlayers": [
+      "Nicolò Fagioli — 2025-26 Team of the Season midfielder"
+    ]
   },
   {
     "id": "atalanta",
@@ -891,7 +964,11 @@
       "ambition": "smart-overachiever",
       "narrative": "underdog",
       "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Finished 7th (59 points), reaching the Conference League play-off; goalkeeper Marco Carnesecchi made the Team of the Season.",
+    "keyPlayers": [
+      "Marco Carnesecchi — 2025-26 Team of the Season goalkeeper"
+    ]
   },
   {
     "id": "bayern-munich",
@@ -926,7 +1003,13 @@
       "fan-culture": "intellectual",
       "ambition": "trophy-driven",
       "narrative": "dynasty"
-    }
+    },
+    "lastSeason": "Ran away with the Bundesliga title (89 points, 122 goals — one of the highest tallies in top-five-league history); Harry Kane won the scoring race with 36 goals and Michael Olise was named Player of the Season.",
+    "keyPlayers": [
+      "Harry Kane — 2025-26 Bundesliga top scorer with 36 goals",
+      "Michael Olise — Player of the Season (15 goals, 19 assists)",
+      "Joshua Kimmich — midfield metronome and leader"
+    ]
   },
   {
     "id": "dortmund",
@@ -962,7 +1045,12 @@
       "fan-culture": "ultras",
       "ambition": "identity-driven",
       "narrative": "underdog"
-    }
+    },
+    "lastSeason": "Finished 2nd (73 points), qualifying for the Champions League behind a defense that kept goalkeeper Gregor Kobel busy with a league-best 15 clean sheets.",
+    "keyPlayers": [
+      "Gregor Kobel — 15 clean sheets, most of any Bundesliga keeper",
+      "Nico Schlotterbeck — defensive lynchpin and build-up hub"
+    ]
   },
   {
     "id": "leipzig",
@@ -994,7 +1082,11 @@
       "ambition": "trophy-driven",
       "narrative": "project",
       "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Finished 3rd (65 points), returning to the Champions League; young winger Yan Diomande was named the league's Rookie of the Season.",
+    "keyPlayers": [
+      "Yan Diomande — 2025-26 Bundesliga Rookie of the Season"
+    ]
   },
   {
     "id": "leverkusen",
@@ -1026,7 +1118,9 @@
       "ambition": "smart-overachiever",
       "narrative": "project",
       "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Finished 6th (59 points) and reached the Europa League, a step back from their title-winning era, through a season with a mid-campaign managerial change.",
+    "keyPlayers": []
   },
   {
     "id": "schalke",
@@ -1059,7 +1153,9 @@
       "fan-culture": "ultras",
       "ambition": "romantic",
       "narrative": "cursed"
-    }
+    },
+    "lastSeason": "Spent 2025-26 in the 2. Bundesliga, continuing a multi-season stay in the second tier since relegation from the top flight.",
+    "keyPlayers": []
   },
   {
     "id": "gladbach",
@@ -1091,7 +1187,9 @@
       "ambition": "romantic",
       "narrative": "dynasty",
       "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Finished 12th (38 points), a mid-table season.",
+    "keyPlayers": []
   },
   {
     "id": "eintracht-frankfurt",
@@ -1123,7 +1221,9 @@
       "ambition": "romantic",
       "narrative": "underdog",
       "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Finished 8th (44 points) after a turbulent season with two managerial changes.",
+    "keyPlayers": []
   },
   {
     "id": "union-berlin",
@@ -1156,7 +1256,9 @@
       "ambition": "identity-driven",
       "narrative": "underdog",
       "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Finished 11th (39 points), comfortably clear of the relegation places.",
+    "keyPlayers": []
   },
   {
     "id": "psg",
@@ -1188,7 +1290,13 @@
       "fan-culture": "ultras",
       "ambition": "trophy-driven",
       "narrative": "dynasty"
-    }
+    },
+    "lastSeason": "Won a record-extending 14th Ligue 1 title — their fifth in a row — clinched by mid-May; Ousmane Dembélé was named Ligue 1 Player of the Season and PSG placed five players in the Team of the Season.",
+    "keyPlayers": [
+      "Ousmane Dembélé — 2025-26 Ligue 1 Player of the Season",
+      "Achraf Hakimi — attacking right-back, Team of the Season",
+      "Vitinha — midfield conductor, Team of the Season"
+    ]
   },
   {
     "id": "marseille",
@@ -1221,7 +1329,11 @@
       "fan-culture": "rebel",
       "ambition": "trophy-driven",
       "narrative": "cursed"
-    }
+    },
+    "lastSeason": "Finished 5th (59 points) and qualified for the Europa League despite manager Roberto De Zerbi departing in February; Mason Greenwood made the Team of the Season.",
+    "keyPlayers": [
+      "Mason Greenwood — Team of the Season forward"
+    ]
   },
   {
     "id": "lyon",
@@ -1252,7 +1364,11 @@
       "fan-culture": "intellectual",
       "ambition": "trophy-driven",
       "narrative": "dynasty"
-    }
+    },
+    "lastSeason": "Finished 4th (60 points) to reach Champions League qualifying; midfielder Corentin Tolisso made the Team of the Season.",
+    "keyPlayers": [
+      "Corentin Tolisso — captain and Team of the Season midfielder"
+    ]
   },
   {
     "id": "monaco",
@@ -1284,7 +1400,9 @@
       "ambition": "smart-overachiever",
       "narrative": "project",
       "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Finished 7th (54 points), reaching the Conference League.",
+    "keyPlayers": []
   },
   {
     "id": "lille",
@@ -1315,40 +1433,9 @@
       "fan-culture": "ultras",
       "ambition": "smart-overachiever",
       "narrative": "underdog"
-    }
-  },
-  {
-    "id": "saint-etienne",
-    "name": "AS Saint-Étienne",
-    "nick": "Les Verts (The Greens)",
-    "league": "Ligue 1",
-    "country": "France",
-    "founded": 1919,
-    "stadium": "Stade Geoffroy-Guichard, Saint-Étienne",
-    "honours": "10 French league titles",
-    "c1": "#00A651",
-    "c2": "#FFFFFF",
-    "identity": "France's most historically decorated club outside the current 'big' clubs — a coal-mining city's team whose 1970s golden generation is still the emotional high-water mark of French domestic football.",
-    "history": "Saint-Étienne's 1976 European Cup final defeat to Bayern Munich, despite dominating the match, is one of French football's defining heartbreak stories and helped cement Les Verts as the country's most romantically supported traditional club.",
-    "rivals": [
-      "Lyon — the Derby Rhône-Alpes"
-    ],
-    "legends": [
-      "Michel Platini",
-      "Dominique Rocheteau"
-    ],
-    "watch": "The definitive French 'glorious past, hungry present' club — a strong pick for journey-over-trophies fans.",
-    "tags": {
-      "journey": 3,
-      "ultras": 2,
-      "underdog": 2,
-      "bloodfeud": 2,
-      "community": 1,
-      "stability": "rebuilding",
-      "fan-culture": "ultras",
-      "ambition": "romantic",
-      "narrative": "dynasty"
-    }
+    },
+    "lastSeason": "Finished 3rd (61 points), qualifying for the Champions League.",
+    "keyPlayers": []
   },
   {
     "id": "la-galaxy",
@@ -1380,8 +1467,11 @@
       "stability": "stable",
       "fan-culture": "family",
       "ambition": "trophy-driven",
-      "narrative": "dynasty"
-    }
+      "narrative": "dynasty",
+      "aristocratic": 1
+    },
+    "lastSeason": "Suffered a stunning post-championship collapse — after winning MLS Cup 2024, they finished 14th in the West (30 points) and missed the 2025 playoffs entirely.",
+    "keyPlayers": []
   },
   {
     "id": "lafc",
@@ -1413,7 +1503,11 @@
       "fan-culture": "ultras",
       "ambition": "trophy-driven",
       "narrative": "project"
-    }
+    },
+    "lastSeason": "Finished 3rd in the West (60 points) and reached the playoffs; Denis Bouanga made the MLS Best XI and was an MVP finalist.",
+    "keyPlayers": [
+      "Denis Bouanga — 2025 MLS Best XI forward and MVP finalist"
+    ]
   },
   {
     "id": "inter-miami",
@@ -1445,7 +1539,11 @@
       "ambition": "trophy-driven",
       "narrative": "project",
       "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Won the first MLS Cup in club history in 2025, beating Vancouver 3-1 in the final; Lionel Messi won a second straight MVP and the Golden Boot with 29 goals.",
+    "keyPlayers": [
+      "Lionel Messi — 2025 MLS MVP and Golden Boot winner (29 goals)"
+    ]
   },
   {
     "id": "seattle-sounders",
@@ -1477,8 +1575,13 @@
       "stability": "stable",
       "fan-culture": "ultras",
       "ambition": "trophy-driven",
-      "narrative": "dynasty"
-    }
+      "narrative": "dynasty",
+      "trophyhunger": 1
+    },
+    "lastSeason": "Finished 5th in the West (55 points) and reached the playoffs; club stalwart Cristian Roldan made the MLS Best XI.",
+    "keyPlayers": [
+      "Cristian Roldan — 2025 MLS Best XI midfielder"
+    ]
   },
   {
     "id": "atlanta-united",
@@ -1509,8 +1612,11 @@
       "fan-culture": "ultras",
       "ambition": "trophy-driven",
       "narrative": "project",
-      "rivalryagnostic": 2
-    }
+      "rivalryagnostic": 2,
+      "journey": 1
+    },
+    "lastSeason": "Finished 14th in the East (28 points), a major disappointment for one of MLS's biggest-drawing clubs.",
+    "keyPlayers": []
   },
   {
     "id": "nycfc",
@@ -1541,8 +1647,11 @@
       "stability": "stable",
       "fan-culture": "family",
       "ambition": "smart-overachiever",
-      "narrative": "project"
-    }
+      "narrative": "project",
+      "patience": 1
+    },
+    "lastSeason": "Finished 5th in the East (56 points) and reached the playoffs.",
+    "keyPlayers": []
   },
   {
     "id": "nyrb",
@@ -1575,7 +1684,9 @@
       "fan-culture": "family",
       "ambition": "smart-overachiever",
       "narrative": "underdog"
-    }
+    },
+    "lastSeason": "Finished 10th in the East (43 points) and narrowly missed the playoff places.",
+    "keyPlayers": []
   },
   {
     "id": "portland-timbers",
@@ -1606,8 +1717,11 @@
       "stability": "stable",
       "fan-culture": "ultras",
       "ambition": "romantic",
-      "narrative": "underdog"
-    }
+      "narrative": "underdog",
+      "underdog": 2
+    },
+    "lastSeason": "Finished 8th in the West (44 points) and reached the playoffs.",
+    "keyPlayers": []
   },
   {
     "id": "sporting-kc",
@@ -1637,8 +1751,11 @@
       "fan-culture": "family",
       "ambition": "smart-overachiever",
       "narrative": "underdog",
-      "rivalryagnostic": 2
-    }
+      "rivalryagnostic": 2,
+      "underdog": 2
+    },
+    "lastSeason": "Finished bottom of the West (15th, 28 points) in a season to forget.",
+    "keyPlayers": []
   },
   {
     "id": "fc-cincinnati",
@@ -1669,8 +1786,13 @@
       "stability": "stable",
       "fan-culture": "ultras",
       "ambition": "smart-overachiever",
-      "narrative": "underdog"
-    }
+      "narrative": "underdog",
+      "underdog": 2
+    },
+    "lastSeason": "Finished 2nd in the East (65 points) and reached the playoffs; Evander made the MLS Best XI and was an MVP finalist.",
+    "keyPlayers": [
+      "Evander — 2025 MLS Best XI midfielder and MVP finalist"
+    ]
   },
   {
     "id": "club-america",
@@ -1703,8 +1825,11 @@
       "stability": "stable",
       "fan-culture": "ultras",
       "ambition": "trophy-driven",
-      "narrative": "dynasty"
-    }
+      "narrative": "dynasty",
+      "aristocratic": 1
+    },
+    "lastSeason": "Qualified for the Clausura 2026 Liguilla as the 8th seed but fell in the quarterfinals — a modest campaign by the standards of Mexico's most decorated club.",
+    "keyPlayers": []
   },
   {
     "id": "chivas",
@@ -1736,7 +1861,9 @@
       "fan-culture": "rebel",
       "ambition": "identity-driven",
       "narrative": "dynasty"
-    }
+    },
+    "lastSeason": "Finished 2nd in the Clausura 2026 general table (level on points with Pumas) and reached the Liguilla quarterfinals — a strong season for the all-Mexican club.",
+    "keyPlayers": []
   },
   {
     "id": "cruz-azul",
@@ -1766,8 +1893,13 @@
       "stability": "chaotic",
       "fan-culture": "ultras",
       "ambition": "trophy-driven",
-      "narrative": "cursed"
-    }
+      "narrative": "cursed",
+      "ultras": 1
+    },
+    "lastSeason": "Won the Clausura 2026 title — the club's 10th league championship — beating Pumas 2-1 on aggregate in the final; captain Ignacio Rivero was among the team's standout performers.",
+    "keyPlayers": [
+      "Ignacio Rivero — captain and one of the side's top performers in the title run"
+    ]
   },
   {
     "id": "pumas",
@@ -1799,7 +1931,9 @@
       "ambition": "identity-driven",
       "narrative": "dynasty",
       "friendlyrivalry": 2
-    }
+    },
+    "lastSeason": "Reached the Clausura 2026 final (losing to Cruz Azul) after topping the regular-season general table on goal difference — a major step forward for the university club.",
+    "keyPlayers": []
   },
   {
     "id": "tigres",
@@ -1830,7 +1964,9 @@
       "fan-culture": "ultras",
       "ambition": "trophy-driven",
       "narrative": "project"
-    }
+    },
+    "lastSeason": "Runners-up in Apertura 2025 (losing the final to Toluca on penalties) and reached the Clausura 2026 Liguilla quarterfinals.",
+    "keyPlayers": []
   },
   {
     "id": "monterrey",
@@ -1860,7 +1996,9 @@
       "fan-culture": "ultras",
       "ambition": "trophy-driven",
       "narrative": "project"
-    }
+    },
+    "lastSeason": "Missed the Clausura 2026 Liguilla — a disappointing season for one of Liga MX's biggest-spending clubs.",
+    "keyPlayers": []
   },
   {
     "id": "leon",
@@ -1890,7 +2028,9 @@
       "ambition": "romantic",
       "narrative": "dynasty",
       "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Finished 10th in the Clausura 2026 general table, just missing out on the Liguilla playoffs.",
+    "keyPlayers": []
   },
   {
     "id": "toluca",
@@ -1920,7 +2060,9 @@
       "ambition": "trophy-driven",
       "narrative": "dynasty",
       "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Won the Apertura 2025 title — back-to-back championships (their 12th overall) — beating Tigres on penalties, then reached the Clausura 2026 Liguilla.",
+    "keyPlayers": []
   },
   {
     "id": "brighton",
@@ -1958,7 +2100,12 @@
       "ambition": "smart-overachiever",
       "narrative": "underdog",
       "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Finished 8th (53 points), qualifying for the Conference League play-off on the back of a defense anchored by Jan Paul van Hecke; Ferdi Kadıoğlu won Player of the Season.",
+    "keyPlayers": [
+      "Jan Paul van Hecke — defensive anchor of an 8th-place finish",
+      "Ferdi Kadıoğlu — 2025-26 Player of the Season"
+    ]
   },
   {
     "id": "brentford",
@@ -1996,7 +2143,11 @@
       "ambition": "smart-overachiever",
       "narrative": "underdog",
       "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Finished 9th (53 points); Igor Thiago scored 22 league goals in his first full season, finishing runner-up for the Golden Boot and winning Player of the Season.",
+    "keyPlayers": [
+      "Igor Thiago — 22 league goals, 2nd in the 2025-26 Golden Boot race"
+    ]
   },
   {
     "id": "fulham",
@@ -2032,7 +2183,11 @@
       "ambition": "romantic",
       "narrative": "cursed",
       "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Finished 11th (52 points); Harry Wilson won the club's Player of the Season award.",
+    "keyPlayers": [
+      "Harry Wilson — 2025-26 Player of the Season"
+    ]
   },
   {
     "id": "crystal-palace",
@@ -2069,44 +2224,11 @@
       "fan-culture": "ultras",
       "ambition": "romantic",
       "narrative": "underdog"
-    }
-  },
-  {
-    "id": "wolves",
-    "name": "Wolverhampton Wanderers",
-    "nick": "Wolves",
-    "league": "Premier League",
-    "country": "England",
-    "founded": 1877,
-    "stadium": "Molineux Stadium, Wolverhampton",
-    "honours": "3 English league titles, 4 FA Cups, 1 League Cup",
-    "c1": "#FDB913",
-    "c2": "#231F20",
-    "identity": "A founding club of European club competition with deep history now rebuilt through a Portuguese super-agent pipeline — a club that turned a unique recruitment network into Premier League stability.",
-    "history": "Wolves were one of English football's dominant forces in the 1950s, winning three league titles and pioneering European competition under manager Stan Cullis, famously beating Honvéd in a floodlit friendly that helped inspire the creation of the European Cup. After decades of decline, the Fosun International takeover (2016) and a partnership with Jorge Mendes's agency brought a wave of Portuguese talent — Rúben Neves, João Moutinho, Diogo Jota — that propelled Wolves from the Championship into the Europa League quarter-finals under Nuno Espírito Santo (2017–21).",
-    "rivals": [
-      "West Bromwich Albion — the Black Country Derby, one of English football's oldest and fiercest local feuds",
-      "Aston Villa — a newer Premier League-era rivalry"
-    ],
-    "legends": [
-      "Billy Wright",
-      "Steve Bull",
-      "Rúben Neves",
-      "Stan Cullis (manager)"
-    ],
-    "watch": "A club with genuine European-pioneer history now running one of the most distinctive recruitment pipelines in football — the Mendes connection makes Wolves' transfer strategy unlike any other.",
-    "tags": {
-      "technical": 2,
-      "counterattack": 2,
-      "underdog": 1,
-      "bloodfeud": 2,
-      "journey": 2,
-      "community": 1,
-      "stability": "stable",
-      "fan-culture": "family",
-      "ambition": "smart-overachiever",
-      "narrative": "project"
-    }
+    },
+    "lastSeason": "Finished 15th in the league (45 points) but won the UEFA Conference League, beating Rayo Vallecano in the final on 27 May 2026 — the club's first major trophy. Ismaila Sarr was voted Player of the Season.",
+    "keyPlayers": [
+      "Ismaila Sarr — 2025-26 Player of the Season, key to the Conference League run"
+    ]
   },
   {
     "id": "nottingham-forest",
@@ -2142,7 +2264,12 @@
       "fan-culture": "ultras",
       "ambition": "romantic",
       "narrative": "dynasty"
-    }
+    },
+    "lastSeason": "Finished 16th (44 points) following a mid-season managerial change that brought in Ange Postecoglou; Morgan Gibbs-White had a 15-goal campaign and Neco Williams won Player of the Season.",
+    "keyPlayers": [
+      "Morgan Gibbs-White — 15-goal season",
+      "Neco Williams — 2025-26 Player of the Season"
+    ]
   },
   {
     "id": "bournemouth",
@@ -2179,119 +2306,11 @@
       "ambition": "smart-overachiever",
       "narrative": "underdog",
       "rivalryagnostic": 2
-    }
-  },
-  {
-    "id": "southampton",
-    "name": "Southampton FC",
-    "nick": "The Saints",
-    "league": "Premier League",
-    "country": "England",
-    "founded": 1885,
-    "stadium": "St Mary's Stadium, Southampton",
-    "honours": "1 FA Cup (1976)",
-    "c1": "#D71920",
-    "c2": "#FFFFFF",
-    "identity": "English football's great talent factory — a club that developed Gareth Bale, Theo Walcott, and Alan Shearer, and built a reputation as the Premier League's most reliable academy pipeline.",
-    "history": "Southampton's 1976 FA Cup win as a Second Division club over Manchester United remains one of the competition's great upsets, but the club's modern identity was built on academy development. The 'Saints Way' model — develop elite youth talent, sell at peak value, reinvest — produced Bale, Walcott, Alex Oxlade-Chamberlain, Luke Shaw, and Virgil van Dijk through a golden run of scouting and coaching. After a decade of Premier League stability, Southampton were relegated in 2023 but returned immediately under Russell Martin (2024), playing a possession-based style that divided opinion but delivered promotion.",
-    "rivals": [
-      "Bournemouth — the South Coast Derby",
-      "Portsmouth — a fierce historical South Coast rivalry, less frequent in recent years"
-    ],
-    "legends": [
-      "Alan Shearer",
-      "Gareth Bale",
-      "Matt Le Tissier",
-      "Theo Walcott"
-    ],
-    "watch": "The academy is the club's identity — even through relegation and promotion, Southampton's ability to develop and sell young talent remains its defining characteristic.",
-    "tags": {
-      "academy": 3,
-      "possession": 2,
-      "underdog": 2,
-      "journey": 2,
-      "community": 1,
-      "stability": "rebuilding",
-      "fan-culture": "intellectual",
-      "ambition": "smart-overachiever",
-      "narrative": "project",
-      "rivalryagnostic": 2
-    }
-  },
-  {
-    "id": "leicester",
-    "name": "Leicester City",
-    "nick": "The Foxes",
-    "league": "Premier League",
-    "country": "England",
-    "founded": 1884,
-    "stadium": "King Power Stadium, Leicester",
-    "honours": "1 Premier League title (2016), 1 FA Cup (2021), 3 League Cups",
-    "c1": "#003090",
-    "c2": "#FDBE00",
-    "identity": "The club that achieved the single most improbable championship in football history — a 5000-1 Premier League title that redefined what was possible in the modern game.",
-    "history": "Leicester City spent most of their history as a mid-table or second-tier club, winning League Cups in the 1960s and 1990s but never seriously contending for the title. That changed in 2015–16, when Claudio Ranieri's team — built around N'Golo Kanté, Jamie Vardy, and Riyad Mahrez — won the Premier League at 5000-1 odds, the greatest upset in English football history. The club won the FA Cup in 2021 under Brendan Rodgers and the Championship in 2024 after a single-season relegation, returning to the Premier League under Steve Cooper.",
-    "rivals": [
-      "Nottingham Forest — the East Midlands Derby",
-      "Derby County — a fierce regional rivalry, less frequent in the top flight"
-    ],
-    "legends": [
-      "Jamie Vardy",
-      "N'Golo Kanté",
-      "Claudio Ranieri (manager)",
-      "Gary Lineker"
-    ],
-    "watch": "The 2016 title story is permanent — no matter what happens next, Leicester is the club that proved the impossible was possible, and that legacy shapes everything about how the club is perceived.",
-    "tags": {
-      "underdog": 3,
-      "counterattack": 3,
-      "trophyhunger": 2,
-      "journey": 3,
-      "bloodfeud": 1,
-      "community": 2,
-      "stability": "stable",
-      "fan-culture": "family",
-      "ambition": "smart-overachiever",
-      "narrative": "underdog",
-      "friendlyrivalry": 2
-    }
-  },
-  {
-    "id": "ipswich",
-    "name": "Ipswich Town",
-    "nick": "The Tractor Boys",
-    "league": "Premier League",
-    "country": "England",
-    "founded": 1878,
-    "stadium": "Portman Road, Ipswich",
-    "honours": "1 English league title (1962), 1 FA Cup (1978), 1 UEFA Cup (1981)",
-    "c1": "#3D64A4",
-    "c2": "#FFFFFF",
-    "identity": "A rural, East Anglian club with a golden Bobby Robson era and a modern revival built on progressive coaching — the kind of club that feels like it belongs to a quieter, more romantic football era.",
-    "history": "Ipswich won the league in 1962 under Alf Ramsey and the FA Cup in 1978 under Bobby Robson, who then led the club to UEFA Cup glory in 1981 — a remarkable haul for a club from a small Suffolk town. After decades of decline, including a 22-year exile from the top flight, Ipswich returned to the Premier League in 2024 under Kieran McKenna, who transformed the club with progressive, possession-based football that delivered back-to-back promotions from League One to the Premier League. Portman Road remains one of English football's most characterful, community-rooted grounds.",
-    "rivals": [
-      "Norwich City — the East Anglian Derby, one of English football's most geographically isolated rivalries",
-      "Colchester United — a minor local rivalry"
-    ],
-    "legends": [
-      "Bobby Robson (manager)",
-      "Alf Ramsey (manager)",
-      "Kevin Beattie",
-      "Paul Mariner"
-    ],
-    "watch": "Back-to-back promotions under a young, forward-thinking manager make this one of football's most satisfying recent comeback stories — a small-town club doing things the right way.",
-    "tags": {
-      "possession": 2,
-      "underdog": 3,
-      "community": 2,
-      "journey": 3,
-      "bloodfeud": 2,
-      "academy": 1,
-      "stability": "rebuilding",
-      "fan-culture": "intellectual",
-      "ambition": "smart-overachiever",
-      "narrative": "underdog"
-    }
+    },
+    "lastSeason": "Finished 6th (57 points) — the club's best-ever Premier League finish — securing Europa League qualification; Alex Scott won Player of the Season.",
+    "keyPlayers": [
+      "Alex Scott — 2025-26 Player of the Season"
+    ]
   },
   {
     "id": "villarreal",
@@ -2328,82 +2347,13 @@
       "ambition": "smart-overachiever",
       "narrative": "underdog",
       "rivalryagnostic": 2
-    }
-  },
-  {
-    "id": "girona",
-    "name": "Girona FC",
-    "nick": "Els Gironins",
-    "league": "La Liga",
-    "country": "Spain",
-    "founded": 1930,
-    "stadium": "Estadi Montilivi, Girona",
-    "honours": "1 Segunda División title (2022)",
-    "c1": "#CD2534",
-    "c2": "#FFFFFF",
-    "identity": "The City Football Group's Catalan outpost that shocked Spain — a modest club that finished third in La Liga and qualified for the Champions League under an attacking, fearless style.",
-    "history": "Girona spent nearly its entire existence in the lower divisions of Spanish football before promotion to La Liga in 2017. The City Football Group's involvement (since 2017, majority stake from 2020) brought resources and player pathways from the wider CFG network. Under Michel (2021–24), Girona played some of the most exciting attacking football in Spain and finished third in the 2023–24 La Liga season — ahead of Barcelona, Atlético, and Real Sociedad — qualifying for the Champions League for the first time, one of the most stunning overachievements in recent La Liga history.",
-    "rivals": [
-      "Barcelona — a Catalan regional rivalry, sharpened by CFG's presence and Michel's attacking style",
-      "Espanyol — a lesser Catalan rivalry"
-    ],
-    "legends": [
-      "Artem Dovbyk",
-      "Aleix García",
-      "Michel (manager)",
-      "Cristhian Stuani"
-    ],
-    "watch": "The most exciting overachievement story in recent La Liga — a club from a small Catalan city that outplayed the giants through fearless attacking football and CFG-backed recruitment.",
-    "tags": {
-      "possession": 2,
-      "technical": 2,
-      "underdog": 3,
-      "counterattack": 2,
-      "journey": 3,
-      "accessible": 1,
-      "stability": "stable",
-      "fan-culture": "intellectual",
-      "ambition": "smart-overachiever",
-      "narrative": "project",
-      "rivalryagnostic": 2
-    }
-  },
-  {
-    "id": "mallorca",
-    "name": "RCD Mallorca",
-    "nick": "Los Bermellones",
-    "league": "La Liga",
-    "country": "Spain",
-    "founded": 1916,
-    "stadium": "Estadi de Son Moix, Palma de Mallorca",
-    "honours": "1 Copa del Rey (2003), 1 Spanish Super Cup",
-    "c1": "#E20613",
-    "c2": "#FFD100",
-    "identity": "The island club — the only La Liga team based on the Balearic Islands, with a fierce, geographically distinct fanbase and a history of punching above its weight from a Mediterranean outpost.",
-    "history": "Mallorca has spent over 40 seasons in the top flight despite being the only top-division club on the Balearic Islands, a geographic isolation that gives the club a uniquely tight-knit fan culture. The club's golden era came under Gregorio Manzano and then a Copa del Rey win in 2003, followed by a run to the 1999 Cup Winners' Cup final. After financial collapse and a drop to the third tier, Mallorca climbed back under new ownership, returning to La Liga in 2024 and re-establishing themselves under Mexican manager Javier Aguirre.",
-    "rivals": [
-      "Real Betis — a historical rivalry sharpened by geography and competitive matchups",
-      "Barcelona — an island-vs-mainland Catalan dynamic"
-    ],
-    "legends": [
-      "Samuel Eto'o",
-      "Javier Aguirre (manager)",
-      "Miki Nadal",
-      "Daniel Güiza"
-    ],
-    "watch": "The only island club in La Liga — the geographic isolation and Mediterranean identity give Mallorca a fan culture unlike any other in Spanish football.",
-    "tags": {
-      "underdog": 2,
-      "community": 3,
-      "setpieces": 1,
-      "journey": 2,
-      "accessible": 1,
-      "stability": "stable",
-      "fan-culture": "ultras",
-      "ambition": "romantic",
-      "narrative": "underdog",
-      "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Finished 3rd (72 points) — back-to-back Champions League qualification for the first time in club history — despite a mid-season squad overhaul and a coaching change.",
+    "keyPlayers": [
+      "Gerard Moreno — 10 league goals, longtime club forward",
+      "Georges Mikautadze — leading scorer with 13 goals",
+      "Renato Veiga — breakout 22-year-old centre-back in his debut LaLiga season"
+    ]
   },
   {
     "id": "getafe",
@@ -2440,7 +2390,11 @@
       "ambition": "smart-overachiever",
       "narrative": "underdog",
       "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Finished 7th (51 points), reaching the Conference League play-off; Luis Milla made LaLiga's Team of the Season.",
+    "keyPlayers": [
+      "Luis Milla — 2025-26 Team of the Season"
+    ]
   },
   {
     "id": "osasuna",
@@ -2477,7 +2431,9 @@
       "ambition": "identity-driven",
       "narrative": "underdog",
       "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Finished 17th (42 points), a season spent battling the lower half of the table.",
+    "keyPlayers": []
   },
   {
     "id": "celta-vigo",
@@ -2513,7 +2469,11 @@
       "fan-culture": "ultras",
       "ambition": "romantic",
       "narrative": "underdog"
-    }
+    },
+    "lastSeason": "Finished 6th (54 points), qualifying for the Europa League.",
+    "keyPlayers": [
+      "Iago Aspas — the club's longtime captain and all-time talisman"
+    ]
   },
   {
     "id": "rayo-vallecano",
@@ -2551,44 +2511,11 @@
       "ambition": "identity-driven",
       "narrative": "underdog",
       "rivalryagnostic": 2
-    }
-  },
-  {
-    "id": "las-palmas",
-    "name": "UD Las Palmas",
-    "nick": "Los Amarillos",
-    "league": "La Liga",
-    "country": "Spain",
-    "founded": 1949,
-    "stadium": "Estadio Gran Canaria, Las Palmas",
-    "honours": "0 major trophies (1 Copa del Rey finalist 1978; 1 UEFA Cup round of 16 1972–73)",
-    "c1": "#FDED00",
-    "c2": "#0047A0",
-    "identity": "The Canary Islands' footballing heartbeat — a club 1,000 miles from mainland Spain with a uniquely Canarian, possession-based identity and a passionate, geographically isolated fanbase.",
-    "history": "Las Palmas was founded in 1949 through the merger of five Gran Canaria clubs and quickly became one of Spain's leading sides, reaching the Copa del Rey final in 1978 and the UEFA Cup in the early 1970s. The club's golden era (1960s–70s) featured a distinctive Canarian possession style influenced by the islands' football culture. After decades bouncing between divisions, Las Palmas returned to La Liga in 2023 under García Pimienta, playing a possession-based style that harked back to the club's 1970s identity. The geographic isolation — the club flies to every away match — gives Las Palmas a unique, island-rooted character.",
-    "rivals": [
-      "CD Tenerife — the Canary Islands Derby, one of the most intense island rivalries in world football",
-      "Sevilla FC — a lesser historical rivalry from competitive La Liga eras"
-    ],
-    "legends": [
-      "Juan Carlos Valerón",
-      "David Silva",
-      "Tonono",
-      "García Pimienta (manager)"
-    ],
-    "watch": "A club 1,000 miles from the mainland with a genuinely Canarian football identity — the possession style and island isolation make Las Palmas one of La Liga's most distinctive outfits.",
-    "tags": {
-      "possession": 2,
-      "technical": 2,
-      "community": 2,
-      "journey": 2,
-      "accessible": 1,
-      "stability": "rebuilding",
-      "fan-culture": "intellectual",
-      "ambition": "identity-driven",
-      "narrative": "underdog",
-      "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Finished 8th (50 points); centre-back Florian Lejeune made the Team of the Season and manager Iñigo Pérez won LaLiga Manager of the Year.",
+    "keyPlayers": [
+      "Florian Lejeune — 2025-26 Team of the Season"
+    ]
   },
   {
     "id": "alaves",
@@ -2624,44 +2551,11 @@
       "ambition": "smart-overachiever",
       "narrative": "underdog",
       "rivalryagnostic": 2
-    }
-  },
-  {
-    "id": "leganes",
-    "name": "CD Leganés",
-    "nick": "Los Pepineros",
-    "league": "La Liga",
-    "country": "Spain",
-    "founded": 1928,
-    "stadium": "Estadio Municipal de Butarque, Leganés",
-    "honours": "0 major trophies (1 Segunda División title 2024)",
-    "c1": "#00529F",
-    "c2": "#FFFFFF",
-    "identity": "Madrid's working-class southern suburb club — known as 'The Cucumber Growers' for the market gardens that once surrounded Leganés, a club that embodies humble, community-rooted football.",
-    "history": "Leganés spent nearly nine decades in Spain's lower divisions, a modest club from a working-class Madrid suburb, before an extraordinary rise in the 2010s. Under Asier Garitano, Leganés reached La Liga for the first time in 2016, survived four seasons in the top flight (including a famous 2018–19 campaign that saw them nearly avoid relegation on the final day), and briefly became one of Spanish football's favorite underdog stories. After relegation, Leganés returned to La Liga in 2024 as Segunda División champions, re-establishing themselves under Borja Jiménez.",
-    "rivals": [
-      "Getafe — the Madrid southern-suburb derby, a genuine local grudge between neighboring towns",
-      "Rayo Vallecano — a broader Madrid mini-rivalry"
-    ],
-    "legends": [
-      "Asier Garitano (manager)",
-      "Martín Mantovani",
-      "Unai Bustinza",
-      "Diego Simeone (briefly, as player)"
-    ],
-    "watch": "A genuine underdog from a working-class Madrid suburb — the 'Cucumber Growers' nickname and the humble, community-rooted identity make Leganés one of La Liga's most endearing stories.",
-    "tags": {
-      "underdog": 3,
-      "community": 2,
-      "physical": 2,
-      "journey": 3,
-      "accessible": 1,
-      "stability": "stable",
-      "fan-culture": "family",
-      "ambition": "smart-overachiever",
-      "narrative": "underdog",
-      "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Finished 14th (43 points); forward Toni Martínez was among the league's Team of the Season runners-up.",
+    "keyPlayers": [
+      "Toni Martínez"
+    ]
   },
   {
     "id": "espanyol",
@@ -2697,43 +2591,11 @@
       "fan-culture": "family",
       "ambition": "identity-driven",
       "narrative": "cursed"
-    }
-  },
-  {
-    "id": "valladolid",
-    "name": "Real Valladolid",
-    "nick": "Los Pucelanos",
-    "league": "La Liga",
-    "country": "Spain",
-    "founded": 1928,
-    "stadium": "Estadio José Zorrilla, Valladolid",
-    "honours": "0 major trophies (1 Copa del Rey finalist 1950, 1989)",
-    "c1": "#502E8E",
-    "c2": "#FFFFFF",
-    "identity": "Castile's modest, yo-yo club — a small-market side from the Spanish heartland known for the Ronaldo (Brazilian star) ownership era and a persistent habit of bouncing between divisions.",
-    "history": "Valladolid has spent over 45 seasons in La Liga but never won a major trophy, reaching two Copa del Rey finals (1950, 1989) and building a reputation as one of Spanish football's most persistent yo-yo clubs. The most distinctive period came when Brazilian legend Ronaldo Nazário bought the club in 2018, bringing global attention to a club that had rarely made headlines. Under Ronaldo's ownership, Valladolid bounced between La Liga and the second division, with the Brazilian star's involvement making the club a curiosity for international fans despite limited on-field success.",
-    "rivals": [
-      "Cultural Leonesa — a historical Castilian-Leonese rivalry",
-      "Osasuna — a regional Navarra-Castile rivalry"
-    ],
-    "legends": [
-      "Jorge Valdano (manager)",
-      "Pedro Herrera",
-      "Gaizka Mendieta (early career)",
-      "Ronaldo Nazário (owner)"
-    ],
-    "watch": "The Ronaldo ownership angle makes this one of La Liga's most internationally curious clubs — a modest Castilian side owned by one of football's biggest names, a strange but fascinating combination.",
-    "tags": {
-      "underdog": 3,
-      "journey": 2,
-      "community": 1,
-      "accessible": 1,
-      "stability": "rebuilding",
-      "fan-culture": "family",
-      "ambition": "smart-overachiever",
-      "narrative": "underdog",
-      "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Finished 11th (46 points); Carlos Romero made LaLiga's Team of the Season.",
+    "keyPlayers": [
+      "Carlos Romero — 2025-26 Team of the Season"
+    ]
   },
   {
     "id": "bologna",
@@ -2772,7 +2634,9 @@
       "ambition": "smart-overachiever",
       "narrative": "dynasty",
       "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Finished 8th (56 points), just missing out on European qualification.",
+    "keyPlayers": []
   },
   {
     "id": "torino",
@@ -2810,7 +2674,9 @@
       "fan-culture": "ultras",
       "ambition": "romantic",
       "narrative": "cursed"
-    }
+    },
+    "lastSeason": "Finished 12th (45 points), clear of the relegation battle.",
+    "keyPlayers": []
   },
   {
     "id": "udinese",
@@ -2847,7 +2713,9 @@
       "fan-culture": "family",
       "ambition": "smart-overachiever",
       "narrative": "underdog"
-    }
+    },
+    "lastSeason": "Finished 10th (50 points), a comfortable mid-table season.",
+    "keyPlayers": []
   },
   {
     "id": "genoa",
@@ -2884,7 +2752,9 @@
       "fan-culture": "ultras",
       "ambition": "romantic",
       "narrative": "dynasty"
-    }
+    },
+    "lastSeason": "Finished 16th (41 points), avoiding relegation in the season's closing weeks.",
+    "keyPlayers": []
   },
   {
     "id": "monza",
@@ -2920,45 +2790,9 @@
       "fan-culture": "family",
       "ambition": "romantic",
       "narrative": "project"
-    }
-  },
-  {
-    "id": "verona",
-    "name": "Hellas Verona",
-    "nick": "I Gialloblu (The Yellow and Blues)",
-    "league": "Serie A",
-    "country": "Italy",
-    "founded": 1903,
-    "stadium": "Stadio Marcantonio Bentegodi, Verona",
-    "honours": "1 Italian league title (1984-85), 1 Coppa Italia (1990)",
-    "c1": "#FCD000",
-    "c2": "#0033A0",
-    "identity": "A one-title wonder with one of Italy's most distinctive ultras cultures — Hellas Verona's 1985 Scudetto is the most improbable title in Serie A history, and its hardcore support has a complex, sometimes notorious political identity.",
-    "history": "Hellas Verona's 1984-85 Scudetto, won under Osvaldo Bagnoli with a squad of journeymen and one genuine star in Danish striker Preben Elkjær, remains one of Italian football's great anomalies — the only Serie A title ever won by a club outside Italy's traditional elite seven. The club spent the 1990s and 2000s in decline, punctuated by the brief European adventure of the 1985-86 season and a long Serie B/C spell. The 2010s revival under Maurizio Zamparini-style ownership restored Serie A status, and the club has since oscillated between seasons of overachievement and relegation scrapes.",
-    "rivals": [
-      "Chievo Verona — the Derby della Scala, the city derby against the now-defunct smaller club",
-      "Venezia — the Veneto regional rivalry",
-      "Atalanta — the Lombardy-Veneto border tension"
-    ],
-    "legends": [
-      "Preben Elkjær",
-      "Dario Hubner",
-      "Osvaldo Bagnoli (manager)"
-    ],
-    "watch": "The 1984-85 title is one of the great 'how did that happen' stories in football — if a single improbable season can define a club's identity for forty years, Hellas is that club.",
-    "tags": {
-      "underdog": 3,
-      "ultras": 3,
-      "community": 2,
-      "setpieces": 1,
-      "counterattack": 2,
-      "bloodfeud": 2,
-      "rebellious": 1,
-      "stability": "chaotic",
-      "fan-culture": "ultras",
-      "ambition": "identity-driven",
-      "narrative": "cursed"
-    }
+    },
+    "lastSeason": "Spent 2025-26 in Serie B after relegation from Serie A at the end of 2024-25.",
+    "keyPlayers": []
   },
   {
     "id": "cagliari",
@@ -2995,7 +2829,9 @@
       "fan-culture": "ultras",
       "ambition": "romantic",
       "narrative": "underdog"
-    }
+    },
+    "lastSeason": "Finished 14th (43 points), securing Serie A survival.",
+    "keyPlayers": []
   },
   {
     "id": "como",
@@ -3032,44 +2868,12 @@
       "fan-culture": "family",
       "ambition": "trophy-driven",
       "narrative": "project"
-    }
-  },
-  {
-    "id": "empoli",
-    "name": "Empoli",
-    "nick": "Gli Azzurri (The Blues)",
-    "league": "Serie A",
-    "country": "Italy",
-    "founded": 1920,
-    "stadium": "Stadio Carlo Castellani, Empoli",
-    "honours": "No major trophies; one of Italy's most respected youth development clubs",
-    "c1": "#0033A0",
-    "c2": "#FFFFFF",
-    "identity": "A tiny Tuscan town of 45,000 people that has sustained Serie A football for two decades through one of Italy's most productive academies — Empoli is the club that proves development and location matter more than population.",
-    "history": "Empoli spent most of its first 80 years in the lower divisions before a first Serie A promotion in 1986 was followed by decades as a yo-yo club. The club's identity crystallised around its academy, which has produced players like Daniele Rugani, Riccardo Saponara, and Sebastiano Luperto and has made Empoli a reliable feeder to Serie A's bigger clubs. Under managers like Maurizio Sarri (who built his tactical reputation here) and more recently Aurelio Andreazzoli and Davide Nicola, Empoli has consistently punched above its demographic weight, surviving on youth, tactical discipline, and player sales.",
-    "rivals": [
-      "Fiorentina — the Tuscan regional rivalry, the small-town upstart vs the regional capital",
-      "Livorno — the historical Tuscan coastal rivalry (dormant as Livorno declined)",
-      "Serie A generally — no blood rival; Empoli's identity is overachievement, not enmity"
-    ],
-    "legends": [
-      "Francesco Toldo",
-      "Daniele Rugani",
-      "Maurizio Sarri (manager)"
-    ],
-    "watch": "If you care about how clubs build through youth rather than money, Empoli is the Italian case study — the town is smaller than most Serie A stadiums, yet the club keeps producing and surviving.",
-    "tags": {
-      "academy": 3,
-      "technical": 2,
-      "underdog": 3,
-      "patience": 2,
-      "rivalryagnostic": 2,
-      "journey": 2,
-      "stability": "stable",
-      "fan-culture": "intellectual",
-      "ambition": "smart-overachiever",
-      "narrative": "underdog"
-    }
+    },
+    "lastSeason": "Finished 4th (71 points) and qualified for the Champions League in only their second season back in the top flight — an extraordinary rise under manager Cesc Fàbregas. Nico Paz scored 12 league goals, 4th in the scoring charts.",
+    "keyPlayers": [
+      "Nico Paz — 12 league goals, 2025-26 Team of the Season",
+      "Cesc Fàbregas — manager who took newly-promoted Como to the Champions League"
+    ]
   },
   {
     "id": "parma",
@@ -3108,7 +2912,9 @@
       "ambition": "romantic",
       "narrative": "cursed",
       "friendlyrivalry": 2
-    }
+    },
+    "lastSeason": "Finished 13th (45 points), surviving comfortably in the top flight.",
+    "keyPlayers": []
   },
   {
     "id": "lecce",
@@ -3138,15 +2944,17 @@
       "underdog": 3,
       "community": 3,
       "technical": 1,
-      "chaos": 1,
       "journey": 2,
       "bloodfeud": 1,
       "stability": "stable",
       "fan-culture": "ultras",
       "ambition": "romantic",
       "narrative": "underdog",
-      "friendlyrivalry": 2
-    }
+      "friendlyrivalry": 2,
+      "highpress": 1
+    },
+    "lastSeason": "Finished 17th (38 points), securing another season of top-flight survival on the final stretch.",
+    "keyPlayers": []
   },
   {
     "id": "venezia",
@@ -3183,7 +2991,9 @@
       "fan-culture": "intellectual",
       "ambition": "romantic",
       "narrative": "cursed"
-    }
+    },
+    "lastSeason": "Spent 2025-26 in Serie B after relegation from Serie A at the end of 2024-25.",
+    "keyPlayers": []
   },
   {
     "id": "stuttgart",
@@ -3221,7 +3031,11 @@
       "fan-culture": "ultras",
       "ambition": "romantic",
       "narrative": "project"
-    }
+    },
+    "lastSeason": "Finished 4th (62 points) to reach the Champions League, driven by Deniz Undav's 19 goals.",
+    "keyPlayers": [
+      "Deniz Undav — 19 goals, powered the Champions League push"
+    ]
   },
   {
     "id": "freiburg",
@@ -3260,44 +3074,9 @@
       "ambition": "smart-overachiever",
       "narrative": "underdog",
       "rivalryagnostic": 2
-    }
-  },
-  {
-    "id": "wolfsburg",
-    "name": "VfL Wolfsburg",
-    "nick": "Die Wölfe (The Wolves)",
-    "league": "Bundesliga",
-    "country": "Germany",
-    "founded": 1945,
-    "stadium": "Volkswagen Arena, Wolfsburg",
-    "honours": "1 Bundesliga title (2008-09), 1 DFB-Pokal (2015)",
-    "c1": "#65B32E",
-    "c2": "#FFFFFF",
-    "identity": "The works team of Volkswagen, located in a company town built around the factory — Wolfsburg is German football's most explicitly corporate club, a single-industry city where the club and the employer are the same institution.",
-    "history": "Founded in 1945 as a works team for Volkswagen employees, Wolfsburg spent decades as a modest lower-division side before VW's financial backing propelled the club into the Bundesliga in 1997. The 2008-09 Bundesliga title under Felix Magath, built around Edin Dzeko and Grafite, was one of the most unexpected championships in Bundesliga history and the club's peak. Since then, Wolfsburg has been a stable mid-table Bundesliga presence with intermittent European runs, defined less by fan passion than by its corporate-parent structure — a model that sits awkwardly against German football's 50+1 fan-ownership tradition but has produced consistent top-flight football for a city of 125,000.",
-    "rivals": [
-      "Eintracht Braunschweig — the Lower Saxony regional rivalry, the two clubs' closest geographic neighbour",
-      "Hannover 96 — the Lower Saxony rivalry, dormant as Hannover declined",
-      "Bayer Leverkusen — the two works teams (VW vs Bayer), a shared corporate-parent identity"
-    ],
-    "legends": [
-      "Edin Dzeko",
-      "Grafite",
-      "Diego Benaglio",
-      "Felix Magath (manager)"
-    ],
-    "watch": "If you want to see what a company-town football club looks like in a league that officially disdains corporate ownership, Wolfsburg is the German case — and the 2009 title remains a genuinely strange outlier.",
-    "tags": {
-      "physical": 2,
-      "counterattack": 2,
-      "aristocratic": 1,
-      "rivalryagnostic": 2,
-      "underdog": 1,
-      "stability": "stable",
-      "fan-culture": "family",
-      "ambition": "smart-overachiever",
-      "narrative": "project"
-    }
+    },
+    "lastSeason": "Finished 7th (47 points), qualifying for the Conference League — another overachieving season on a modest budget.",
+    "keyPlayers": []
   },
   {
     "id": "mainz",
@@ -3336,7 +3115,9 @@
       "ambition": "smart-overachiever",
       "narrative": "underdog",
       "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Finished 10th (40 points) following a mid-season managerial change that brought in Urs Fischer.",
+    "keyPlayers": []
   },
   {
     "id": "augsburg",
@@ -3372,7 +3153,9 @@
       "fan-culture": "family",
       "ambition": "smart-overachiever",
       "narrative": "underdog"
-    }
+    },
+    "lastSeason": "Finished 9th (43 points), a solid mid-table campaign.",
+    "keyPlayers": []
   },
   {
     "id": "werder-bremen",
@@ -3411,7 +3194,9 @@
       "ambition": "romantic",
       "narrative": "dynasty",
       "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Finished 15th (32 points), surviving after a mid-season managerial change to Daniel Thioune.",
+    "keyPlayers": []
   },
   {
     "id": "hoffenheim",
@@ -3448,118 +3233,9 @@
       "fan-culture": "family",
       "ambition": "trophy-driven",
       "narrative": "project"
-    }
-  },
-  {
-    "id": "bochum",
-    "name": "VfL Bochum",
-    "nick": "Die Unabsteigbaren (The Unrelegatable Ones)",
-    "league": "Bundesliga",
-    "country": "Germany",
-    "founded": 1938,
-    "stadium": "Vonovia Ruhrstadion, Bochum",
-    "honours": "No major trophies; 2 Bundesliga promotions, 1 German amateur championship",
-    "c1": "#005CA9",
-    "c2": "#FFFFFF",
-    "identity": "The Ruhr Valley's most stubborn survivor — a working-class club from the heart of Germany's industrial belt, Bochum has spent decades defying the economics of German football through sheer persistence.",
-    "history": "Bochum was formed in 1938 from the merger of two local clubs and spent most of its early decades in regional football before reaching the Bundesliga in 1971. The club became one of the Bundesliga's most persistent presences, often surviving against the odds despite one of the smallest budgets in the league and repeated near-relegations. A 1994 DFB-Pokal semifinal and a 2022 promotion back to the Bundesliga after a long absence marked the club's modern highlights. The 'Unabsteigbaren' nickname — the unrelegatable ones — captures a club that treats every relegation battle as a test of identity and usually wins it, though a 2025 relegation finally ended the run.",
-    "rivals": [
-      "Borussia Dortmund — the Ruhr Valley local rivalry, the smaller club vs the giant neighbour",
-      "Schalke 04 — the Ruhr Valley regional rivalry",
-      "VfL Essen — the local Ruhr rivalry from the lower divisions"
-    ],
-    "legends": [
-      "Stefan Kuntz",
-      "Paul Freier",
-      "Thomas Reis (manager)"
-    ],
-    "watch": "If you want a club whose identity is built on refusal to give up rather than ambition to win, Bochum is the Ruhr Valley's most honest expression of that stubbornness.",
-    "tags": {
-      "underdog": 3,
-      "physical": 2,
-      "community": 2,
-      "patience": 2,
-      "bloodfeud": 2,
-      "chaos": 1,
-      "stability": "chaotic",
-      "fan-culture": "ultras",
-      "ambition": "romantic",
-      "narrative": "underdog"
-    }
-  },
-  {
-    "id": "heidenheim",
-    "name": "1. FC Heidenheim",
-    "nick": "Die Voithauser",
-    "league": "Bundesliga",
-    "country": "Germany",
-    "founded": 1846,
-    "stadium": "Voith-Arena, Heidenheim",
-    "honours": "1 Bundesliga promotion (2023), 1 2. Bundesliga title (2022-23)",
-    "c1": "#E2001A",
-    "c2": "#003087",
-    "identity": "The Bundesliga's most remarkable small-town story — a club from a town of 50,000 that rose through every German division under one coach for 30 years, reaching the top flight in 2023 and immediately qualifying for Europe.",
-    "history": "Founded in 1846 as a gymnastics club, Heidenheim's football section spent most of its existence in the amateur lower divisions. The appointment of Frank Schmidt as head coach in 2007 — a role he has held for over 17 years, the longest tenure in German professional football — initiated a steady climb from the fourth tier to the Bundesliga. Promotion in 2023 made Heidenheim the smallest town ever represented in the Bundesliga. The 2023-24 debut season under Schmidt exceeded all expectations, with the club finishing in a European qualification place — a genuinely unprecedented overachievement for a club of its size and budget.",
-    "rivals": [
-      "VfB Stuttgart — the Baden-Württemberg regional rivalry, the small town vs the regional capital",
-      "1. FC Nürnberg — the regional rivalry from the lower divisions",
-      "SC Freiburg — the regional rivalry, two overachieving small clubs"
-    ],
-    "legends": [
-      "Frank Schmidt (manager)",
-      "Tim Kleindienst",
-      "Norman Theuerkauf"
-    ],
-    "watch": "If you want to follow a club that defies every economic logic of modern football — a town of 50,000, one coach for 17 years, promotion to the Bundesliga and then European qualification — Heidenheim is the most unlikely story in German football.",
-    "tags": {
-      "underdog": 3,
-      "community": 3,
-      "patience": 3,
-      "physical": 2,
-      "setpieces": 2,
-      "journey": 3,
-      "stability": "stable",
-      "fan-culture": "family",
-      "ambition": "smart-overachiever",
-      "narrative": "underdog",
-      "rivalryagnostic": 2
-    }
-  },
-  {
-    "id": "holstein-kiel",
-    "name": "Holstein Kiel",
-    "nick": "Die Störche (The Storks)",
-    "league": "Bundesliga",
-    "country": "Germany",
-    "founded": 1900,
-    "stadium": "Holstein-Stadion, Kiel",
-    "honours": "1 German championship (1912), 1 Bundesliga promotion (2024)",
-    "c1": "#003087",
-    "c2": "#E2001A",
-    "identity": "Germany's oldest northern club to reach the modern Bundesliga — Holstein Kiel won a national title in 1912, spent a century in obscurity, and returned to the top flight in 2024 for the first time in the Bundesliga era.",
-    "history": "Founded in 1900, Holstein Kiel was one of the strongest clubs in the German empire's early football history, winning the 1912 national championship and reaching several other national finals before World War I. The club then spent the entire Bundesliga era — from the league's 1963 founding to 2024 — outside the top flight, dropping as low as the fourth tier. A gradual revival in the 2010s, culminating in the 2024 promotion under Marcel Rapp, ended a 62-year Bundesliga absence and made Holstein the oldest club by founding date to reach the modern Bundesliga. The 2024-25 season is the club's first ever Bundesliga campaign.",
-    "rivals": [
-      "Hamburger SV — the historic Nordderby, reactivated by both clubs' recent rises",
-      "VfB Lübeck — the Schleswig-Holstein regional rivalry",
-      "Werder Bremen — the northern-Germany regional rivalry"
-    ],
-    "legends": [
-      "Marcel Rapp (manager)",
-      "Steven Skrzybski",
-      "Lewis Holtby"
-    ],
-    "watch": "If you want to follow a genuinely historic club experiencing its first ever Bundesliga season — 62 years outside the top flight, a 1912 title, and now finally back — Holstein Kiel is the Bundesliga's most singular newcomer.",
-    "tags": {
-      "underdog": 3,
-      "community": 2,
-      "journey": 3,
-      "patience": 2,
-      "rivalryagnostic": 2,
-      "stability": "rebuilding",
-      "fan-culture": "family",
-      "ambition": "smart-overachiever",
-      "narrative": "underdog"
-    }
+    },
+    "lastSeason": "Finished 5th (61 points) — a standout campaign — to qualify for the Europa League.",
+    "keyPlayers": []
   },
   {
     "id": "nice",
@@ -3593,7 +3269,9 @@
       "ambition": "trophy-driven",
       "narrative": "project",
       "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Finished 16th (32 points) and survived via the relegation play-off, beating Saint-Étienne 4-1 on aggregate, after a mid-season managerial change.",
+    "keyPlayers": []
   },
   {
     "id": "rennes",
@@ -3626,7 +3304,11 @@
       "fan-culture": "ultras",
       "ambition": "smart-overachiever",
       "narrative": "project"
-    }
+    },
+    "lastSeason": "Finished 6th (59 points), qualifying for the Europa League; Esteban Lepaul (who played for both Angers and Rennes across the season) led Ligue 1 with 21 goals.",
+    "keyPlayers": [
+      "Esteban Lepaul — 2025-26 Ligue 1 top scorer with 21 goals"
+    ]
   },
   {
     "id": "strasbourg",
@@ -3660,42 +3342,9 @@
       "ambition": "identity-driven",
       "narrative": "cursed",
       "rivalryagnostic": 2
-    }
-  },
-  {
-    "id": "nantes",
-    "name": "FC Nantes",
-    "nick": "Les Canaris (The Canaries)",
-    "league": "Ligue 1",
-    "country": "France",
-    "founded": 1943,
-    "stadium": "Stade de la Beaujoire, Nantes",
-    "honours": "8 French league titles",
-    "c1": "#FCD404",
-    "c2": "#0066B3",
-    "identity": "A club defined by its unique 'jeu à la nantaise' — a flowing, collective, academy-driven playing philosophy that made it one of France's most stylistically distinctive clubs across the 20th century.",
-    "history": "Founded in 1943, Nantes won eight French league titles, mostly concentrated in the 1960s–80s under the guidance of José Arribas and later Jean-Claude Suaudeau, establishing a possession-based, youth-oriented style known as 'le jeu à la nantaise.' The club's academy produced Marcel Desailly, Didier Deschamps, and Christian Karembeu. Financial troubles in the 2000s led to multiple relegations, but the club has re-established itself in Ligue 1.",
-    "rivals": [
-      "Rennes — the Derby Breton, a historic regional rivalry",
-      "Bordeaux — a broader Atlantic coast derby"
-    ],
-    "legends": [
-      "Marcel Desailly (academy)",
-      "Didier Deschamps (academy)",
-      "José Arribas"
-    ],
-    "watch": "If the idea of a club with a genuine, nameable playing philosophy — one that survived decades — appeals, Nantes is one of France's oldest and most principled examples.",
-    "tags": {
-      "academy": 3,
-      "possession": 2,
-      "technical": 2,
-      "journey": 2,
-      "bloodfeud": 2,
-      "stability": "chaotic",
-      "fan-culture": "ultras",
-      "ambition": "identity-driven",
-      "narrative": "cursed"
-    }
+    },
+    "lastSeason": "Finished 8th (53 points), a strong season for the young, data-driven BlueCo-owned project.",
+    "keyPlayers": []
   },
   {
     "id": "lens",
@@ -3729,7 +3378,12 @@
       "fan-culture": "ultras",
       "ambition": "romantic",
       "narrative": "underdog"
-    }
+    },
+    "lastSeason": "Finished 2nd (70 points) AND won the Coupe de France under manager Pierre Sage, earning Champions League football; three Lens players made the Team of the Season.",
+    "keyPlayers": [
+      "Florian Thauvin — Team of the Season, experienced attacking leader",
+      "Pierre Sage — manager who drove the 2nd-place-and-cup double"
+    ]
   },
   {
     "id": "brest",
@@ -3756,13 +3410,15 @@
       "underdog": 3,
       "journey": 3,
       "community": 2,
-      "chaos": 1,
       "stability": "stable",
       "fan-culture": "ultras",
       "ambition": "smart-overachiever",
       "narrative": "underdog",
-      "rivalryagnostic": 2
-    }
+      "rivalryagnostic": 2,
+      "highpress": 1
+    },
+    "lastSeason": "Finished 12th (39 points), a step back after their Champions League season, but clear of trouble.",
+    "keyPlayers": []
   },
   {
     "id": "toulouse",
@@ -3793,40 +3449,9 @@
       "ambition": "smart-overachiever",
       "narrative": "project",
       "rivalryagnostic": 2
-    }
-  },
-  {
-    "id": "montpellier",
-    "name": "Montpellier Hérault Sport Club",
-    "nick": "La Paillade (Les Héraultais)",
-    "league": "Ligue 1",
-    "country": "France",
-    "founded": 1919,
-    "stadium": "Stade de la Mosson, Montpellier",
-    "honours": "1 French league title (2012), 2 Coupe de France",
-    "c1": "#F47B20",
-    "c2": "#0046AD",
-    "identity": "A southern French club whose 2012 Ligue 1 title — won on a shoestring budget with a tactical innovator coach — remains one of the most improbable league wins in modern European football.",
-    "history": "Founded in 1919, Montpellier spent much of its history as a provincial club with occasional Cup runs. The 2011–12 season produced a miracle: René Girard's squad, built around Olivier Giroud and a young Rémy Cabella, won Ligue 1 ahead of PSG's first money-backed campaign — the last French title won by a club outside the big-spenders. The club has remained in Ligue 1 since, known for its academy and attacking traditions.",
-    "rivals": [
-      "Nîmes — the Derby du Languedoc (historical, less active now)",
-      "Lens — a broader southern vs northern rivalry"
-    ],
-    "legends": [
-      "Olivier Giroud",
-      "René Girard"
-    ],
-    "watch": "The club that proved a league title could still be won without oil money — a story worth following for fans who love the underdog-incredible narrative.",
-    "tags": {
-      "underdog": 3,
-      "journey": 2,
-      "academy": 2,
-      "stability": "stable",
-      "fan-culture": "family",
-      "ambition": "smart-overachiever",
-      "narrative": "underdog",
-      "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Finished 9th (45 points), a comfortable mid-table campaign.",
+    "keyPlayers": []
   },
   {
     "id": "le-havre",
@@ -3859,7 +3484,9 @@
       "ambition": "smart-overachiever",
       "narrative": "underdog",
       "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Finished 14th (35 points), grinding out another season of top-flight survival.",
+    "keyPlayers": []
   },
   {
     "id": "auxerre",
@@ -3894,7 +3521,9 @@
       "ambition": "romantic",
       "narrative": "underdog",
       "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Finished 15th (34 points), avoiding relegation late in the season.",
+    "keyPlayers": []
   },
   {
     "id": "angers",
@@ -3926,41 +3555,9 @@
       "ambition": "romantic",
       "narrative": "underdog",
       "rivalryagnostic": 2
-    }
-  },
-  {
-    "id": "reims",
-    "name": "Stade de Reims",
-    "nick": "Les Rouges et Blancs (The Red and Whites)",
-    "league": "Ligue 1",
-    "country": "France",
-    "founded": 1931,
-    "stadium": "Stade Auguste-Delaune, Reims",
-    "honours": "6 French league titles, 2 Coupe de France, 2 European Cup finals (1956, 1959)",
-    "c1": "#E2001A",
-    "c2": "#FFFFFF",
-    "identity": "Once one of Europe's greatest clubs — Real Madrid's first great European rival — Reims carries the weight of a lost golden age and a determination to rebuild it in the modern era.",
-    "history": "Reims dominated French football in the 1950s and early 60s, winning six league titles and reaching two European Cup finals — both lost to Real Madrid (1956, 1959), with the 1956 final being the inaugural European Cup final. The club's star, Raymond Kopa, was signed by Real Madrid between those finals. Decades of decline followed, including relegation to the third tier, before a steady comeback culminated in a 2018 return to Ligue 1 and re-establishment as a top-flight club.",
-    "rivals": [
-      "Lens — a historical northern France rivalry",
-      "Metz — a broader eastern/northern derby"
-    ],
-    "legends": [
-      "Raymond Kopa",
-      "Just Fontaine"
-    ],
-    "watch": "A club with a genuine claim to being one of Europe's earliest giants — the 1956 European Cup final is one of football's founding stories, and Reims was in it.",
-    "tags": {
-      "aristocratic": 2,
-      "journey": 3,
-      "underdog": 2,
-      "community": 1,
-      "stability": "rebuilding",
-      "fan-culture": "intellectual",
-      "ambition": "romantic",
-      "narrative": "dynasty",
-      "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Finished 13th (36 points) and secured survival; Esteban Lepaul starred before a mid-season move to Rennes.",
+    "keyPlayers": []
   },
   {
     "id": "columbus-crew",
@@ -3994,7 +3591,9 @@
       "fan-culture": "ultras",
       "ambition": "smart-overachiever",
       "narrative": "project"
-    }
+    },
+    "lastSeason": "Finished 7th in the East (54 points) and made the playoffs, still one of the league's most admired possession sides.",
+    "keyPlayers": []
   },
   {
     "id": "philadelphia-union",
@@ -4028,7 +3627,12 @@
       "ambition": "smart-overachiever",
       "narrative": "underdog",
       "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Won the 2025 Supporters' Shield as the league's best regular-season team (66 points) before falling in the playoffs; Kai Wagner and Jakob Glesnes both made the MLS Best XI.",
+    "keyPlayers": [
+      "Kai Wagner — 2025 MLS Best XI full-back",
+      "Jakob Glesnes — 2025 MLS Best XI centre-back"
+    ]
   },
   {
     "id": "austin-fc",
@@ -4061,7 +3665,9 @@
       "ambition": "romantic",
       "narrative": "project",
       "friendlyrivalry": 2
-    }
+    },
+    "lastSeason": "Finished 6th in the West (47 points) and qualified for the playoffs.",
+    "keyPlayers": []
   },
   {
     "id": "fc-dallas",
@@ -4095,7 +3701,9 @@
       "fan-culture": "family",
       "ambition": "smart-overachiever",
       "narrative": "underdog"
-    }
+    },
+    "lastSeason": "Finished 7th in the West (44 points) and squeaked into the playoffs.",
+    "keyPlayers": []
   },
   {
     "id": "houston-dynamo",
@@ -4128,7 +3736,9 @@
       "fan-culture": "family",
       "ambition": "romantic",
       "narrative": "dynasty"
-    }
+    },
+    "lastSeason": "Finished 12th in the West (37 points) and missed the playoffs.",
+    "keyPlayers": []
   },
   {
     "id": "san-jose-earthquakes",
@@ -4162,7 +3772,9 @@
       "fan-culture": "family",
       "ambition": "romantic",
       "narrative": "underdog"
-    }
+    },
+    "lastSeason": "Finished 10th in the West (41 points), just missing the playoffs on tiebreakers.",
+    "keyPlayers": []
   },
   {
     "id": "colorado-rapids",
@@ -4196,7 +3808,9 @@
       "fan-culture": "family",
       "ambition": "romantic",
       "narrative": "underdog"
-    }
+    },
+    "lastSeason": "Finished 11th in the West (41 points) and missed out on the playoffs.",
+    "keyPlayers": []
   },
   {
     "id": "real-salt-lake",
@@ -4230,7 +3844,9 @@
       "fan-culture": "family",
       "ambition": "smart-overachiever",
       "narrative": "underdog"
-    }
+    },
+    "lastSeason": "Finished 9th in the West (41 points), grabbing the final playoff spot on tiebreakers.",
+    "keyPlayers": []
   },
   {
     "id": "minnesota-united",
@@ -4263,7 +3879,11 @@
       "ambition": "romantic",
       "narrative": "project",
       "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Finished 4th in the West (58 points) and made the playoffs; goalkeeper Dayne St. Clair earned an MLS Best XI selection.",
+    "keyPlayers": [
+      "Dayne St. Clair — 2025 MLS Best XI goalkeeper"
+    ]
   },
   {
     "id": "charlotte-fc",
@@ -4296,7 +3916,9 @@
       "ambition": "trophy-driven",
       "narrative": "project",
       "friendlyrivalry": 2
-    }
+    },
+    "lastSeason": "Finished 4th in the East (59 points) — the club's best season yet — and qualified for the playoffs.",
+    "keyPlayers": []
   },
   {
     "id": "nashville-sc",
@@ -4328,8 +3950,13 @@
       "fan-culture": "ultras",
       "ambition": "romantic",
       "narrative": "project",
-      "rivalryagnostic": 2
-    }
+      "rivalryagnostic": 2,
+      "patience": 1
+    },
+    "lastSeason": "Finished 6th in the East (54 points) and made the playoffs; striker Sam Surridge was an MVP finalist.",
+    "keyPlayers": [
+      "Sam Surridge — 2025 MLS MVP finalist"
+    ]
   },
   {
     "id": "orlando-city",
@@ -4361,8 +3988,13 @@
       "stability": "stable",
       "fan-culture": "ultras",
       "ambition": "romantic",
-      "narrative": "project"
-    }
+      "narrative": "project",
+      "diaspora": 1
+    },
+    "lastSeason": "Finished 9th in the East (53 points) to reach the playoffs; Alex Freeman broke out with a 2025 MLS Best XI selection.",
+    "keyPlayers": [
+      "Alex Freeman — 2025 MLS Best XI defender"
+    ]
   },
   {
     "id": "dc-united",
@@ -4397,7 +4029,9 @@
       "fan-culture": "family",
       "ambition": "trophy-driven",
       "narrative": "dynasty"
-    }
+    },
+    "lastSeason": "Finished bottom of the East (15th, 26 points), extending a long rebuild.",
+    "keyPlayers": []
   },
   {
     "id": "chicago-fire",
@@ -4431,7 +4065,9 @@
       "ambition": "romantic",
       "narrative": "dynasty",
       "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Finished 8th in the East (53 points) to return to the playoffs after a long absence.",
+    "keyPlayers": []
   },
   {
     "id": "new-england-revolution",
@@ -4465,7 +4101,9 @@
       "ambition": "smart-overachiever",
       "narrative": "underdog",
       "friendlyrivalry": 2
-    }
+    },
+    "lastSeason": "Finished 11th in the East (36 points), missing the playoffs in a rebuilding year.",
+    "keyPlayers": []
   },
   {
     "id": "toronto-fc",
@@ -4499,7 +4137,9 @@
       "fan-culture": "ultras",
       "ambition": "trophy-driven",
       "narrative": "cursed"
-    }
+    },
+    "lastSeason": "Finished 12th in the East (32 points), another season outside the playoff places.",
+    "keyPlayers": []
   },
   {
     "id": "vancouver-whitecaps",
@@ -4531,8 +4171,14 @@
       "stability": "stable",
       "fan-culture": "ultras",
       "ambition": "romantic",
-      "narrative": "underdog"
-    }
+      "narrative": "underdog",
+      "underdog": 1
+    },
+    "lastSeason": "Reached the 2025 MLS Cup final (losing 3-1 to Inter Miami) after finishing 2nd in the West; Sebastian Berhalter and Tristan Blackmon made the MLS Best XI.",
+    "keyPlayers": [
+      "Sebastian Berhalter — 2025 MLS Best XI midfielder",
+      "Tristan Blackmon — 2025 MLS Best XI defender"
+    ]
   },
   {
     "id": "st-louis-city",
@@ -4565,7 +4211,9 @@
       "ambition": "romantic",
       "narrative": "project",
       "friendlyrivalry": 2
-    }
+    },
+    "lastSeason": "Finished 13th in the West (32 points), a fall from their headline-making debut season.",
+    "keyPlayers": []
   },
   {
     "id": "san-diego-fc",
@@ -4598,7 +4246,11 @@
       "ambition": "romantic",
       "narrative": "project",
       "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Topped the Western Conference (63 points) in their inaugural 2025 season — a stunning debut — led by MVP finalist Anders Dreyer.",
+    "keyPlayers": [
+      "Anders Dreyer — 2025 MLS Best XI forward and MVP finalist"
+    ]
   },
   {
     "id": "cf-montreal",
@@ -4632,7 +4284,9 @@
       "fan-culture": "ultras",
       "ambition": "romantic",
       "narrative": "underdog"
-    }
+    },
+    "lastSeason": "Finished 13th in the East (28 points) in a difficult, rebuilding campaign.",
+    "keyPlayers": []
   },
   {
     "id": "pachuca",
@@ -4666,7 +4320,9 @@
       "ambition": "smart-overachiever",
       "narrative": "project",
       "friendlyrivalry": 2
-    }
+    },
+    "lastSeason": "Finished 4th in the Clausura 2026 general table and reached the Liguilla quarterfinals.",
+    "keyPlayers": []
   },
   {
     "id": "santos-laguna",
@@ -4698,7 +4354,9 @@
       "fan-culture": "family",
       "ambition": "smart-overachiever",
       "narrative": "underdog"
-    }
+    },
+    "lastSeason": "Missed the Clausura 2026 Liguilla, continuing a lean spell for the northern club.",
+    "keyPlayers": []
   },
   {
     "id": "queretaro",
@@ -4730,7 +4388,9 @@
       "ambition": "romantic",
       "narrative": "underdog",
       "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Missed the Clausura 2026 Liguilla, another season in the lower half of the table.",
+    "keyPlayers": []
   },
   {
     "id": "atlas",
@@ -4763,8 +4423,11 @@
       "stability": "chaotic",
       "fan-culture": "ultras",
       "ambition": "identity-driven",
-      "narrative": "cursed"
-    }
+      "narrative": "cursed",
+      "ultras": 1
+    },
+    "lastSeason": "Finished 6th in the Clausura 2026 general table and reached the Liguilla — a rare bright season for the long-suffering Guadalajara club.",
+    "keyPlayers": []
   },
   {
     "id": "san-luis",
@@ -4796,7 +4459,11 @@
       "ambition": "romantic",
       "narrative": "project",
       "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Missed the Clausura 2026 Liguilla, but striker João Pedro won the tournament's top-scorer crown (14 goals) — his second straight Golden Boot after also topping Apertura 2025.",
+    "keyPlayers": [
+      "João Pedro — back-to-back Liga MX top scorer (Apertura 2025 & Clausura 2026)"
+    ]
   },
   {
     "id": "puebla",
@@ -4829,7 +4496,9 @@
       "ambition": "romantic",
       "narrative": "dynasty",
       "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Missed the Clausura 2026 Liguilla, finishing among the bottom clubs of the general table.",
+    "keyPlayers": []
   },
   {
     "id": "juarez",
@@ -4862,39 +4531,9 @@
       "ambition": "romantic",
       "narrative": "project",
       "rivalryagnostic": 2
-    }
-  },
-  {
-    "id": "mazatlan",
-    "name": "Mazatlán FC",
-    "nick": "Los Cañoneros (The Gunners)",
-    "league": "Liga MX",
-    "country": "Mexico",
-    "founded": 2020,
-    "stadium": "Estadio de Mazatlán, Mazatlán",
-    "honours": "No major trophies (entered Liga MX in 2020)",
-    "c1": "#000000",
-    "c2": "#A50021",
-    "identity": "Liga MX's Pacific Coast club — a 2020 expansion franchise representing the resort city of Mazatlán, one of Mexico's most tourism-dependent markets.",
-    "history": "Founded in 2020 when the Licenciado Alfredo Harp Helú ownership group relocated the Morelia franchise to Mazatlán, the club entered Liga MX in the 2020 Apertura. The move brought top-flight football to the Sinaloa coast for the first time, though it was controversial, ending Monarcas Morelia's 21-year Liga MX tenure. The Estadio de Mazatlán was built as a modern venue, and the club has been a consistent if modest presence in the league.",
-    "rivals": [
-      "Santos Laguna — a northern Pacific coast regional rivalry",
-      "Atlas — a broader western Mexico competition"
-    ],
-    "legends": [
-      "Camilo Mayada"
-    ],
-    "watch": "If you want Liga MX's newest and most tourism-market-oriented club — a Pacific coast franchise in a resort city — Mazatlán is the league's most distinctive geographic story.",
-    "tags": {
-      "underdog": 2,
-      "journey": 1,
-      "accessible": 1,
-      "stability": "stable",
-      "fan-culture": "family",
-      "ambition": "romantic",
-      "narrative": "project",
-      "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Missed the Clausura 2026 Liguilla, though the border club produced some memorable results including a home win over champions-in-waiting.",
+    "keyPlayers": []
   },
   {
     "id": "tijuana",
@@ -4928,7 +4567,9 @@
       "ambition": "trophy-driven",
       "narrative": "project",
       "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Narrowly missed the Clausura 2026 Liguilla, finishing 9th in the general table, just outside the top eight.",
+    "keyPlayers": []
   },
   {
     "id": "necaxa",
@@ -4962,6 +4603,829 @@
       "ambition": "romantic",
       "narrative": "dynasty",
       "rivalryagnostic": 2
-    }
+    },
+    "lastSeason": "Missed the Clausura 2026 Liguilla, finishing in the lower reaches of the general table.",
+    "keyPlayers": []
+  },
+  {
+    "id": "sunderland",
+    "name": "Sunderland AFC",
+    "nick": "The Black Cats",
+    "league": "Premier League",
+    "country": "England",
+    "founded": 1879,
+    "stadium": "Stadium of Light, Sunderland",
+    "honours": "6 English league titles, 2 FA Cups (1937, 1973)",
+    "c1": "#EB172B",
+    "c2": "#FFFFFF",
+    "identity": "One of English football's great sleeping giants — a one-club city with a fanatical, oversized following that packed the Stadium of Light even in League One, finally back where its support demands it belongs.",
+    "history": "Sunderland were founding members of the old First Division's elite in the late 19th and early 20th centuries, winning six league titles and becoming known as the 'Team of All the Talents.' The club's finest modern hour came in 1973, when Second Division Sunderland shocked mighty Leeds United to win the FA Cup, with goalkeeper Jim Montgomery's double save entering folklore. Sunderland left Roker Park for the Stadium of Light in 1997, but the 21st century brought a painful cycle of relegations, culminating in years stuck in League One while still drawing crowds bigger than most Championship clubs. A dramatic 2025 play-off final win over Sheffield United, capped by a stoppage-time winner from teenager Tom Watson, finally ended an eight-year top-flight exile.",
+    "rivals": [
+      "Newcastle United — the Tyne-Wear derby, one of England's fiercest and most historic rivalries",
+      "Middlesbrough — a regional North East rivalry with real needle"
+    ],
+    "legends": [
+      "Jim Montgomery",
+      "Charlie Hurley",
+      "Kevin Phillips",
+      "Niall Quinn",
+      "Bob Stokoe (manager)"
+    ],
+    "watch": "Watch for the noise — the Stadium of Light's atmosphere, inherited from the legendary Roker Roar, remains one of the loudest and most passionate in English football regardless of league position.",
+    "tags": {
+      "ultras": 3,
+      "underdog": 2,
+      "community": 3,
+      "physical": 2,
+      "bloodfeud": 3,
+      "journey": 3,
+      "stability": "rebuilding",
+      "fan-culture": "ultras",
+      "ambition": "romantic",
+      "narrative": "underdog"
+    },
+    "lastSeason": "Enjoyed a superb return to the Premier League in 2025-26, finishing 7th (54 points) to qualify for the Europa League; Granit Xhaka was voted Player of the Season.",
+    "keyPlayers": [
+      "Granit Xhaka — 2025-26 Player of the Season"
+    ]
+  },
+  {
+    "id": "leeds-united",
+    "name": "Leeds United",
+    "nick": "The Whites, The Peacocks",
+    "league": "Premier League",
+    "country": "England",
+    "founded": 1919,
+    "stadium": "Elland Road, Leeds",
+    "honours": "3 English league titles, 1 FA Cup, 1 League Cup, 2 Inter-Cities Fairs Cups",
+    "c1": "#FFFFFF",
+    "c2": "#1D428A",
+    "identity": "A one-city footballing institution whose identity was forged by Don Revie's ruthless, dominant side of the late '60s and '70s, then reforged by Marcelo Bielsa's chaotic, high-intensity revival — 'Leeds is Leeds' is both a boast and a warning.",
+    "history": "Formed in 1919 from the ashes of Leeds City, the club became a genuine European power under Don Revie, winning two league titles, an FA Cup, a League Cup, and two Fairs Cups between 1964 and 1974 with a side built on Billy Bremner, Jack Charlton, and Norman Hunter. Leeds reached a Champions League semi-final in 2001 but financial overreach triggered a collapse into administration and a slide as low as League One by 2007. Marcelo Bielsa's arrival in 2018 sparked a stunning transformation, returning the club to the Premier League in 2020 with a thrilling, relentless pressing style that captivated neutrals. After yo-yoing between the Championship and top flight in the mid-2020s, Leeds were promoted again for 2025-26 and held their place into 2026-27.",
+    "rivals": [
+      "Manchester United — bitter rivals since the Revie/Busby era, intensified by Yorkshire-Lancashire history",
+      "Millwall — one of English football's most notorious hooligan-era rivalries",
+      "Huddersfield Town and Bradford City — fierce local Yorkshire derbies"
+    ],
+    "legends": [
+      "Billy Bremner",
+      "Jack Charlton",
+      "Peter Lorimer",
+      "Eric Cantona",
+      "Lucas Radebe",
+      "Don Revie (manager)",
+      "Marcelo Bielsa (manager)"
+    ],
+    "watch": "Watch for intensity over polish — whichever manager is in charge, Leeds sides are built to press, run, and make Elland Road as hostile as possible for visitors.",
+    "tags": {
+      "highpress": 3,
+      "physical": 2,
+      "ultras": 3,
+      "bloodfeud": 3,
+      "journey": 2,
+      "stability": "chaotic",
+      "fan-culture": "ultras",
+      "ambition": "romantic",
+      "narrative": "cursed"
+    },
+    "lastSeason": "Survived their return to the Premier League in 2025-26, finishing 14th (47 points); Ethan Ampadu was voted Player of the Season.",
+    "keyPlayers": [
+      "Ethan Ampadu — captain and 2025-26 Player of the Season"
+    ]
+  },
+  {
+    "id": "coventry-city",
+    "name": "Coventry City",
+    "nick": "The Sky Blues",
+    "league": "Premier League",
+    "country": "England",
+    "founded": 1883,
+    "stadium": "CBS Arena, Coventry",
+    "honours": "1 FA Cup (1987)",
+    "c1": "#78CDD7",
+    "c2": "#000000",
+    "identity": "English football's great romantic underdog story of the modern era — a club that spent a quarter-century wandering the lower divisions and even its own city's stadium ownership limbo before clawing back to the top flight.",
+    "history": "Coventry City's one shining moment came in 1987, when underdogs managed by John Sirrell and George Curtis stunned Tottenham Hotspur 3-2 in the FA Cup final, still the club's only major honour. The Sky Blues spent over three decades in the top flight from the 1960s onward under visionary chairman Jimmy Hill, who pioneered all-seater stadiums and shirt sponsorship, before relegation in 2001 began a long decline. A bitter, years-long dispute over stadium ownership forced the club to play home games away from Coventry entirely at points, deepening supporter frustration even as the team bounced between League One and the Championship. Under Mark Robins the club rebuilt steadily, reaching Championship play-offs repeatedly before finally winning promotion to the Premier League in 2026 — its first top-flight football in 25 years — with the CBS Arena ownership dispute finally resolved in 2025.",
+    "rivals": [
+      "Leicester City — the M69 derby, the club's most fiercely contested modern rivalry",
+      "Aston Villa — a traditional Midlands rivalry",
+      "Birmingham City — a secondary local rivalry"
+    ],
+    "legends": [
+      "Cyrille Regis",
+      "Jimmy Hill (chairman)",
+      "George Curtis (manager)",
+      "John Sillett (manager)",
+      "Mark Robins (manager)"
+    ],
+    "watch": "Watch for a club still finding its top-flight feet after 25 years away — expect a tight, well-organized underdog set-up built on team spirit rather than star names.",
+    "tags": {
+      "underdog": 3,
+      "journey": 3,
+      "community": 2,
+      "physical": 1,
+      "friendlyrivalry": 2,
+      "accessible": 2,
+      "stability": "rebuilding",
+      "fan-culture": "family",
+      "ambition": "romantic",
+      "narrative": "underdog"
+    },
+    "lastSeason": "Won the 2025-26 EFL Championship title to earn automatic promotion to the Premier League — a return to the top flight for the first time since 2001.",
+    "keyPlayers": []
+  },
+  {
+    "id": "ipswich-town",
+    "name": "Ipswich Town",
+    "nick": "The Tractor Boys",
+    "league": "Premier League",
+    "country": "England",
+    "founded": 1878,
+    "stadium": "Portman Road, Ipswich",
+    "honours": "1 English league title (1962), 1 FA Cup (1978), 1 UEFA Cup (1981)",
+    "c1": "#1D4E9C",
+    "c2": "#FFFFFF",
+    "identity": "A homely East Anglian club whose golden age under Sir Bobby Robson produced one of English football's great overachieving European runs, now living through a dizzying modern yo-yo between the Championship and Premier League.",
+    "history": "Ipswich Town's finest era came under Bobby Robson, who led the club to the 1978 FA Cup with a win over Arsenal and then a stunning 1981 UEFA Cup triumph over AZ Alkmaar, having also won the league title in 1962 under Alf Ramsey. The club settled into mid-table top-flight obscurity for decades before relegation in 1986 began a long absence from England's elite. Under Kieran McKenna, Ipswich produced one of modern football's most remarkable turnarounds: back-to-back promotions from League One to the Premier League by 2024, a whirlwind ride for a club that had spent over two decades outside the top two divisions. The story took another twist when Ipswich were relegated straight back down in 2025, only to bounce immediately back to the Premier League for 2026-27 — a genuine yo-yo club living out both the thrill of promotion and the sting of relegation in consecutive seasons.",
+    "rivals": [
+      "Norwich City — the East Anglian derby, one of England's most fiercely contested regional rivalries",
+      "Colchester United — a smaller but spirited Suffolk-Essex rivalry"
+    ],
+    "legends": [
+      "Sir Bobby Robson (manager)",
+      "Kevin Beattie",
+      "Paul Mariner",
+      "Mick Mills",
+      "Kieran McKenna (manager)"
+    ],
+    "watch": "Watch a club riding real momentum but with a very recent taste of relegation — Ipswich's yo-yo run makes their Premier League survival battle genuinely uncertain from week one.",
+    "tags": {
+      "journey": 3,
+      "underdog": 2,
+      "community": 2,
+      "technical": 1,
+      "bloodfeud": 2,
+      "accessible": 2,
+      "stability": "chaotic",
+      "fan-culture": "family",
+      "ambition": "romantic",
+      "narrative": "underdog"
+    },
+    "lastSeason": "Finished 2nd in the 2025-26 EFL Championship to win automatic promotion, bouncing straight back to the Premier League at the first attempt.",
+    "keyPlayers": []
+  },
+  {
+    "id": "hull-city",
+    "name": "Hull City",
+    "nick": "The Tigers",
+    "league": "Premier League",
+    "country": "England",
+    "founded": 1904,
+    "stadium": "MKM Stadium, Hull",
+    "honours": "No major honours; 2014 FA Cup finalists",
+    "c1": "#F18A00",
+    "c2": "#000000",
+    "identity": "A club without a single major trophy to its name, defined instead by its distinctive amber-and-black stripes and a never-say-die run to the 2014 FA Cup final that remains the high point of its history.",
+    "history": "Founded in 1904, Hull City spent most of the 20th century outside the top flight, only reaching the English top division for the first time in 2008 via a play-off final winner from local hero Dean Windass. Under Steve Bruce, the Tigers reached their first FA Cup final in 2014, racing into a 2-0 lead against Arsenal before losing 3-2 after extra time — still the club's signature modern achievement. Hull's Premier League stays have historically been brief, with the club bouncing between the second and top tiers and enduring ownership turbulence under the Allam family, including a controversial attempt to rebrand as 'Hull City Tigers.' After nine years away, promotion back to the Premier League returns Hull to the top flight for 2026-27.",
+    "rivals": [
+      "Leeds United — a fierce Yorkshire rivalry",
+      "Sheffield United and Sheffield Wednesday — traditional Yorkshire derbies"
+    ],
+    "legends": [
+      "Dean Windass",
+      "Nick Barmby",
+      "Steve Bruce (manager)",
+      "Ian Ashbee"
+    ],
+    "watch": "Watch for a club with nothing to prove and everything to gain — Hull's amber stripes and gritty underdog identity make every top-flight point feel like a small triumph.",
+    "tags": {
+      "underdog": 3,
+      "journey": 2,
+      "community": 2,
+      "physical": 2,
+      "bloodfeud": 2,
+      "accessible": 2,
+      "stability": "rebuilding",
+      "fan-culture": "family",
+      "ambition": "identity-driven",
+      "narrative": "underdog"
+    },
+    "lastSeason": "Won the 2025-26 Championship play-off final 1-0 against Middlesbrough — Oli McBurnie striking in the 95th minute — to clinch promotion to the Premier League.",
+    "keyPlayers": [
+      "Oli McBurnie — scored the 95th-minute play-off final winner that sealed promotion"
+    ]
+  },
+  {
+    "id": "levante",
+    "name": "Levante UD",
+    "nick": "Granotes (The Frogs)",
+    "league": "La Liga",
+    "country": "Spain",
+    "founded": 1909,
+    "stadium": "Estadi Ciutat de València, Valencia",
+    "honours": "3x Segunda División titles (2003-04, 2016-17, 2024-25), Copa de la España Libre 1937",
+    "c1": "#0000FF",
+    "c2": "#B4002E",
+    "identity": "Valencia's older, scrappier club — the city's original football team, permanently living in the shadow of its more decorated neighbor while riding an exhausting elevator between La Liga and the Segunda.",
+    "history": "Founded in 1909, Levante actually predates Valencia CF by a decade, inheriting the 'Granota' (Frog) nickname from a 1939 merger with Gimnàstic FC. The club spent most of the 20th century outside the top flight, only establishing itself as a fixture of Spanish football in the 21st century, including a surprising run to the Europa League in 2011-12 under Juan Ignacio Martínez. Levante has become notorious for its yo-yo status, bouncing between La Liga and Segunda División multiple times in the last fifteen years, most recently promoted again for 2025-26 after their third Segunda title. A young Johan Cruyff even turned out for the club in a brief twilight cameo in the early 1980s, one of the odder footnotes in Levante's long history.",
+    "rivals": [
+      "Valencia CF — the lopsided Derbi Valencià, fought for over a century by the city's two clubs",
+      "Villarreal CF — the Derbi de la Comunitat for regional bragging rights"
+    ],
+    "legends": [
+      "Johan Cruyff (brief spell)",
+      "Vicente",
+      "Juan Ignacio Martínez (manager)",
+      "Quique Setién"
+    ],
+    "watch": "A classic yo-yo club — watch for the resilience of a fanbase that keeps coming back to La Liga against the financial gravity of sharing a city with a giant.",
+    "tags": {
+      "underdog": 3,
+      "journey": 3,
+      "community": 2,
+      "counterattack": 2,
+      "stability": "rebuilding",
+      "fan-culture": "family",
+      "ambition": "identity-driven",
+      "narrative": "underdog"
+    },
+    "lastSeason": "Secured survival on their return to La Liga in 2025-26, finishing 16th.",
+    "keyPlayers": []
+  },
+  {
+    "id": "elche",
+    "name": "Elche CF",
+    "nick": "Franjiverdes (The Green-Striped Ones)",
+    "league": "La Liga",
+    "country": "Spain",
+    "founded": 1923,
+    "stadium": "Estadio Martínez Valero, Elche",
+    "honours": "Copa del Rey runners-up 1969",
+    "c1": "#00733E",
+    "c2": "#FFFFFF",
+    "identity": "A modest Valencian community club forever defined by one glorious near-miss — the 1969 Copa del Rey final — and a habit of overachieving relative to its small-city resources before crashing back down.",
+    "history": "Formed in 1923 from the merger of Elche's local clubs, the Franjiverdes took decades to climb into Spanish football's upper tiers, finally reaching La Liga in 1959. Their golden moment came in 1969, when Elche reached the Copa del Rey final at the Santiago Bernabéu, narrowly losing 1-0 to Athletic Bilbao — still the club's greatest achievement, commemorated in the naming of their stadium after club president Manuel Martínez Valero. Elche has since lived a feast-or-famine existence in the Spanish pyramid, suffering financial crises and even a brief expulsion to the regional leagues in 2015 due to bankruptcy, only to rebuild and return to La Liga repeatedly. The club is now back in the top flight after their most recent stint in the Segunda, continuing a pattern of resilience that defines their fanbase.",
+    "rivals": [
+      "Hércules CF — the Derbi de la Provincia de Alicante, a fixture since the 1920s",
+      "Real Murcia — a historic regional rivalry dating to the late 1920s"
+    ],
+    "legends": [
+      "Fran Escribá (manager)",
+      "Enzo Roco",
+      "Manuel Martínez Valero (club president)"
+    ],
+    "watch": "A club defined by resilience through financial near-death experiences — watch for the tight, defensively organized sides that punch above their transfer budget.",
+    "tags": {
+      "counterattack": 2,
+      "underdog": 3,
+      "community": 3,
+      "journey": 2,
+      "stability": "rebuilding",
+      "fan-culture": "family",
+      "ambition": "identity-driven",
+      "narrative": "underdog"
+    },
+    "lastSeason": "Comfortably retained their La Liga place in 2025-26, finishing 15th on their return to the top flight.",
+    "keyPlayers": []
+  },
+  {
+    "id": "racing-santander",
+    "name": "Racing de Santander",
+    "nick": "Racinguistas / Verdiblancos",
+    "league": "La Liga",
+    "country": "Spain",
+    "founded": 1913,
+    "stadium": "El Sardinero, Santander",
+    "honours": "13x Campeonato Regional de Cantabria (1922-1940), founding member of La Liga (1929)",
+    "c1": "#00A651",
+    "c2": "#FFFFFF",
+    "identity": "Cantabria's one true club and a founding member of La Liga in 1929, whose descent into the third tier and improbable climb back to the top flight is one of Spanish football's great modern redemption stories.",
+    "history": "Founded in 1913, Racing became one of the ten founding clubs of La Liga in 1929 and enjoyed a long, stable top-flight history through the 20th century, even producing a young Fernando Torres's youth-team peers and famously beating both Real Madrid and Barcelona in the same season back in 1935-36. The 2000s brought a two-decade run in La Liga, but boardroom chaos and financial mismanagement triggered back-to-back relegations in 2011-12 and 2012-13, and by the mid-2010s Racing had collapsed all the way to Segunda División B, Spanish football's third tier. What followed was a grassroots rebuilding story fueled by a fiercely loyal Cantabrian fanbase that kept filling El Sardinero even in regional obscurity, culminating in a playoff promotion back to La Liga after fourteen years away — one of the most emotional returns of the era.",
+    "rivals": [
+      "Sporting Gijón — the Derbi del Norte, a fierce rivalry between Cantabria and Asturias",
+      "Real Valladolid — a historic Castilian-Cantabrian fixture"
+    ],
+    "legends": [
+      "Fernando Torres (schoolboy ties)",
+      "Pedro Munitis",
+      "Quique Setién (manager, playing days)"
+    ],
+    "watch": "Perhaps La Liga's most emotional comeback story — watch for the deafening El Sardinero atmosphere from a fanbase that never stopped showing up during fourteen years in the wilderness.",
+    "tags": {
+      "underdog": 3,
+      "community": 3,
+      "journey": 3,
+      "physical": 2,
+      "stability": "rebuilding",
+      "fan-culture": "family",
+      "ambition": "romantic",
+      "narrative": "underdog"
+    },
+    "lastSeason": "Won automatic promotion from the Segunda División in 2025-26, sealing a return to La Liga after a 14-year absence.",
+    "keyPlayers": []
+  },
+  {
+    "id": "deportivo-la-coruna",
+    "name": "Deportivo de La Coruña",
+    "nick": "Super Depor / Deportivistas",
+    "league": "La Liga",
+    "country": "Spain",
+    "founded": 1906,
+    "stadium": "Riazor, A Coruña",
+    "honours": "La Liga title 2000, 2x Copa del Rey (1995, 2002), 3x Spanish Super Cup (1995, 2000, 2002)",
+    "c1": "#0066B3",
+    "c2": "#FFFFFF",
+    "identity": "Galicia's greatest football fairy tale — a provincial club from a city of 250,000 that won La Liga in 2000 and reached a Champions League semifinal in 2004, only to collapse into the third tier two decades later.",
+    "history": "Founded in 1906, Deportivo spent most of the 20th century as a middling Spanish club until the 'Super Depor' era of the 1990s and early 2000s transformed it into a genuine European power. Under manager Javier Irureta and led by stars like Djalminha, Juan Carlos Valerón, Roy Makaay, and Mauro Silva, Deportivo won the 1999-2000 La Liga title — still the smallest city ever to produce a Spanish champion at the time — and reached five straight top-three finishes. Their defining European moment came in 2004, overturning a 4-1 first-leg deficit to beat AC Milan 4-0 at Riazor in the Champions League quarterfinals, before falling to Monaco in the semifinal. The club's finances never recovered from the spending of that golden era, and a slow decline through the 2010s culminated in relegation all the way to Primera Federación (the third tier) in the early 2020s, making this return to La Liga an enormously romantic homecoming for one of Spain's most passionate, oversized fanbases.",
+    "rivals": [
+      "Celta Vigo — the Derbi Galego, Spain's fiercest regional rivalry outside the big cities",
+      "Real Madrid — bitter memories from title-race controversies in the Super Depor years"
+    ],
+    "legends": [
+      "Juan Carlos Valerón",
+      "Djalminha",
+      "Roy Makaay",
+      "Fran",
+      "Javier Irureta (manager)",
+      "Mauro Silva"
+    ],
+    "watch": "A romantic homecoming after collapse to the third tier — watch for the Riazor atmosphere and lingering Super Depor nostalgia driving a fanbase that punches far above the city's size.",
+    "tags": {
+      "underdog": 3,
+      "journey": 3,
+      "community": 3,
+      "aristocratic": 2,
+      "stability": "rebuilding",
+      "fan-culture": "family",
+      "ambition": "romantic",
+      "narrative": "underdog"
+    },
+    "lastSeason": "Earned automatic promotion from the Segunda División in 2025-26, ending a long exile and returning the fallen giant to La Liga.",
+    "keyPlayers": []
+  },
+  {
+    "id": "malaga",
+    "name": "Málaga CF",
+    "nick": "Boquerones (Anchovies)",
+    "league": "La Liga",
+    "country": "Spain",
+    "founded": 1948,
+    "stadium": "La Rosaleda, Málaga",
+    "honours": "UEFA Intertoto Cup 2002, Champions League quarterfinals 2012-13",
+    "c1": "#0066B3",
+    "c2": "#FFFFFF",
+    "identity": "A Costa del Sol club that briefly became one of the wealthiest in Europe under Qatari ownership, reaching the Champions League quarterfinals in 2013, before a spectacular financial collapse dragged it into years of administration and lower-division exile.",
+    "history": "Founded in 1948 as Atlético Malagueño, the club took its current name and identity through several reformations before establishing itself as a mid-table La Liga fixture. Everything changed in 2010 when Qatari royal Sheikh Abdullah bin Nasser Al-Thani bought a majority stake and bankrolled a spending spree, assembling a squad featuring Isco, Martín Demichelis, Santi Cazorla, and Salomón Rondón under manager Manuel Pellegrini. The high point came in 2012-13, when Málaga topped a Champions League group containing AC Milan and reached the quarterfinals before losing narrowly to Borussia Dortmund — even as unpaid debts saw the club banned from European competition the following season. Isco's sale to Real Madrid in 2013 symbolized the unraveling, and Al-Thani's ownership descended into years of unpaid wages, points deductions, and legal battles, eventually forcing the club into judicial administration and a fall through the Segunda División all the way to Primera Federación before this return to the top flight.",
+    "rivals": [
+      "Sevilla FC — an Andalusian rivalry sharpened by Málaga's rise and fall",
+      "Real Betis — a broader Andalusian regional fixture"
+    ],
+    "legends": [
+      "Isco",
+      "Martín Demichelis",
+      "Manuel Pellegrini (manager)",
+      "Santi Cazorla",
+      "Salomón Rondón"
+    ],
+    "watch": "A cautionary tale of boom and bust — watch for lingering scars from the Al-Thani ownership crisis alongside genuine excitement about a return from the financial abyss.",
+    "tags": {
+      "underdog": 3,
+      "journey": 3,
+      "community": 2,
+      "stability": "rebuilding",
+      "fan-culture": "rebel",
+      "ambition": "romantic",
+      "narrative": "cursed",
+      "highpress": 2
+    },
+    "lastSeason": "Won promotion to La Liga through the Segunda División play-offs in 2025-26 (beating Almería), returning to the top flight after an eight-year absence.",
+    "keyPlayers": []
+  },
+  {
+    "id": "frosinone",
+    "name": "Frosinone Calcio",
+    "nick": "I Canarini",
+    "league": "Serie A",
+    "country": "Italy",
+    "founded": 1928,
+    "stadium": "Stadio Benito Stirpe, Frosinone",
+    "honours": "Serie B playoff/promotion 2015-16, 2018-19, 2022-23, 2025-26 (3x Serie A promotion via table, 1x via runner-up finish)",
+    "c1": "#FFD700",
+    "c2": "#003399",
+    "identity": "A modest Ciociaria provincial club that has made a habit of yo-yoing between Serie A and Serie B, punching above its weight through shrewd recruitment and a knack for developing loanees and unknowns into first-team stars it later cashes in on.",
+    "history": "Frosinone traces its roots to a 1906 amateur side but counts 1928 as its competitive founding, and spent most of the 20th century in the lower divisions before a modern revival under president Maurizio Stirpe. The club reached Serie A for the first time in 2015-16, was instantly relegated, then returned in 2018-19 and again in 2020s cycles, each stint brief but earning wider respect for its overachieving squads. Its 2023-24 top-flight campaign was built around loanee Matías Soulé, whose breakout form under manager Fabio Grosso helped fund the next rebuild after relegation. Frosinone bounced back immediately, finishing runner-up in the 2025-26 Serie B table to secure a fourth promotion to Serie A for 2026-27. The Stadio Benito Stirpe, opened in 2017 and named for the club's late honorary president, has become a symbol of the family-run project's steady modernization.",
+    "rivals": [
+      "Latina Calcio — the Derby del Basso Lazio, a fierce Ciociaria-versus-Pontina regional rivalry",
+      "Lazio and Roma — occasional and lopsided but geographically close Lazio-region fixtures"
+    ],
+    "legends": [
+      "Matías Soulé (loanee, breakout star)",
+      "Fabio Grosso (manager, promotion-winning)",
+      "Marcello Trotta (forward)",
+      "Giuseppe Caso (winger)"
+    ],
+    "watch": "A perennial yo-yo club that treats every Serie A season as a chance to sell breakout talent for a profit — watch for whichever loanee or unheralded signing becomes this year's Soulé.",
+    "tags": {
+      "counterattack": 2,
+      "underdog": 3,
+      "journey": 3,
+      "community": 2,
+      "stability": "chaotic",
+      "fan-culture": "family",
+      "ambition": "smart-overachiever",
+      "narrative": "underdog"
+    },
+    "lastSeason": "Finished 2nd in the 2025-26 Serie B to win automatic promotion back to Serie A.",
+    "keyPlayers": []
+  },
+  {
+    "id": "sassuolo",
+    "name": "US Sassuolo Calcio",
+    "nick": "I Neroverdi",
+    "league": "Serie A",
+    "country": "Italy",
+    "founded": 1920,
+    "stadium": "Mapei Stadium – Città del Tricolore, Reggio Emilia",
+    "honours": "None major (Serie B champions 2007-08, 2024-25)",
+    "c1": "#000000",
+    "c2": "#00A651",
+    "identity": "A small-town Emilian club bankrolled by chemical-and-adhesives giant Mapei that built an outsized Serie A reputation on progressive, possession-based football and one of Italy's sharpest scouting-and-resale operations.",
+    "history": "Founded in 1920 and shaped through mergers of local Emilian amateur sides, Sassuolo spent decades in regional obscurity until Mapei magnate Giorgio Squinzi took over as sponsor in 2002 and owner in 2003, funding a methodical climb through the divisions. Promotion to Serie B came in 2008 and to Serie A in 2013, an improbable rise for a club representing a town of roughly 40,000 people with no natural fanbase of its own, sharing the Mapei Stadium with neighboring Reggio Emilia. Under sporting director Giovanni Carnevali, Sassuolo built a model of recruiting undervalued or unheralded talent — Domenico Berardi homegrown, plus Manuel Locatelli, Gianluca Scamacca, Davide Frattesi and Giacomo Raspadori developed and later sold for big profits — while playing attractive, possession-oriented football under coaches like Roberto De Zerbi. The club was relegated to Serie B in 2024 after 11 straight years in the top flight, but won immediate promotion back by topping the 2024-25 Serie B table, returning to Serie A for 2026-27.",
+    "rivals": [
+      "Modena — the Derby dell'Emilia / Derby del Panaro, a close-proximity provincial rivalry",
+      "Reggiana — a stadium-sharing-adjacent rivalry with fellow Reggio Emilia-area club"
+    ],
+    "legends": [
+      "Domenico Berardi (club legend, homegrown forward)",
+      "Manuel Locatelli (midfielder, sold to Juventus)",
+      "Gianluca Scamacca (forward, sold to West Ham)",
+      "Davide Frattesi (midfielder, sold to Inter)",
+      "Giacomo Raspadori (forward, sold to Napoli)",
+      "Roberto De Zerbi (manager)",
+      "Giovanni Carnevali (sporting director, architect of the player-trading model)"
+    ],
+    "watch": "Watch the recruitment more than the results — Sassuolo's real skill is finding the next Berardi or Frattesi before anyone else notices, then playing eye-catching football while doing it.",
+    "tags": {
+      "possession": 3,
+      "technical": 2,
+      "academy": 3,
+      "underdog": 2,
+      "community": 1,
+      "stability": "rebuilding",
+      "fan-culture": "intellectual",
+      "ambition": "smart-overachiever",
+      "narrative": "project"
+    },
+    "lastSeason": "Comfortably retained their Serie A status in 2025-26, finishing 11th.",
+    "keyPlayers": []
+  },
+  {
+    "id": "fc-koln",
+    "name": "1. FC Köln",
+    "nick": "Die Geißböcke (The Billy Goats)",
+    "league": "Bundesliga",
+    "country": "Germany",
+    "founded": 1948,
+    "stadium": "RheinEnergieStadion, Cologne",
+    "honours": "3 German championships (incl. inaugural 1963-64 Bundesliga title), 4 DFB-Pokal titles",
+    "c1": "#ED1C24",
+    "c2": "#FFFFFF",
+    "identity": "Cologne's carnival-city club, forever tied to a live mascot goat named Hennes and a fanbase whose devotion survives an exhausting cycle of promotion and relegation between the top two divisions.",
+    "history": "Formed in 1948 from the merger of Kölner Ballspiel-Club 1901 and SpVgg Sülz 07, FC Köln became a founding member of the Bundesliga in 1963 and won its very first title in 1963-64. A golden era followed, including a league-and-cup double in 1978 and a run to the 1986 UEFA Cup final, lost narrowly to Real Madrid. Since the 1990s the club has become notorious as Germany's ultimate yo-yo team, bouncing between the Bundesliga and 2. Bundesliga more than almost any other side while somehow retaining one of the country's largest and loudest support bases. The club's live goat mascot, Hennes, has been a matchday fixture since 1950 and is inseparable from Cologne's Rhineland carnival identity.",
+    "rivals": [
+      "Borussia Mönchengladbach — the Rhine derby, the club's fiercest and oldest rivalry",
+      "Fortuna Düsseldorf — a regional Rhineland rivalry",
+      "Bayer Leverkusen — a rivalry sharpened by Leverkusen's perceived corporate roots"
+    ],
+    "legends": [
+      "Hennes Weisweiler (manager)",
+      "Wolfgang Overath",
+      "Toni Schumacher",
+      "Lukas Podolski",
+      "Pierre Littbarski"
+    ],
+    "watch": "Look for the live goat mascot Hennes paraded pitchside before kickoff, and brace for a stadium atmosphere shaped as much by Cologne's carnival culture as by football — win or lose, the Geißböcke faithful sing themselves hoarse.",
+    "tags": {
+      "ultras": 3,
+      "community": 2,
+      "journey": 3,
+      "underdog": 2,
+      "physical": 1,
+      "stability": "chaotic",
+      "fan-culture": "ultras",
+      "ambition": "identity-driven",
+      "narrative": "cursed"
+    },
+    "lastSeason": "Survived their return to the Bundesliga in 2025-26, finishing 14th; Ragnar Ache scored the league's Goal of the Season.",
+    "keyPlayers": [
+      "Ragnar Ache — scored the 2025-26 Bundesliga Goal of the Season"
+    ]
+  },
+  {
+    "id": "hamburger-sv",
+    "name": "Hamburger SV",
+    "nick": "Der Dino, Die Rothosen (The Red Shorts)",
+    "league": "Bundesliga",
+    "country": "Germany",
+    "founded": 1919,
+    "stadium": "Volksparkstadion, Hamburg",
+    "honours": "6 German championships, 3 DFB-Pokal titles, 1977 European Cup Winners' Cup, 1983 European Cup",
+    "c1": "#0A1E3C",
+    "c2": "#FFFFFF",
+    "identity": "The Bundesliga's fallen giant — the only club to play every top-flight season from the league's 1963 founding until a shattering first-ever relegation in 2018, and a former European champion still fighting to reclaim its old stature.",
+    "history": "Hamburger SV's finest hour came in 1982-83, when a Felix Magath-inspired side upset Juventus to win the European Cup, capping an era that had already produced a Cup Winners' Cup and multiple league titles led by stars like Kevin Keegan and Horst Hrubesch. For decades HSV proudly held the unbroken record of never leaving the Bundesliga since its 1963 formation, a badge of stability nicknamed 'Der Dino.' That record collapsed in dramatic fashion in May 2018, when the club lost a relegation play-off and dropped to 2. Bundesliga for the first time in its history, sending shockwaves through German football. HSV then spent six painful seasons stuck in the second tier, repeatedly falling short in the promotion play-offs and becoming a cautionary tale of institutional dysfunction. The club finally returned to the Bundesliga for the 2025-26 season, ending one of German football's most-watched sagas of decline and redemption.",
+    "rivals": [
+      "Werder Bremen — the Nordderby, the great rivalry of northern Germany",
+      "St. Pauli — the intra-city Hamburg derby"
+    ],
+    "legends": [
+      "Kevin Keegan",
+      "Horst Hrubesch",
+      "Felix Magath",
+      "Manfred Kaltz",
+      "Uwe Seeler"
+    ],
+    "watch": "Watch for the emotional weight around HSV's return to the top flight — this is a fallen European champion trying to prove its years in the Bundesliga 2 wilderness are truly over.",
+    "tags": {
+      "journey": 3,
+      "aristocratic": 2,
+      "trophyhunger": 2,
+      "community": 1,
+      "physical": 1,
+      "stability": "rebuilding",
+      "fan-culture": "family",
+      "ambition": "romantic",
+      "narrative": "cursed"
+    },
+    "lastSeason": "Secured survival on their long-awaited return to the Bundesliga in 2025-26, finishing 13th.",
+    "keyPlayers": []
+  },
+  {
+    "id": "sv-elversberg",
+    "name": "SV Elversberg",
+    "nick": "Die Bergmannself",
+    "league": "Bundesliga",
+    "country": "Germany",
+    "founded": 1907,
+    "stadium": "Ursapharm-Arena an der Kaiserlinde, Spiesen-Elversberg",
+    "honours": "None major — first-ever Bundesliga season 2026-27",
+    "c1": "#000000",
+    "c2": "#FFFFFF",
+    "identity": "German football's smallest-town miracle — a Saarland club from a village of roughly 13,000 people that rocketed up four divisions in under a decade to reach the Bundesliga for the first time in its history.",
+    "history": "Founded in 1907 as FC Germania Elversberg, the club was dissolved during the First World War and refounded in 1918, spending most of its existence in regional and lower-tier obscurity in the small Saarland community of Elversberg. Under manager Horst Steffen from 2018, the club climbed rapidly, earning back-to-back promotions in 2021-22 and 2022-23 to reach 2. Bundesliga for only the third time in its history. A strong debut 2. Bundesliga campaign followed, and in May 2026 Elversberg clinched automatic promotion to the Bundesliga on the final day of the season, becoming the smallest-population town ever to field a top-flight German club. The achievement came just as Steffen departed for Werder Bremen, handing new manager Vincent Wagner the task of keeping the fairytale alive against far wealthier opposition.",
+    "rivals": [
+      "1. FC Saarbrücken — the Saarland derby, the region's key local rivalry",
+      "1. FC Kaiserslautern — a nearby regional rivalry"
+    ],
+    "legends": [
+      "Horst Steffen (manager)",
+      "Fisnik Asllani",
+      "Lukas Petkov"
+    ],
+    "watch": "Watch how a tiny 10,000-capacity stadium and shoestring budget try to survive against Bundesliga giants — Elversberg's rapid four-division climb is one of German football's purest underdog stories.",
+    "tags": {
+      "underdog": 3,
+      "community": 3,
+      "journey": 3,
+      "counterattack": 1,
+      "physical": 1,
+      "stability": "rebuilding",
+      "fan-culture": "family",
+      "ambition": "romantic",
+      "narrative": "underdog"
+    },
+    "lastSeason": "Won automatic promotion from the 2. Bundesliga on the final day of 2025-26 to reach the Bundesliga for the first time in the club's history.",
+    "keyPlayers": []
+  },
+  {
+    "id": "sc-paderborn-07",
+    "name": "SC Paderborn 07",
+    "nick": "Die Ostwestfalen",
+    "league": "Bundesliga",
+    "country": "Germany",
+    "founded": 1907,
+    "stadium": "Home Deluxe Arena, Paderborn",
+    "honours": "None major",
+    "c1": "#003399",
+    "c2": "#FFFFFF",
+    "identity": "East Westphalia's high-wire overachiever — a small-budget club that has twice bounced into the Bundesliga on the back of a relentless, high-risk pressing style, only to be relegated immediately both times.",
+    "history": "SC Paderborn 07 spent most of its history in the German lower leagues before a meteoric rise under manager André Breitenreiter delivered a first-ever promotion to the Bundesliga in 2014. That debut season produced the Bundesliga's longest-ever recorded goal, an 83-metre volley by Moritz Stoppelkamp, but a second-half collapse saw the newcomers relegated on the final day. Paderborn returned to the Bundesliga for the 2019-20 season, again playing an aggressive, high-press system, but finished bottom of the table and went straight back down. The club has built a reputation as one of the Bundesliga's classic small-budget disruptors, using intense pressing and tactical daring to punch above its financial weight even when the results don't hold. Paderborn returned to the top flight once more for 2026-27, aiming to finally break its immediate-relegation pattern.",
+    "rivals": [
+      "1. FC Köln — a regional North Rhine-Westphalia rivalry",
+      "Borussia Mönchengladbach — a regional rivalry",
+      "Borussia Dortmund — a regional rivalry lacking a formal derby history"
+    ],
+    "legends": [
+      "André Breitenreiter (manager)",
+      "Moritz Stoppelkamp",
+      "Sven Michel"
+    ],
+    "watch": "Watch for chaotic, end-to-end matches — Paderborn's high-press, high-risk style produces some of the most entertaining, error-prone football in the league, for better or worse.",
+    "tags": {
+      "highpress": 3,
+      "underdog": 3,
+      "counterattack": 1,
+      "physical": 1,
+      "stability": "chaotic",
+      "fan-culture": "family",
+      "ambition": "smart-overachiever",
+      "narrative": "underdog"
+    },
+    "lastSeason": "Won promotion to the Bundesliga via the relegation/promotion play-off in 2025-26 (beating Wolfsburg), returning to the top flight after six years away.",
+    "keyPlayers": []
+  },
+  {
+    "id": "lorient",
+    "name": "FC Lorient",
+    "nick": "Les Merlus",
+    "league": "Ligue 1",
+    "country": "France",
+    "founded": 1926,
+    "stadium": "Stade du Moustoir, Lorient",
+    "honours": "Coupe de France (2002)",
+    "c1": "#F97316",
+    "c2": "#000000",
+    "identity": "Brittany's model development club — a quietly-run academy factory that has spent decades turning young talent into transfer profit while yo-yoing between France's top two divisions.",
+    "history": "Lorient spent most of its early existence as a minor amateur outfit before a 1980s revival under manager Christian Gourcuff, whose methodical coaching philosophy became the template for the club's identity. The Merlus reached their high-water mark in 2002, beating Bastia 1-0 in the Coupe de France final for the club's only major trophy, then backed it up with European football the following season. Since then Lorient has built a reputation as a reliable Ligue 2/Ligue 1 shuttle side, repeatedly promoted on the strength of academy graduates and smart sporting-director recruitment rather than spending power. Christian's son Yoann Gourcuff came through the Lorient academy before becoming a French international, epitomizing the club's development-first ethos, and strikers like Kevin Gameiro built their reputations at the Moustoir before bigger moves.",
+    "rivals": [
+      "Rennes — the primary Breton derby and Lorient's biggest rivalry",
+      "Guingamp — a smaller, more regional Breton fixture",
+      "Brest — another Brittany meeting, more geographic than heated"
+    ],
+    "legends": [
+      "Christian Gourcuff (manager)",
+      "Yoann Gourcuff",
+      "Kevin Gameiro",
+      "Christophe Pélissier (manager)"
+    ],
+    "watch": "Watch for the academy pipeline — Lorient is consistently a place where young French talent gets its first real minutes before moving on to bigger clubs.",
+    "tags": {
+      "academy": 3,
+      "journey": 3,
+      "community": 2,
+      "underdog": 2,
+      "patience": 2,
+      "rivalryagnostic": 1,
+      "stability": "rebuilding",
+      "fan-culture": "family",
+      "ambition": "smart-overachiever",
+      "narrative": "underdog"
+    },
+    "lastSeason": "Retained their Ligue 1 place in 2025-26, finishing 10th on their return to the top flight.",
+    "keyPlayers": []
+  },
+  {
+    "id": "paris-fc",
+    "name": "Paris FC",
+    "nick": "Les Parisiens, Les Bleus",
+    "league": "Ligue 1",
+    "country": "France",
+    "founded": 1969,
+    "stadium": "Stade Jean-Bouin, Paris",
+    "honours": "None major",
+    "c1": "#003DA5",
+    "c2": "#FFFFFF",
+    "identity": "The other Paris club — a long-suffering, historically overshadowed second team from the capital that has been transformed almost overnight by Arnault family and Red Bull investment into PSG's first true intracity rival in decades.",
+    "history": "Formed in 1969, Paris FC briefly merged with Stade Saint-Germain to create Paris Saint-Germain in 1970 before splitting off again in 1972 to go its own way, leaving PSG to become the capital's dominant club. For over four decades Paris FC drifted through Ligue 2 and the third tier, playing in front of sparse crowds at the athletics-track Stade Charléty, a stadium ill-suited to atmosphere. Everything changed in late 2024 when the Arnault family (LVMH) took a majority stake alongside a minority investment from Red Bull, pouring in resources and footballing expertise led by figures like Jürgen Klopp. The revamped club moved to Stade Jean-Bouin and won promotion to Ligue 1 in May 2025, ending a 46-year absence from the top flight and setting up Paris's first derby with PSG in over three decades.",
+    "rivals": [
+      "Paris Saint-Germain — the emerging Paris derby, freighted with a David-vs-Goliath, old-money-vs-new-money storyline"
+    ],
+    "legends": [
+      "Pierre Ferracci (former president)",
+      "Fernando Aristeguieta"
+    ],
+    "watch": "Watch the Paris derby narrative — a fraction of PSG's budget and history, but backed by fresh billionaire money and positioning itself as the identity-driven counterweight to PSG's galactico model.",
+    "tags": {
+      "underdog": 2,
+      "galactico": 2,
+      "rebellious": 2,
+      "bloodfeud": 2,
+      "trophyhunger": 1,
+      "stability": "rebuilding",
+      "fan-culture": "rebel",
+      "ambition": "romantic",
+      "narrative": "underdog"
+    },
+    "lastSeason": "Impressed on their top-flight debut season in 2025-26, finishing 11th in Ligue 1.",
+    "keyPlayers": []
+  },
+  {
+    "id": "troyes",
+    "name": "ES Troyes AC",
+    "nick": "Les Troyens",
+    "league": "Ligue 1",
+    "country": "France",
+    "founded": 1986,
+    "stadium": "Stade de l'Aube, Troyes",
+    "honours": "Intertoto Cup (2001)",
+    "c1": "#0033A0",
+    "c2": "#FFFFFF",
+    "identity": "A small Champagne-region club whose fortunes have swung between surprise European nights and yo-yo relegations, now steered by City Football Group's global scouting network.",
+    "history": "Formed in 1986 out of the financial wreckage of an earlier Troyes club, ESTAC's best era came in the early 2000s under president-driven ambition that carried them to seventh-place Ligue 1 finishes and a memorable 2001 Intertoto Cup campaign, including a famous win over Newcastle United. The club has since become one of French football's classic elevator teams, bouncing between Ligue 1 and Ligue 2 through the 2010s and 2020s. In 2020, City Football Group took ownership, plugging Troyes into the same data-driven recruitment network as Manchester City, using the Aube club partly as a proving ground for young talent across the group's global system. Troyes returned to Ligue 1 for 2026-27 after topping Ligue 2, capping a title-winning campaign that included a statement win away at Saint-Étienne.",
+    "rivals": [
+      "Stade de Reims — the closest regional Champagne/Marne rivalry",
+      "AS Saint-Étienne — a fixture sharpened by their 2025-26 promotion race"
+    ],
+    "legends": [
+      "Jérôme Rothen",
+      "Rafik Saïfi",
+      "Roger Courtois (manager)"
+    ],
+    "watch": "Watch for City Football Group fingerprints — a possession-based, recruitment-driven identity layered onto a historically modest, yo-yo Champagne club.",
+    "tags": {
+      "possession": 2,
+      "journey": 3,
+      "underdog": 2,
+      "academy": 1,
+      "friendlyrivalry": 1,
+      "stability": "rebuilding",
+      "fan-culture": "family",
+      "ambition": "smart-overachiever",
+      "narrative": "underdog"
+    },
+    "lastSeason": "Won the 2025-26 Ligue 2 title (67 points) to earn automatic promotion to Ligue 1.",
+    "keyPlayers": []
+  },
+  {
+    "id": "le-mans",
+    "name": "Le Mans FC",
+    "nick": "Les Sarthois",
+    "league": "Ligue 1",
+    "country": "France",
+    "founded": 1985,
+    "stadium": "MMArena, Le Mans",
+    "honours": "None major",
+    "c1": "#FFFFFF",
+    "c2": "#1C1C1C",
+    "identity": "A Sarthe club overshadowed globally by its city's famous 24-hour endurance race, whose own football story is one of near-death financial collapse followed by an astonishing climb back through six tiers of French football.",
+    "history": "Formed in 1985 as Le Mans Union Club 72, the club enjoyed its best spell in Ligue 1 between 2003 and 2010, fielding sides featuring Grafite, Romaric and a young Gervinho and reaching as high as ninth place. Financial mismanagement caught up with the club after relegation, and by 2013 Le Mans FC had gone bankrupt and been administratively demoted all the way to regional amateur football, a fall of six divisions. What followed was a remarkable rebuild: consecutive promotions clawed the club back up through the pyramid, culminating in back-to-back promotions from the third tier in 2024-25 and from Ligue 2 in 2025-26. The 2026-27 return to Ligue 1 comes seventeen years after the club was last in the top flight, playing out of the MMArena inside the Circuit de la Sarthe, better known worldwide for hosting the 24 Hours of Le Mans.",
+    "rivals": [
+      "Stade Lavallois — the Derby du Maine, contested across the Sarthe-Mayenne boundary",
+      "Angers — a broader Pays de la Loire regional rivalry"
+    ],
+    "legends": [
+      "Grafite",
+      "Gervinho",
+      "Rudi Garcia (manager)",
+      "Frédéric Hantz (manager)"
+    ],
+    "watch": "Watch for the comeback narrative — a club that fell to amateur regional football in 2013 and clawed its way back to Ligue 1 through six divisions in just over a decade.",
+    "tags": {
+      "underdog": 3,
+      "journey": 3,
+      "community": 2,
+      "trophyhunger": 1,
+      "friendlyrivalry": 1,
+      "stability": "chaotic",
+      "fan-culture": "family",
+      "ambition": "romantic",
+      "narrative": "underdog"
+    },
+    "lastSeason": "Finished 2nd in the 2025-26 Ligue 2 — losing only four league games all season — to win promotion to Ligue 1.",
+    "keyPlayers": []
+  },
+  {
+    "id": "atlante",
+    "name": "Club Atlante",
+    "nick": "Los Potros de Hierro, La Potranca",
+    "league": "Liga MX",
+    "country": "Mexico",
+    "founded": 1916,
+    "stadium": "Estadio Banorte, Mexico City",
+    "honours": "3 Liga MX titles (1940s dynasty era, Apertura 2007), 1 Campeón de Campeones, 2 Copa México titles, 2 CONCACAF Champions' Cup (1983, 2008-09)",
+    "c1": "#002B7F",
+    "c2": "#C8102E",
+    "identity": "Mexico City's original working-class club and one of the country's oldest institutions, Atlante built its identity as \"El Equipo del Pueblo\" in direct contrast to the capital's establishment sides, and its current return to the top flight via a purchased franchise slot has only added to its reputation as Liga MX's most improbable survivor.",
+    "history": "Founded on April 18, 1916, under the name Sinaloa before passing through incarnations as Lusitania, U-53, and Atlántico, the club settled on Atlante in 1921 and quickly became a Mexico City institution known for its resilient, iron-willed sides. Atlante won Mexican titles across the 1940s golden era, added continental glory with CONCACAF Champions' Cup wins in 1983 and 2008-09, and famously lifted an Apertura 2007 title just months after relocating to Cancún. Financial collapse and administrative turmoil pushed the club out of Liga MX entirely in 2020, and Atlante spent over a decade in the second-tier Liga de Expansión MX while its historic identity was kept alive largely through loyalist fans and its storied rivalry with América. In a move unprecedented in Liga MX history, Atlante secured its return to the top flight for 2026-27 not through sporting promotion but by purchasing the Primera División franchise membership of Mazatlán FC, which was dissolved, allowing Atlante to relocate the slot back to Mexico City and resume life at Estadio Banorte alongside Cruz Azul and América. The deal is a stark reminder that Liga MX's playoff-based promotion system was only just reinstated by a CAS ruling, and that a club's place in the top flight can still be bought as easily as it can be earned.",
+    "rivals": [
+      "Club América — the Clásico Capitalino, one of Mexico City's oldest and most historic derbies, rooted in Atlante's working-class identity against América's establishment image",
+      "Cruz Azul — a modern Mexico City rivalry sharpened by Atlante's return to groundshare at Estadio Banorte",
+      "Pumas UNAM — a historic capital rivalry, including Atlante's 2007 Apertura final win over Pumas"
+    ],
+    "legends": [
+      "Hugo Sánchez",
+      "Ricardo La Volpe",
+      "Cabinho",
+      "Grzegorz Lato",
+      "Rubén \"Ratón\" Ayala",
+      "Miodrag Belodedici",
+      "Faustino Asprilla",
+      "Refugio \"El Vaquero\" Martínez"
+    ],
+    "watch": "Watch for the emotional weight of Atlante's first Clásico Capitalino against América back in Mexico City after more than a decade away, and notice how a fanbase that survived relegation, relocation, and years in the second division reacts to reclaiming a seat at Liga MX's top table by checkbook rather than by winning promotion on the pitch.",
+    "tags": {
+      "underdog": 3,
+      "journey": 3,
+      "trophyhunger": 2,
+      "bloodfeud": 2,
+      "community": 2,
+      "stability": "rebuilding",
+      "fan-culture": "family",
+      "ambition": "identity-driven",
+      "narrative": "underdog",
+      "highpress": 1
+    },
+    "lastSeason": "Returned to Liga MX for the Apertura 2026 tournament after 12 years in the second tier, acquiring the top-flight franchise formerly held by Mazatlán FC.",
+    "keyPlayers": []
   }
 ]

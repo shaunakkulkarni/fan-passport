@@ -20,6 +20,8 @@ Each club is a JSON object with the following required fields:
 | `legends` | string[] | Array of legendary player/manager names |
 | `watch` | string | 1-2 sentence "what to watch for" guidance for a new fan |
 | `tags` | object | Tag → weight (0-3) mapping for quiz matching algorithm |
+| `lastSeason` | string | 1 sentence: final league position + notable cup/continental result for the 2025–26 season. Update every season start (see `TAGGING_GUIDE.md` review triggers). |
+| `keyPlayers` | string[] | 3-4 current marquee players, `"Name — one-clause reason they matter"`. Not a full roster — refresh at season start and after major transfer windows; do not attempt to track mid-window moves. |
 
 ## Tag Vocabulary
 

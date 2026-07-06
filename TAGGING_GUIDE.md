@@ -98,15 +98,29 @@ What story is the club living in right now?
 
 ---
 
-## ⚠️ Arsenal flag — `narrative: "dynasty"` → should be `"project"`
+## ✅ Arsenal flag — RESOLVED (updated twice)
 
-**Current tag:** `narrative: "dynasty"`
-**Problem:** Arsenal has not won the Premier League since the 2003–04 Invincibles season — a 21-year drought. The `dynasty` rubric requires a domestic league title within the last ~5 seasons AND perennial-title expectation. Arsenal meets neither criterion. They are in a genuine rebuild/building phase under Arteta with young talent and a developing philosophy — the textbook `project` profile.
+**History:** was `narrative: "dynasty"` → flagged as stale (21-year title drought contradicted the tag) → corrected to `"project"` → then Arsenal actually won the 2025-26 Premier League title (confirmed via live research, their first since 2003-04, ending a 22-year drought). Per this guide's own review trigger ("Trophy won after long drought — narrative shifts toward `dynasty` or `underdog`... Leicester 2016 is the canonical example"), `"project"` was no longer right either — they're not "still building," they delivered. **Current tag: `narrative: "underdog"`**, matching the Leicester 2016 precedent: a breakthrough after years away, not yet an established dynasty (that would need consecutive/perennial title expectation, which one title doesn't establish). Re-evaluate again if they win a second title in the next 2-3 seasons — at that point `dynasty` would become correct.
 
-**Recommended fix:** Change `narrative: "dynasty"` → `narrative: "project"` in clubs.json for arsenal.
-**Alternative:** If the tagger feels Arsenal's title-contention status in 2023–24/2024–25 brings them back to expectation, `underdog` (punching back toward the top after years away) is defensible. `dynasty` is not.
+---
 
-**Action:** This is a documentation flag, not an automated change. A human tagger should confirm and apply. The fix is a one-line edit in clubs.json: `"narrative": "project"` under the arsenal club object.
+## ⚠️ Additional flagged narrative mis-tags — MLS / Liga MX (needs human confirmation)
+
+While investigating why MLS/Liga MX clubs almost never win the quiz (see `scripts/audit-reachability.js`), the same class of error as the Arsenal case turned up repeatedly in the American-league rows: several clubs carry `narrative: "dynasty"` or `"underdog"` that their own `identity`/`history` prose directly contradicts. Unlike Arsenal, these weren't corrected automatically — confirming the right *replacement* value needs current-season knowledge this pass didn't have. Flagging per the same protocol: a human tagger should confirm and apply.
+
+| Club | Current tag | Contradicting evidence (from the club's own bio) | Confidence |
+|---|---|---|---|
+| Chicago Fire FC | `dynasty` | Same sentence says "one of the league's longest trophy droughts" — the definition of `cursed`, not `dynasty`. | High |
+| D.C. United | `dynasty` | "Won four of the first nine MLS Cups" anchors the claim to 1996–2004. Nothing suggests current-era dominance. | High |
+| Houston Dynamo FC | `dynasty` | "Has spent the years since [2006–07] searching for sustained relevance." Explicitly says the opposite of current dynasty. | High |
+| Club Puebla | `dynasty` | "Proud 1980s title era" — 40+ years stale by the rubric's own ~5-season window. | High |
+| Club Necaxa | `dynasty` | "Once one of Mexican football's most successful clubs... moved across states to survive." Explicitly past-tense. | High |
+| LA Galaxy | `dynasty` | "All-time most successful franchise" is an all-time claim, not a current-era one (same pattern as Arsenal). | Medium |
+| Chivas de Guadalajara | `dynasty` | Bio emphasizes identity/purity (Mexican-players-only policy) and "national pride," not current trophy contention. | Medium |
+| Pumas UNAM | `dynasty` | Bio frames Pumas as academically rooted and "less corporate" — no trophy claim at all. Sits oddly next to `dynasty`. | Medium |
+| New England Revolution | `underdog` | "Consistently competed but never won MLS Cup... the league's most successful trophy-less club" is the `cursed` definition (repeated near-misses), not `underdog` (punching above weight to win). | Medium |
+
+**Action:** Documentation flag only, consistent with how the Arsenal case was handled — a human tagger with current-season knowledge should confirm the correct replacement value (likely `project`, `underdog`, or `cursed` depending on the club) and apply it, then re-run `node scripts/validate-tags.js` and `node scripts/audit-reachability.js`.
 
 ---
 

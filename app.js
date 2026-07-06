@@ -740,6 +740,11 @@ function renderDossier(){
         <div class="flabel">Honours</div>
         <div class="fval">${c.honours}</div>
       </div>
+      ${c.lastSeason ? `
+      <div class="field">
+        <div class="flabel">Latest season</div>
+        <div class="fval">${c.lastSeason}</div>
+      </div>` : ""}
       <div class="field">
         <div class="flabel">History</div>
         <div class="fval">${c.history}</div>
@@ -752,6 +757,11 @@ function renderDossier(){
         <div class="flabel">Legends</div>
         <div class="fval">${c.legends.join(" · ")}</div>
       </div>
+      ${c.keyPlayers && c.keyPlayers.length ? `
+      <div class="field">
+        <div class="flabel">Players to know right now</div>
+        <div class="fval">${c.keyPlayers.map(p => `• ${p}`).join("<br>")}</div>
+      </div>` : ""}
       <div class="field">
         <div class="flabel">What to watch for</div>
         <div class="fval">${c.watch}</div>

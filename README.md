@@ -68,8 +68,10 @@ Fan Passport/
 ├── og-share-card.png       # Default/generic OG share card
 ├── vercel.json             # Vercel deployment config
 ├── scripts/
-│   ├── add-v2-tags.js      # One-time script: adds v2 tags to clubs.json
-│   └── audit-scoring.js    # Anti-shortcut scoring audit (re-runnable)
+│   ├── add-v2-tags.js         # One-time script: adds v2 tags to clubs.json
+│   ├── validate-tags.js       # Dead/orphaned tag validator + tag distribution stats
+│   ├── audit-scoring.js       # Anti-shortcut scoring audit (re-runnable)
+│   └── audit-reachability.js  # Brute-forces every quiz combo, reports which clubs can ever place #1
 └── README.md               # This file
 ```
 
@@ -92,6 +94,14 @@ node scripts/audit-scoring.js
 ```
 
 This checks that no answer option across Q1–Q6 concentrates >40% of its tag weight into a single league. The audit also verifies that all NFL mapping club IDs exist in clubs.json and flags any NFL team whose mapped clubs are all from the same league.
+
+Also run the reachability audit, which checks a different failure mode — not "does one answer favor a league" but "can this club mathematically ever win at all":
+
+```bash
+node scripts/audit-reachability.js
+```
+
+This brute-forces all 135,168 possible quiz outcomes (4⁶ Q1–Q6 combinations × 33 Q7 NFL options) and reports how many of the 144 clubs ever place #1, how concentrated the top results are, and the win share by league. Re-run after any tag change to confirm you haven't made a club (or a whole league) unreachable.
 
 ## Deploy to Vercel
 
