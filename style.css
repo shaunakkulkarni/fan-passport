@@ -324,9 +324,11 @@ nav.topnav span:hover{opacity:1;border-bottom:1px solid var(--gold);}
 /* ── Share result card ── */
 /* A screenshot-friendly, branded card optimized for social sharing. */
 .share-card-section{margin-top:56px;}
-/* Shared-hero wrapper: sits at the top of the result page in shared-link
-   mode so the share card + CTA are the first thing a viewer sees. */
-.shared-hero{margin-bottom:48px;}
+/* Shared-hero grid: share card + CTA side-by-side at desktop, stacked mobile. */
+.shared-hero-grid{
+  display:flex;gap:24px;align-items:stretch;margin-bottom:48px;
+}
+.shared-hero-grid > *{flex:1 1 0;min-width:0;}
 .scs-label{
   font-family:'IBM Plex Mono',monospace;font-size:12px;text-transform:uppercase;
   letter-spacing:0.1em;color:var(--ink-soft);margin-bottom:16px;
@@ -342,6 +344,8 @@ nav.topnav span:hover{opacity:1;border-bottom:1px solid var(--gold);}
   box-shadow:0 4px 24px rgba(27,27,23,0.16);
   position:relative;
 }
+/* Inside the shared-hero grid, let the card fill its column */
+.shared-hero-grid .share-card{max-width:none;}
 .sc-accent{
   padding:12px 20px;
   font-family:'IBM Plex Mono',monospace;
@@ -677,13 +681,15 @@ footer{padding:30px 24px 50px;text-align:center;font-family:'IBM Plex Mono',mono
 
 /* ── Shared link CTA — conversion module ── */
 /* Only shown when viewing a friend's result via ?r= link. */
+/* In the shared-hero grid it sits side-by-side with the share card. */
 .shared-cta-module{
-  margin-top:48px;padding:36px 32px;
+  padding:36px 32px;
   border:1.5px solid var(--ink);
   background:var(--paper);
   position:relative;
   text-align:center;
   box-shadow:0 4px 24px rgba(27,27,23,0.14);
+  display:flex;flex-direction:column;justify-content:center;
 }
 .shared-cta-module::before{
   content:"";position:absolute;inset:6px;
@@ -715,9 +721,10 @@ footer{padding:30px 24px 50px;text-align:center;font-family:'IBM Plex Mono',mono
 @keyframes scmIn{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
 .shared-cta-module{animation:scmIn .5s ease both;}
 
-/* Mobile: stack the buttons, tighten padding */
+/* Mobile: stack the shared-hero grid, tighten padding */
 @media(max-width:640px){
-  .shared-cta-module{padding:28px 20px;margin-top:36px;}
+  .shared-hero-grid{flex-direction:column;gap:20px;}
+  .shared-cta-module{padding:28px 20px;}
   .scm-actions{flex-direction:column;}
   .scm-actions .btn{width:100%;flex:1 1 auto;}
 }
