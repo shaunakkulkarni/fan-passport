@@ -346,11 +346,30 @@ function computeResults(answers){
   // (maxBaseScore above is pre-boost max, used ONLY to size the NFL boost.)
   const topScore = scored[0].score || 1;
 
-  return scored.slice(0, 3).map(s => ({
+  const top3 = scored.slice(0, 3).map(s => ({
     club: s.club,
     pct: Math.min(100, Math.round((s.score / topScore) * 100)),
     topTags: s.contributions.sort((a,b) => b.contrib - a.contrib).slice(0, 5).map(c => c.tag),
   }));
+
+  // Best match in each league other than the top match's league
+  const topLeague = top3[0].club.league;
+  const leagueMatches = LEAGUE_ORDER
+    .filter(league => league !== topLeague)
+    .map(league => {
+      const best = scored.find(s => s.club.league === league);
+      if(!best) return null;
+      return {
+        club: best.club,
+        pct: Math.min(100, Math.round((best.score / topScore) * 100)),
+      };
+    })
+    .filter(Boolean);
+
+  // Attach leagueMatches to the top result for the renderer to use
+  if(top3[0]) top3[0].leagueMatches = leagueMatches;
+
+  return top3;
 }
 
 /* ──── Quiz Flow ──── */
@@ -644,6 +663,24 @@ function renderResult(){
     </div>
   `).join("");
 
+  // Best match in each of the other leagues
+  const leagueMatches = (top.leagueMatches || []);
+  const leagueCards = leagueMatches.map(m => `
+    <div class="league-match" data-open="${m.club.id}">
+      ${crestHTML(m.club, "crest-md")}
+      <div class="league-match-info">
+        <div class="lm-name">${m.club.name}</div>
+        <div class="lm-league">${m.club.league}</div>
+      </div>
+      <div class="lm-pct">${m.pct}%</div>
+    </div>
+  `).join("");
+  const leagueSection = leagueMatches.length ? `
+    <div class="league-matches">
+      <h3>Your matches in the other leagues</h3>
+      <div class="league-match-grid">${leagueCards}</div>
+    </div>` : "";
+
   // Retake chips: one per answered question
   const retakeChips = state.answers.map((ans, i) => {
     const q = QUESTIONS[i];
@@ -702,6 +739,7 @@ function renderResult(){
         <h3>Also under consideration</h3>
         <div class="runner-grid">${runnerCards}</div>
       </div>
+      ${leagueSection}
       ${sharedCTA}
     </div>
   </section>`;

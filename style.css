@@ -185,6 +185,15 @@ nav.topnav span:hover{opacity:1;border-bottom:1px solid var(--gold);}
 .runner-card:nth-child(1){animation-delay:.38s;}
 .runner-card:nth-child(2){animation-delay:.44s;}
 
+/* League matches staggered entrance */
+.league-match{animation:fadeUp .4s ease both;}
+.league-match:nth-child(1){animation-delay:.46s;}
+.league-match:nth-child(2){animation-delay:.50s;}
+.league-match:nth-child(3){animation-delay:.54s;}
+.league-match:nth-child(4){animation-delay:.58s;}
+.league-match:nth-child(5){animation-delay:.62s;}
+.league-match:nth-child(6){animation-delay:.66s;}
+
 /* Result meta staggered entrance */
 .result-meta{animation:fadeUp .5s ease both;animation-delay:.08s;}
 .result-meta .granted{animation:fadeUp .4s ease both;animation-delay:.12s;}
@@ -269,6 +278,22 @@ nav.topnav span:hover{opacity:1;border-bottom:1px solid var(--gold);}
 .runner-card:active{transform:scale(0.99);}
 .runner-card .rname{font-weight:600;font-size:15px;}
 .runner-card .rleague{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-soft);margin-top:2px;font-variant:small-caps;letter-spacing:0.04em;}
+
+/* league matches — best club in each other league */
+.league-matches{margin-top:48px;}
+.league-matches h3{font-family:'IBM Plex Mono',monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.1em;color:var(--ink-soft);margin-bottom:16px;}
+.league-match-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;}
+.league-match{
+  border:1px solid var(--line);padding:16px;display:flex;gap:12px;align-items:center;
+  background:rgba(255,255,255,0.28);cursor:pointer;
+  transition:border-color .12s,transform .12s;
+}
+.league-match:hover{border-color:var(--ink);}
+.league-match:active{transform:scale(0.99);}
+.league-match-info{flex:1;min-width:0;}
+.lm-name{font-weight:600;font-size:14px;line-height:1.2;}
+.lm-league{font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--ink-soft);margin-top:3px;font-variant:small-caps;letter-spacing:0.04em;}
+.lm-pct{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--visa-red);font-weight:600;font-variant-numeric:tabular-nums;flex:none;}
 
 /* retake flow */
 .retake-bar{
@@ -387,6 +412,7 @@ footer{padding:30px 24px 50px;text-align:center;font-family:'IBM Plex Mono',mono
   .club-grid{grid-template-columns:1fr;}
   .club-card{padding:12px;gap:10px;}
   .club-card .cname{font-size:13px;}
+  .league-match-grid{grid-template-columns:1fr;}
   footer{padding:24px 16px 36px;font-size:10px;}
 }
 
