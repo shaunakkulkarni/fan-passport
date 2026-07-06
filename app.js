@@ -890,9 +890,18 @@ function renderResult(){
     </div>
   `;
 
+  // In shared-link mode, the share card + CTA go at the TOP (conversion-first).
+  // In personal mode, the share card stays at the bottom and the CTA is hidden.
+  const sharedHero = isShared ? `
+      <div class="shared-hero">
+        ${shareCard}
+        ${sharedCTA}
+      </div>` : "";
+
   return `
   <section class="result-shell">
     <div class="wrap">
+      ${sharedHero}
       <div class="result-top">
         ${crestHTML(top.club, "crest-xl")}
         <div class="result-meta">
@@ -925,11 +934,11 @@ function renderResult(){
         <div class="runner-grid">${runnerCards}</div>
       </div>
       ${leagueSection}
+      ${isShared ? "" : `
       <div class="share-card-section">
         <div class="scs-label">Share this result</div>
         ${shareCard}
-      </div>
-      ${sharedCTA}
+      </div>`}
     </div>
   </section>`;
 }
