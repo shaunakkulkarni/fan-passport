@@ -672,12 +672,52 @@ footer{padding:30px 24px 50px;text-align:center;font-family:'IBM Plex Mono',mono
   .toast{bottom:80px;}
 }
 
-/* ── Shared link CTA ── */
-.shared-cta{
-  margin-top:32px;padding:24px;text-align:center;
-  border:1.5px dashed var(--line);background:rgba(255,255,255,0.28);
+/* ── Shared link CTA — conversion module ── */
+/* Only shown when viewing a friend's result via ?r= link. */
+.shared-cta-module{
+  margin-top:48px;padding:36px 32px;
+  border:1.5px solid var(--ink);
+  background:var(--paper);
+  position:relative;
+  text-align:center;
+  box-shadow:0 4px 24px rgba(27,27,23,0.14);
 }
-.shared-cta .btn{margin:0 auto;}
+.shared-cta-module::before{
+  content:"";position:absolute;inset:6px;
+  border:1px solid var(--line);pointer-events:none;
+}
+.scm-stamp{
+  display:inline-block;
+  font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:600;
+  letter-spacing:0.18em;text-transform:uppercase;color:var(--visa-red);
+  border:1.5px dashed var(--visa-red);
+  padding:5px 14px;border-radius:2px;
+  transform:rotate(-3deg);
+  margin-bottom:18px;
+}
+.scm-headline{
+  font-family:'Fraunces',serif;font-weight:600;
+  font-size:clamp(24px,4vw,34px);line-height:1.1;letter-spacing:-0.01em;
+  color:var(--ink);text-wrap:balance;
+}
+.scm-body{
+  font-size:15px;line-height:1.55;color:var(--ink-soft);
+  max-width:38ch;margin:14px auto 0;text-wrap:pretty;
+}
+.scm-actions{
+  display:flex;gap:14px;margin-top:26px;justify-content:center;flex-wrap:wrap;
+}
+.scm-actions .btn{flex:0 1 auto;}
+.scm-actions .btn.secondary{flex:0 1 auto;}
+@keyframes scmIn{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+.shared-cta-module{animation:scmIn .5s ease both;}
+
+/* Mobile: stack the buttons, tighten padding */
+@media(max-width:640px){
+  .shared-cta-module{padding:28px 20px;margin-top:36px;}
+  .scm-actions{flex-direction:column;}
+  .scm-actions .btn{width:100%;flex:1 1 auto;}
+}
 
 /* ── NFL grid responsive ── */
 @media(max-width:640px){

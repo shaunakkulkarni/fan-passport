@@ -839,10 +839,18 @@ function renderResult(){
 
   const sharedNote = isShared ? `<div class="why-chip" style="border-color:var(--visa-red);color:var(--visa-red)">Shared result</div>` : "";
 
-  // Shared link CTA
+  // Shared link CTA — strong conversion module, only in shared-link mode.
+  // Uses the friend's matched club name in the copy. Primary CTA starts a
+  // FRESH quiz (data-nav="quiz" -> startQuiz() clears sharedResult/answers/results).
   const sharedCTA = isShared ? `
-    <div class="shared-cta">
-      <button class="btn" data-nav="quiz">Take the quiz yourself →</button>
+    <div class="shared-cta-module">
+      <div class="scm-stamp">YOUR TURN</div>
+      <h3 class="scm-headline">Think you'd get a better club?</h3>
+      <p class="scm-body">Your friend got stamped into ${top.club.name}. Take the interview and see where your passport lands.</p>
+      <div class="scm-actions">
+        <button class="btn" data-nav="quiz">Get my match →</button>
+        <button class="btn secondary" data-nav="browse">Browse the club directory</button>
+      </div>
     </div>` : "";
 
   // Update OG meta tags for this specific club result
