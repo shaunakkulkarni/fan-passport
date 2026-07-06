@@ -324,6 +324,9 @@ nav.topnav span:hover{opacity:1;border-bottom:1px solid var(--gold);}
 /* ── Share result card ── */
 /* A screenshot-friendly, branded card optimized for social sharing. */
 .share-card-section{margin-top:56px;}
+/* Shared-hero wrapper: sits at the top of the result page in shared-link
+   mode so the share card + CTA are the first thing a viewer sees. */
+.shared-hero{margin-bottom:48px;}
 .scs-label{
   font-family:'IBM Plex Mono',monospace;font-size:12px;text-transform:uppercase;
   letter-spacing:0.1em;color:var(--ink-soft);margin-bottom:16px;
