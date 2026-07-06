@@ -636,7 +636,7 @@ function renderResult(){
   const chips = top.topTags.map(t => `<span class="why-chip">${TAG_LABEL[t] || t}</span>`).join("");
   const runnerCards = runners.map(r => `
     <div class="runner-card" data-open="${r.club.id}">
-      <div class="runner-crest" style="background:${r.club.c1}">${initials(r.club.name)}</div>
+      ${crestHTML(r.club, "crest-md")}
       <div>
         <div class="rname">${r.club.name}</div>
         <div class="rleague">${r.club.league} · ${r.pct}% match</div>
@@ -676,7 +676,7 @@ function renderResult(){
   <section class="result-shell">
     <div class="wrap">
       <div class="result-top">
-        <div class="crest" style="background:${top.club.c1}">${initials(top.club.name)}</div>
+        ${crestHTML(top.club, "crest-xl")}
         <div class="result-meta">
           <div class="granted">Entry granted ${sharedNote}</div>
           <h2>${top.club.name}</h2>
@@ -689,9 +689,9 @@ function renderResult(){
         <button class="btn" data-open="${top.club.id}">Read the full dossier →</button>
         <button class="btn secondary" id="shareBtn">Copy share link</button>
         <button class="btn secondary" id="shareXBtn">Share on X</button>
-        ${isShared ? "" : '<button class="btn secondary" id="retakeBtn">Quick retake</button>'}
-        ${isShared ? "" : '<button class="btn secondary" data-nav="quiz">Full retake</button>'}
-        <button class="btn secondary" data-nav="browse">Browse all clubs</button>
+        ${isShared ? "" : '<button class="text-link" id="retakeBtn">Quick retake</button>'}
+        ${isShared ? "" : '<button class="text-link" data-nav="quiz">Full retake</button>'}
+        <button class="text-link" data-nav="browse">Browse all clubs</button>
       </div>
       <div class="share-link-box" id="shareBox"></div>
       <div class="retake-bar" id="retakeBar" style="display:none">
@@ -715,10 +715,11 @@ function renderDossier(){
     if(typeof val === "string") return `<span>${t}: ${val}</span>`;
     return `<span>${TAG_LABEL[t] || t}</span>`;
   }).join("");
+  const bandText = contrastColor(c.c1);
   return `
-  <section class="dossier-band" style="background:${c.c1}">
+  <section class="dossier-band" style="background:${c.c1};color:${bandText}">
     <div class="wrap">
-      <div class="dossier-crest" style="background:${c.c2};color:${c.c1}">${initials(c.name)}</div>
+      <div class="crest crest-lg dossier-crest" style="background:${c.c2};color:${contrastColor(c.c2)}">${initials(c.name)}</div>
       <div>
         <div class="dname display">${c.name}</div>
         <div class="dmeta">${c.nick} · ${c.league}, ${c.country} · Founded ${c.founded}</div>
@@ -727,35 +728,61 @@ function renderDossier(){
   </section>
   <section class="dossier-body">
     <div class="wrap">
-      <span class="back-link" data-nav="browse">← Back to directory</span>
+      <span class="back-link" data-nav="browse" role="button" tabindex="0">← Back to directory</span>
       <div class="field">
         <div class="flabel">Identity</div>
         <div class="fval serif">${c.identity}</div>
       </div>
-      <div class="field">
-        <div class="flabel">Home ground</div>
-        <div class="fval">${c.stadium}</div>
+      <div class="field-grid">
+        <div class="field">
+          <div class="flabel">Home ground</div>
+          <div class="fval">${c.stadium}</div>
+        </div>
+        <div class="field">
+          <div class="flabel">Honours</div>
+          <div class="fval">${c.honours}</div>
+        </div>
       </div>
-      <div class="field">
-        <div class="flabel">Honours</div>
-        <div class="fval">${c.honours}</div>
-      </div>
+      ${c.lastSeason ? `
+      <div class="field-grid">
+        <div class="field">
+          <div class="flabel">Latest season</div>
+          <div class="fval">${c.lastSeason}</div>
+        </div>
+        <div class="field">
+          <div class="flabel">History</div>
+          <div class="fval">${c.history}</div>
+        </div>
+      </div>` : `
       <div class="field">
         <div class="flabel">History</div>
         <div class="fval">${c.history}</div>
+      </div>`}
+      <div class="field-grid">
+        <div class="field">
+          <div class="flabel">Rivals</div>
+          <div class="fval">${c.rivals.map(r => `• ${r}`).join("<br>")}</div>
+        </div>
+        <div class="field">
+          <div class="flabel">Legends</div>
+          <div class="fval">${c.legends.join(" · ")}</div>
+        </div>
       </div>
-      <div class="field">
-        <div class="flabel">Rivals</div>
-        <div class="fval">${c.rivals.map(r => `• ${r}`).join("<br>")}</div>
-      </div>
-      <div class="field">
-        <div class="flabel">Legends</div>
-        <div class="fval">${c.legends.join(" · ")}</div>
-      </div>
+      ${c.keyPlayers && c.keyPlayers.length ? `
+      <div class="field-grid">
+        <div class="field">
+          <div class="flabel">Players to know right now</div>
+          <div class="fval">${c.keyPlayers.map(p => `• ${p}`).join("<br>")}</div>
+        </div>
+        <div class="field">
+          <div class="flabel">What to watch for</div>
+          <div class="fval">${c.watch}</div>
+        </div>
+      </div>` : `
       <div class="field">
         <div class="flabel">What to watch for</div>
         <div class="fval">${c.watch}</div>
-      </div>
+      </div>`}
       <div class="field">
         <div class="flabel">Identity tags</div>
         <div class="tagpills">${tagList}</div>
@@ -771,7 +798,7 @@ function renderBrowse(){
     const country = clubs[0].country;
     const cards = clubs.map(c => `
       <div class="club-card" data-open="${c.id}">
-        <div class="club-crest-sm" style="background:${c.c1}">${initials(c.name)}</div>
+        ${crestHTML(c, "crest-sm")}
         <div>
           <div class="cname">${c.name}</div>
           <div class="cid">${c.nick}</div>
@@ -822,7 +849,7 @@ function renderShareBar(){
   bar.id = "shareBar";
   bar.className = "share-bar";
   bar.innerHTML = `
-    <div class="share-bar-crest" style="background:${top.club.c1}">${initials(top.club.name)}</div>
+    <div class="crest crest-sm share-bar-crest" style="background:${top.club.c1};color:${contrastColor(top.club.c1)}">${initials(top.club.name)}</div>
     <div class="share-bar-info">
       <div class="share-bar-name">${top.club.name}</div>
       <div class="share-bar-pct">${top.pct}% match</div>
@@ -924,7 +951,38 @@ function initials(name){
   return name.slice(0, 2).toUpperCase();
 }
 
+/* Contrast-safe text color for a given hex background.
+   Uses relative luminance (WCAG). Returns "#fff" or "#1b1b17". */
+function contrastColor(hex){
+  if(!hex || typeof hex !== "string") return "#fff";
+  const h = hex.replace("#", "");
+  if(h.length !== 6 && h.length !== 3) return "#fff";
+  const full = h.length === 3 ? h.split("").map(c => c + c).join("") : h;
+  const r = parseInt(full.slice(0, 2), 16) / 255;
+  const g = parseInt(full.slice(2, 4), 16) / 255;
+  const b = parseInt(full.slice(4, 6), 16) / 255;
+  const lin = [r, g, b].map(v => v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4));
+  const L = 0.2126 * lin[0] + 0.7152 * lin[1] + 0.0722 * lin[2];
+  return L > 0.45 ? "#1b1b17" : "#fff";
+}
+
+/* Build a crest element string with a contrast-safe text color.
+   sizeClass is one of: crest-sm, crest-md, crest-lg, crest-xl */
+function crestHTML(club, sizeClass){
+  const fg = contrastColor(club.c1);
+  return `<div class="crest ${sizeClass}" style="background:${club.c1};color:${fg}">${initials(club.name)}</div>`;
+}
+
 function attachHandlers(){
+  // Keyboard activation for role="button" elements (spans/divs acting as buttons)
+  document.querySelectorAll('[role="button"]').forEach(el => {
+    el.addEventListener("keydown", (e) => {
+      if(e.key === "Enter" || e.key === " "){
+        e.preventDefault();
+        el.click();
+      }
+    });
+  });
   document.querySelectorAll("[data-nav]").forEach(el => {
     el.onclick = () => {
       const target = el.getAttribute("data-nav");
