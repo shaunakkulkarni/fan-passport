@@ -537,7 +537,7 @@ function renderHome(){
     <div class="wrap">
       <div class="eyebrow">${LEAGUE_ORDER.length} leagues · ${clubCount} clubs · one interview</div>
       <h1>Your club is waiting to stamp you in.</h1>
-      <p class="lede">The World Cup made you a soccer fan. Now the actual leagues are kicking off — Premier League, La Liga, Serie A, Bundesliga, Ligue 1, MLS, and Liga MX — and you need somewhere to point your Saturday mornings. Answer a short interview, get matched to a club by identity and playing style, then read the full country-file on where you're headed.</p>
+      <p class="lede">The World Cup made you a soccer fan. Now find your club across 7 leagues and 144 teams.</p>
       <div class="hero-actions">
         <button class="btn" data-nav="quiz">Begin the interview →</button>
         <button class="btn secondary" data-nav="browse">Skip to the directory</button>
@@ -576,7 +576,7 @@ function renderQuiz(){
     navHTML = `
     <div class="quiz-nav">
       <button class="btn secondary" id="cancelRetakeBtn">← Back to results</button>
-      <span class="step-count">${selected !== undefined ? 'Answer saved — click back to results' : 'Pick a new answer'}</span>
+      <span class="step-count">${selected !== undefined ? 'Answer saved. Click back to results' : 'Pick a new answer'}</span>
       <span></span>
     </div>`;
   } else {
@@ -670,7 +670,7 @@ function buildMatchExplanation(top, answers){
 
   // If we don't have at least 3 valid picks, fall back to the club identity.
   if(picks.length < 3){
-    return `You matched with ${club.name} — ${club.identity || "a club that fits the way you want to watch football."}`;
+    return `You matched with ${club.name}. ${club.identity || "A club that fits the way you want to watch football."}`;
   }
 
   // Map the strongest picks into short, human phrases.
@@ -694,7 +694,7 @@ function buildMatchExplanation(top, answers){
   const fragments = order.map(k => phrase[k]()).filter(Boolean).slice(0, 3);
 
   if(!fragments.length){
-    return `You matched with ${club.name} — ${club.identity || "a club that fits the way you want to watch football."}`;
+    return `You matched with ${club.name}. ${club.identity || "A club that fits the way you want to watch football."}`;
   }
 
   // Compose the sentence. One or two sentences max.
@@ -823,7 +823,7 @@ function renderResult(){
   // Retake chips: one per answered question
   const retakeChips = state.answers.map((ans, i) => {
     const q = QUESTIONS[i];
-    let label = "—";
+    let label = "-";
     if(q.type === "nfl-selector"){
       if(typeof ans === "string" && ans === "nfl:skip") label = NFL_SKIP_LABEL;
       else if(typeof ans === "string" && ans.startsWith("nfl:")) {
@@ -1152,7 +1152,7 @@ function updateOGMeta(club){
     el.setAttribute("content", val);
   };
 
-  const title = `Fan Passport — You matched ${club.name}`;
+  const title = `Fan Passport: You matched ${club.name}`;
   const desc = `${club.name} (${club.nick}) · ${club.league}, ${club.country}. Matched by identity and playing style.`;
   const img = `og/${club.id}.png`;
 
@@ -1176,13 +1176,13 @@ function resetOGMeta(){
     if(!el) return;
     el.setAttribute("content", val);
   };
-  setMeta("og:title", "Fan Passport — Find Your Club");
+  setMeta("og:title", "Fan Passport: Find Your Club");
   setMeta("og:description", "Answer a short interview, get matched to a soccer club by identity and playing style. 140+ clubs across 7 leagues.");
   setMeta("og:image", "og-share-card.png");
-  setTwitter("twitter:title", "Fan Passport — Find Your Club");
+  setTwitter("twitter:title", "Fan Passport: Find Your Club");
   setTwitter("twitter:description", "Answer a short interview, get matched to a soccer club.");
   setTwitter("twitter:image", "og-share-card.png");
-  document.title = "Fan Passport — Find Your Club";
+  document.title = "Fan Passport: Find Your Club";
 }
 
 function initials(name){
@@ -1297,7 +1297,7 @@ function shareOnX(){
   if(!url) return;
   const top = state.results[0];
   if(!top) return;
-  const text = `I got matched to ${top.club.name} — ${top.pct}%. Take the quiz:`;
+  const text = `I got matched to ${top.club.name} at ${top.pct}%. Take the quiz:`;
   const xUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
   window.open(xUrl, "_blank");
 }
@@ -1311,11 +1311,11 @@ function buildShareCaption(top, isShared){
   const name = top.club.name;
   const pct = top.pct;
   if(isShared){
-    return `Someone matched with ${name} — ${pct}% on Fan Passport. Take the quiz and find your club: ${url}`;
+    return `Someone matched with ${name} at ${pct}% on Fan Passport. Take the quiz and find your club: ${url}`;
   }
   const reactions = ["Honestly… I see it.", "Vibes.", "Could be worse.", "Honestly? Yeah.", "I'm not mad at it."];
   const reaction = reactions[top.club.id.charCodeAt(0) % reactions.length];
-  return `I got matched with ${name} — ${pct}% on Fan Passport. ${reaction} Take the quiz and tell me who you get: ${url}`;
+  return `I got matched with ${name} at ${pct}% on Fan Passport. ${reaction} Take the quiz and tell me who you get: ${url}`;
 }
 
 /* Copy the share caption to clipboard, with a toast confirmation.
@@ -1357,7 +1357,7 @@ function shareResultCard(){
   if(!url) return;
   if(navigator.share){
     navigator.share({
-      title: `Fan Passport — ${top.club.name}`,
+      title: `Fan Passport: ${top.club.name}`,
       text: buildShareCaption(top, isSharedView()),
       url: url,
     }).catch(() => { /* user cancelled — no-op */ });
