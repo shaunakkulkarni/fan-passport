@@ -150,7 +150,7 @@
         {
           "label": "Trophies. Period.",
           "description": "I want a club that wins. If they're not competing for titles, what's the point? Legacy is measured in silverware.",
-          "tags": { "ambition": "trophy-driven", "trophyhunger": 2, "galactico": 1 }
+          "tags": { "ambition": "trophy-driven", "trophyhunger": 2, "galactico": 1, "aristocratic": 1 }
         },
         {
           "label": "Identity first",
@@ -165,7 +165,7 @@
         {
           "label": "The romantic choice",
           "description": "I want a club that feels like a story worth telling. History, passion, a connection to a place and people. Results come and go; the romance is permanent.",
-          "tags": { "ambition": "romantic", "journey": 2, "ultras": 1 }
+          "tags": { "ambition": "romantic", "journey": 2, "ultras": 1, "diaspora": 1 }
         }
       ]
     },
