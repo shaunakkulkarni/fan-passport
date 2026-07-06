@@ -868,7 +868,7 @@ function renderResult(){
   // Branded card — uses club color as accent stripe
   const cardAccent = top.club.c1;
   const cardAccentText = contrastColor(top.club.c1);
-  const shareCard = `
+  const shareCardHTML = `
     <div class="share-card" id="shareCard">
       <div class="sc-accent" style="background:${cardAccent};color:${cardAccentText}">FAN PASSPORT</div>
       <div class="sc-body">
@@ -883,22 +883,25 @@ function renderResult(){
         ${runnerLine}
         <div class="sc-cta">Take the quiz and find your club.</div>
       </div>
-    </div>
+    </div>`;
+  const shareCardActions = `
     <div class="share-card-actions">
       <button class="btn" id="copyCaptionBtn">Copy caption</button>
       <button class="btn secondary" id="shareCardBtn">Share result</button>
       <button class="btn secondary" id="downloadPngBtn">Download PNG</button>
-    </div>
-  `;
+    </div>`;
+  // Personal mode: card + actions together at the bottom
+  const shareCard = shareCardHTML + shareCardActions;
 
   // In shared-link mode, the share card + CTA go at the TOP (conversion-first),
-  // side-by-side as two equal-width columns.
+  // side-by-side as two equal-width columns. Action buttons centered below.
   // In personal mode, the share card stays at the bottom and the CTA is hidden.
   const sharedHero = isShared ? `
       <div class="shared-hero-grid">
-        ${shareCard}
+        ${shareCardHTML}
         ${sharedCTA}
-      </div>` : "";
+      </div>
+      ${shareCardActions}` : "";
 
   return `
   <section class="result-shell">

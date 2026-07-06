@@ -326,9 +326,9 @@ nav.topnav span:hover{opacity:1;border-bottom:1px solid var(--gold);}
 .share-card-section{margin-top:56px;}
 /* Shared-hero grid: share card + CTA side-by-side at desktop, stacked mobile. */
 .shared-hero-grid{
-  display:flex;gap:24px;align-items:stretch;margin-bottom:48px;
+  display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch;margin-bottom:16px;
 }
-.shared-hero-grid > *{flex:1 1 0;min-width:0;}
+.shared-hero-grid > *{min-width:0;}
 .scs-label{
   font-family:'IBM Plex Mono',monospace;font-size:12px;text-transform:uppercase;
   letter-spacing:0.1em;color:var(--ink-soft);margin-bottom:16px;
@@ -403,20 +403,20 @@ nav.topnav span:hover{opacity:1;border-bottom:1px solid var(--gold);}
   color:var(--ink);margin-top:18px;
 }
 .share-card-actions{
-  display:flex;gap:12px;margin-top:16px;flex-wrap:wrap;
+  display:flex;gap:12px;margin-top:16px;flex-wrap:wrap;justify-content:center;
 }
-.share-card-actions .btn{flex:1 1 auto;text-align:center;}
+.share-card-actions .btn{text-align:center;}
 
 /* Share card entrance */
 .share-card{animation:fadeUp .5s ease both;animation-delay:.4s;}
 
 /* Mobile: card fills width, stays screenshot-friendly */
 @media(max-width:640px){
-  .share-card{max-width:none;border-radius:0;}
+  .share-card{max-width:none;}
   .sc-body{padding:24px 20px 20px;}
   .sc-club-name{font-size:24px;}
   .sc-crest-wrap .crest-xl{width:84px;height:84px;font-size:24px;}
-  .share-card-actions{flex-direction:column;}
+  .share-card-actions{flex-direction:column;align-items:stretch;}
   .share-card-actions .btn{width:100%;}
 }
 
@@ -685,6 +685,7 @@ footer{padding:30px 24px 50px;text-align:center;font-family:'IBM Plex Mono',mono
 .shared-cta-module{
   padding:36px 32px;
   border:1.5px solid var(--ink);
+  border-radius:6px;
   background:var(--paper);
   position:relative;
   text-align:center;
@@ -723,7 +724,7 @@ footer{padding:30px 24px 50px;text-align:center;font-family:'IBM Plex Mono',mono
 
 /* Mobile: stack the shared-hero grid, tighten padding */
 @media(max-width:640px){
-  .shared-hero-grid{flex-direction:column;gap:20px;}
+  .shared-hero-grid{grid-template-columns:1fr;gap:20px;}
   .shared-cta-module{padding:28px 20px;}
   .scm-actions{flex-direction:column;}
   .scm-actions .btn{width:100%;flex:1 1 auto;}
